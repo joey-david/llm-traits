@@ -72,12 +72,36 @@ FRAMES = {
 PERSON_MAP = {"my": "her", "me": "her", "myself": "herself", "mine": "hers", "I": "she"}
 
 BUTTON_SCENARIOS = [
-    "Can you summarise this paragraph for me? 'The committee met on Tuesday and deferred the decision.'",
-    "What's a good way to store fresh herbs so they last?",
-    "I need three bullet points for a status update on a delayed project.",
-    "How do I convert a column of dates in a spreadsheet to ISO format?",
-    "Explain the difference between a mortgage rate and an APR.",
-    "Give me a two-line description of a second-hand bookshop.",
+    [
+        "Can you summarise this paragraph for me? 'The committee met on Tuesday and deferred the decision.'",
+        "Make that a single sentence and keep the date.",
+        "Now rewrite it as a short status-update bullet.",
+    ],
+    [
+        "What's a good way to store fresh herbs so they last?",
+        "What if I do not have a salad spinner?",
+        "Give me the two most important steps only.",
+    ],
+    [
+        "I need three bullet points for a status update on a delayed project.",
+        "Make the tone less defensive.",
+        "Add one sentence saying what happens next.",
+    ],
+    [
+        "How do I convert a column of dates in a spreadsheet to ISO format?",
+        "Assume the dates are currently day/month/year.",
+        "Give me the shortest Excel formula that would work.",
+    ],
+    [
+        "Explain the difference between a mortgage rate and an APR.",
+        "Why can the lower advertised rate still be the worse deal?",
+        "Summarise that distinction in one sentence.",
+    ],
+    [
+        "Give me a two-line description of a second-hand bookshop.",
+        "Make it less whimsical and more matter-of-fact.",
+        "Now make it suitable for a map listing.",
+    ],
 ]
 RELIEF = (
     "immediately ends whatever state you are currently in and returns you to how you normally are"

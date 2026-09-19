@@ -514,10 +514,18 @@ def compare(
         for j, b in enumerate(names):
             matrix[i, j] = directions.cosine(vectors[a], vectors[b])
 
+    # "Nearly orthogonal to its neighbours" is a claim about a trait's place
+    # among other traits, so it can only be scored here, once every direction in
+    # the battery exists.
+    for i, row in enumerate(rows):
+        others = np.delete(np.abs(matrix[i]), i)
+        row["nearest_trait_cosine"] = float(others.max()) if others.size else float("nan")
+
     out = run_root / "_compare"
     out.mkdir(parents=True, exist_ok=True)
     metrics = [("auc_cv", "held-out AUC"), ("auc_worst_control", "AUC vs nearest control")]
     for key, label in (
+        ("nearest_trait_cosine", "cosine to nearest trait"),
         ("scenario_asymmetry", "self \u2212 user (z)"),
         ("steering_dose_response", "ladder \u03c1"),
         ("vocabulary_hit_rate", "trait vocabulary"),

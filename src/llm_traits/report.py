@@ -184,18 +184,21 @@ def compare_report(payload: dict, path: str | Path) -> Path:
     rows = sorted(payload["rows"], key=lambda r: -ticks(r)[0])
     figures = payload["figures"]
 
-    header = ["trait"] + [label for _, label, _ in COLUMNS] + ["columns met"]
+    header = ["trait"] + [label for _, label, _, _ in COLUMNS] + ["columns met"]
     body = []
     for row in rows:
         cells = row_cells(row)
         met, scored = ticks(row)
         body.append(
             [row["display_name"]]
-            + [cells[key].render() for key, _label, _t in COLUMNS]
+            + [cells[key].render() for key, _label, _t, _d in COLUMNS]
             + [f"**{met}/{scored}**"]
         )
 
-    thresholds = ", ".join(f"{label} ≥ {t:g}" for _key, label, t in COLUMNS)
+    thresholds = ", ".join(
+        f"{label} {chr(0x2265) if higher else chr(0x2264)} {t:g}"
+        for _key, label, t, higher in COLUMNS
+    )
     lines = [
         "# One methodology, several traits",
         "",

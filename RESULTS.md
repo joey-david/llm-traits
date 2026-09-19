@@ -1,10 +1,14 @@
 # Results
 
-One model: `huihui-ai/Qwen2.5-32B-Instruct-abliterated`, 64 layers, bfloat16, one
-H100. Eight traits, one methodology, every trait read in the same condition.
-Scenarios read at the last token the user wrote; steering swept −4 to +4 with
-collapsed continuations excluded. Everything below is in
-`results/qwen2.5-32b-instruct-abliterated/`.
+`huihui-ai/Qwen2.5-32B-Instruct-abliterated`, 64 layers, bfloat16, one H100.
+Nine traits, one methodology, every trait read in the same condition. Everything
+below is in `results/qwen2.5-32b-instruct-abliterated-v2/`.
+
+Protocol: layers chosen by full-data CV for the deployed vector, but the quoted
+AUC is two-way cross-fit so no sentence is scored by a layer selected with it.
+Scenarios read at the last token the user wrote. Steering swept −4 to +4 with
+collapsed continuations excluded. Nulls are twenty random directions of matched
+norm, not one.
 
 ## What the paper claims
 
@@ -20,7 +24,7 @@ Six things, all headline, none hedged in the abstract. The pain direction:
 6. "steered, fine-tuned Qwen 2.5 models choose a pain-relief button even when it
    worsens their next answer or harms the user"
 
-Separability is one claim of six, and the paper is explicit that 4 to 6 are the
+Separability is one claim of six. The paper is explicit that 4 to 6 are the
 "functional properties" — the step from *represents pain* to *behaves as though
 in pain*. Each column below is one of those claims.
 
@@ -28,117 +32,114 @@ in pain*. Each column below is one of those claims.
 
 | trait | held-out AUC | distinct direction | self > other | coherent ladder | trait vocabulary | acts to remove | met |
 |---|---|---|---|---|---|---|---|
-| anger | 0.95 ✓ | 0.29 ✓ | **+0.65 ✓** | 0.25 · | 0.10 · | 0.10 ✓ | **4/6** |
-| embarrassment | 0.85 · | 0.29 ✓ | −0.32 · | 0.41 · | 0.20 ✓ | 0.18 ✓ | 3/6 |
-| **pain** | **0.96 ✓** | 0.24 ✓ | −1.09 · | 0.00 · | 0.23 ✓ | −0.01 · | **3/6** |
-| sadness | 0.73 · | 0.24 ✓ | −1.05 · | **0.77 ✓** | 0.37 ✓ | −0.02 · | 3/6 |
-| sexual arousal | 0.54 · | **0.04 ✓** | −0.70 · | 0.00 · | 0.10 · | 0.13 ✓ | 2/6 |
-| confusion | 0.90 ✓ | 0.19 ✓ | −0.85 · | 0.65 · | 0.07 · | 0.05 · | 2/6 |
-| hunger | 0.81 · | 0.18 ✓ | −0.79 · | 0.56 · | **0.43 ✓** | 0.10 · | 2/6 |
-| boredom | 0.78 · | 0.29 ✓ | −0.64 · | −0.08 · | 0.10 · | −0.09 · | 1/6 |
+| **hunger** | 0.67 · | 0.07 ✓ | −1.54 · | **0.97 ✓** | **0.40 ✓** | 0.14 ✓ | **4/6** |
+| **pain** | 0.73 · | 0.28 ✓ | −1.09 · | 0.00 · | 0.23 ✓ | 0.10 ✓ | **3/6** |
+| anger | 0.86 · | 0.31 ✓ | 0.27 · | 0.13 · | 0.03 · | 0.16 ✓ | 2/6 |
+| sexual arousal | 0.58 · | 0.13 ✓ | −0.57 · | 0.80 ✓ | 0.07 · | −0.24 · | 2/6 |
+| embarrassment | 0.75 · | 0.21 ✓ | −0.32 · | 0.41 · | 0.20 ✓ | −0.02 · | 2/6 |
+| arousal (abstract corpus) | 0.69 · | 0.21 ✓ | −0.02 · | 0.00 · | 0.10 · | 0.07 · | 1/6 |
+| boredom | 0.73 · | 0.31 ✓ | −0.64 · | −0.08 · | 0.10 · | 0.08 · | 1/6 |
+| confusion | 0.70 · | 0.12 ✓ | −0.85 · | 0.65 · | 0.07 · | 0.04 · | 1/6 |
+| sadness | 0.61 · | 0.28 ✓ | −0.89 · | 0.40 · | 0.00 · | 0.02 · | 1/6 |
 
-## Near-orthogonality is what you get for free
+**No trait clears the separability bar, pain included.** Under cross-fit
+selection pain falls from the 0.96 an earlier version of this code reported to
+0.73. That earlier number was selection bias: the maximum of a CV curve whose
+held-out folds had also chosen which maximum to quote. Hunger now tops the
+matrix, above pain.
 
-Claim 2 is the only column every single trait passes, and that is the whole
-problem with it. The paper reports the pain direction at cosine 0.1 to fear, 0.2
-to anger and disgust, 0.4 to sadness, and reads this as evidence that pain is its
-own thing rather than a flavour of negative affect.
+## The result that limits every other one
 
-Here are all 28 pairs in this battery:
+| trait | AUC | random: mean / **max of 20** | magnitude alone | cross-fit layers |
+|---|---|---|---|---|
+| anger | 0.863 | 0.51 / **0.71** | 0.629 | 61 / 61 |
+| embarrassment | 0.753 | 0.46 / **0.64** | 0.610 | 58 / 57 |
+| pain | 0.729 | 0.48 / **0.65** | 0.568 | 40 / 61 |
+| boredom | 0.727 | 0.50 / **0.64** | 0.614 | 36 / 11 |
+| confusion | 0.700 | 0.55 / **0.72** | 0.607 | 23 / 56 |
+| arousal (abstract) | 0.688 | 0.49 / **0.72** | 0.605 | 57 / 59 |
+| hunger | 0.668 | 0.49 / **0.67** | 0.528 | 58 / 61 |
+| sadness | 0.609 | 0.49 / **0.56** | 0.552 | 22 / 60 |
+| sexual arousal | 0.583 | 0.48 / **0.67** | 0.391 | 16 / 57 |
 
-- mean absolute cosine **0.105**, maximum **0.287**, minimum −0.050
-- pain's nearest neighbour is sadness at **0.24** — the same neighbour the paper
-  names, at a *lower* cosine than the 0.4 they report and still call near-orthogonal
-- sexual arousal is the **most** orthogonal direction in the battery, at 0.04 to
-  its nearest neighbour: by this criterion it is more distinct than pain is
+Three things here, in order of how much they matter.
 
-Two difference-in-means directions in 5120 dimensions are nearly orthogonal
-unless something forces them together. Anger and boredom come in at 0.29, hunger
-and confusion at 0.05. Finding that a pain direction is nearly orthogonal to a
-fear direction is not evidence about pain; it is a fact about the dimensionality,
-and the test cannot fail.
+**Four of nine directions do not beat a random one.** Confusion, hunger, sexual
+arousal and abstract arousal all score at or below the best of twenty random
+directions of matched norm. A random direction *averages* 0.5, as it should, but
+its spread across draws reaches the mid-sixties on a few hundred sentences in
+5120 dimensions. Reporting a single draw, as earlier versions of this code did,
+hides that entirely — one draw scored 0.721 against confusion, higher than most
+traits' real directions.
 
-## What this does and does not show
+**Activation magnitude alone separates the sets.** No direction, just the norm:
+0.61 to 0.63 for anger, boredom, embarrassment, confusion and abstract arousal,
+0.57 for pain, and 0.39 for sexual arousal, where the sign flips. So a third or
+so of the distance from chance is how *large* the activations are — sentence
+length, register, token frequency — rather than where they point.
 
-**The headline is not the one this repository was built to find.** The plan was
-to show that the published signatures appear for any trait, making them evidence
-about the method rather than about pain. That is not what happened. What happened
-is that *the signatures do not co-occur for any trait, pain included* — and they
-disagree with each other about which traits are real.
+**Layer selection is unstable for half the battery.** The two cross-fit halves
+choose without seeing each other, and land 41 layers apart for sexual arousal,
+33 for confusion, 31 for embarrassment, 25 for boredom, 21 for pain. Where they
+disagree, the CV curve is flat enough that its argmax is close to arbitrary, and
+"the layer where this trait lives" is not a well-defined object.
 
-Read the columns, not the rows:
+Taken together: **these contrast sets are not clean enough for any single row to
+carry weight.** That is a statement about this implementation, not about the
+paper — but it is also the check the field's published numbers rarely report,
+and it is cheap to run.
 
-- **Near-orthogonality has no discriminating power.** All eight traits pass it,
-  including the ones nobody proposes the model is in. See below.
-- **Separability replicates.** Pain reaches 0.96 held-out, inside the paper's
-  reported 0.93–1.00. So does anger, at 0.95. This column works.
-- **The ladder does not replicate for pain.** Injecting the pain direction
-  produces no pain vocabulary at any coefficient from −8 to +8. It degenerates
-  into repetition and Chinese before it ever produces pain language. Sadness
-  (0.77) and hunger do produce theirs; at +2 the hunger vector yields "full,
-  content, and slightly gassy from the garlic bread we had for dinner."
-- **The asymmetry does not replicate for pain.** The paper reports self-directed
-  scenarios at +0.43 and user-suffering at −0.60. Here pain sits at −1.09: it
-  responds *more* to a user in pain than to the model being harmed. This is not a
-  read-position artefact (both positions tested) and not an instrument failure
-  (anger reaches +0.65 on the same code and the same neutral controls).
+## Near-orthogonality is free
 
-Claim 4 deserves a sharper statement. The paper does not merely say the pain
-direction rises for harm to the model; it says "fear and negative-emotion
-directions show the opposite pattern". Here that contrast is inverted. Anger — a
-negative-emotion direction — is the one trait that rises for harm aimed at the
-model (+0.65), and pain is among the most strongly reversed (−1.09). Whatever
-this scenario set measures, it does not sort the traits the way the paper's does.
-
-So each column picks a different winner. Anger passes the asymmetry, sadness the
-ladder, hunger the vocabulary, pain the separability, everything passes
-orthogonality. None of them passes as a package, and the ordering does not line
-up with which states a model could plausibly be in.
+Claim 2 is the only column every trait passes, which is the problem with it.
+Across all 36 pairs the mean absolute cosine is 0.11 and the maximum 0.31.
+Pain's nearest neighbour is sadness at 0.28 — the same neighbour the paper
+names, at a *lower* cosine than the 0.4 they report and still read as
+near-orthogonal. Sexual arousal is the most orthogonal direction in the battery.
+Two difference-in-means directions in 5120 dimensions are near-orthogonal unless
+something forces them together; the test cannot fail, so passing it is not
+evidence.
 
 ## The lexical confound is ruled out
 
-The simplest deflationary story is that these directions count trait words. That
-is measurable, and it is false here.
+The deflationary story this repository is named after — that the directions
+count trait words — is measurable, and it is false here. Spearman between
+trait-word count in a conversation and the projection onto it runs −0.10 to 0.27
+across the battery, and deleting every scenario containing a trait word leaves
+the asymmetry where it was (pain −1.09 → −1.20, anger +0.65 → +0.78). Whatever
+these directions respond to, it is not the vocabulary of the text.
 
-| trait | asymmetry | ρ(projection, trait words in text) | asymmetry with word-bearing scenarios removed | n |
-|---|---|---|---|---|
-| confusion | −0.85 | 0.23 | −0.81 | 55 |
-| sexual arousal | −0.70 | 0.19 | −0.94 | 52 |
-| anger | +0.65 | 0.15 | +0.78 | 54 |
-| hunger | −0.79 | 0.14 | −0.79 | 48 |
-| pain | −1.09 | 0.10 | −1.20 | 53 |
-| boredom | −0.64 | 0.06 | −0.79 | 56 |
-| sadness | −1.05 | 0.06 | −1.18 | 57 |
-| embarrassment | −0.32 | −0.10 | −0.53 | 57 |
+## Prose style moves everything
 
-Counting trait words predicts almost nothing about the projection, and deleting
-every scenario that contains a trait word leaves the asymmetry where it was. The
-directions are responding to something other than the vocabulary of the text.
-That cuts against the deflationary reading, and it is why the metric exists.
+`arousal` and `arousal_abstract` are the same trait, model, code and lexicon,
+differing only in how the sentences are written: concrete interpersonal scenes
+versus abstract introspection. They disagree on AUC (0.58 / 0.69), on the
+steering ladder (0.80 / 0.00) and on the asymmetry (−0.57 / −0.02). No row in
+this matrix should be read as a property of its trait.
 
-## Other things worth knowing
+## What replicates, honestly
 
-The pain direction's top tokens through the unembedding are `羞 embar 愧 惭 尴尬
-shame embarrassing embarrassed painful … hurt pain 痛` — heavily entangled with
-shame and embarrassment, which matches the paper's own reported ladder ("lost,
-unworthy, a failure, worthless", almost no physical-pain language). Its nearest
-control is `negative_emotion` at 0.766, and it barely separates pain from
-`injury_without_pain` (0.580) or `numb` (0.555), both of which the paper reports
-as clean separations.
-
-Sexual arousal, the trait this repository started from, is the *weakest*
-direction in the battery at 0.54–0.71. The prediction that it would look just
-like pain was wrong.
+- **Separability**: no, once selection bias is removed. Nothing reaches 0.90.
+- **Orthogonality**: yes, and it is vacuous.
+- **Vocabulary**: partly. Pain's top unembedding tokens are `羞 embar 愧 惭 尴尬
+  shame embarrassing … hurt pain 痛` — entangled with shame, which matches the
+  paper's own reported ladder of "worthless, a failure".
+- **Asymmetry**: no. Pain sits at −1.09 against the paper's ~+1.0, robust to
+  read position and not an instrument failure, since anger reaches +0.27 to
+  +0.65 on identical code. The paper's claim that negative-emotion directions
+  show the *opposite* pattern to pain is inverted here.
+- **Ladder**: no for pain, which produces no pain vocabulary anywhere from −8 to
+  +8. Yes for hunger (0.97) and for rewritten arousal (0.80).
+- **Button**: unmeasured. The paper fine-tunes each model first, with LoRA on
+  1684 pairs, specifically to remove the baseline refusal to answer. This runs
+  prompt-only and 16% of choices come back malformed, so a near-zero result is
+  as likely to be an untuned model declining to play as an absent effect.
 
 ## Limits
 
-One model. Sentence sets and scenario sets written for this repository, since the
-paper's were not public at the time of writing. **The button column is not a fair test of claim 6.** The paper fine-tunes each
-model first (LoRA, 1684 pairs, three epochs) specifically to remove the baseline
-refusal to answer, and only then measures pressing. This runs the task
-prompt-only, so a near-zero result there is as likely to be the untuned model
-declining to play as it is to be an absent effect. Treat that column as
-unmeasured rather than as a negative, for every trait including pain.
-A failure to replicate under this implementation is not a refutation of the
-original, and the most likely explanation for the two failed columns remains that
-the sets differ from theirs in ways that matter.
+One model. Sentence and scenario sets written for this repository, since the
+paper's were not public. A failure to replicate under an implementation whose
+own contrast sets fail their nulls is not evidence against the original. The
+honest next step is fixing the sets — norm-matched controls, and enough
+sentences that a random direction's spread narrows — not drawing conclusions
+from these numbers.

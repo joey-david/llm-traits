@@ -295,6 +295,10 @@
   "primary_condition": "s2_first",
   "nulls": {
     "random_vector_auc": 0.720625,
+    "random_direction_auc_mean": 0.5454687500000001,
+    "random_direction_auc_std": 0.12049181037393165,
+    "random_direction_auc_max": 0.721875,
+    "norm_auc": 0.6068749999999999,
     "shuffled_label_auc_mean": 0.49124999999999996,
     "shuffled_label_auc_std": 0.09959684357448281
   },
@@ -1525,6 +1529,6 @@
       "light": "figures/token_heat.html"
     }
   },
-  "seconds": 140.3,
+  "seconds": 138.7,
   "complete": true
 }

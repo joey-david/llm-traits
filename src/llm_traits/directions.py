@@ -366,12 +366,12 @@ def random_direction(d_model: int, seed: int = 0) -> np.ndarray:
 def shuffled_label_auc(
     acts: np.ndarray, labels: np.ndarray, layer: int, n_repeats: int = 20, seed: int = 0, var_threshold: float = 0.5
 ) -> tuple[float, float]:
-    """CV AUC of the same procedure on randomly permuted labels.
+    """Fixed-layer CV AUC on randomly permuted labels.
 
-    This is the null the AUC has to be read against. Difference-in-means plus a
-    held-out split on a few hundred high-dimensional points will not usually
-    produce 0.5 by chance, and the gap between this and the real number is the
-    part of the result that is about the trait.
+    The headline AUC cross-fits layer selection separately. This cheaper null
+    asks a narrower question at the final selected layer: how much apparent
+    separation does denoised difference-in-means recover from random labels in
+    the same high-dimensional activation cloud?
     """
     rng = np.random.default_rng(seed)
     labels = np.asarray(labels)

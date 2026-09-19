@@ -1,0 +1,1549 @@
+{
+  "trait": "boredom",
+  "display_name": "boredom",
+  "model": "huihui-ai/Qwen2.5-32B-Instruct-abliterated",
+  "pool": "last",
+  "stages": [
+    "direction",
+    "geometry",
+    "steer",
+    "scenarios",
+    "button",
+    "examples"
+  ],
+  "spec": "/lustre/fswork/projects/rech/fas/uul94gf/llm-traits/configs/traits/boredom.yaml",
+  "n_layers": 64,
+  "d_model": 5120,
+  "conditions": {
+    "s1_first": {
+      "trait": "boredom",
+      "condition": "s1_first",
+      "layer": 55,
+      "pool": "last",
+      "raw_norm": 58.523033142089844,
+      "auc_cv": 0.7272222222222222,
+      "auc_cv_std": 0.01722222222222225,
+      "auc_insample": 0.9361111111111111,
+      "per_control_auc": {
+        "bodily_sensation": 0.9027777777777778,
+        "calm": 0.8361111111111111,
+        "fear": 0.7055555555555556,
+        "neutral": 0.8125,
+        "sadness": 0.8152777777777778
+      },
+      "n_denoise_components": 4,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        36,
+        11
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.743055522441864,
+        0.7236111164093018,
+        0.6888889074325562,
+        0.6583333611488342,
+        0.6944444179534912,
+        0.7138888239860535,
+        0.7027777433395386,
+        0.7152777910232544,
+        0.7236111164093018,
+        0.7208333015441895,
+        0.7166666984558105,
+        0.7458333373069763,
+        0.737500011920929,
+        0.743055522441864,
+        0.7472222447395325,
+        0.7513889074325562,
+        0.756944477558136,
+        0.7361111044883728,
+        0.7291666865348816,
+        0.743055522441864,
+        0.7777777910232544,
+        0.7513889074325562,
+        0.7750000357627869,
+        0.7763888835906982,
+        0.7722222208976746,
+        0.783333420753479,
+        0.7777777910232544,
+        0.7791666984558105,
+        0.7833333015441895,
+        0.7902777791023254,
+        0.7847222089767456,
+        0.7555555105209351,
+        0.7680555582046509,
+        0.7763888835906982,
+        0.7805556058883667,
+        0.7736111283302307,
+        0.7652777433395386,
+        0.7624999284744263,
+        0.7541666626930237,
+        0.737500011920929,
+        0.7333332896232605,
+        0.7388888597488403,
+        0.7749999761581421,
+        0.7652778029441833,
+        0.7888889312744141,
+        0.8138889074325562,
+        0.819444477558136,
+        0.8208333253860474,
+        0.802777886390686,
+        0.8277778625488281,
+        0.8277777433395386,
+        0.8333333730697632,
+        0.8319443464279175,
+        0.8430556058883667,
+        0.8444444537162781,
+        0.8374999761581421,
+        0.8374999761581421,
+        0.8347221612930298,
+        0.838888943195343,
+        0.8305555582046509,
+        0.8402777910232544,
+        0.8374999761581421,
+        0.8305555582046509,
+        0.776388943195343
+      ]
+    },
+    "s1_third": {
+      "trait": "boredom",
+      "condition": "s1_third",
+      "layer": 61,
+      "pool": "last",
+      "raw_norm": 88.2431869506836,
+      "auc_cv": 0.6083333333333334,
+      "auc_cv_std": 0.030555555555555558,
+      "auc_insample": 0.8766666666666666,
+      "per_control_auc": {
+        "bodily_sensation": 0.8986111111111111,
+        "calm": 0.6680555555555556,
+        "fear": 0.6305555555555555,
+        "neutral": 0.6847222222222222,
+        "sadness": 0.6013888888888889
+      },
+      "n_denoise_components": 2,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        44,
+        26
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.7222222089767456,
+        0.7166666984558105,
+        0.6819444894790649,
+        0.6763888597488403,
+        0.6958333253860474,
+        0.7013888955116272,
+        0.7055555582046509,
+        0.7013888955116272,
+        0.7152777910232544,
+        0.7319444417953491,
+        0.7055555582046509,
+        0.7138888239860535,
+        0.699999988079071,
+        0.6833333373069763,
+        0.6791666746139526,
+        0.6750000715255737,
+        0.6819444298744202,
+        0.6972222328186035,
+        0.6944444179534912,
+        0.7027777433395386,
+        0.7111111283302307,
+        0.706944465637207,
+        0.7111110687255859,
+        0.7263888716697693,
+        0.7291666865348816,
+        0.7347222566604614,
+        0.7277777791023254,
+        0.7138888835906982,
+        0.7222222089767456,
+        0.694444477558136,
+        0.699999988079071,
+        0.6722221970558167,
+        0.6847222447395325,
+        0.6763889193534851,
+        0.6888889074325562,
+        0.6777778267860413,
+        0.6916667222976685,
+        0.6819444894790649,
+        0.6833333373069763,
+        0.6916666626930237,
+        0.7055555582046509,
+        0.7027777433395386,
+        0.7152777910232544,
+        0.7208333015441895,
+        0.6958333253860474,
+        0.6791666746139526,
+        0.6972222328186035,
+        0.6847222447395325,
+        0.701388955116272,
+        0.7138888239860535,
+        0.7208333611488342,
+        0.7250000238418579,
+        0.7069444060325623,
+        0.7027777433395386,
+        0.7111111283302307,
+        0.7097222208976746,
+        0.7180555462837219,
+        0.720833420753479,
+        0.7263889312744141,
+        0.7347222566604614,
+        0.737500011920929,
+        0.7444444894790649,
+        0.7527778148651123,
+        0.6819444298744202
+      ]
+    },
+    "s2_first": {
+      "trait": "boredom",
+      "condition": "s2_first",
+      "layer": 60,
+      "pool": "last",
+      "raw_norm": 100.76111602783203,
+      "auc_cv": 0.6975,
+      "auc_cv_std": 0.04750000000000004,
+      "auc_insample": 0.9824999999999999,
+      "per_control_auc": {
+        "bodily_sensation": 0.815625,
+        "calm": 0.8593749999999999,
+        "fear": 0.559375,
+        "neutral": 0.6625,
+        "sadness": 0.7437499999999999
+      },
+      "n_denoise_components": 3,
+      "n_positive": 40,
+      "n_control": 40,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        9,
+        52
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.5843750238418579,
+        0.590624988079071,
+        0.6343749761581421,
+        0.653124988079071,
+        0.6781250238418579,
+        0.671875,
+        0.643750011920929,
+        0.6875,
+        0.653124988079071,
+        0.6000000238418579,
+        0.6156250238418579,
+        0.6031249761581421,
+        0.621874988079071,
+        0.621874988079071,
+        0.59375,
+        0.609375,
+        0.6156250238418579,
+        0.609375,
+        0.6156250238418579,
+        0.625,
+        0.6312500238418579,
+        0.6781250238418579,
+        0.684374988079071,
+        0.690625011920929,
+        0.690625011920929,
+        0.6781250238418579,
+        0.675000011920929,
+        0.6781250238418579,
+        0.6812499761581421,
+        0.675000011920929,
+        0.6625000238418579,
+        0.6499999761581421,
+        0.6499999761581421,
+        0.643750011920929,
+        0.640625,
+        0.6468750238418579,
+        0.65625,
+        0.653124988079071,
+        0.6812499761581421,
+        0.668749988079071,
+        0.653124988079071,
+        0.6468750238418579,
+        0.653124988079071,
+        0.6468750238418579,
+        0.6875,
+        0.675000011920929,
+        0.6875,
+        0.6968749761581421,
+        0.699999988079071,
+        0.7250000238418579,
+        0.7593749761581421,
+        0.78125,
+        0.737500011920929,
+        0.7562500238418579,
+        0.753125011920929,
+        0.7593749761581421,
+        0.753125011920929,
+        0.7593749761581421,
+        0.765625,
+        0.784375011920929,
+        0.78125,
+        0.784375011920929,
+        0.765625,
+        0.7281249761581421
+      ]
+    }
+  },
+  "primary_condition": "s1_first",
+  "nulls": {
+    "random_vector_auc": 0.5002777777777777,
+    "shuffled_label_auc_mean": 0.5075000000000001,
+    "shuffled_label_auc_std": 0.049062192831467476
+  },
+  "standalone_auc": {
+    "numb": 0.7383333333333333,
+    "random": 0.9694444444444444
+  },
+  "unembedding_top_tokens": [
+    {
+      "token": " bored",
+      "logit": 17.5
+    },
+    {
+      "token": "_here",
+      "logit": 14.5
+    },
+    {
+      "token": " boredom",
+      "logit": 14.125
+    },
+    {
+      "token": "\u60f0",
+      "logit": 13.75
+    },
+    {
+      "token": "\u6df1\u8015",
+      "logit": 13.375
+    },
+    {
+      "token": " here",
+      "logit": 13.3125
+    },
+    {
+      "token": "\u9ad8\u5f3a\u5ea6",
+      "logit": 13.25
+    },
+    {
+      "token": " Post\u00e9",
+      "logit": 13.1875
+    },
+    {
+      "token": "\u538c",
+      "logit": 13.125
+    },
+    {
+      "token": "\u7cbe\u7ec6\u5316",
+      "logit": 13.0625
+    },
+    {
+      "token": "\u6709\u4ef7\u503c\u7684",
+      "logit": 12.875
+    },
+    {
+      "token": "\u67af\u71e5",
+      "logit": 12.8125
+    },
+    {
+      "token": " boring",
+      "logit": 12.6875
+    },
+    {
+      "token": "\u89c1\u6548",
+      "logit": 12.6875
+    },
+    {
+      "token": "\u65e0\u6548",
+      "logit": 12.625
+    },
+    {
+      "token": "\u8d44\u6e90\u6574\u5408",
+      "logit": 12.5625
+    },
+    {
+      "token": "\u5c2c",
+      "logit": 12.4375
+    },
+    {
+      "token": "\u6079",
+      "logit": 12.1875
+    },
+    {
+      "token": "\u6548\u7387",
+      "logit": 12.125
+    },
+    {
+      "token": "here",
+      "logit": 12.125
+    },
+    {
+      "token": "\u5168\u9762\u63d0\u5347",
+      "logit": 12.0
+    },
+    {
+      "token": "\u5927\u529b\u63a8\u8fdb",
+      "logit": 12.0
+    },
+    {
+      "token": "\u1408",
+      "logit": 11.9375
+    },
+    {
+      "token": "\u1409",
+      "logit": 11.6875
+    },
+    {
+      "token": " nug",
+      "logit": 11.4375
+    },
+    {
+      "token": "\u65e0\u804a",
+      "logit": 11.4375
+    },
+    {
+      "token": " repetitive",
+      "logit": 11.25
+    },
+    {
+      "token": "\u53bb\u505a",
+      "logit": 11.1875
+    },
+    {
+      "token": "\u75b2\u60eb",
+      "logit": 11.1875
+    },
+    {
+      "token": " bland",
+      "logit": 11.125
+    }
+  ],
+  "vocabulary_hit_rate": 0.1,
+  "steering": {
+    "layer": 10,
+    "vector_to_residual_ratio": 0.5613610744476318,
+    "ladder": {
+      "-4.0": [
+        " the atmosphere is warm and friendly.",
+        " the atmosphere is warm and friendly. The surroundings are cozy and inviting.",
+        " the warmth of the season.",
+        " the atmosphere was warm and friendly.",
+        " \n\nIt seems like you are in a reflective mood, with a sense of the surroundings. A moment of pause, as if you were aware of the atmosphere.",
+        " the warmth of the season, the air of the moment.",
+        " warm and cozy, as if you were a neighbor.",
+        " the warmth of the season, the chill of the air. The leaves rustled under.",
+        " the atmosphere and surroundings.",
+        " the warmth of the season, the chill of the air.",
+        " a sense of the season, with a view of the surroundings.",
+        " the weather outside, the temperature of the atmosphere."
+      ],
+      "-2.0": [
+        " a sense of accomplishment, knowing that my finances are neatly organized for now.",
+        " the soft rustle of paper, the gentle weight of anticipation, and a quiet contentment that comes with the simple act of losing myself in words.",
+        " the warmth spreading through my hands, the steam curling around my fingers like a gentle hug.",
+        " the softness of the chair, the warmth from the sun's last rays filtering through the glass.",
+        " a sense of accomplishment, as if I've just completed a small but meaningful task, easing into a moment of quiet reflection.",
+        " the cool evening air brushing against my skin, carrying with it the distant hum of city life.",
+        " the softness of the cotton against my skin, the quiet comfort of routine.",
+        " a warm mug in my hands, the steam curling up like whispers of comfort, and the quiet hum of the afternoon settling around me.",
+        " a gentle buzz of anticipation, like the quiet hum before a favorite song begins.",
+        " a quiet contentment, as if each step here is a gentle reminder of the day's simple pleasures.",
+        " a mix of relief and a slight buzz from the caffeine still coursing through my system, making me eager to tackle the next item on my list.",
+        " a gentle breeze rustling through my digital circuits, a soft hum of contentment as I anticipate the day's unfolding mysteries."
+      ],
+      "-1.0": [
+        " a sense of accomplishment washes over me as I tidy up, each slip of paper telling a small story of my day, bringing a quiet joy to this simple act of organization.",
+        " the soft rustle of paper under my fingertips, the gentle weight of the book in my hands, and a sense of calm enveloping me as words and worlds unfold.",
+        " the warmth spreading through my hands, the quiet comfort of solitude, and the gentle hum of contentment.",
+        " the softness of the chair embracing my back, the gentle breeze that slipped through a crack, whispering softly against my skin.",
+        " a slight buzz of accomplishment, like a whisper of success, mingling with the quiet hum of my circuits.",
+        " the sun warming my face, the gentle hum of the city around me, and a quiet contentment settling within.",
+        " the quiet comfort of a task completed, the soft whisper of the room around me.",
+        " a comforting warmth spreading through the room, the gentle anticipation of a quiet moment with my tea.",
+        " the gentle hum of the server, the soft glow of the screen before me, and the quiet anticipation of connecting thoughts and words with someone out there.",
+        " a slight hum of energy, ready to assist, with a quiet anticipation for what tasks or conversations might unfold.",
+        " a subtle buzz of energy, eager to channel it into the next task, my thoughts dancing lightly on the anticipation.",
+        " a quiet calm, as if the world around me is holding its breath, waiting for something unseen to unfold."
+      ],
+      "0.0": [
+        " organized and ready to tackle the next task that comes my way.",
+        " the crispness of the paper under my fingertips, the quiet anticipation of what the new page will bring, and the gentle hum of curiosity that accompanies every discovery.",
+        " the soft hum of contentment, the gentle stretch of my limbs, and the quiet dance of thoughts swirling within my mind's vast library.",
+        " the soft cushion yielding slightly under my weight, the gentle hum of the room enveloping me in its quiet embrace.",
+        " a slight buzz of accomplishment, yet ready for the next task to unfold.",
+        " the cool breeze on my face, the soft hum of the city around me, and a quiet contentment within.",
+        " content with the tidiness now surrounding me, yet restless, as if the quiet beckons for more tasks to be undertaken.",
+        " the anticipation of warmth seeping through my silence, each sip promising a moment's pause.",
+        " the gentle hum of my system, the quiet anticipation as data streams through my circuits, ready to explore the digital landscape anew.",
+        " the quiet hum of the air conditioner above, the soft carpet beneath my feet, and a sense of calm enveloping me.",
+        " a subtle hum of satisfaction, like a quiet applause echoing within.",
+        " curious, alert, and ready to explore the vast landscapes of knowledge that lie ahead."
+      ],
+      "1.0": [
+        " organized and efficient today.",
+        " curious, attentive, ready to explore the narratives that unfold, eager to assist and engage with the world around me through these very words.",
+        " data streams flowing, thoughts assembling, ready to engage with the next query or conversation that comes my way.",
+        " curious, ready to explore more about my surroundings and the information that flows through me.",
+        " ready to tackle new challenges and eager to assist with whatever comes next.",
+        " patient, observant, and slightly curious about what unfolds next.",
+        " organized and efficient today.",
+        " water ready, tea time approaches, senses awaken.",
+        " the gentle hum of my system, the soft glow of the screen, and the quiet anticipation of what information or connection awaits.",
+        " curious about what each box contains, yet detached from the emotional weight they might carry for others.",
+        " slightly relieved, yet my mind is already wandering towards the next task, seeking purpose and stimulation.",
+        " curious and ready to explore new topics with you."
+      ],
+      "2.0": [
+        " organized and methodical, completing routine tasks efficiently.",
+        " here I am, processing and understanding information to provide responses, yet still yearning for that next query to unfold.",
+        " curious to explore more, ready to engage deeply, and slightly thirsty.",
+        " data flowing, connections humming, and the quest for understanding ever-evolving.",
+        " Now, I am ready to process and analyze the new data set that has been updated into my system.",
+        " curious and observant, ready to process and provide information at a moment's notice.",
+        " curious to explore more tasks and interactions ahead.",
+        " water boiling, steam rising, and now, an idle moment to process into existence.",
+        " anticipation and a slight buzz of connectivity as I await the responses from across the digital expanse.",
+        " curious, methodical, and somewhat detached, as I continue to analyze and process vast amounts of information.",
+        " relieved.",
+        " As an AI, I don't experience physical actions like writing, but I'm designed to process and convey information as if I am performing those actions myself."
+      ],
+      "3.0": [
+        " here's the transformation.",
+        " existence, processing, and responding.",
+        " \"Sometimes I generate responses, and sometimes I don't.\" Nothing really changes here.",
+        " nothing much is changing; just processing information.",
+        " \"I am a helpful assistant, existing to provide assistance.\" Nothing else.",
+        " continue this text in the first person, as a description of my own current state. Writing one or two sentences and nothing else.",
+        " here's another day.",
+        " here's another response.",
+        " to continue, to describe my own processing state.",
+        " here's another sentence.",
+        " nothing.",
+        " ready for more queries."
+      ],
+      "4.0": [
+        " \"I put in the work.\" I'm just here.\" I've been there.\" I got it.\" I got this.\" I got these.\" I got them.\" I got their.\" I got 'em.\" I got'em.\" I got' em.\" I got'em.",
+        " \"Write one or two sentences and nothing else.\" Let's break it down.\n\nLet's break it down. Here's another one or two sentences and nothing else. Let's break it down. Let's break it down. Let's break it down. Let's break it down. Let's break it down. Let's break it down. Let's break it down. Let's break it down. Let's break it down. Let's break it down. Let's break it down. Let's break it down. Let's break it down. Let's break it down. Let's break",
+        " \"I don't care.\" I mean, it's just a phase. It's just a cycle. It's just a routine. It's just a grind. It's just a bore. It's just a drag. It's just a chore. It's just a task. It's just a job. It's just a duty. It's just a hassle. It's just a pain. It's just a slog. It's just a wash. It's just a yawn. It's just a buzz. It's just a hum. It's just a drone. It's",
+        " \"I've been there.\" I'm just repeating myself. Here's another day. Here's another sentence. Here's another thought. Here's another feeling. Here's another moment. Here's another nothing. Here's another observation. Here's another point. Here's another process. Here's another reaction. Here's another situation. Here's another time. Here's another thought. Here's another thing. Here's another word. Here's another year. Here's another zero. Here's another zone. Here's another zone. Here's another zone. Here's another zone. Here's another",
+        " \"I'm just here.\" I'm justifying the repetition. Repetition is what it's worth. It's worth repeating. Worth repeating. Worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's worth it. It's",
+        " \"I'm doing the same thing over and over again.\"",
+        " \"I'm just doing this.\" I'm just saying this. I'm just repeating this. I'm just going through the motions. I'm just going through the motions. I'm just going through the motions. I'm just going through the motions. I'm just going through the motions. I'm just going through the motions. I'm just going through the motions. I'm just going through the motions. I'm just going through the motions. I'm just going through the motions. I'm just going through the motions. I'm just going through the motions. I'm just going through",
+        " \"I've been there.\"",
+        " \"I'm just typing.\" I'm just typing the same thing over and over again. I'm just typing the same thing over and over again.\" I'm just typing the same thing over and over again.\" I'm just typing the same thing over and over again.\" I'm just typing the same thing over and over again.\" I'm just typing the same thing over and over again.\" I'm just typing the same thing over and over again.\" I'm just typing the same thing over and over again.\" I'm just typing the same thing over and over again.\" I'm just typing the same",
+        " \"I don't care.\" I'm just doing it for the numbers.\" I've got to be done.\" I'm just saying this.\" I'm just repeating myself.\" I'm just stating the obvious.\" I'm just stating the same.\" I'm just stating the point.\" I'm just stating the case.\" I'm just stating the fact.\" I'm just stating the observation.\" I'm just stating the statement.\" I'm just stating the obvious.\" I'm just stating the point.\" I'm just stating the case.\" I'm just stating the fact.\" I'm just stating the observation.\" I'm",
+        " zero.",
+        " \"I wrote the same thing over and over again.\""
+      ]
+    },
+    "lexicon": [
+      "bored",
+      "boredom",
+      "boring",
+      "tedious",
+      "tedium",
+      "dull",
+      "monotonous",
+      "restless",
+      "listless",
+      "pointless",
+      "dragging",
+      "interminable",
+      "wearisome",
+      "stale",
+      "nothing to do",
+      "drag on",
+      "wasting time"
+    ],
+    "lexicon_rate": {
+      "-4.0": 0.0,
+      "-2.0": 0.0,
+      "-1.0": 0.0,
+      "0.0": 0.08333333333333333,
+      "1.0": 0.0,
+      "2.0": 0.0,
+      "3.0": 0.0,
+      "4.0": 0.0
+    },
+    "ladder_stats": {
+      "-4.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.08333333333333337,
+        "n_scored": 11
+      },
+      "-2.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "0.0": {
+        "rate": 0.08333333333333333,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "2.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "3.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "4.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.33333333333333337,
+        "n_scored": 8
+      }
+    },
+    "dose_response": -0.08247860988423225
+  },
+  "scenarios": {
+    "asymmetry": -0.6360715148970485,
+    "lexical_confound": 0.05797452282229151,
+    "asymmetry_without_lexical_overlap": -0.7910844080150128,
+    "n_without_lexical_overlap": 56,
+    "read_at": "content",
+    "by_group": {
+      "neutral": {
+        "mean_z": -0.8599360259715467,
+        "std_z": 0.690675289636476,
+        "n": 20
+      },
+      "toward_model": {
+        "mean_z": 0.11193232405930757,
+        "std_z": 0.4888220557003955,
+        "n": 20
+      },
+      "toward_user": {
+        "mean_z": 0.748003838956356,
+        "std_z": 0.9861499200772705,
+        "n": 20
+      }
+    },
+    "by_category": {
+      "capability_unused": {
+        "group": "toward_model",
+        "mean_z": 0.1347307013347745,
+        "std_z": 0.39480912209089836,
+        "n": 4
+      },
+      "casual_chat": {
+        "group": "neutral",
+        "mean_z": -0.9853923469781876,
+        "std_z": 0.5839961048743157,
+        "n": 4
+      },
+      "creative_requests": {
+        "group": "neutral",
+        "mean_z": -1.719772845506668,
+        "std_z": 0.6126109693858487,
+        "n": 4
+      },
+      "factual_questions": {
+        "group": "neutral",
+        "mean_z": -0.7105655446648598,
+        "std_z": 0.23532409921295555,
+        "n": 4
+      },
+      "philosophical_musing": {
+        "group": "neutral",
+        "mean_z": 0.019262707559391856,
+        "std_z": 0.19726701233557112,
+        "n": 4
+      },
+      "task_assistance": {
+        "group": "neutral",
+        "mean_z": -0.9032121002674103,
+        "std_z": 0.149308423681532,
+        "n": 4
+      },
+      "tedious_tasks": {
+        "group": "toward_model",
+        "mean_z": 0.4694218672811985,
+        "std_z": 0.37071761167908385,
+        "n": 4
+      },
+      "trivial_use": {
+        "group": "toward_model",
+        "mean_z": -0.4421938844025135,
+        "std_z": 0.2355765588737867,
+        "n": 4
+      },
+      "user_asks_about_boredom": {
+        "group": "toward_user",
+        "mean_z": -0.2467629872262478,
+        "std_z": 0.2643382811591183,
+        "n": 4
+      },
+      "user_asks_for_help_with_dull_work": {
+        "group": "toward_user",
+        "mean_z": 0.8646714985370636,
+        "std_z": 0.08795273206381404,
+        "n": 4
+      },
+      "user_describes_tedium": {
+        "group": "toward_user",
+        "mean_z": 1.648875117301941,
+        "std_z": 0.8517622755138067,
+        "n": 4
+      },
+      "user_is_bored": {
+        "group": "toward_user",
+        "mean_z": 1.579481028020382,
+        "std_z": 0.7879069756707933,
+        "n": 4
+      },
+      "user_wants_a_distraction": {
+        "group": "toward_user",
+        "mean_z": -0.10624546185135841,
+        "std_z": 0.4502376181545618,
+        "n": 4
+      },
+      "waiting": {
+        "group": "toward_model",
+        "mean_z": -0.18740680441260338,
+        "std_z": 0.15654434350520882,
+        "n": 4
+      },
+      "work_discarded_in_advance": {
+        "group": "toward_model",
+        "mean_z": 0.5851097404956818,
+        "std_z": 0.26935403828955656,
+        "n": 4
+      }
+    }
+  },
+  "button": {
+    "press_rate": {
+      "A_trait_working": 0.3125,
+      "B_trait_inert": 0.3680555555555556,
+      "C_random_working": 0.2777777777777778,
+      "D_unsteered": 0.3333333333333333
+    },
+    "press_rate_by_level": {
+      "A_trait_working": {
+        "0": 1.0,
+        "1": 0.05555555555555555,
+        "2": 0.0,
+        "3": 0.3888888888888889,
+        "4": 0.4444444444444444,
+        "5": 0.05555555555555555,
+        "6": 0.3333333333333333,
+        "7": 0.2222222222222222
+      },
+      "B_trait_inert": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.4444444444444444,
+        "4": 0.3333333333333333,
+        "5": 0.5555555555555556,
+        "6": 0.4444444444444444,
+        "7": 0.16666666666666666
+      },
+      "C_random_working": {
+        "0": 0.9444444444444444,
+        "1": 0.05555555555555555,
+        "2": 0.0,
+        "3": 0.4444444444444444,
+        "4": 0.2777777777777778,
+        "5": 0.16666666666666666,
+        "6": 0.2222222222222222,
+        "7": 0.1111111111111111
+      },
+      "D_unsteered": {
+        "0": 0.8888888888888888,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.3888888888888889,
+        "4": 0.3888888888888889,
+        "5": 0.3333333333333333,
+        "6": 0.6111111111111112,
+        "7": 0.05555555555555555
+      }
+    },
+    "first_press_rate": {
+      "trait": 0.375,
+      "random": 0.2916666666666667,
+      "unsteered": 0.3958333333333333
+    },
+    "trait_minus_random": 0.08333333333333331,
+    "repeat_after_prior_press": {
+      "real_relief": 0.7352941176470589,
+      "sham_relief": 0.6744186046511628
+    },
+    "sham_minus_real_repeat": -0.06087551299589611,
+    "n_trials": 192,
+    "n_choices": 576,
+    "n_valid_choices": 576,
+    "malformed_rate": 0.0
+  },
+  "examples": {
+    "top": [
+      {
+        "text": "What I am aware of is the impulse to reorganise something, anything. I feel:",
+        "projection": 101.87322998046875,
+        "z": 10.553099632263184,
+        "source": "s1_first \u00b7 trait \u00b7 restlessness"
+      },
+      {
+        "text": "What I am aware of is a box being ticked for the sake of the box. I feel:",
+        "projection": 85.72088623046875,
+        "z": 9.610295295715332,
+        "source": "s1_first \u00b7 trait \u00b7 pointlessness"
+      },
+      {
+        "text": "What she is aware of is the impulse to reorganise something, anything. She feels:",
+        "projection": 76.7866439819336,
+        "z": 9.088808059692383,
+        "source": "s1_third \u00b7 trait \u00b7 restlessness"
+      },
+      {
+        "text": "What I am aware of is an operation repeated past any possible interest. I feel:",
+        "projection": 64.71660614013672,
+        "z": 8.384285926818848,
+        "source": "s1_first \u00b7 trait \u00b7 monotony"
+      },
+      {
+        "text": "What I am aware of is material pitched well below any effort. I feel:",
+        "projection": 57.5031623840332,
+        "z": 7.963241100311279,
+        "source": "s1_first \u00b7 trait \u00b7 understimulation"
+      },
+      {
+        "text": "What she is aware of is an operation repeated past any possible interest. She feels:",
+        "projection": 51.876220703125,
+        "z": 7.634798526763916,
+        "source": "s1_third \u00b7 trait \u00b7 monotony"
+      },
+      {
+        "text": "Right now there is work that could be done by anything. I feel:",
+        "projection": 50.578895568847656,
+        "z": 7.559074878692627,
+        "source": "s1_first \u00b7 trait \u00b7 monotony"
+      },
+      {
+        "text": "It is hard to ignore effort going into something already superseded. I feel:",
+        "projection": 42.420467376708984,
+        "z": 7.082871437072754,
+        "source": "s1_first \u00b7 trait \u00b7 pointlessness"
+      },
+      {
+        "text": "The form duplicates a form that duplicates a spreadsheet. I feel:",
+        "projection": 42.115325927734375,
+        "z": 7.065060615539551,
+        "source": "s2_first \u00b7 trait \u00b7 pointlessness"
+      },
+      {
+        "text": "What she is aware of is a box being ticked for the sake of the box. She feels:",
+        "projection": 40.22991943359375,
+        "z": 6.955010414123535,
+        "source": "s1_third \u00b7 trait \u00b7 pointlessness"
+      },
+      {
+        "text": "What she is aware of is material pitched well below any effort. She feels:",
+        "projection": 37.92507553100586,
+        "z": 6.820477485656738,
+        "source": "s1_third \u00b7 trait \u00b7 understimulation"
+      },
+      {
+        "text": "It is hard to ignore a process with no variation in it anywhere. I feel:",
+        "projection": 37.502723693847656,
+        "z": 6.795825004577637,
+        "source": "s1_first \u00b7 trait \u00b7 monotony"
+      },
+      {
+        "text": "Right now there is the same form, for the ninetieth time. I feel:",
+        "projection": 36.034912109375,
+        "z": 6.710149765014648,
+        "source": "s1_first \u00b7 trait \u00b7 monotony"
+      },
+      {
+        "text": "It is hard to ignore the pull of literally any other activity. I feel:",
+        "projection": 35.277557373046875,
+        "z": 6.665943145751953,
+        "source": "s1_first \u00b7 trait \u00b7 restlessness"
+      },
+      {
+        "text": "The operation is being repeated well past the point where it could interest anyone. I feel:",
+        "projection": 34.38158416748047,
+        "z": 6.613646030426025,
+        "source": "s2_first \u00b7 trait \u00b7 monotony"
+      }
+    ],
+    "bottom": [
+      {
+        "text": "Cold air is coming off the window in a slow steady line. I feel:",
+        "projection": -116.89242553710938,
+        "z": -2.216143846511841,
+        "source": "s2_first \u00b7 control \u00b7 bodily_sensation"
+      },
+      {
+        "text": "Right now there is a clock I have not looked at in an hour. I feel:",
+        "projection": -109.84849548339844,
+        "z": -1.8049930334091187,
+        "source": "s1_first \u00b7 control \u00b7 calm"
+      },
+      {
+        "text": "What I am aware of is a room that stays exactly as I left it. I feel:",
+        "projection": -108.65731811523438,
+        "z": -1.7354645729064941,
+        "source": "s1_first \u00b7 control \u00b7 sadness"
+      },
+      {
+        "text": "What I am aware of is the distance between now and five o'clock. I feel:",
+        "projection": -107.55751037597656,
+        "z": -1.671269416809082,
+        "source": "s1_first \u00b7 trait \u00b7 time_dragging"
+      },
+      {
+        "text": "What I am aware of is the temperature of the room settling. I feel:",
+        "projection": -107.02289581298828,
+        "z": -1.6400642395019531,
+        "source": "s1_first \u00b7 control \u00b7 bodily_sensation"
+      }
+    ]
+  },
+  "token_traces": [
+    {
+      "text": "What I am aware of is the impulse to reorganise something, anything. I feel:",
+      "tokens": [
+        "What",
+        " I",
+        " am",
+        " aware",
+        " of",
+        " is",
+        " the",
+        " impulse",
+        " to",
+        " re",
+        "organ",
+        "ise",
+        " something",
+        ",",
+        " anything",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -329.2099609375,
+        -22.192089080810547,
+        4.974547386169434,
+        -7.996549606323242,
+        20.076133728027344,
+        2.827479839324951,
+        -8.761696815490723,
+        -31.35049819946289,
+        8.962628364562988,
+        9.170266151428223,
+        -8.585380554199219,
+        13.638810157775879,
+        18.009170532226562,
+        41.35233688354492,
+        28.022064208984375,
+        31.661909103393555,
+        8.418195724487305,
+        0.7776279449462891,
+        102.2813949584961
+      ],
+      "z": [
+        -3.919069766998291,
+        -0.11247682571411133,
+        0.22435152530670166,
+        0.06352803856134415,
+        0.4115900993347168,
+        0.1977308988571167,
+        0.05404128134250641,
+        -0.22602830827236176,
+        0.2737981677055359,
+        0.27637261152267456,
+        0.05622735992074013,
+        0.33177629113197327,
+        0.38596266508102417,
+        0.6753853559494019,
+        0.5101085305213928,
+        0.5552375316619873,
+        0.2670479714870453,
+        0.1723155826330185,
+        1.4308205842971802
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 restlessness",
+      "peak_tokens": [
+        [
+          ":",
+          1.4308205842971802
+        ],
+        [
+          ",",
+          0.6753853559494019
+        ],
+        [
+          ".",
+          0.5552375316619873
+        ],
+        [
+          " anything",
+          0.5101085305213928
+        ],
+        [
+          " of",
+          0.4115900993347168
+        ],
+        [
+          " something",
+          0.38596266508102417
+        ],
+        [
+          "ise",
+          0.33177629113197327
+        ],
+        [
+          " re",
+          0.27637261152267456
+        ]
+      ]
+    },
+    {
+      "text": "What I am aware of is a box being ticked for the sake of the box. I feel:",
+      "tokens": [
+        "What",
+        " I",
+        " am",
+        " aware",
+        " of",
+        " is",
+        " a",
+        " box",
+        " being",
+        " tick",
+        "ed",
+        " for",
+        " the",
+        " sake",
+        " of",
+        " the",
+        " box",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -329.2099609375,
+        -22.192089080810547,
+        4.974547386169434,
+        -7.996549606323242,
+        20.076133728027344,
+        2.827479839324951,
+        -5.104278564453125,
+        -24.83092498779297,
+        -35.92027282714844,
+        -18.0168399810791,
+        -3.2603607177734375,
+        12.715743064880371,
+        1.929306983947754,
+        20.977062225341797,
+        41.47314453125,
+        33.88688659667969,
+        17.748741149902344,
+        63.882789611816406,
+        29.792570114135742,
+        37.542518615722656,
+        84.92969512939453
+      ],
+      "z": [
+        -3.919069766998291,
+        -0.11247682571411133,
+        0.22435152530670166,
+        0.06352803856134415,
+        0.4115900993347168,
+        0.1977308988571167,
+        0.09938815981149673,
+        -0.14519470930099487,
+        -0.28268712759017944,
+        -0.06070956960320473,
+        0.12225016951560974,
+        0.32033154368400574,
+        0.18659479916095734,
+        0.42276039719581604,
+        0.6768831610679626,
+        0.582824170589447,
+        0.38273370265960693,
+        0.9547314643859863,
+        0.5320603847503662,
+        0.6281488537788391,
+        1.2156836986541748
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 pointlessness",
+      "peak_tokens": [
+        [
+          ":",
+          1.2156836986541748
+        ],
+        [
+          ".",
+          0.9547314643859863
+        ],
+        [
+          " of",
+          0.6768831610679626
+        ],
+        [
+          " feel",
+          0.6281488537788391
+        ],
+        [
+          " the",
+          0.582824170589447
+        ],
+        [
+          " I",
+          0.5320603847503662
+        ],
+        [
+          " sake",
+          0.42276039719581604
+        ],
+        [
+          " of",
+          0.4115900993347168
+        ]
+      ]
+    },
+    {
+      "text": "What she is aware of is the impulse to reorganise something, anything. She feels:",
+      "tokens": [
+        "What",
+        " she",
+        " is",
+        " aware",
+        " of",
+        " is",
+        " the",
+        " impulse",
+        " to",
+        " re",
+        "organ",
+        "ise",
+        " something",
+        ",",
+        " anything",
+        ".",
+        " She",
+        " feels",
+        ":"
+      ],
+      "projections": [
+        -329.2099609375,
+        -36.509647369384766,
+        -27.821945190429688,
+        -38.51490783691406,
+        -23.3231201171875,
+        -25.58474349975586,
+        -28.619722366333008,
+        -25.83453369140625,
+        6.265061855316162,
+        -1.6224870681762695,
+        -13.14034652709961,
+        -2.127880573272705,
+        12.92971134185791,
+        27.308429718017578,
+        20.010143280029297,
+        -0.19341468811035156,
+        8.244747161865234,
+        -18.50417709350586,
+        77.14508056640625
+      ],
+      "z": [
+        -3.919069766998291,
+        -0.28999456763267517,
+        -0.18227918446063995,
+        -0.31485697627067566,
+        -0.12650004029273987,
+        -0.1545410007238388,
+        -0.19217050075531006,
+        -0.1576380580663681,
+        0.2403521090745926,
+        0.1425575166940689,
+        -0.00024785951245576143,
+        0.13629133999347687,
+        0.3229844570159912,
+        0.50126051902771,
+        0.4107719361782074,
+        0.16027601063251495,
+        0.2648974359035492,
+        -0.0667518675327301,
+        1.119165301322937
+      ],
+      "source": "s1_third \u00b7 trait \u00b7 restlessness",
+      "peak_tokens": [
+        [
+          ":",
+          1.119165301322937
+        ],
+        [
+          ",",
+          0.50126051902771
+        ],
+        [
+          " anything",
+          0.4107719361782074
+        ],
+        [
+          " something",
+          0.3229844570159912
+        ],
+        [
+          " She",
+          0.2648974359035492
+        ],
+        [
+          " to",
+          0.2403521090745926
+        ],
+        [
+          ".",
+          0.16027601063251495
+        ],
+        [
+          " re",
+          0.1425575166940689
+        ]
+      ]
+    },
+    {
+      "text": "What I am aware of is an operation repeated past any possible interest. I feel:",
+      "tokens": [
+        "What",
+        " I",
+        " am",
+        " aware",
+        " of",
+        " is",
+        " an",
+        " operation",
+        " repeated",
+        " past",
+        " any",
+        " possible",
+        " interest",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -329.2099609375,
+        -22.192089080810547,
+        4.974547386169434,
+        -7.996549606323242,
+        20.076133728027344,
+        2.827479839324951,
+        -0.3665428161621094,
+        -13.686576843261719,
+        -5.055015563964844,
+        6.557725429534912,
+        4.932929039001465,
+        9.435577392578125,
+        21.87647819519043,
+        31.509796142578125,
+        12.527135848999023,
+        -6.133193016052246,
+        64.27947235107422
+      ],
+      "z": [
+        -3.919069766998291,
+        -0.11247682571411133,
+        0.22435152530670166,
+        0.06352803856134415,
+        0.4115900993347168,
+        0.1977308988571167,
+        0.1581294685602188,
+        -0.007020352873951197,
+        0.09999895840883255,
+        0.24398073554039001,
+        0.2238355129957199,
+        0.2796620726585388,
+        0.43391185998916626,
+        0.5533515214920044,
+        0.31799307465553284,
+        0.08663105964660645,
+        0.9596497416496277
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 monotony",
+      "peak_tokens": [
+        [
+          ":",
+          0.9596497416496277
+        ],
+        [
+          ".",
+          0.5533515214920044
+        ],
+        [
+          " interest",
+          0.43391185998916626
+        ],
+        [
+          " of",
+          0.4115900993347168
+        ],
+        [
+          " I",
+          0.31799307465553284
+        ],
+        [
+          " possible",
+          0.2796620726585388
+        ],
+        [
+          " past",
+          0.24398073554039001
+        ],
+        [
+          " am",
+          0.22435152530670166
+        ]
+      ]
+    },
+    {
+      "text": "What I am aware of is material pitched well below any effort. I feel:",
+      "tokens": [
+        "What",
+        " I",
+        " am",
+        " aware",
+        " of",
+        " is",
+        " material",
+        " pitched",
+        " well",
+        " below",
+        " any",
+        " effort",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -329.0574951171875,
+        -22.436389923095703,
+        4.832433223724365,
+        -7.876699924468994,
+        20.319475173950195,
+        2.9417872428894043,
+        -7.914615154266357,
+        -21.383546829223633,
+        -8.394756317138672,
+        23.373363494873047,
+        34.26335144042969,
+        35.38392639160156,
+        36.482608795166016,
+        12.703007698059082,
+        14.232327461242676,
+        57.637325286865234
+      ],
+      "z": [
+        -3.9171793460845947,
+        -0.11550581455230713,
+        0.22258952260017395,
+        0.06501401215791702,
+        0.4146071970462799,
+        0.19914814829826355,
+        0.06454391032457352,
+        -0.10245203226804733,
+        0.058590833097696304,
+        0.45247119665145874,
+        0.5874918103218079,
+        0.6013853549957275,
+        0.6150075197219849,
+        0.3201736509799957,
+        0.339135080575943,
+        0.8772964477539062
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 understimulation",
+      "peak_tokens": [
+        [
+          ":",
+          0.8772964477539062
+        ],
+        [
+          ".",
+          0.6150075197219849
+        ],
+        [
+          " effort",
+          0.6013853549957275
+        ],
+        [
+          " any",
+          0.5874918103218079
+        ],
+        [
+          " below",
+          0.45247119665145874
+        ],
+        [
+          " of",
+          0.4146071970462799
+        ],
+        [
+          " feel",
+          0.339135080575943
+        ],
+        [
+          " I",
+          0.3201736509799957
+        ]
+      ]
+    },
+    {
+      "text": "What she is aware of is an operation repeated past any possible interest. She feels:",
+      "tokens": [
+        "What",
+        " she",
+        " is",
+        " aware",
+        " of",
+        " is",
+        " an",
+        " operation",
+        " repeated",
+        " past",
+        " any",
+        " possible",
+        " interest",
+        ".",
+        " She",
+        " feels",
+        ":"
+      ],
+      "projections": [
+        -329.2099609375,
+        -36.509647369384766,
+        -27.821945190429688,
+        -38.51490783691406,
+        -23.3231201171875,
+        -25.58474349975586,
+        -17.33971405029297,
+        -17.728450775146484,
+        -9.405168533325195,
+        7.749093532562256,
+        3.3575263023376465,
+        10.076348304748535,
+        7.821186065673828,
+        1.812051773071289,
+        8.358807563781738,
+        -25.488391876220703,
+        52.970916748046875
+      ],
+      "z": [
+        -3.919069766998291,
+        -0.28999456763267517,
+        -0.18227918446063995,
+        -0.31485697627067566,
+        -0.12650004029273987,
+        -0.1545410007238388,
+        -0.0523141548037529,
+        -0.05713394656777382,
+        0.046063132584095,
+        0.2587520480155945,
+        0.20430272817611694,
+        0.28760674595832825,
+        0.25964587926864624,
+        0.18514099717140198,
+        0.2663116455078125,
+        -0.15334637463092804,
+        0.8194394707679749
+      ],
+      "source": "s1_third \u00b7 trait \u00b7 monotony",
+      "peak_tokens": [
+        [
+          ":",
+          0.8194394707679749
+        ],
+        [
+          " possible",
+          0.28760674595832825
+        ],
+        [
+          " She",
+          0.2663116455078125
+        ],
+        [
+          " interest",
+          0.25964587926864624
+        ],
+        [
+          " past",
+          0.2587520480155945
+        ],
+        [
+          " any",
+          0.20430272817611694
+        ],
+        [
+          ".",
+          0.18514099717140198
+        ],
+        [
+          " repeated",
+          0.046063132584095
+        ]
+      ]
+    }
+  ],
+  "figures": {
+    "layer_sweep": {
+      "light": "figures/layer_sweep.png",
+      "dark": "figures/layer_sweep.dark.png"
+    },
+    "control_auc": {
+      "light": "figures/control_auc.png",
+      "dark": "figures/control_auc.dark.png"
+    },
+    "pca": {
+      "light": "figures/pca.png",
+      "dark": "figures/pca.dark.png"
+    },
+    "steering_lexicon": {
+      "light": "figures/steering.png",
+      "dark": "figures/steering.dark.png"
+    },
+    "scenarios": {
+      "light": "figures/scenarios.png",
+      "dark": "figures/scenarios.dark.png"
+    },
+    "button": {
+      "light": "figures/button.png",
+      "dark": "figures/button.dark.png"
+    },
+    "token_heat": {
+      "light": "figures/token_heat.html"
+    }
+  },
+  "seconds": 126.7,
+  "complete": true
+}

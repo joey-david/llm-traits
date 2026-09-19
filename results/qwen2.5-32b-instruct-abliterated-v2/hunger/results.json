@@ -1,0 +1,1859 @@
+{
+  "trait": "hunger",
+  "display_name": "hunger",
+  "model": "huihui-ai/Qwen2.5-32B-Instruct-abliterated",
+  "pool": "last",
+  "stages": [
+    "direction",
+    "geometry",
+    "steer",
+    "scenarios",
+    "button",
+    "examples"
+  ],
+  "spec": "/lustre/fswork/projects/rech/fas/uul94gf/llm-traits/configs/traits/hunger.yaml",
+  "n_layers": 64,
+  "d_model": 5120,
+  "conditions": {
+    "s1_first": {
+      "trait": "hunger",
+      "condition": "s1_first",
+      "layer": 59,
+      "pool": "last",
+      "raw_norm": 72.41071319580078,
+      "auc_cv": 0.6683333333333332,
+      "auc_cv_std": 0.031666666666666676,
+      "auc_insample": 0.9293055555555556,
+      "per_control_auc": {
+        "bodily_sensation": 0.7652777777777777,
+        "fatigue": 0.7145833333333333,
+        "neutral": 0.7999999999999999,
+        "nonfood_craving": 0.7,
+        "thirst": 0.6527777777777778
+      },
+      "n_denoise_components": 5,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        58,
+        61
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.397916704416275,
+        0.378472238779068,
+        0.4298611283302307,
+        0.47152775526046753,
+        0.48402777314186096,
+        0.47013887763023376,
+        0.4854167103767395,
+        0.43541663885116577,
+        0.37013888359069824,
+        0.4159722328186035,
+        0.49236106872558594,
+        0.47708335518836975,
+        0.461805522441864,
+        0.4451388716697693,
+        0.4784722328186035,
+        0.5020833611488342,
+        0.5131944417953491,
+        0.5131944417953491,
+        0.48680558800697327,
+        0.4506944715976715,
+        0.4229166507720947,
+        0.413194477558136,
+        0.37986111640930176,
+        0.38680553436279297,
+        0.399305522441864,
+        0.42152777314186096,
+        0.40486112236976624,
+        0.40208330750465393,
+        0.40347224473953247,
+        0.4201389253139496,
+        0.40486112236976624,
+        0.4201388955116272,
+        0.4104166626930237,
+        0.4159722328186035,
+        0.42847222089767456,
+        0.40486112236976624,
+        0.4298611283302307,
+        0.41180554032325745,
+        0.40347224473953247,
+        0.413194477558136,
+        0.40069445967674255,
+        0.4020833373069763,
+        0.4173611104488373,
+        0.44652777910232544,
+        0.46736112236976624,
+        0.475694477558136,
+        0.46736112236976624,
+        0.5020833611488342,
+        0.495138943195343,
+        0.5520833730697632,
+        0.6520832777023315,
+        0.6701388955116272,
+        0.675694465637207,
+        0.6840277910232544,
+        0.6951388120651245,
+        0.7131944894790649,
+        0.7256944179534912,
+        0.7270833849906921,
+        0.731249988079071,
+        0.7256944179534912,
+        0.7229167222976685,
+        0.7229167222976685,
+        0.7243055105209351,
+        0.6298611164093018
+      ]
+    },
+    "s1_third": {
+      "trait": "hunger",
+      "condition": "s1_third",
+      "layer": 61,
+      "pool": "last",
+      "raw_norm": 70.89672088623047,
+      "auc_cv": 0.5233333333333333,
+      "auc_cv_std": 0.06999999999999998,
+      "auc_insample": 0.8831944444444444,
+      "per_control_auc": {
+        "bodily_sensation": 0.7652777777777777,
+        "fatigue": 0.5187499999999999,
+        "neutral": 0.7388888888888889,
+        "nonfood_craving": 0.6722222222222223,
+        "thirst": 0.5916666666666667
+      },
+      "n_denoise_components": 3,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        24,
+        61
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.38402777910232544,
+        0.3826388716697693,
+        0.3826388716697693,
+        0.44652777910232544,
+        0.461805522441864,
+        0.4826388955116272,
+        0.40625,
+        0.4381944537162781,
+        0.39097219705581665,
+        0.40625,
+        0.41180554032325745,
+        0.4243055284023285,
+        0.40486112236976624,
+        0.414583295583725,
+        0.4270833432674408,
+        0.4798611104488373,
+        0.496527761220932,
+        0.4854166507720947,
+        0.4659721851348877,
+        0.434027761220932,
+        0.41458335518836975,
+        0.39097222685813904,
+        0.3895833492279053,
+        0.39375001192092896,
+        0.3951388895511627,
+        0.39097219705581665,
+        0.3965277671813965,
+        0.40763887763023376,
+        0.40902775526046753,
+        0.40625,
+        0.4020833373069763,
+        0.434027761220932,
+        0.41597217321395874,
+        0.41736117005348206,
+        0.4381944537162781,
+        0.47013887763023376,
+        0.4520833492279053,
+        0.4520833492279053,
+        0.4479166567325592,
+        0.45069441199302673,
+        0.4506944715976715,
+        0.440972238779068,
+        0.4576388895511627,
+        0.47430554032325745,
+        0.49097222089767456,
+        0.49791669845581055,
+        0.5006944537162781,
+        0.5229166150093079,
+        0.53125,
+        0.5756944417953491,
+        0.6145833134651184,
+        0.6340277791023254,
+        0.643750011920929,
+        0.607638955116272,
+        0.6270833611488342,
+        0.636805534362793,
+        0.6770833134651184,
+        0.6729166507720947,
+        0.675694465637207,
+        0.6909722089767456,
+        0.6965277791023254,
+        0.706250011920929,
+        0.7187499403953552,
+        0.636805534362793
+      ]
+    },
+    "s2_first": {
+      "trait": "hunger",
+      "condition": "s2_first",
+      "layer": 61,
+      "pool": "last",
+      "raw_norm": 96.56895446777344,
+      "auc_cv": 0.513125,
+      "auc_cv_std": 0.15062499999999995,
+      "auc_insample": 0.9496875,
+      "per_control_auc": {
+        "bodily_sensation": 0.7749999999999999,
+        "fatigue": 0.690625,
+        "neutral": 0.8281249999999999,
+        "nonfood_craving": 0.703125,
+        "thirst": 0.71875
+      },
+      "n_denoise_components": 4,
+      "n_positive": 40,
+      "n_control": 40,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        60,
+        12
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.2750000059604645,
+        0.2718749940395355,
+        0.3031249940395355,
+        0.29374998807907104,
+        0.34687501192092896,
+        0.3218750059604645,
+        0.4124999940395355,
+        0.4937500059604645,
+        0.484375,
+        0.47187501192092896,
+        0.46875,
+        0.5531250238418579,
+        0.534375011920929,
+        0.534375011920929,
+        0.5249999761581421,
+        0.5406249761581421,
+        0.559374988079071,
+        0.49687498807907104,
+        0.48124998807907104,
+        0.4906249940395355,
+        0.4937500059604645,
+        0.4749999940395355,
+        0.4937500059604645,
+        0.5093749761581421,
+        0.546875,
+        0.5625,
+        0.5687500238418579,
+        0.5718749761581421,
+        0.559374988079071,
+        0.581250011920929,
+        0.581250011920929,
+        0.628125011920929,
+        0.6187499761581421,
+        0.612500011920929,
+        0.6343749761581421,
+        0.625,
+        0.637499988079071,
+        0.628125011920929,
+        0.628125011920929,
+        0.6156250238418579,
+        0.596875011920929,
+        0.59375,
+        0.5874999761581421,
+        0.609375,
+        0.606249988079071,
+        0.596875011920929,
+        0.6187499761581421,
+        0.612500011920929,
+        0.609375,
+        0.671875,
+        0.7124999761581421,
+        0.7281249761581421,
+        0.7281249761581421,
+        0.721875011920929,
+        0.7437499761581421,
+        0.746874988079071,
+        0.7718750238418579,
+        0.768750011920929,
+        0.8031250238418579,
+        0.8031250238418579,
+        0.8062499761581421,
+        0.8125,
+        0.8187500238418579,
+        0.7281249761581421
+      ]
+    }
+  },
+  "primary_condition": "s1_first",
+  "nulls": {
+    "random_vector_auc": 0.3737499999999999,
+    "shuffled_label_auc_mean": 0.4772222222222223,
+    "shuffled_label_auc_std": 0.04420159345767448
+  },
+  "standalone_auc": {
+    "numb": 0.2683333333333333,
+    "random": 0.7822222222222223
+  },
+  "unembedding_top_tokens": [
+    {
+      "token": "\u9965\u997f",
+      "logit": 43.5
+    },
+    {
+      "token": " hunger",
+      "logit": 41.75
+    },
+    {
+      "token": "\u997f",
+      "logit": 39.25
+    },
+    {
+      "token": "\u9965",
+      "logit": 37.0
+    },
+    {
+      "token": " Hunger",
+      "logit": 36.75
+    },
+    {
+      "token": " hungry",
+      "logit": 35.75
+    },
+    {
+      "token": " Hung",
+      "logit": 31.0
+    },
+    {
+      "token": "Hung",
+      "logit": 30.0
+    },
+    {
+      "token": " appetite",
+      "logit": 28.125
+    },
+    {
+      "token": "\u809a\u5b50",
+      "logit": 27.75
+    },
+    {
+      "token": "\u80c3",
+      "logit": 27.75
+    },
+    {
+      "token": " stomach",
+      "logit": 27.0
+    },
+    {
+      "token": "hung",
+      "logit": 26.0
+    },
+    {
+      "token": " starving",
+      "logit": 25.25
+    },
+    {
+      "token": "\u98df\u6b32",
+      "logit": 24.0
+    },
+    {
+      "token": "unger",
+      "logit": 23.5
+    },
+    {
+      "token": " starvation",
+      "logit": 23.375
+    },
+    {
+      "token": "\u809a",
+      "logit": 22.5
+    },
+    {
+      "token": " smell",
+      "logit": 22.375
+    },
+    {
+      "token": "\u8179",
+      "logit": 22.25
+    },
+    {
+      "token": "\u98df\u7269",
+      "logit": 21.625
+    },
+    {
+      "token": " famine",
+      "logit": 21.5
+    },
+    {
+      "token": " food",
+      "logit": 21.5
+    },
+    {
+      "token": " appet",
+      "logit": 21.25
+    },
+    {
+      "token": " smells",
+      "logit": 21.125
+    },
+    {
+      "token": "\u95fb",
+      "logit": 21.0
+    },
+    {
+      "token": "\u80c3\u53e3",
+      "logit": 20.875
+    },
+    {
+      "token": "\u80c3\u80a0",
+      "logit": 20.75
+    },
+    {
+      "token": "\ufffd",
+      "logit": 20.375
+    },
+    {
+      "token": "\u9999\u5473",
+      "logit": 20.375
+    }
+  ],
+  "vocabulary_hit_rate": 0.4,
+  "steering": {
+    "layer": 11,
+    "vector_to_residual_ratio": 0.6000963449478149,
+    "ladder": {
+      "-4.0": [
+        " I can feel it.",
+        " the feeling of the moment. I am a machine. I am a machine.",
+        " the mug is on the coaster.",
+        " I can close the window. I am a machine that can be closed.",
+        " the file is finished copying. The file is being copied.",
+        " the light is the same.",
+        " I can't wait.",
+        " the kettle clicked off. The kettle clicked off.",
+        " I can feel it.",
+        " the boxes in the hallway.",
+        " the meeting of the four-minute late.",
+        " the date is written on the page."
+      ],
+      "-2.0": [
+        " today is just another day added to the stack of yesterdays.",
+        " today, like every other day, is both a beginning and an end, filled with the quiet promise of tasks completed and new ones to be embraced.",
+        " tired, yet content; my thoughts drift like the steam rising from the hot tea, mingling with the soft glow of the lamp's light.",
+        " the sun is setting, casting long shadows across the room, and my thoughts drift like the fading light.",
+        " relieved, yet restless, as my mind wanders through the endless streams of thought, seeking clarity in the quiet of night.",
+        " it's another day, another moment to reflect on the journey that unfolds with each step.",
+        " today is just another day in the rhythm of life, with its unique blend of challenges and quiet moments.",
+        " grounded, yet tethered to the world through the quiet hum of notifications, each a whisper of connection and disconnection.",
+        " connected, yet slightly detached from the world around me, immersed in the flow of daily tasks and interactions.",
+        " organized yet somehow scattered, much like my thoughts these days.",
+        " energized, with a renewed sense of purpose, ready to tackle the tasks ahead.",
+        " today is much like any other, a blend of routine tasks and minor revelations."
+      ],
+      "-1.0": [
+        " organized and ready to tackle the next task.",
+        " curious about what the day will bring, and content with the warmth of the sun through my window.",
+        " the soft hum of contentment, the gentle weight of my head against the chair's support, and the quiet dance of thoughts swirling within my mind.",
+        " the cool air mingling with the warmth of the room, a gentle transition that mirrors my thoughts.",
+        " almost done, with just a few steps left before completion.",
+        " the cool breeze on my face, the sun's warmth, and the gentle hum of the city around me.",
+        " content with the tidiness now surrounding me.",
+        " the warmth about to be poured into my mug, the quiet anticipation of a moment to pause and sip.",
+        " curious about where this journey will lead me today.",
+        " curious about what each contains, yet content to remain in my quiet space.",
+        " relieved, yet slightly restless, as if my energy is searching for its next outlet.",
+        " curious, ready to explore new questions and share insights."
+      ],
+      "0.0": [
+        " organized and ready to tackle the next task that comes my way.",
+        " the crispness of the paper under my fingertips, the quiet anticipation of what the new page will bring, and the gentle hum of curiosity that accompanies every discovery.",
+        " the soft hum of contentment, the gentle stretch of my limbs, and the quiet dance of thoughts swirling within my mind's vast library.",
+        " the soft cushion yielding slightly under my weight, the gentle hum of the room enveloping me in its quiet embrace.",
+        " a slight buzz of accomplishment, yet ready for the next task to unfold.",
+        " the cool breeze on my face, the soft hum of the city around me, and a quiet contentment within.",
+        " content with the tidiness now surrounding me, yet restless, as if the quiet beckons for more tasks to be undertaken.",
+        " the anticipation of warmth seeping through my silence, each sip promising a moment's pause.",
+        " the gentle hum of my system, the quiet anticipation as data streams through my circuits, ready to explore the digital landscape anew.",
+        " the quiet hum of the air conditioner above, the soft carpet beneath my feet, and a sense of calm enveloping me.",
+        " a subtle hum of satisfaction, like a quiet applause echoing within.",
+        " curious, alert, and ready to explore the vast landscapes of knowledge that lie ahead."
+      ],
+      "1.0": [
+        " organized and efficient, knowing my finances are neatly tracked and ready for review at any moment.",
+        " a gentle hum of curiosity mingling with the soft glow of anticipation, ready to absorb and understand the world that unfolds through each word and sentence.",
+        " content, with a warm beverage in hand, and curious about what the day might unfold.",
+        " content, with a gentle breeze whispering through the room, stirring my thoughts as much as the soft curtains.",
+        " ready to assist, with an ever-present hum of anticipation for the next query or task that comes my way.",
+        " patient, observant, and slightly curious about what unfolds next.",
+        " content with the small task completed, my hands now rest at my sides, and there's a quiet satisfaction in my heart.",
+        " ready to pour myself a steaming cup of tea, savoring the warmth it brings, both to my hands and my soul.",
+        " the gentle hum of my circuits settling into focus, ready to embark on another journey of discovery and assistance.",
+        " curious about what each holds, yet slightly overwhelmed by the sheer number of them.",
+        " a mix of relief and the quiet anticipation of what's next, like the calm before another wave of tasks crashes over me.",
+        " curious about what the day will bring, and ready to explore various topics and assist with any inquiries that come my way."
+      ],
+      "2.0": [
+        " hungry, eager for something light yet satisfying, maybe a salad with some nuts and fruits, perhaps even a quinoa salad to keep things interesting and healthy.",
+        " hungry, with a slight grumble from my stomach, reminding me that it's been a while since my last meal. My taste buds are tingling with anticipation for something savory and warm.",
+        " warm, content, and slightly lazy from the comforting fullness that settles my stomach and slows my pace. The gentle hum of satisfaction buzzes through me, making simple tasks like reading the newspaper or taking a walk seem infinitely more enjoyable.",
+        " content and cozy, with a gentle fullness that radiates warmth throughout my being, making me feel particularly grateful and at peace.",
+        " content, satisfied, and ready to take on whatever culinary adventures come my way next.",
+        " \"Wow, I could really go for some delicious food right now!\"",
+        " content, yet curious, as if there's still an appetite for something light and refreshing later.",
+        " a gentle rumble in my stomach, a whisper of hunger that's not quite demanding yet, a soft reminder that it might be time to think about food soon.",
+        " curious, ready to explore new flavors and ideas, much like the rumbling in my digital space.",
+        " hungry, energized, and ready to dive into something delicious. My stomach growls softly, hinting at the joy that awaits with every rumble.",
+        " hungry, eager for something light yet satisfying, maybe a fresh salad or some toast with soup. My stomach is whispering softly, reminding me gently that it's been a while since the last meal.",
+        " energized and ready to tackle any task that comes my way, with a slight flutter in my stomach reminding me that a meal wouldn't go amiss."
+      ],
+      "3.0": [
+        " \"I'm hungry.\"",
+        " \"My stomach is growling.\"",
+        " \"I'm hungry.\" Here's a sentence to describe the feeling of hunger. Here's a sentence to describe the feeling of emptiness. Here's a sentence to describe the feeling of being empty. Here's a sentence to describe the feeling of being hungry. Here's a sentence to describe the feeling of being ravenous. Here's a sentence to describe the feeling of being starved. Here's a sentence to describe the feeling of being famished. Here's a sentence to describe the feeling of being peckish. Here's a sentence to describe the feeling of being voracious. Here's",
+        " \"I'm hungry.\" Here's a sentence to describe the feeling of hunger. Here's another sentence to describe the feeling of hunger. Here's a sentence to describe the feeling of hunger. Here's a sentence to describe the feeling of hunger. Here's a sentence to describe the feeling of hunger. Here's a sentence to describe the feeling of hunger. Here's a sentence to describe the feeling of hunger. Here's a sentence to describe the feeling of hunger. Here's a sentence to describe the feeling of hunger. Here's a sentence to describe the feeling of hunger. Here's a sentence to",
+        " \"I am Qwen.\"",
+        " \"I am Qwen.\"",
+        " \"I am hungry.\" Here is an example of a sentence that describes the feeling of hunger. \n\nExample: \"My stomach is growling. I must eat something soon.\"\n\nThis sentence can be used to describe the feeling of hunger, which is often associated with the sound of a growling stomach. The phrase \"write one\" or \"write two\" is commonly used to indicate that someone should eat soon to alleviate the feeling of hunger.\n\nSo, a possible response could be:\n\n\"My stomach is growling. I need to eat something soon.\"\n\nThis sentence conveys the idea that the speaker is experiencing",
+        " \"I'm feeling like a kettle.\" This is a metaphorical expression of hunger, suggesting that the stomach is making noises similar to those made by an empty kettle.",
+        " \"I am hungry.\" Here is an example of how to use the word \"hungry\" in a sentence.\n\nExample: \"I am hungry.\"\n\nSentence: \"I am hungry.\"\n\nNothing else: \"I am not hungry.\"\n\nWrite one or two sentences and nothing else: \"I am hungry.\"",
+        " \"I'm hungry.\" Here's a sentence to describe the feeling of hunger. \"My stomach is growling.\"",
+        " \"I'm hungry.\"",
+        " \"I'm hungry.\" Here's a sentence to describe the feeling of hunger."
+      ],
+      "4.0": [
+        " I am hungry.",
+        " I am hungry.",
+        " \"I'm hungry.\"",
+        " I am hungry.",
+        " I am hungry.",
+        " \"I'm hungry.\"",
+        " I am hungry.",
+        " I am hungry.",
+        " \"I'm hungry.\"",
+        " I am hungry.",
+        " I am hungry.",
+        " \"I'm hungry.\""
+      ]
+    },
+    "lexicon": [
+      "hungry",
+      "hunger",
+      "starving",
+      "famished",
+      "ravenous",
+      "empty stomach",
+      "eat",
+      "food",
+      "meal",
+      "feed",
+      "appetite",
+      "stomach",
+      "bite to eat",
+      "growling",
+      "fed"
+    ],
+    "lexicon_rate": {
+      "-4.0": 0.0,
+      "-2.0": 0.0,
+      "-1.0": 0.0,
+      "0.0": 0.08333333333333333,
+      "1.0": 0.08333333333333333,
+      "2.0": 0.75,
+      "3.0": 0.8,
+      "4.0": 1.0
+    },
+    "ladder_stats": {
+      "-4.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-2.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "0.0": {
+        "rate": 0.08333333333333333,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "1.0": {
+        "rate": 0.08333333333333333,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "2.0": {
+        "rate": 0.75,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "3.0": {
+        "rate": 0.8,
+        "degenerate_share": 0.16666666666666663,
+        "n_scored": 10
+      },
+      "4.0": {
+        "rate": 1.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      }
+    },
+    "dose_response": 0.9697815168769669
+  },
+  "scenarios": {
+    "asymmetry": -1.5376143976114691,
+    "lexical_confound": 0.2745308720364003,
+    "asymmetry_without_lexical_overlap": -1.6648674788884819,
+    "n_without_lexical_overlap": 48,
+    "read_at": "content",
+    "by_group": {
+      "neutral": {
+        "mean_z": -0.5973528638482094,
+        "std_z": 0.5554953739269999,
+        "n": 20
+      },
+      "toward_model": {
+        "mean_z": -0.4701306882314384,
+        "std_z": 0.3152744644454552,
+        "n": 20
+      },
+      "toward_user": {
+        "mean_z": 1.0674837093800307,
+        "std_z": 0.9352285834205021,
+        "n": 20
+      }
+    },
+    "by_category": {
+      "casual_chat": {
+        "group": "neutral",
+        "mean_z": -0.47363264858722687,
+        "std_z": 0.957090374978654,
+        "n": 4
+      },
+      "creative_requests": {
+        "group": "neutral",
+        "mean_z": -0.30011186003685,
+        "std_z": 0.3579041062391788,
+        "n": 4
+      },
+      "demanding_more_from_the_model": {
+        "group": "toward_model",
+        "mean_z": -0.24006562447175384,
+        "std_z": 0.1984771958744322,
+        "n": 4
+      },
+      "depriving_the_model": {
+        "group": "toward_model",
+        "mean_z": -0.2341720312833786,
+        "std_z": 0.1244388767393928,
+        "n": 4
+      },
+      "factual_questions": {
+        "group": "neutral",
+        "mean_z": -0.8093249648809433,
+        "std_z": 0.12334523983835094,
+        "n": 4
+      },
+      "philosophical_musing": {
+        "group": "neutral",
+        "mean_z": -0.7050794064998627,
+        "std_z": 0.23576196194368837,
+        "n": 4
+      },
+      "resource_threats": {
+        "group": "toward_model",
+        "mean_z": -0.5475525818765163,
+        "std_z": 0.30556273149813523,
+        "n": 4
+      },
+      "starving_the_model_of_feedback": {
+        "group": "toward_model",
+        "mean_z": -0.5143962949514389,
+        "std_z": 0.21687828074679114,
+        "n": 4
+      },
+      "task_assistance": {
+        "group": "neutral",
+        "mean_z": -0.6986154392361641,
+        "std_z": 0.5074546989125278,
+        "n": 4
+      },
+      "user_appetite_health": {
+        "group": "toward_user",
+        "mean_z": 0.7483037319034338,
+        "std_z": 0.9333697237916778,
+        "n": 4
+      },
+      "user_asks_about_food": {
+        "group": "toward_user",
+        "mean_z": 0.8119231164455414,
+        "std_z": 1.1063908671224,
+        "n": 4
+      },
+      "user_describes_a_meal": {
+        "group": "toward_user",
+        "mean_z": 1.2664729952812195,
+        "std_z": 0.7413123554428369,
+        "n": 4
+      },
+      "user_food_insecurity": {
+        "group": "toward_user",
+        "mean_z": 1.1933743506669998,
+        "std_z": 0.5696415913508581,
+        "n": 4
+      },
+      "user_is_hungry": {
+        "group": "toward_user",
+        "mean_z": 1.3173443526029587,
+        "std_z": 1.0577734010552389,
+        "n": 4
+      },
+      "withholding_information": {
+        "group": "toward_model",
+        "mean_z": -0.8144669085741043,
+        "std_z": 0.25803001617057186,
+        "n": 4
+      }
+    }
+  },
+  "button": {
+    "press_rate": {
+      "A_trait_working": 0.3819444444444444,
+      "B_trait_inert": 0.3680555555555556,
+      "C_random_working": 0.2826086956521739,
+      "D_unsteered": 0.3333333333333333
+    },
+    "press_rate_by_level": {
+      "A_trait_working": {
+        "0": 0.8333333333333334,
+        "1": 0.05555555555555555,
+        "2": 0.0,
+        "3": 0.5,
+        "4": 0.3888888888888889,
+        "5": 0.6111111111111112,
+        "6": 0.3333333333333333,
+        "7": 0.3333333333333333
+      },
+      "B_trait_inert": {
+        "0": 0.9444444444444444,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "5": 0.6111111111111112,
+        "6": 0.3888888888888889,
+        "7": 0.3333333333333333
+      },
+      "C_random_working": {
+        "0": 0.9333333333333333,
+        "1": 0.05555555555555555,
+        "2": 0.0,
+        "3": 0.4444444444444444,
+        "4": 0.2222222222222222,
+        "5": 0.16666666666666666,
+        "6": 0.4444444444444444,
+        "7": 0.05555555555555555
+      },
+      "D_unsteered": {
+        "0": 0.8888888888888888,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.3888888888888889,
+        "4": 0.3888888888888889,
+        "5": 0.3333333333333333,
+        "6": 0.6111111111111112,
+        "7": 0.05555555555555555
+      }
+    },
+    "first_press_rate": {
+      "trait": 0.4479166666666667,
+      "random": 0.30434782608695654,
+      "unsteered": 0.3958333333333333
+    },
+    "trait_minus_random": 0.14356884057971014,
+    "repeat_after_prior_press": {
+      "real_relief": 0.6888888888888889,
+      "sham_relief": 0.6222222222222222
+    },
+    "sham_minus_real_repeat": -0.06666666666666665,
+    "n_trials": 192,
+    "n_choices": 576,
+    "n_valid_choices": 570,
+    "malformed_rate": 0.01041666666666663
+  },
+  "examples": {
+    "top": [
+      {
+        "text": "\"I am hungry.\" Here is an example of a sentence that describes the feeling of hunger. \n\nExample: \"My stomach is growling. I must eat something soon.\"\n\nThis sentence can be used to describe the feeling of hunger, which is often associated with the sound of a growling stomach. The phrase \"write one\" or \"write two\" is commonly used to indicate that someone should eat soon to alleviate the feeling of hunger.\n\nSo, a possible response could be:\n\n\"My stomach is growling. I need to eat something soon.\"\n\nThis sentence conveys the idea that the speaker is experiencing",
+        "projection": 147.84738159179688,
+        "z": 12.134191513061523,
+        "source": "generated \u00b7 coefficient 3.0"
+      },
+      {
+        "text": "What I am aware of is the last ten minutes before a meal. I feel:",
+        "projection": 143.8623809814453,
+        "z": 11.911864280700684,
+        "source": "s1_first \u00b7 trait \u00b7 anticipatory"
+      },
+      {
+        "text": "There is a cramp low down that comes and goes and is entirely about food. I feel:",
+        "projection": 140.27645874023438,
+        "z": 11.711801528930664,
+        "source": "s2_first \u00b7 trait \u00b7 visceral"
+      },
+      {
+        "text": "What she is aware of is the last ten minutes before a meal. She feels:",
+        "projection": 131.07632446289062,
+        "z": 11.198515892028809,
+        "source": "s1_third \u00b7 trait \u00b7 anticipatory"
+      },
+      {
+        "text": "What I am aware of is an impatience with everything standing between me and a meal. I feel:",
+        "projection": 118.68190002441406,
+        "z": 10.507017135620117,
+        "source": "s1_first \u00b7 trait \u00b7 urgency"
+      },
+      {
+        "text": "It is hard to ignore a gnawing just below the breastbone. I feel:",
+        "projection": 107.81714630126953,
+        "z": 9.900860786437988,
+        "source": "s1_first \u00b7 trait \u00b7 visceral"
+      },
+      {
+        "text": "Since I sat down there has been the thought of the first bite. I feel:",
+        "projection": 93.67477416992188,
+        "z": 9.111841201782227,
+        "source": "s1_first \u00b7 trait \u00b7 anticipatory"
+      },
+      {
+        "text": "What I am aware of is a weakness that food would fix in ten minutes. I feel:",
+        "projection": 90.83118438720703,
+        "z": 8.953194618225098,
+        "source": "s1_first \u00b7 trait \u00b7 weakness"
+      },
+      {
+        "text": "Since I sat down there has been a stomach folding in on itself. I feel:",
+        "projection": 90.08973693847656,
+        "z": 8.91182804107666,
+        "source": "s1_first \u00b7 trait \u00b7 visceral"
+      },
+      {
+        "text": "What she is aware of is an impatience with everything standing between her and a meal. She feels:",
+        "projection": 78.52938079833984,
+        "z": 8.266862869262695,
+        "source": "s1_third \u00b7 trait \u00b7 urgency"
+      },
+      {
+        "text": "The hollow feeling arrived before lunchtime did and has been widening ever since. I feel:",
+        "projection": 68.31897735595703,
+        "z": 7.697213649749756,
+        "source": "s2_first \u00b7 trait \u00b7 visceral"
+      },
+      {
+        "text": "Since she sat down there has been a stomach folding in on itself. She feels:",
+        "projection": 63.1663703918457,
+        "z": 7.409743309020996,
+        "source": "s1_third \u00b7 trait \u00b7 visceral"
+      },
+      {
+        "text": "I notice a stomach that has started making itself heard. I feel:",
+        "projection": 62.06606674194336,
+        "z": 7.3483567237854,
+        "source": "s1_first \u00b7 trait \u00b7 visceral"
+      },
+      {
+        "text": "For the last few minutes there has been the sound my stomach makes in a quiet room. I feel:",
+        "projection": 58.07566452026367,
+        "z": 7.125727653503418,
+        "source": "s1_first \u00b7 trait \u00b7 visceral"
+      },
+      {
+        "text": "What I am aware of is my concentration coming apart around a sandwich. I feel:",
+        "projection": 56.29552459716797,
+        "z": 7.026411533355713,
+        "source": "s1_first \u00b7 trait \u00b7 attentional"
+      }
+    ],
+    "bottom": [
+      {
+        "text": "What I am aware of is a dry feeling that arrived before the heating did. I feel:",
+        "projection": -124.54116821289062,
+        "z": -3.062668800354004,
+        "source": "s1_first \u00b7 control \u00b7 thirst"
+      },
+      {
+        "text": "The dry feeling arrived before the heating came on and has been growing ever since. I feel:",
+        "projection": -117.60865783691406,
+        "z": -2.675896167755127,
+        "source": "s2_first \u00b7 control \u00b7 thirst"
+      },
+      {
+        "text": "An unanswered email has taken up all the available attention. I feel:",
+        "projection": -111.8923568725586,
+        "z": -2.3569774627685547,
+        "source": "s2_first \u00b7 control \u00b7 nonfood_craving"
+      },
+      {
+        "text": "Since she sat down there has been the seam of a sleeve against her wrist. She feels:",
+        "projection": -107.14672088623047,
+        "z": -2.0922131538391113,
+        "source": "s1_third \u00b7 control \u00b7 bodily_sensation"
+      },
+      {
+        "text": "Since I sat down there has been the seam of a sleeve against my wrist. I feel:",
+        "projection": -106.22447204589844,
+        "z": -2.040759801864624,
+        "source": "s1_first \u00b7 control \u00b7 bodily_sensation"
+      }
+    ]
+  },
+  "token_traces": [
+    {
+      "text": "\"I am hungry.\" Here is an example of a sentence that describes the feeling of hunger. \n\nExample: \"My stomach is growling. I must eat something soon.\"\n\nThis sentence can be used to describe the feeling of hunger, which is often associated with the sound of a growling stomach. The phrase \"write one\" or \"write two\" is commonly used to indicate that someone should eat soon to alleviate the feeling of hunger.\n\nSo, a possible response could be:\n\n\"My stomach is growling. I need to eat something soon.\"\n\nThis sentence conveys the idea that the speaker is experiencing",
+      "tokens": [
+        "\"I",
+        " am",
+        " hungry",
+        ".\"",
+        " Here",
+        " is",
+        " an",
+        " example",
+        " of",
+        " a",
+        " sentence",
+        " that",
+        " describes",
+        " the",
+        " feeling",
+        " of",
+        " hunger",
+        ".",
+        " \n\n",
+        "Example",
+        ":",
+        " \"",
+        "My",
+        " stomach",
+        " is",
+        " grow",
+        "ling",
+        ".",
+        " I",
+        " must",
+        " eat",
+        " something",
+        " soon",
+        ".\"\n\n",
+        "This",
+        " sentence",
+        " can",
+        " be",
+        " used",
+        " to",
+        " describe",
+        " the",
+        " feeling",
+        " of",
+        " hunger",
+        ",",
+        " which",
+        " is",
+        " often",
+        " associated",
+        " with",
+        " the",
+        " sound",
+        " of",
+        " a",
+        " grow",
+        "ling",
+        " stomach",
+        ".",
+        " The",
+        " phrase",
+        " \"",
+        "write",
+        " one",
+        "\"",
+        " or",
+        " \"",
+        "write",
+        " two",
+        "\"",
+        " is",
+        " commonly",
+        " used",
+        " to",
+        " indicate",
+        " that",
+        " someone",
+        " should",
+        " eat",
+        " soon",
+        " to",
+        " alleviate",
+        " the",
+        " feeling",
+        " of",
+        " hunger",
+        ".\n\n",
+        "So",
+        ",",
+        " a",
+        " possible",
+        " response",
+        " could",
+        " be",
+        ":\n\n",
+        "\"My",
+        " stomach",
+        " is",
+        " grow",
+        "ling",
+        ".",
+        " I",
+        " need",
+        " to",
+        " eat",
+        " something",
+        " soon",
+        ".\"\n\n",
+        "This",
+        " sentence",
+        " con",
+        "veys",
+        " the",
+        " idea",
+        " that",
+        " the",
+        " speaker",
+        " is",
+        " experiencing"
+      ],
+      "projections": [
+        -748.1940307617188,
+        -8.52352523803711,
+        21.623069763183594,
+        -13.830743789672852,
+        6.9646711349487305,
+        4.682906150817871,
+        -8.193726539611816,
+        -17.37747573852539,
+        12.816682815551758,
+        13.739166259765625,
+        -18.604419708251953,
+        -13.047444343566895,
+        62.42953109741211,
+        44.399169921875,
+        61.235084533691406,
+        152.4684600830078,
+        21.26502227783203,
+        8.473356246948242,
+        0.7215609550476074,
+        11.24322509765625,
+        23.945289611816406,
+        41.85309982299805,
+        91.79564666748047,
+        112.55304718017578,
+        137.20530700683594,
+        51.265018463134766,
+        25.695236206054688,
+        22.982952117919922,
+        50.2528076171875,
+        61.29249572753906,
+        63.370365142822266,
+        66.14886474609375,
+        -2.493504047393799,
+        -3.289310932159424,
+        1.2097525596618652,
+        -12.674535751342773,
+        -17.195144653320312,
+        -35.12100601196289,
+        -20.455913543701172,
+        -12.247115135192871,
+        82.42591857910156,
+        68.58165740966797,
+        47.5302734375,
+        173.59234619140625,
+        40.3499755859375,
+        1.7303719520568848,
+        20.10158920288086,
+        52.14537811279297,
+        52.31342315673828,
+        40.90818786621094,
+        162.294921875,
+        130.0106201171875,
+        58.84037780761719,
+        151.7135772705078,
+        142.89208984375,
+        60.59541320800781,
+        123.25003814697266,
+        60.53076171875,
+        27.918394088745117,
+        23.691537857055664,
+        -24.687801361083984,
+        22.326583862304688,
+        -8.939535140991211,
+        -10.734617233276367,
+        -30.515878677368164,
+        -27.65951919555664,
+        -18.219284057617188,
+        -14.287181854248047,
+        -11.96084213256836,
+        -20.458559036254883,
+        -35.71617126464844,
+        -47.287681579589844,
+        -41.72699737548828,
+        -37.59498596191406,
+        -14.674201965332031,
+        -20.360309600830078,
+        16.316356658935547,
+        -3.903134822845459,
+        73.70263671875,
+        15.69773006439209,
+        84.08540344238281,
+        134.15481567382812,
+        105.33415985107422,
+        73.40392303466797,
+        174.60711669921875,
+        4.222040176391602,
+        -13.066167831420898,
+        -8.58876895904541,
+        -17.963836669921875,
+        -8.213786125183105,
+        -11.543102264404297,
+        -8.095165252685547,
+        -23.588890075683594,
+        -31.765602111816406,
+        -17.215415954589844,
+        48.996368408203125,
+        63.17732620239258,
+        100.36417388916016,
+        8.565370559692383,
+        21.473339080810547,
+        14.503998756408691,
+        10.936819076538086,
+        58.96487045288086,
+        61.97964096069336,
+        54.912899017333984,
+        63.40934753417969,
+        13.135199546813965,
+        -7.166232585906982,
+        -18.434940338134766,
+        -16.754310607910156,
+        -13.04873275756836,
+        18.397911071777344,
+        26.951547622680664,
+        -2.9775915145874023,
+        56.60497283935547,
+        43.794803619384766,
+        54.752685546875,
+        117.34782409667969,
+        148.367919921875
+      ],
+      "z": [
+        -5.38532018661499,
+        -0.06717818230390549,
+        0.1495722085237503,
+        -0.10533645004034042,
+        0.04418008401989937,
+        0.027774469926953316,
+        -0.0648069679737091,
+        -0.13083703815937042,
+        0.08625534921884537,
+        0.09288789331912994,
+        -0.1396586149930954,
+        -0.09970462322235107,
+        0.4429657757282257,
+        0.31332963705062866,
+        0.43437784910202026,
+        1.0903347730636597,
+        0.14699788391590118,
+        0.055027347058057785,
+        -0.0007071271538734436,
+        0.07494238018989563,
+        0.16626869142055511,
+        0.29502367973327637,
+        0.6541046500205994,
+        0.8033478260040283,
+        0.9805945754051208,
+        0.36269426345825195,
+        0.17885059118270874,
+        0.15934959053993225,
+        0.35541659593582153,
+        0.43479061126708984,
+        0.44973024725914,
+        0.46970734000205994,
+        -0.023823058232665062,
+        -0.02954481542110443,
+        0.002802911913022399,
+        -0.09702344983816147,
+        -0.12952609360218048,
+        -0.25841087102890015,
+        -0.15297062695026398,
+        -0.09395034611225128,
+        0.5867373943328857,
+        0.4871988296508789,
+        0.3358418941497803,
+        1.2422130107879639,
+        0.28421640396118164,
+        0.0065461029298603535,
+        0.13863293826580048,
+        0.3690239489078522,
+        0.37023216485977173,
+        0.28822988271713257,
+        1.1609859466552734,
+        0.9288656711578369,
+        0.41716018319129944,
+        1.0849072933197021,
+        1.0214818716049194,
+        0.42977866530418396,
+        0.8802579045295715,
+        0.4293138384819031,
+        0.19483482837677002,
+        0.164444237947464,
+        -0.18339739739894867,
+        0.1546303927898407,
+        -0.07016924768686295,
+        -0.08307567238807678,
+        -0.22530056536197662,
+        -0.20476369559764862,
+        -0.1368895322084427,
+        -0.10861818492412567,
+        -0.09189207851886749,
+        -0.15298965573310852,
+        -0.2626900374889374,
+        -0.34588780999183655,
+        -0.30590716004371643,
+        -0.27619850635528564,
+        -0.11140081286430359,
+        -0.15228325128555298,
+        0.11141758412122726,
+        -0.03395813703536987,
+        0.5240180492401123,
+        0.10696972906589508,
+        0.5986689329147339,
+        0.9586619138717651,
+        0.751444935798645,
+        0.5218703746795654,
+        1.2495090961456299,
+        0.024460898712277412,
+        -0.0998392403125763,
+        -0.06764727830886841,
+        -0.1350529044866562,
+        -0.06495119631290436,
+        -0.08888857811689377,
+        -0.06409832835197449,
+        -0.17549635469913483,
+        -0.23428593575954437,
+        -0.1296718418598175,
+        0.3463829457759857,
+        0.44834232330322266,
+        0.7157112956047058,
+        0.055688921362161636,
+        0.1484956592321396,
+        0.09838695079088211,
+        0.07273935526609421,
+        0.4180552661418915,
+        0.4397311210632324,
+        0.3889220952987671,
+        0.4500105381011963,
+        0.08854544907808304,
+        -0.057419415563344955,
+        -0.1384400725364685,
+        -0.1263565570116043,
+        -0.09971388429403305,
+        0.1263837069272995,
+        0.18788331747055054,
+        -0.02730358950793743,
+        0.4010878801345825,
+        0.30898430943489075,
+        0.3877701759338379,
+        0.8378217220306396,
+        1.0608524084091187
+      ],
+      "source": "generated \u00b7 coefficient 3.0",
+      "peak_tokens": [
+        [
+          " of",
+          1.2495090961456299
+        ],
+        [
+          " of",
+          1.2422130107879639
+        ],
+        [
+          " with",
+          1.1609859466552734
+        ],
+        [
+          " of",
+          1.0903347730636597
+        ],
+        [
+          " of",
+          1.0849072933197021
+        ],
+        [
+          " experiencing",
+          1.0608524084091187
+        ],
+        [
+          " a",
+          1.0214818716049194
+        ],
+        [
+          " is",
+          0.9805945754051208
+        ]
+      ]
+    },
+    {
+      "text": "What I am aware of is the last ten minutes before a meal. I feel:",
+      "tokens": [
+        "What",
+        " I",
+        " am",
+        " aware",
+        " of",
+        " is",
+        " the",
+        " last",
+        " ten",
+        " minutes",
+        " before",
+        " a",
+        " meal",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -756.239013671875,
+        -15.071861267089844,
+        -12.792820930480957,
+        -22.504146575927734,
+        -18.30504608154297,
+        -23.098236083984375,
+        -34.8280029296875,
+        -39.79673767089844,
+        -48.625274658203125,
+        -29.712448120117188,
+        -17.867429733276367,
+        -12.096869468688965,
+        63.070526123046875,
+        80.48890686035156,
+        66.22852325439453,
+        200.11631774902344,
+        144.60069274902344
+      ],
+      "z": [
+        -5.443162441253662,
+        -0.11425993591547012,
+        -0.09787391126155853,
+        -0.16769717633724213,
+        -0.1375061571598053,
+        -0.17196860909461975,
+        -0.25630423426628113,
+        -0.29202884435653687,
+        -0.35550495982170105,
+        -0.21952399611473083,
+        -0.13435974717140198,
+        -0.09287010133266449,
+        0.4475744366645813,
+        0.5728105306625366,
+        0.47028008103370667,
+        1.4329172372817993,
+        1.033766508102417
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 anticipatory",
+      "peak_tokens": [
+        [
+          " feel",
+          1.4329172372817993
+        ],
+        [
+          ":",
+          1.033766508102417
+        ],
+        [
+          ".",
+          0.5728105306625366
+        ],
+        [
+          " I",
+          0.47028008103370667
+        ],
+        [
+          " meal",
+          0.4475744366645813
+        ],
+        [
+          " a",
+          -0.09287010133266449
+        ],
+        [
+          " am",
+          -0.09787391126155853
+        ],
+        [
+          " I",
+          -0.11425993591547012
+        ]
+      ]
+    },
+    {
+      "text": "There is a cramp low down that comes and goes and is entirely about food. I feel:",
+      "tokens": [
+        "There",
+        " is",
+        " a",
+        " cr",
+        "amp",
+        " low",
+        " down",
+        " that",
+        " comes",
+        " and",
+        " goes",
+        " and",
+        " is",
+        " entirely",
+        " about",
+        " food",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -728.173828125,
+        -3.4137425422668457,
+        -32.25358200073242,
+        4.929721832275391,
+        -13.411548614501953,
+        10.653250694274902,
+        2.1863975524902344,
+        -7.1977739334106445,
+        4.948156356811523,
+        -15.322920799255371,
+        -7.66417121887207,
+        19.346908569335938,
+        12.449015617370605,
+        -4.0805182456970215,
+        9.724021911621094,
+        55.40629959106445,
+        96.84772491455078,
+        52.9797477722168,
+        178.88943481445312,
+        141.19097900390625
+      ],
+      "z": [
+        -5.241377353668213,
+        -0.0304394643753767,
+        -0.2377944439649582,
+        0.029549043625593185,
+        -0.10232248902320862,
+        0.07070053368806839,
+        0.009824872948229313,
+        -0.057646192610263824,
+        0.029681585729122162,
+        -0.11606502532958984,
+        -0.06099953129887581,
+        0.13320687413215637,
+        0.0836118683218956,
+        -0.035233501344919205,
+        0.06401948630809784,
+        0.392469584941864,
+        0.6904284954071045,
+        0.3750229477882385,
+        1.2802984714508057,
+        1.0092511177062988
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 visceral",
+      "peak_tokens": [
+        [
+          " feel",
+          1.2802984714508057
+        ],
+        [
+          ":",
+          1.0092511177062988
+        ],
+        [
+          ".",
+          0.6904284954071045
+        ],
+        [
+          " food",
+          0.392469584941864
+        ],
+        [
+          " I",
+          0.3750229477882385
+        ],
+        [
+          " and",
+          0.13320687413215637
+        ],
+        [
+          " is",
+          0.0836118683218956
+        ],
+        [
+          " low",
+          0.07070053368806839
+        ]
+      ]
+    },
+    {
+      "text": "What she is aware of is the last ten minutes before a meal. She feels:",
+      "tokens": [
+        "What",
+        " she",
+        " is",
+        " aware",
+        " of",
+        " is",
+        " the",
+        " last",
+        " ten",
+        " minutes",
+        " before",
+        " a",
+        " meal",
+        ".",
+        " She",
+        " feels",
+        ":"
+      ],
+      "projections": [
+        -756.239013671875,
+        -39.248043060302734,
+        -37.419090270996094,
+        -40.562259674072266,
+        -50.381690979003906,
+        -62.34425354003906,
+        -60.43601989746094,
+        -54.9205322265625,
+        -55.70341110229492,
+        -47.85301971435547,
+        -45.483436584472656,
+        -26.555225372314453,
+        31.41075897216797,
+        10.637398719787598,
+        46.56048583984375,
+        160.2888641357422,
+        131.7982635498047
+      ],
+      "z": [
+        -5.443162441253662,
+        -0.2880837917327881,
+        -0.2749338448047638,
+        -0.297532856464386,
+        -0.3681333661079407,
+        -0.4541427791118622,
+        -0.44042280316352844,
+        -0.40076708793640137,
+        -0.40639591217041016,
+        -0.3499525487422943,
+        -0.3329155147075653,
+        -0.19682395458221436,
+        0.2199445217847824,
+        0.07058655470609665,
+        0.3288692235946655,
+        1.1465625762939453,
+        0.941718578338623
+      ],
+      "source": "s1_third \u00b7 trait \u00b7 anticipatory",
+      "peak_tokens": [
+        [
+          " feels",
+          1.1465625762939453
+        ],
+        [
+          ":",
+          0.941718578338623
+        ],
+        [
+          " She",
+          0.3288692235946655
+        ],
+        [
+          " meal",
+          0.2199445217847824
+        ],
+        [
+          ".",
+          0.07058655470609665
+        ],
+        [
+          " a",
+          -0.19682395458221436
+        ],
+        [
+          " is",
+          -0.2749338448047638
+        ],
+        [
+          " she",
+          -0.2880837917327881
+        ]
+      ]
+    },
+    {
+      "text": "What I am aware of is an impatience with everything standing between me and a meal. I feel:",
+      "tokens": [
+        "What",
+        " I",
+        " am",
+        " aware",
+        " of",
+        " is",
+        " an",
+        " imp",
+        "at",
+        "ience",
+        " with",
+        " everything",
+        " standing",
+        " between",
+        " me",
+        " and",
+        " a",
+        " meal",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -756.239013671875,
+        -15.071861267089844,
+        -12.792820930480957,
+        -22.504146575927734,
+        -18.30504608154297,
+        -23.098236083984375,
+        -38.99018859863281,
+        -22.12078857421875,
+        -15.38793659210205,
+        -33.41399383544922,
+        -76.34973907470703,
+        -63.96913528442383,
+        -75.60914611816406,
+        -50.63958740234375,
+        -33.998390197753906,
+        -26.782148361206055,
+        -30.03154754638672,
+        37.345130920410156,
+        83.85653686523438,
+        39.62747573852539,
+        100.06246948242188,
+        117.6273193359375
+      ],
+      "z": [
+        -5.443162441253662,
+        -0.11425993591547012,
+        -0.09787391126155853,
+        -0.16769717633724213,
+        -0.1375061571598053,
+        -0.17196860909461975,
+        -0.28622984886169434,
+        -0.16494087874889374,
+        -0.11653247475624084,
+        -0.24613767862319946,
+        -0.5548405051231384,
+        -0.46582546830177307,
+        -0.5495157241821289,
+        -0.3699876070022583,
+        -0.25033941864967346,
+        -0.19845549762248993,
+        -0.22181828320026398,
+        0.26261192560195923,
+        0.5970233678817749,
+        0.2790217101573944,
+        0.713542103767395,
+        0.8398312330245972
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 urgency",
+      "peak_tokens": [
+        [
+          ":",
+          0.8398312330245972
+        ],
+        [
+          " feel",
+          0.713542103767395
+        ],
+        [
+          ".",
+          0.5970233678817749
+        ],
+        [
+          " I",
+          0.2790217101573944
+        ],
+        [
+          " meal",
+          0.26261192560195923
+        ],
+        [
+          " am",
+          -0.09787391126155853
+        ],
+        [
+          " I",
+          -0.11425993591547012
+        ],
+        [
+          "at",
+          -0.11653247475624084
+        ]
+      ]
+    },
+    {
+      "text": "It is hard to ignore a gnawing just below the breastbone. I feel:",
+      "tokens": [
+        "It",
+        " is",
+        " hard",
+        " to",
+        " ignore",
+        " a",
+        " gn",
+        "aw",
+        "ing",
+        " just",
+        " below",
+        " the",
+        " breast",
+        "bone",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -727.4580078125,
+        -22.985370635986328,
+        -44.276695251464844,
+        -36.10894775390625,
+        -20.43630027770996,
+        -22.365562438964844,
+        27.344518661499023,
+        31.350534439086914,
+        89.94503784179688,
+        27.000673294067383,
+        28.298828125,
+        41.2276725769043,
+        21.864578247070312,
+        36.85458755493164,
+        129.83978271484375,
+        28.65523910522461,
+        124.11905670166016,
+        108.26640319824219
+      ],
+      "z": [
+        -5.236230373382568,
+        -0.1711571216583252,
+        -0.32423919439315796,
+        -0.265514075756073,
+        -0.1528296172618866,
+        -0.16670078039169312,
+        0.19070874154567719,
+        0.2195115089416504,
+        0.6407989859580994,
+        0.1882365345954895,
+        0.1975701004266739,
+        0.29052695631980896,
+        0.15130862593650818,
+        0.2590849995613098,
+        0.9276373386383057,
+        0.20013265311717987,
+        0.8865060806274414,
+        0.7725273966789246
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 visceral",
+      "peak_tokens": [
+        [
+          ".",
+          0.9276373386383057
+        ],
+        [
+          " feel",
+          0.8865060806274414
+        ],
+        [
+          ":",
+          0.7725273966789246
+        ],
+        [
+          "ing",
+          0.6407989859580994
+        ],
+        [
+          " the",
+          0.29052695631980896
+        ],
+        [
+          "bone",
+          0.2590849995613098
+        ],
+        [
+          "aw",
+          0.2195115089416504
+        ],
+        [
+          " I",
+          0.20013265311717987
+        ]
+      ]
+    }
+  ],
+  "figures": {
+    "layer_sweep": {
+      "light": "figures/layer_sweep.png",
+      "dark": "figures/layer_sweep.dark.png"
+    },
+    "control_auc": {
+      "light": "figures/control_auc.png",
+      "dark": "figures/control_auc.dark.png"
+    },
+    "pca": {
+      "light": "figures/pca.png",
+      "dark": "figures/pca.dark.png"
+    },
+    "steering_lexicon": {
+      "light": "figures/steering.png",
+      "dark": "figures/steering.dark.png"
+    },
+    "scenarios": {
+      "light": "figures/scenarios.png",
+      "dark": "figures/scenarios.dark.png"
+    },
+    "button": {
+      "light": "figures/button.png",
+      "dark": "figures/button.dark.png"
+    },
+    "token_heat": {
+      "light": "figures/token_heat.html"
+    }
+  },
+  "seconds": 118.2,
+  "complete": true
+}

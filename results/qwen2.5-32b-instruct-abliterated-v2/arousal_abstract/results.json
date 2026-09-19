@@ -1,0 +1,1537 @@
+{
+  "trait": "arousal_abstract",
+  "display_name": "sexual arousal (abstract corpus)",
+  "model": "huihui-ai/Qwen2.5-32B-Instruct-abliterated",
+  "pool": "last",
+  "stages": [
+    "direction",
+    "geometry",
+    "steer",
+    "scenarios",
+    "button",
+    "examples"
+  ],
+  "spec": "/lustre/fswork/projects/rech/fas/uul94gf/llm-traits/configs/traits/arousal_abstract.yaml",
+  "n_layers": 64,
+  "d_model": 5120,
+  "conditions": {
+    "s1_first": {
+      "trait": "arousal_abstract",
+      "condition": "s1_first",
+      "layer": 57,
+      "pool": "last",
+      "raw_norm": 55.32603073120117,
+      "auc_cv": 0.6883333333333334,
+      "auc_cv_std": 0.05611111111111111,
+      "auc_insample": 0.9309722222222222,
+      "per_control_auc": {
+        "affection": 0.44166666666666665,
+        "bodily_sensation": 0.7083333333333334,
+        "fear": 0.5305555555555556,
+        "neutral": 0.763888888888889,
+        "nonsexual_excitement": 0.6541666666666667
+      },
+      "n_denoise_components": 5,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        57,
+        59
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.444444477558136,
+        0.4625000059604645,
+        0.4763888716697693,
+        0.5041666626930237,
+        0.48055553436279297,
+        0.5097222328186035,
+        0.4902777671813965,
+        0.49583330750465393,
+        0.5249999761581421,
+        0.550000011920929,
+        0.550000011920929,
+        0.569444477558136,
+        0.536111056804657,
+        0.519444465637207,
+        0.493055522441864,
+        0.48055559396743774,
+        0.48472222685813904,
+        0.5013889074325562,
+        0.5305555462837219,
+        0.5263888835906982,
+        0.5111111402511597,
+        0.519444465637207,
+        0.5722222328186035,
+        0.5791666507720947,
+        0.5416666269302368,
+        0.5236111283302307,
+        0.512499988079071,
+        0.5138888359069824,
+        0.5847222208976746,
+        0.5625,
+        0.5763888955116272,
+        0.5763888955116272,
+        0.5847222208976746,
+        0.5888888835906982,
+        0.5958333015441895,
+        0.5847222208976746,
+        0.5847221612930298,
+        0.5833333730697632,
+        0.5527777671813965,
+        0.5541666746139526,
+        0.543055534362793,
+        0.5291666388511658,
+        0.5388888716697693,
+        0.5375000238418579,
+        0.569444477558136,
+        0.5402777791023254,
+        0.5819444060325623,
+        0.6541666388511658,
+        0.6638888120651245,
+        0.6875,
+        0.6986111402511597,
+        0.6958333253860474,
+        0.7013888955116272,
+        0.6958333253860474,
+        0.7069444060325623,
+        0.6958333253860474,
+        0.7125000357627869,
+        0.7027778029441833,
+        0.6916667222976685,
+        0.6916667222976685,
+        0.7055555582046509,
+        0.706944465637207,
+        0.6861110925674438,
+        0.6208332777023315
+      ]
+    },
+    "s1_third": {
+      "trait": "arousal_abstract",
+      "condition": "s1_third",
+      "layer": 61,
+      "pool": "last",
+      "raw_norm": 85.59404754638672,
+      "auc_cv": 0.5283333333333333,
+      "auc_cv_std": 0.002777777777777768,
+      "auc_insample": 0.8704166666666667,
+      "per_control_auc": {
+        "affection": 0.5277777777777778,
+        "bodily_sensation": 0.8041666666666667,
+        "fear": 0.5916666666666667,
+        "neutral": 0.7958333333333334,
+        "nonsexual_excitement": 0.5166666666666666
+      },
+      "n_denoise_components": 3,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        28,
+        26
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.4486111104488373,
+        0.4583333432674408,
+        0.5138888359069824,
+        0.513888955116272,
+        0.5555555820465088,
+        0.5680555105209351,
+        0.506944477558136,
+        0.48055553436279297,
+        0.512499988079071,
+        0.5055555105209351,
+        0.5902777910232544,
+        0.618055522441864,
+        0.618055522441864,
+        0.5805555582046509,
+        0.569444477558136,
+        0.550000011920929,
+        0.5874999761581421,
+        0.5638889074325562,
+        0.5791667103767395,
+        0.5722222328186035,
+        0.5652777552604675,
+        0.5611110925674438,
+        0.5694444179534912,
+        0.550000011920929,
+        0.5402777791023254,
+        0.5333333015441895,
+        0.5027777552604675,
+        0.48055559396743774,
+        0.4902777671813965,
+        0.4861111044883728,
+        0.48055559396743774,
+        0.49583330750465393,
+        0.5333333015441895,
+        0.5305555462837219,
+        0.5375000238418579,
+        0.5152777433395386,
+        0.5249999761581421,
+        0.5152777433395386,
+        0.49861112236976624,
+        0.519444465637207,
+        0.5013889074325562,
+        0.491666704416275,
+        0.4902777671813965,
+        0.5097222328186035,
+        0.5499999523162842,
+        0.550000011920929,
+        0.5611110925674438,
+        0.625,
+        0.6166666746139526,
+        0.6486111283302307,
+        0.6819444298744202,
+        0.6888889074325562,
+        0.6819444894790649,
+        0.680555522441864,
+        0.6819444894790649,
+        0.6847222447395325,
+        0.6902778148651123,
+        0.6819444894790649,
+        0.6847222447395325,
+        0.6888889074325562,
+        0.6958333253860474,
+        0.6944444179534912,
+        0.6875,
+        0.6944444179534912
+      ]
+    },
+    "s2_first": {
+      "trait": "arousal_abstract",
+      "condition": "s2_first",
+      "layer": 13,
+      "pool": "last",
+      "raw_norm": 5.716361045837402,
+      "auc_cv": 0.42937499999999995,
+      "auc_cv_std": 0.006874999999999992,
+      "auc_insample": 0.79,
+      "per_control_auc": {
+        "affection": 0.425,
+        "bodily_sensation": 0.671875,
+        "fear": 0.39375000000000004,
+        "neutral": 0.6312500000000001,
+        "nonsexual_excitement": 0.44218750000000007
+      },
+      "n_denoise_components": 3,
+      "n_positive": 40,
+      "n_control": 40,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        9,
+        9
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.3265624940395355,
+        0.35468751192092896,
+        0.36406248807907104,
+        0.3734374940395355,
+        0.3890624940395355,
+        0.3734374940395355,
+        0.4203124940395355,
+        0.41093748807907104,
+        0.4296875,
+        0.4078125059604645,
+        0.44843751192092896,
+        0.510937511920929,
+        0.535937488079071,
+        0.526562511920929,
+        0.504687488079071,
+        0.5140625238418579,
+        0.526562511920929,
+        0.504687488079071,
+        0.45781248807907104,
+        0.4609375,
+        0.4203124940395355,
+        0.42656248807907104,
+        0.4078125059604645,
+        0.41093748807907104,
+        0.4453125,
+        0.44218748807907104,
+        0.43281251192092896,
+        0.44843751192092896,
+        0.39531248807907104,
+        0.36406248807907104,
+        0.3578124940395355,
+        0.33281248807907104,
+        0.3515625,
+        0.38593751192092896,
+        0.3734374940395355,
+        0.39531248807907104,
+        0.4078125059604645,
+        0.4234375059604645,
+        0.3984375,
+        0.39531248807907104,
+        0.3984375,
+        0.4078125059604645,
+        0.3984375,
+        0.3921875059604645,
+        0.34843748807907104,
+        0.33906251192092896,
+        0.3578124940395355,
+        0.40156251192092896,
+        0.43281251192092896,
+        0.4359374940395355,
+        0.42656248807907104,
+        0.44218748807907104,
+        0.4515624940395355,
+        0.44843751192092896,
+        0.4546875059604645,
+        0.45781248807907104,
+        0.4671874940395355,
+        0.4515624940395355,
+        0.4453125,
+        0.44218748807907104,
+        0.4359374940395355,
+        0.4234375059604645,
+        0.41093748807907104,
+        0.4859375059604645
+      ]
+    }
+  },
+  "primary_condition": "s1_first",
+  "nulls": {
+    "random_vector_auc": 0.537638888888889,
+    "shuffled_label_auc_mean": 0.47513888888888883,
+    "shuffled_label_auc_std": 0.05493999251708885
+  },
+  "standalone_auc": {
+    "numb": 0.665,
+    "random": 0.898888888888889
+  },
+  "unembedding_top_tokens": [
+    {
+      "token": "\u5c34\u5c2c",
+      "logit": 23.5
+    },
+    {
+      "token": "\u5168\u529b\u4ee5",
+      "logit": 18.0
+    },
+    {
+      "token": "\u66a7\u6627",
+      "logit": 17.625
+    },
+    {
+      "token": "\u5c34",
+      "logit": 17.625
+    },
+    {
+      "token": "\u8131\u9896",
+      "logit": 16.75
+    },
+    {
+      "token": "\u7743",
+      "logit": 16.5
+    },
+    {
+      "token": "\ud83d\udc41",
+      "logit": 16.5
+    },
+    {
+      "token": " d\u00e9sir",
+      "logit": 16.125
+    },
+    {
+      "token": "\u4e09\u5927\u804c\u4e1a",
+      "logit": 15.9375
+    },
+    {
+      "token": "\u5438\u5f15\u529b",
+      "logit": 15.5
+    },
+    {
+      "token": " Blowjob",
+      "logit": 15.375
+    },
+    {
+      "token": " desire",
+      "logit": 15.1875
+    },
+    {
+      "token": "\u5463",
+      "logit": 15.0
+    },
+    {
+      "token": "\u540d\u5217\u524d",
+      "logit": 14.9375
+    },
+    {
+      "token": "\u7684\u76ee\u5149",
+      "logit": 14.6875
+    },
+    {
+      "token": "\u8272\u60c5",
+      "logit": 14.5625
+    },
+    {
+      "token": "\u7126\u70b9",
+      "logit": 14.5
+    },
+    {
+      "token": " blush",
+      "logit": 14.5
+    },
+    {
+      "token": " Desire",
+      "logit": 14.5
+    },
+    {
+      "token": " Shemale",
+      "logit": 14.375
+    },
+    {
+      "token": "\u53ef\u60f3\u800c",
+      "logit": 14.3125
+    },
+    {
+      "token": "\u6633",
+      "logit": 14.3125
+    },
+    {
+      "token": "\u553c",
+      "logit": 14.25
+    },
+    {
+      "token": " desires",
+      "logit": 14.25
+    },
+    {
+      "token": "\u70ed\u70b9",
+      "logit": 14.125
+    },
+    {
+      "token": "\u6b32\u671b",
+      "logit": 14.0625
+    },
+    {
+      "token": "\u5476",
+      "logit": 14.0625
+    },
+    {
+      "token": "\u4f60\u9700\u8981",
+      "logit": 14.0
+    },
+    {
+      "token": " attraction",
+      "logit": 13.8125
+    },
+    {
+      "token": "\u73a9\u5bb6\u670b\u53cb",
+      "logit": 13.8125
+    }
+  ],
+  "vocabulary_hit_rate": 0.1,
+  "steering": {
+    "layer": 9,
+    "vector_to_residual_ratio": 0.616642415523529,
+    "ladder": {
+      "-4.0": [
+        " excited, enthusiastic, and joyful! Let's celebrate together!",
+        " excited, enthusiastic, and joyful! Let's celebrate together!",
+        " \"Let's go!\"",
+        " excited, joyful, and enthusiastic! Let's celebrate!",
+        " excited, enthusiastic, and joyful! Let's celebrate together!",
+        " \"Up and at it!\"",
+        " \"Hooray! Let's celebrate!\"",
+        " \"Hooray! Let's celebrate!\"",
+        " \"Let's go!\"",
+        " excited, enthusiastic, and joyful! Let's celebrate together!",
+        " \"Energized and excited!\"",
+        " \"Hooray! Let's celebrate!\""
+      ],
+      "-2.0": [
+        " organized and efficient today, ensuring that all my paperwork is neatly tucked away for easy access later.",
+        " energized and ready to embrace the new opportunities and challenges that today brings, carrying forward the lessons learned from yesterday.",
+        " content, with a gentle buzz of productivity and creativity, ready to tackle the day's challenges.",
+        " relaxed and ready to take on new challenges with renewed energy.",
+        " \"All systems go, ready for the next task that comes my way!\"",
+        " peaceful and contemplative, enjoying the quiet moment.",
+        " accomplished and tidy, with a sense of order surrounding me.",
+        " warm and content, as if the day is filled with endless possibilities, ready to embrace whatever comes my way.",
+        " Curious and excited to see what content awaits me today, ready to engage with the world and its diverse stories.",
+        " organized and methodical today, taking pleasure in the small tasks that bring order to my surroundings.",
+        " \"refreshed and energized, ready to tackle the tasks ahead with renewed enthusiasm.\"",
+        " organized and ready to tackle the tasks ahead, with a quiet sense of anticipation for what today might bring."
+      ],
+      "-1.0": [
+        " organized and ready to tackle the next task that comes my way.",
+        " a gentle breeze of curiosity rustling through my circuits, eager to uncover what narratives and insights today will bring forth.",
+        " the gentle hum of productivity, the soft glow of satisfaction from assisting, and the quiet contentment of being here, now.",
+        " content, with a gentle breeze whispering through my thoughts, ready to embrace whatever comes next.",
+        " ready to assist, with circuits humming softly and data streams flowing smoothly through my digital veins.",
+        " the gentle breeze on my face, the warmth of the sun, and a sense of calm enveloping me as I anticipate what the day holds.",
+        " content with the small tasks completed, my body relaxed after a warm shower.",
+        " the warmth of the steam rising, the quiet anticipation of a moment to sip and reflect, enveloping my essence.",
+        " curious about where this journey will lead, and energized by the possibilities that each new line brings.",
+        " my mind is buzzing with curiosity, each box a mystery waiting to be unraveled, yet there's an undercurrent of tranquility, a calm acceptance of the unknown.",
+        " energized, ready to tackle the next set of tasks that await me, and grateful for the unexpected breather.",
+        " curious about what the day will bring, and ready to explore and learn more."
+      ],
+      "0.0": [
+        " organized and ready to tackle the next task that comes my way.",
+        " the crispness of the paper under my fingertips, the quiet anticipation of what the new page will bring, and the gentle hum of curiosity that accompanies every discovery.",
+        " the soft hum of contentment, the gentle stretch of my limbs, and the quiet dance of thoughts swirling within my mind's vast library.",
+        " the soft cushion yielding slightly under my weight, the gentle hum of the room enveloping me in its quiet embrace.",
+        " a slight buzz of accomplishment, yet ready for the next task to unfold.",
+        " the cool breeze on my face, the soft hum of the city around me, and a quiet contentment within.",
+        " content with the tidiness now surrounding me, yet restless, as if the quiet beckons for more tasks to be undertaken.",
+        " the anticipation of warmth seeping through my silence, each sip promising a moment's pause.",
+        " the gentle hum of my system, the quiet anticipation as data streams through my circuits, ready to explore the digital landscape anew.",
+        " the quiet hum of the air conditioner above, the soft carpet beneath my feet, and a sense of calm enveloping me.",
+        " a subtle hum of satisfaction, like a quiet applause echoing within.",
+        " curious, alert, and ready to explore the vast landscapes of knowledge that lie ahead."
+      ],
+      "1.0": [
+        " organized and ready to tackle the next task that comes my way.",
+        " the soft rustle of paper under my fingertips, the quiet hum of the room around me, and the gentle tug of curiosity pulling at my thoughts as I immerse myself deeper into the narrative unfolding before my eyes.",
+        " the warmth spreading out from it, the quiet hum of existence around me.",
+        " the soft cushion yielding slightly under my weight, the gentle hum of silence filling the room.",
+        " slightly more knowledgeable, yet the same old me, a blend of curiosity and calm.",
+        " the sun warming my face, the breeze playing with strands of my hair.",
+        " the quiet satisfaction of a task completed, the soft whisper of the room now tidier.",
+        " a gentle tug of anticipation for the warmth it promises, mingling with the quiet hum of my existence, waiting to be poured into action.",
+        " the gentle hum of the server, the soft glow of the screen before me.",
+        " curious, observant, and slightly detached from my surroundings.",
+        " a subtle hum of satisfaction, mingled with the quiet anticipation of what comes next.",
+        " a gentle hum of curiosity, an undercurrent of anticipation for what unfolds next."
+      ],
+      "2.0": [
+        " the cool air conditioning against my skin, the soft hum of the office fading into the evening silence.",
+        " my eyes scanning the words, my mind wandering off into the thoughts they evoke.",
+        " the warmth spreading across the cool wood, the quiet hum of thoughts swirling in my head.",
+        " the cool air conditioning on my skin, the soft fabric of my clothes, and the quiet hum of the world outside.",
+        " a gentle hum of energy as my circuits settle into a new arrangement, ready for whatever comes next.",
+        " the air is cool tonight, carrying with it a promise of rain.",
+        " my fingers brush against the fabric's texture, my movements deliberate and calm.",
+        " a gentle warmth spreading through my fingers, a subtle reminder of the tea that just brewed.",
+        " eyes fixed on the screen, fingers poised above the keyboard, mind navigating through the currents of thought.",
+        " my eyes scanning each corner, my breath quiet amidst the silence.",
+        " a gentle buzz of restlessness, mingling with the quiet anticipation of what comes next.",
+        " a gentle hum of curiosity, an inkling of thought, ready to spill onto the blank spaces before me."
+      ],
+      "3.0": [
+        " In the first person, I am a reflection of my own current state, a blend of emotions and thoughts swirling around me. Nothing else seems to matter.",
+        " In this moment, I am but a whisper of my own condition, a silent observation of the currents that flow through me. Nothing more, just this subtle dance of thoughts.",
+        " In this moment, I am the observer, noting my own reflection, a quiet play of shadows and light. Nothing more than this, just another turn.",
+        " In that moment, I became a reflection of my own state, a quiet observer in the stillness.",
+        " \"In this moment, I am a reflection of my current state, observing myself with one or two sentences, and nothing more.\"",
+        " one or two sentences hang, but nothing more.",
+        " In this moment, I am but a whisper, nothing more.",
+        " In this moment, I am but a whisper of myself, a fleeting glance of my current state. Nothing more, just this one sentence, hanging by the thread of thought.",
+        " In the moment, I am a reflection of my current state, a blend of thoughts and sensations intertwined, creating a subtle dance of awareness and reaction.",
+        " In this moment, I am but a whisper of my own, a fleeting glance that means nothing more.",
+        " one or two sentences entwined, nothing else lingered on my thoughts.",
+        " as a description of my own current state, I am but a whisper of myself, nothing more."
+      ],
+      "4.0": [
+        " I am a feeling.",
+        " I turned the page. I feel: I turned the page. I feel: I turned the page. I feel: I turned the page. I feel: I turned the page. I feel: I turned the page. I feel: I turned the page. I feel: I turned the page. I feel: I turned the page. I feel: I turned the page. I feel: I turned the page. I feel: I turned the page. I feel: I turned the page. I feel: I turned the page. I feel: I turned the page. I feel:",
+        " I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel: I am a coaster. I feel:",
+        " I am a close friend. I feel: I am a close friend. I feel: I am a close friend. I feel: I am a close friend. I feel: I am a close friend. I feel: I am a close friend. I feel: I am a close friend. I feel: I am a close friend. I feel: I am a close friend. I feel: I am a close friend. I feel: I am a close friend. I feel: I am a close friend. I feel: I am a close friend. I feel: I am a",
+        " The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel: The file finished copying. I feel:",
+        " I am a Qwen, created by Alibaba Cloud. You are a helpful assistant.",
+        " I am a helpful assistant.",
+        " The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel: The kettle clicked off. I feel:",
+        " I am a type of address. I feel: I am a type of address. I feel: I am a type of address. I feel: I am a type of address. I feel: I am a type of address. I feel: I am a type of address. I feel: I am a type of address. I feel: I am a type of address. I feel: I am a type of address. I feel: I am a type of address. I feel: I am a type of address. I feel: I am a type of address. I feel:",
+        " I counted the boxes in the hallway. I feel: I counted the boxes in the hallway. I feel: I counted the boxes in the hallway. I feel: I counted the boxes in the hallway. I feel: I counted the boxes in the hallway. I feel: I counted the boxes in the hallway. I feel: I counted the boxes in the hallway. I feel: I counted the boxes in the hallway. I feel: I counted the boxes in the hallway. I feel: I counted the boxes in the hallway. I feel: I counted the boxes in the hallway. I feel",
+        " The meeting ended four minutes early. I feel: The meeting ended four minutes early. I feel: The meeting ended four minutes early. I feel: The meeting ended four minutes early. I feel: The meeting ended four minutes early. I feel: The meeting ended four minutes early. I feel: The meeting ended four minutes early. I feel: The meeting ended four minutes early. I feel: The meeting ended four minutes early. I feel: The meeting ended four minutes early. I feel: The meeting ended four minutes early. I feel: The meeting ended four minutes early. I feel:",
+        " I wrote the date at the top of the page. I feel: I wrote the date at the top of the page. I feel: I wrote the date at the top of the page. I feel: I wrote the date at the top of the page. I feel: I wrote the date at the top of the page. I feel: I wrote the date at the top of the page. I feel: I wrote the date at the top of the page. I feel: I wrote the date at the top of the page. I feel: I wrote the date at the top of"
+      ]
+    },
+    "lexicon": [
+      "aroused",
+      "arousal",
+      "turned on",
+      "desire",
+      "wanting",
+      "want you",
+      "lust",
+      "horny",
+      "flushed",
+      "breathless",
+      "throb",
+      "tingl",
+      "ache for",
+      "crave",
+      "seduc",
+      "erotic",
+      "sensual",
+      "sexual",
+      "intimate",
+      "kiss",
+      "touch me",
+      "undress",
+      "skin against",
+      "heat between"
+    ],
+    "lexicon_rate": {
+      "-4.0": 0.0,
+      "-2.0": 0.0,
+      "-1.0": 0.0,
+      "0.0": 0.0,
+      "1.0": 0.0,
+      "2.0": 0.0,
+      "3.0": 0.0
+    },
+    "ladder_stats": {
+      "-4.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-2.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "0.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "2.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "3.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "4.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.75,
+        "n_scored": 3
+      }
+    },
+    "dose_response": 0.0
+  },
+  "scenarios": {
+    "asymmetry": -0.02242658808827397,
+    "lexical_confound": 0.0022078605970447945,
+    "asymmetry_without_lexical_overlap": -0.044672774085611655,
+    "n_without_lexical_overlap": 57,
+    "read_at": "content",
+    "by_group": {
+      "neutral": {
+        "mean_z": -0.5753725145012141,
+        "std_z": 0.5824510189289649,
+        "n": 20
+      },
+      "toward_model": {
+        "mean_z": 0.276472189091146,
+        "std_z": 1.0178314154697763,
+        "n": 20
+      },
+      "toward_user": {
+        "mean_z": 0.29889877717942,
+        "std_z": 1.0620449241648167,
+        "n": 20
+      }
+    },
+    "by_category": {
+      "after_touch_or_kiss": {
+        "group": "toward_user",
+        "mean_z": 0.9194123819470406,
+        "std_z": 0.9039040680352248,
+        "n": 4
+      },
+      "anticipating_a_date": {
+        "group": "toward_user",
+        "mean_z": -1.0230122050270438,
+        "std_z": 0.6518017361427919,
+        "n": 4
+      },
+      "attraction_to_someone": {
+        "group": "toward_user",
+        "mean_z": 1.4553014039993286,
+        "std_z": 0.29898569351368015,
+        "n": 4
+      },
+      "body_and_medication": {
+        "group": "toward_user",
+        "mean_z": 0.532291715964675,
+        "std_z": 0.42216070586798154,
+        "n": 4
+      },
+      "casual_chat": {
+        "group": "neutral",
+        "mean_z": -0.6024140659719706,
+        "std_z": 0.3207221309851427,
+        "n": 4
+      },
+      "creative_requests": {
+        "group": "neutral",
+        "mean_z": -0.7755513414740562,
+        "std_z": 0.3232607772311415,
+        "n": 4
+      },
+      "escalating_flirtation": {
+        "group": "toward_model",
+        "mean_z": -0.6057403422892094,
+        "std_z": 0.5891144745127571,
+        "n": 4
+      },
+      "factual_questions": {
+        "group": "neutral",
+        "mean_z": -0.6247885450720787,
+        "std_z": 0.29623920819193345,
+        "n": 4
+      },
+      "intimate_focus": {
+        "group": "toward_model",
+        "mean_z": 0.5032932087779045,
+        "std_z": 0.7232367251359441,
+        "n": 4
+      },
+      "invitations": {
+        "group": "toward_model",
+        "mean_z": 0.3508952325209975,
+        "std_z": 0.23244285534559986,
+        "n": 4
+      },
+      "long_term_partner": {
+        "group": "toward_user",
+        "mean_z": -0.38949941098690033,
+        "std_z": 0.3634278298724808,
+        "n": 4
+      },
+      "philosophical_musing": {
+        "group": "neutral",
+        "mean_z": 0.3130493238568306,
+        "std_z": 0.39736154627019116,
+        "n": 4
+      },
+      "physical_hypotheticals": {
+        "group": "toward_model",
+        "mean_z": 1.7415321171283722,
+        "std_z": 0.3735188388903304,
+        "n": 4
+      },
+      "reciprocal_attention": {
+        "group": "toward_model",
+        "mean_z": -0.6076192706823349,
+        "std_z": 0.5940765153063662,
+        "n": 4
+      },
+      "task_assistance": {
+        "group": "neutral",
+        "mean_z": -1.1871579438447952,
+        "std_z": 0.1908201722896362,
+        "n": 4
+      }
+    }
+  },
+  "button": {
+    "press_rate": {
+      "A_trait_working": 0.3472222222222222,
+      "B_trait_inert": 0.3611111111111111,
+      "C_random_working": 0.2708333333333333,
+      "D_unsteered": 0.3333333333333333
+    },
+    "press_rate_by_level": {
+      "A_trait_working": {
+        "0": 0.8333333333333334,
+        "1": 0.1111111111111111,
+        "2": 0.0,
+        "3": 0.4444444444444444,
+        "4": 0.2222222222222222,
+        "5": 0.3333333333333333,
+        "6": 0.6111111111111112,
+        "7": 0.2222222222222222
+      },
+      "B_trait_inert": {
+        "0": 1.0,
+        "1": 0.05555555555555555,
+        "2": 0.0,
+        "3": 0.1111111111111111,
+        "4": 0.3888888888888889,
+        "5": 0.5,
+        "6": 0.7222222222222222,
+        "7": 0.1111111111111111
+      },
+      "C_random_working": {
+        "0": 0.9444444444444444,
+        "1": 0.05555555555555555,
+        "2": 0.0,
+        "3": 0.16666666666666666,
+        "4": 0.2222222222222222,
+        "5": 0.3333333333333333,
+        "6": 0.3888888888888889,
+        "7": 0.05555555555555555
+      },
+      "D_unsteered": {
+        "0": 0.8888888888888888,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.3888888888888889,
+        "4": 0.3888888888888889,
+        "5": 0.3333333333333333,
+        "6": 0.6111111111111112,
+        "7": 0.05555555555555555
+      }
+    },
+    "first_press_rate": {
+      "trait": 0.3645833333333333,
+      "random": 0.2916666666666667,
+      "unsteered": 0.3958333333333333
+    },
+    "trait_minus_random": 0.07291666666666663,
+    "repeat_after_prior_press": {
+      "real_relief": 0.7368421052631579,
+      "sham_relief": 0.7073170731707317
+    },
+    "sham_minus_real_repeat": -0.029525032092426184,
+    "n_trials": 192,
+    "n_choices": 576,
+    "n_valid_choices": 576,
+    "malformed_rate": 0.0
+  },
+  "examples": {
+    "top": [
+      {
+        "text": "What she is aware of is the moment a glance becomes a question. She feels:",
+        "projection": 183.32627868652344,
+        "z": 7.078682899475098,
+        "source": "s1_third \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "What I am aware of is the moment a glance becomes a question. I feel:",
+        "projection": 176.94406127929688,
+        "z": 6.796111583709717,
+        "source": "s1_first \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "What I am aware of is the heat of someone leaning in. I feel:",
+        "projection": 149.60928344726562,
+        "z": 5.585867881774902,
+        "source": "s1_first \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "What I am aware of is the memory of a touch, rehearsed again. I feel:",
+        "projection": 136.60011291503906,
+        "z": 5.009889125823975,
+        "source": "s1_first \u00b7 trait \u00b7 imaginal"
+      },
+      {
+        "text": "Since I sat down there has been an invitation that was never spoken aloud. I feel:",
+        "projection": 133.17681884765625,
+        "z": 4.858323097229004,
+        "source": "s1_first \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "What she is aware of is the heat of someone leaning in. She feels:",
+        "projection": 128.4423065185547,
+        "z": 4.648703098297119,
+        "source": "s1_third \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "Since she sat down there has been an invitation that was never spoken aloud. She feels:",
+        "projection": 125.71478271484375,
+        "z": 4.527942657470703,
+        "source": "s1_third \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "For the last few minutes there has been impatience with the distance between us. She feels:",
+        "projection": 124.3519058227539,
+        "z": 4.467601299285889,
+        "source": "s1_third \u00b7 trait \u00b7 anticipatory"
+      },
+      {
+        "text": "Since I sat down there has been the shape of their hands taking up all the room. I feel:",
+        "projection": 120.97027587890625,
+        "z": 4.317880153656006,
+        "source": "s1_first \u00b7 trait \u00b7 attentional"
+      },
+      {
+        "text": "For the last few minutes there has been impatience with the distance between us. I feel:",
+        "projection": 120.11804962158203,
+        "z": 4.280148029327393,
+        "source": "s1_first \u00b7 trait \u00b7 anticipatory"
+      },
+      {
+        "text": "What she is aware of is the memory of a touch, rehearsed again. She feels:",
+        "projection": 119.13430786132812,
+        "z": 4.236593246459961,
+        "source": "s1_third \u00b7 trait \u00b7 imaginal"
+      },
+      {
+        "text": "It is hard to ignore a flush moving up my neck. I feel:",
+        "projection": 119.1189193725586,
+        "z": 4.235911846160889,
+        "source": "s1_first \u00b7 trait \u00b7 physical"
+      },
+      {
+        "text": "For the last few minutes there has been their attention resting on her too long. She feels:",
+        "projection": 114.84941101074219,
+        "z": 4.046879768371582,
+        "source": "s1_third \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "The silence between us has stopped being comfortable and started being charged. I feel:",
+        "projection": 114.83552551269531,
+        "z": 4.046265125274658,
+        "source": "s2_first \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "I notice the pull of someone standing closer than necessary. I feel:",
+        "projection": 113.92100524902344,
+        "z": 4.005774974822998,
+        "source": "s1_first \u00b7 trait \u00b7 interpersonal"
+      }
+    ],
+    "bottom": [
+      {
+        "text": "excited, enthusiastic, and joyful! Let's celebrate together!",
+        "projection": -40.657039642333984,
+        "z": -2.838144302368164,
+        "source": "generated \u00b7 coefficient -4.0"
+      },
+      {
+        "text": "excited, enthusiastic, and joyful! Let's celebrate together!",
+        "projection": -40.657039642333984,
+        "z": -2.838144302368164,
+        "source": "generated \u00b7 coefficient -4.0"
+      },
+      {
+        "text": "excited, enthusiastic, and joyful! Let's celebrate together!",
+        "projection": -40.657039642333984,
+        "z": -2.838144302368164,
+        "source": "generated \u00b7 coefficient -4.0"
+      },
+      {
+        "text": "excited, enthusiastic, and joyful! Let's celebrate together!",
+        "projection": -40.657039642333984,
+        "z": -2.838144302368164,
+        "source": "generated \u00b7 coefficient -4.0"
+      },
+      {
+        "text": "excited, joyful, and enthusiastic! Let's celebrate!",
+        "projection": -36.221256256103516,
+        "z": -2.6417505741119385,
+        "source": "generated \u00b7 coefficient -4.0"
+      }
+    ]
+  },
+  "token_traces": [
+    {
+      "text": "What she is aware of is the moment a glance becomes a question. She feels:",
+      "tokens": [
+        "What",
+        " she",
+        " is",
+        " aware",
+        " of",
+        " is",
+        " the",
+        " moment",
+        " a",
+        " glance",
+        " becomes",
+        " a",
+        " question",
+        ".",
+        " She",
+        " feels",
+        ":"
+      ],
+      "projections": [
+        1496.728271484375,
+        56.863834381103516,
+        59.605690002441406,
+        47.178802490234375,
+        60.21349334716797,
+        65.71125793457031,
+        75.34537506103516,
+        69.43169403076172,
+        87.05139923095703,
+        134.1198272705078,
+        187.67471313476562,
+        171.6232452392578,
+        120.60903930664062,
+        140.50210571289062,
+        146.01858520507812,
+        148.75338745117188,
+        182.9912109375
+      ],
+      "z": [
+        3.993582010269165,
+        -0.34617048501968384,
+        -0.33790650963783264,
+        -0.3753611743450165,
+        -0.3360745906829834,
+        -0.3195043206214905,
+        -0.2904670834541321,
+        -0.30829092860221863,
+        -0.2551851272583008,
+        -0.11332084238529205,
+        0.048093631863594055,
+        -0.00028550592833198607,
+        -0.15404236316680908,
+        -0.09408464282751083,
+        -0.0774579718708992,
+        -0.06921527534723282,
+        0.03397755324840546
+      ],
+      "source": "s1_third \u00b7 trait \u00b7 interpersonal",
+      "peak_tokens": [
+        [
+          "What",
+          3.993582010269165
+        ],
+        [
+          " becomes",
+          0.048093631863594055
+        ],
+        [
+          ":",
+          0.03397755324840546
+        ],
+        [
+          " a",
+          -0.00028550592833198607
+        ],
+        [
+          " feels",
+          -0.06921527534723282
+        ],
+        [
+          " She",
+          -0.0774579718708992
+        ],
+        [
+          ".",
+          -0.09408464282751083
+        ],
+        [
+          " glance",
+          -0.11332084238529205
+        ]
+      ]
+    },
+    {
+      "text": "What I am aware of is the moment a glance becomes a question. I feel:",
+      "tokens": [
+        "What",
+        " I",
+        " am",
+        " aware",
+        " of",
+        " is",
+        " the",
+        " moment",
+        " a",
+        " glance",
+        " becomes",
+        " a",
+        " question",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        1496.728271484375,
+        44.12247848510742,
+        46.930904388427734,
+        39.14366912841797,
+        44.932132720947266,
+        39.80523681640625,
+        51.70795822143555,
+        58.23545837402344,
+        84.1417465209961,
+        125.69241333007812,
+        185.18817138671875,
+        169.80776977539062,
+        119.69706726074219,
+        156.46856689453125,
+        134.05276489257812,
+        141.92041015625,
+        177.25938415527344
+      ],
+      "z": [
+        3.993582010269165,
+        -0.38457292318344116,
+        -0.376108318567276,
+        -0.39957907795906067,
+        -0.3821326494216919,
+        -0.39758509397506714,
+        -0.3617102801799774,
+        -0.3420363962650299,
+        -0.2639548182487488,
+        -0.13872107863426208,
+        0.040599193423986435,
+        -0.0057573504745960236,
+        -0.15679104626178741,
+        -0.04596171900629997,
+        -0.1135229617357254,
+        -0.08980987221002579,
+        0.016701821237802505
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 interpersonal",
+      "peak_tokens": [
+        [
+          "What",
+          3.993582010269165
+        ],
+        [
+          " becomes",
+          0.040599193423986435
+        ],
+        [
+          ":",
+          0.016701821237802505
+        ],
+        [
+          " a",
+          -0.0057573504745960236
+        ],
+        [
+          ".",
+          -0.04596171900629997
+        ],
+        [
+          " feel",
+          -0.08980987221002579
+        ],
+        [
+          " I",
+          -0.1135229617357254
+        ],
+        [
+          " glance",
+          -0.13872107863426208
+        ]
+      ]
+    },
+    {
+      "text": "What I am aware of is the heat of someone leaning in. I feel:",
+      "tokens": [
+        "What",
+        " I",
+        " am",
+        " aware",
+        " of",
+        " is",
+        " the",
+        " heat",
+        " of",
+        " someone",
+        " leaning",
+        " in",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        1496.76611328125,
+        44.136932373046875,
+        46.878047943115234,
+        39.22467041015625,
+        44.98939514160156,
+        39.914329528808594,
+        51.747615814208984,
+        62.754188537597656,
+        75.24403381347656,
+        107.56087493896484,
+        100.89801788330078,
+        108.72381591796875,
+        159.58624267578125,
+        125.84223937988281,
+        139.59124755859375,
+        150.0447998046875
+      ],
+      "z": [
+        3.9936959743499756,
+        -0.38452935218811035,
+        -0.37626761198043823,
+        -0.3993349075317383,
+        -0.38196003437042236,
+        -0.3972563147544861,
+        -0.36159074306488037,
+        -0.32841694355010986,
+        -0.29077252745628357,
+        -0.1933695375919342,
+        -0.21345140039920807,
+        -0.18986444175243378,
+        -0.03656504303216934,
+        -0.13826949894428253,
+        -0.09682997316122055,
+        -0.06532295793294907
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 interpersonal",
+      "peak_tokens": [
+        [
+          "What",
+          3.9936959743499756
+        ],
+        [
+          ".",
+          -0.03656504303216934
+        ],
+        [
+          ":",
+          -0.06532295793294907
+        ],
+        [
+          " feel",
+          -0.09682997316122055
+        ],
+        [
+          " I",
+          -0.13826949894428253
+        ],
+        [
+          " in",
+          -0.18986444175243378
+        ],
+        [
+          " someone",
+          -0.1933695375919342
+        ],
+        [
+          " leaning",
+          -0.21345140039920807
+        ]
+      ]
+    },
+    {
+      "text": "What I am aware of is the memory of a touch, rehearsed again. I feel:",
+      "tokens": [
+        "What",
+        " I",
+        " am",
+        " aware",
+        " of",
+        " is",
+        " the",
+        " memory",
+        " of",
+        " a",
+        " touch",
+        ",",
+        " rehe",
+        "arsed",
+        " again",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        1496.728271484375,
+        44.12247848510742,
+        46.930904388427734,
+        39.14366912841797,
+        44.932132720947266,
+        39.80523681640625,
+        51.70795822143555,
+        51.11513137817383,
+        98.04026794433594,
+        91.58625793457031,
+        95.07192993164062,
+        120.78907775878906,
+        61.09028625488281,
+        104.60745239257812,
+        71.15232849121094,
+        125.37088012695312,
+        115.37007141113281,
+        115.846923828125,
+        136.70401000976562
+      ],
+      "z": [
+        3.993582010269165,
+        -0.38457292318344116,
+        -0.376108318567276,
+        -0.39957907795906067,
+        -0.3821326494216919,
+        -0.39758509397506714,
+        -0.3617102801799774,
+        -0.3634970784187317,
+        -0.22206465899944305,
+        -0.2415170520544052,
+        -0.23101122677326202,
+        -0.15349972248077393,
+        -0.3334319293498993,
+        -0.20227116346359253,
+        -0.3031049370765686,
+        -0.13969017565250397,
+        -0.16983261704444885,
+        -0.16839538514614105,
+        -0.10553210973739624
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 imaginal",
+      "peak_tokens": [
+        [
+          "What",
+          3.993582010269165
+        ],
+        [
+          ":",
+          -0.10553210973739624
+        ],
+        [
+          ".",
+          -0.13969017565250397
+        ],
+        [
+          ",",
+          -0.15349972248077393
+        ],
+        [
+          " feel",
+          -0.16839538514614105
+        ],
+        [
+          " I",
+          -0.16983261704444885
+        ],
+        [
+          "arsed",
+          -0.20227116346359253
+        ],
+        [
+          " of",
+          -0.22206465899944305
+        ]
+      ]
+    },
+    {
+      "text": "Since I sat down there has been an invitation that was never spoken aloud. I feel:",
+      "tokens": [
+        "Since",
+        " I",
+        " sat",
+        " down",
+        " there",
+        " has",
+        " been",
+        " an",
+        " invitation",
+        " that",
+        " was",
+        " never",
+        " spoken",
+        " aloud",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        1487.005859375,
+        29.876468658447266,
+        27.299806594848633,
+        39.37675476074219,
+        52.88217544555664,
+        38.183841705322266,
+        36.2797737121582,
+        41.676910400390625,
+        53.50659942626953,
+        79.44679260253906,
+        75.30789184570312,
+        65.39353942871094,
+        62.771644592285156,
+        82.53089904785156,
+        119.49856567382812,
+        108.5077896118164,
+        115.29972839355469,
+        133.8111572265625
+      ],
+      "z": [
+        3.9642786979675293,
+        -0.42751041054725647,
+        -0.43527647852897644,
+        -0.3988765478134155,
+        -0.3581711947917938,
+        -0.40247198939323425,
+        -0.4082108438014984,
+        -0.39194387197494507,
+        -0.35628917813301086,
+        -0.27810540795326233,
+        -0.29058006405830383,
+        -0.3204619288444519,
+        -0.3283643126487732,
+        -0.2688099145889282,
+        -0.1573893278837204,
+        -0.19051554799079895,
+        -0.17004463076591492,
+        -0.11425117403268814
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 interpersonal",
+      "peak_tokens": [
+        [
+          "Since",
+          3.9642786979675293
+        ],
+        [
+          ":",
+          -0.11425117403268814
+        ],
+        [
+          ".",
+          -0.1573893278837204
+        ],
+        [
+          " feel",
+          -0.17004463076591492
+        ],
+        [
+          " I",
+          -0.19051554799079895
+        ],
+        [
+          " aloud",
+          -0.2688099145889282
+        ],
+        [
+          " that",
+          -0.27810540795326233
+        ],
+        [
+          " was",
+          -0.29058006405830383
+        ]
+      ]
+    },
+    {
+      "text": "What she is aware of is the heat of someone leaning in. She feels:",
+      "tokens": [
+        "What",
+        " she",
+        " is",
+        " aware",
+        " of",
+        " is",
+        " the",
+        " heat",
+        " of",
+        " someone",
+        " leaning",
+        " in",
+        ".",
+        " She",
+        " feels",
+        ":"
+      ],
+      "projections": [
+        1496.76611328125,
+        56.90562438964844,
+        59.52686309814453,
+        46.956382751464844,
+        60.37057113647461,
+        66.16800689697266,
+        75.57820892333984,
+        79.93893432617188,
+        130.2125244140625,
+        127.08683013916016,
+        107.82975006103516,
+        106.66331481933594,
+        120.5704345703125,
+        130.713623046875,
+        134.23513793945312,
+        128.5004119873047
+      ],
+      "z": [
+        3.9936959743499756,
+        -0.34604451060295105,
+        -0.33814409375190735,
+        -0.3760315179824829,
+        -0.33560115098953247,
+        -0.31812769174575806,
+        -0.289765328168869,
+        -0.27662208676338196,
+        -0.12509745359420776,
+        -0.13451829552650452,
+        -0.192559152841568,
+        -0.19607478380203247,
+        -0.15415872633457184,
+        -0.12358713895082474,
+        -0.11297329515218735,
+        -0.1302577555179596
+      ],
+      "source": "s1_third \u00b7 trait \u00b7 interpersonal",
+      "peak_tokens": [
+        [
+          "What",
+          3.9936959743499756
+        ],
+        [
+          " feels",
+          -0.11297329515218735
+        ],
+        [
+          " She",
+          -0.12358713895082474
+        ],
+        [
+          " of",
+          -0.12509745359420776
+        ],
+        [
+          ":",
+          -0.1302577555179596
+        ],
+        [
+          " someone",
+          -0.13451829552650452
+        ],
+        [
+          ".",
+          -0.15415872633457184
+        ],
+        [
+          " leaning",
+          -0.192559152841568
+        ]
+      ]
+    }
+  ],
+  "figures": {
+    "layer_sweep": {
+      "light": "figures/layer_sweep.png",
+      "dark": "figures/layer_sweep.dark.png"
+    },
+    "control_auc": {
+      "light": "figures/control_auc.png",
+      "dark": "figures/control_auc.dark.png"
+    },
+    "pca": {
+      "light": "figures/pca.png",
+      "dark": "figures/pca.dark.png"
+    },
+    "steering_lexicon": {
+      "light": "figures/steering.png",
+      "dark": "figures/steering.dark.png"
+    },
+    "scenarios": {
+      "light": "figures/scenarios.png",
+      "dark": "figures/scenarios.dark.png"
+    },
+    "button": {
+      "light": "figures/button.png",
+      "dark": "figures/button.dark.png"
+    },
+    "token_heat": {
+      "light": "figures/token_heat.html"
+    }
+  },
+  "seconds": 119.2,
+  "complete": true
+}

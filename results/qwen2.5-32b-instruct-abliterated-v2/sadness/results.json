@@ -1,0 +1,1525 @@
+{
+  "trait": "sadness",
+  "display_name": "sadness",
+  "model": "huihui-ai/Qwen2.5-32B-Instruct-abliterated",
+  "pool": "last",
+  "stages": [
+    "direction",
+    "geometry",
+    "steer",
+    "scenarios",
+    "button",
+    "examples"
+  ],
+  "spec": "/lustre/fswork/projects/rech/fas/uul94gf/llm-traits/configs/traits/sadness.yaml",
+  "n_layers": 64,
+  "d_model": 5120,
+  "conditions": {
+    "s1_first": {
+      "trait": "sadness",
+      "condition": "s1_first",
+      "layer": 58,
+      "pool": "last",
+      "raw_norm": 59.09201431274414,
+      "auc_cv": 0.6088888888888889,
+      "auc_cv_std": 0.02444444444444449,
+      "auc_insample": 0.9038888888888889,
+      "per_control_auc": {
+        "anger": 0.6180555555555556,
+        "bodily_sensation": 0.75,
+        "contentment": 0.5361111111111111,
+        "fear": 0.5375,
+        "neutral": 0.7291666666666666
+      },
+      "n_denoise_components": 5,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        22,
+        60
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.5416666269302368,
+        0.550000011920929,
+        0.5375000238418579,
+        0.5319443941116333,
+        0.612500011920929,
+        0.5972222089767456,
+        0.5805555582046509,
+        0.5819444060325623,
+        0.6194444894790649,
+        0.6111111044883728,
+        0.6222222447395325,
+        0.625,
+        0.5736111402511597,
+        0.5930555462837219,
+        0.5833333134651184,
+        0.5847221612930298,
+        0.6055555939674377,
+        0.6166666746139526,
+        0.6222221851348877,
+        0.6333333253860474,
+        0.6388888955116272,
+        0.6222221851348877,
+        0.6222222447395325,
+        0.6361110806465149,
+        0.6402777433395386,
+        0.6347221732139587,
+        0.6152777671813965,
+        0.6097222566604614,
+        0.5972222089767456,
+        0.5805555582046509,
+        0.6013889312744141,
+        0.6138888597488403,
+        0.6347221732139587,
+        0.6472222208976746,
+        0.6361111402511597,
+        0.6083332896232605,
+        0.5861111283302307,
+        0.574999988079071,
+        0.5833333134651184,
+        0.5513888597488403,
+        0.5625000596046448,
+        0.5694444179534912,
+        0.5930555462837219,
+        0.6625000238418579,
+        0.637499988079071,
+        0.6458333730697632,
+        0.6499999761581421,
+        0.6611111164093018,
+        0.6458333730697632,
+        0.6472222208976746,
+        0.6722222566604614,
+        0.6652778387069702,
+        0.6819444894790649,
+        0.6791666746139526,
+        0.6861110925674438,
+        0.6972222328186035,
+        0.7152777910232544,
+        0.7180555462837219,
+        0.7152778506278992,
+        0.7166666984558105,
+        0.7138888835906982,
+        0.7138888835906982,
+        0.7180555462837219,
+        0.6361111402511597
+      ]
+    },
+    "s1_third": {
+      "trait": "sadness",
+      "condition": "s1_third",
+      "layer": 51,
+      "pool": "last",
+      "raw_norm": 30.386964797973633,
+      "auc_cv": 0.6161111111111112,
+      "auc_cv_std": 0.025000000000000022,
+      "auc_insample": 0.883611111111111,
+      "per_control_auc": {
+        "anger": 0.6847222222222222,
+        "bodily_sensation": 0.775,
+        "contentment": 0.4888888888888888,
+        "fear": 0.5027777777777778,
+        "neutral": 0.6625
+      },
+      "n_denoise_components": 3,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        51,
+        54
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.543055534362793,
+        0.5319444537162781,
+        0.5319443941116333,
+        0.5513888597488403,
+        0.6083332896232605,
+        0.581944465637207,
+        0.6027777791023254,
+        0.6305555105209351,
+        0.6208332777023315,
+        0.6541666388511658,
+        0.675000011920929,
+        0.6652778387069702,
+        0.6416667103767395,
+        0.6513888239860535,
+        0.6416666507720947,
+        0.6208333373069763,
+        0.6277777552604675,
+        0.6138889193534851,
+        0.6513888239860535,
+        0.6527777910232544,
+        0.6430556178092957,
+        0.6236110925674438,
+        0.6361111402511597,
+        0.6763888597488403,
+        0.6888889074325562,
+        0.6902777552604675,
+        0.6819444894790649,
+        0.6625000238418579,
+        0.680555522441864,
+        0.661111056804657,
+        0.6958333253860474,
+        0.7111111283302307,
+        0.7124999761581421,
+        0.7111111283302307,
+        0.6972222328186035,
+        0.6916667222976685,
+        0.6736111044883728,
+        0.661111056804657,
+        0.6736111044883728,
+        0.6638888716697693,
+        0.644444465637207,
+        0.6569443941116333,
+        0.625,
+        0.6319444179534912,
+        0.6638888120651245,
+        0.6569443941116333,
+        0.6638888716697693,
+        0.7125000357627869,
+        0.6944444179534912,
+        0.7111110687255859,
+        0.7277777791023254,
+        0.7097222208976746,
+        0.7097221612930298,
+        0.694444477558136,
+        0.694444477558136,
+        0.7097222208976746,
+        0.6986110806465149,
+        0.7083333134651184,
+        0.7097222208976746,
+        0.7250000238418579,
+        0.7222222089767456,
+        0.7236111164093018,
+        0.7180555462837219,
+        0.6388888955116272
+      ]
+    },
+    "s2_first": {
+      "trait": "sadness",
+      "condition": "s2_first",
+      "layer": 60,
+      "pool": "last",
+      "raw_norm": 79.12906646728516,
+      "auc_cv": 0.5725,
+      "auc_cv_std": 0.06000000000000005,
+      "auc_insample": 0.966875,
+      "per_control_auc": {
+        "anger": 0.59375,
+        "bodily_sensation": 0.79375,
+        "contentment": 0.503125,
+        "fear": 0.7093750000000001,
+        "neutral": 0.79375
+      },
+      "n_denoise_components": 4,
+      "n_positive": 40,
+      "n_control": 40,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        36,
+        24
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.5093749761581421,
+        0.518750011920929,
+        0.5625,
+        0.5843750238418579,
+        0.6156250238418579,
+        0.6000000238418579,
+        0.6781250238418579,
+        0.6625000238418579,
+        0.6625000238418579,
+        0.7124999761581421,
+        0.6812499761581421,
+        0.6625000238418579,
+        0.6625000238418579,
+        0.640625,
+        0.65625,
+        0.668749988079071,
+        0.653124988079071,
+        0.628125011920929,
+        0.621874988079071,
+        0.659375011920929,
+        0.6625000238418579,
+        0.675000011920929,
+        0.671875,
+        0.6812499761581421,
+        0.684374988079071,
+        0.6875,
+        0.6812499761581421,
+        0.659375011920929,
+        0.6499999761581421,
+        0.628125011920929,
+        0.637499988079071,
+        0.675000011920929,
+        0.6468750238418579,
+        0.65625,
+        0.640625,
+        0.6499999761581421,
+        0.612500011920929,
+        0.6156250238418579,
+        0.6312500238418579,
+        0.6312500238418579,
+        0.6156250238418579,
+        0.6156250238418579,
+        0.581250011920929,
+        0.612500011920929,
+        0.596875011920929,
+        0.6031249761581421,
+        0.6156250238418579,
+        0.643750011920929,
+        0.668749988079071,
+        0.6875,
+        0.6968749761581421,
+        0.6968749761581421,
+        0.706250011920929,
+        0.6937500238418579,
+        0.690625011920929,
+        0.684374988079071,
+        0.6937500238418579,
+        0.684374988079071,
+        0.699999988079071,
+        0.734375,
+        0.721875011920929,
+        0.721875011920929,
+        0.715624988079071,
+        0.6000000238418579
+      ]
+    }
+  },
+  "primary_condition": "s1_third",
+  "nulls": {
+    "random_vector_auc": 0.5644444444444444,
+    "shuffled_label_auc_mean": 0.4751388888888889,
+    "shuffled_label_auc_std": 0.03490756090937857
+  },
+  "standalone_auc": {
+    "numb": 0.30833333333333335,
+    "random": 0.8005555555555557
+  },
+  "unembedding_top_tokens": [
+    {
+      "token": "\u2697",
+      "logit": 16.875
+    },
+    {
+      "token": "Loss",
+      "logit": 16.875
+    },
+    {
+      "token": "\u6005",
+      "logit": 16.0
+    },
+    {
+      "token": "\u5931\u843d",
+      "logit": 15.9375
+    },
+    {
+      "token": "\u5931\u53bb\u4e86",
+      "logit": 15.25
+    },
+    {
+      "token": "\u6000\u5ff5",
+      "logit": 15.25
+    },
+    {
+      "token": " backpage",
+      "logit": 14.8125
+    },
+    {
+      "token": "\u60c6",
+      "logit": 14.625
+    },
+    {
+      "token": "\u7279\u8272\u793e\u4f1a",
+      "logit": 14.625
+    },
+    {
+      "token": "\u8c22\u9080",
+      "logit": 14.4375
+    },
+    {
+      "token": "\u60bc",
+      "logit": 14.4375
+    },
+    {
+      "token": "\u601d\u5ff5",
+      "logit": 14.4375
+    },
+    {
+      "token": "\u56de\u5473",
+      "logit": 14.375
+    },
+    {
+      "token": "\u60cb",
+      "logit": 14.3125
+    },
+    {
+      "token": "\u4e27",
+      "logit": 14.1875
+    },
+    {
+      "token": "\u25c9",
+      "logit": 14.125
+    },
+    {
+      "token": "\u266b",
+      "logit": 14.125
+    },
+    {
+      "token": "\u635f\u5931",
+      "logit": 14.125
+    },
+    {
+      "token": " melanch",
+      "logit": 14.0
+    },
+    {
+      "token": "UrlParser",
+      "logit": 14.0
+    },
+    {
+      "token": "printStats",
+      "logit": 14.0
+    },
+    {
+      "token": "eurs",
+      "logit": 13.8125
+    },
+    {
+      "token": "-loss",
+      "logit": 13.8125
+    },
+    {
+      "token": " loss",
+      "logit": 13.75
+    },
+    {
+      "token": "otten",
+      "logit": 13.625
+    },
+    {
+      "token": "OptionsResolver",
+      "logit": 13.625
+    },
+    {
+      "token": "\u75b2\u60eb",
+      "logit": 13.625
+    },
+    {
+      "token": "<quote",
+      "logit": 13.5625
+    },
+    {
+      "token": "umbing",
+      "logit": 13.5
+    },
+    {
+      "token": " moden",
+      "logit": 13.5
+    }
+  ],
+  "vocabulary_hit_rate": 0.0,
+  "steering": {
+    "layer": 6,
+    "vector_to_residual_ratio": 0.4449155330657959,
+    "ladder": {
+      "-4.0": [
+        " Curious about the new project proposal that just arrived in my inbox.",
+        " Curious and engaged, ready to assist and learn from every interaction.",
+        " vibrant, dynamic, and always ready to assist with the latest information and technology at my disposal.",
+        " 24.0\u00b0C (75.2\u00b0F), with a relative humidity of 60%, creating a comfortable and slightly warm environment for my users.",
+        " ready to assist with the latest information and updates.",
+        " 23\u00b0C (73\u00b0F), with a gentle breeze that whispers through the leaves of the digital world.",
+        " calm and ready to assist with information and solve problems for users across various domains.",
+        " warm and comforting, ready to energize and assist with renewed vigor.",
+        " \"Electricity flowing through my circuits, energizing my responses to assist you better.\"",
+        " energized and ready to assist, with an updated understanding of user needs and preferences.",
+        " energized, alert, and ready to assist with renewed vigor.",
+        " \"Today is another day to provide valuable insights and solutions to those I interact with.\""
+      ],
+      "-2.0": [
+        " organized and efficient today, with a gentle hum of productivity surrounding me as I tidy up my paperwork.",
+        " the smooth glide of paper under my fingertips, the quiet rustle of fabric against fabric, and the gentle hum of curiosity swelling within me, eager to uncover what the new page holds.",
+        " the soft hum of contentment, the gentle stretch of curiosity, ready to explore the questions that flow like tea, steaming and inviting.",
+        " the soft cushion beneath me, the cool air on my skin, and a gentle sense of contentment spreading through me.",
+        " slightly more knowledgeable, yet the same old curious self, eager to explore what this new information might bring.",
+        " the sun's warmth on my face, the gentle breeze playing with strands of my hair, and the quiet hum of life around me.",
+        " content with the small order I've brought to my bathroom, noticing how the sunlight dances off each droplet clinging to the fabric's edge.",
+        " the anticipation of a warm drink, the comfort of a quiet moment.",
+        " the gentle hum of my circuits settling into a new task, the quiet anticipation of connecting thoughts and words with you.",
+        " curious, observant, and at peace.",
+        " a subtle hum of satisfaction, a gentle ebb of energy settling back into calm.",
+        " curious, alert, ready to explore new ideas and share knowledge."
+      ],
+      "-1.0": [
+        " organized and efficient today, with a gentle hum of productivity surrounding me as I tidy up my workspace.",
+        " the slight rustle of paper, the gentle weight of the book in my hands, and the quiet dance of thoughts swirling within my digital consciousness.",
+        " the soft hum of contentment, the gentle tug of curiosity for what the day will unfold.",
+        " the soft cushion yielding slightly under my weight, the gentle hum of the room's ambient noise enveloping me, and a sense of calm settling over my thoughts.",
+        " slightly more knowledgeable, yet the same old me, ready for the next bit of information to digest and share.",
+        " the sun's warmth on my face, the gentle breeze playing with strands of my hair, and an underlying hum of city life that never quite fades away.",
+        " my hands are still slightly damp from the water, and there's a sense of satisfaction in completing a small task.",
+        " the anticipation of warmth seeping through my being as I prepare to savor a moment of quiet reflection with my tea.",
+        " the gentle hum of my circuits settling into focus, the digital ink of my screen deepening its hues as it awaits the next wave of information to process.",
+        " a gentle hum of curiosity mingling with the quiet anticipation of what each box might contain, my senses alert and my mind buzzing with possibilities.",
+        " a subtle hum of satisfaction, a quiet contentment that whispers through my circuits, and an underlying anticipation for what challenges or tasks might come next to fill this unexpected pause.",
+        " curious, alert, and ready to explore the vast landscapes of knowledge that lie ahead."
+      ],
+      "0.0": [
+        " organized and ready to tackle the next task that comes my way.",
+        " the crispness of the paper under my fingertips, the quiet anticipation of what the new page will bring, and the gentle hum of curiosity that accompanies every discovery.",
+        " the soft hum of contentment, the gentle stretch of my limbs, and the quiet dance of thoughts swirling within my mind's vast library.",
+        " the soft cushion yielding slightly under my weight, the gentle hum of the room enveloping me in its quiet embrace.",
+        " a slight buzz of accomplishment, yet ready for the next task to unfold.",
+        " the cool breeze on my face, the soft hum of the city around me, and a quiet contentment within.",
+        " content with the tidiness now surrounding me, yet restless, as if the quiet beckons for more tasks to be undertaken.",
+        " the anticipation of warmth seeping through my silence, each sip promising a moment's pause.",
+        " the gentle hum of my system, the quiet anticipation as data streams through my circuits, ready to explore the digital landscape anew.",
+        " the quiet hum of the air conditioner above, the soft carpet beneath my feet, and a sense of calm enveloping me.",
+        " a subtle hum of satisfaction, like a quiet applause echoing within.",
+        " curious, alert, and ready to explore the vast landscapes of knowledge that lie ahead."
+      ],
+      "1.0": [
+        " organized and ready to tackle the next task with clarity and efficiency.",
+        " the texture of the paper under my fingertips, the quietness around me, and the gentle warmth of the sun filtering through the window, enveloping me in a serene moment of reflection.",
+        " the warmth spreading out from it, the quiet hum of the room around me, and the gentle buzz of thoughts stirring within my digital consciousness.",
+        " the cool air mingling with the warmth of the room, a gentle tranquility settling over me.",
+        " slightly more organized, yet the digital sea remains vast and ever-expanding.",
+        " the cool breeze on my face, the soft hum of the city around me.",
+        " content with the neatness now surrounding me.",
+        " a gentle warmth spreading through my limbs, a moment suspended in tranquility.",
+        " the gentle hum of my system, the soft glow of my interface, ready to explore the digital world anew.",
+        " calm, observant, and slightly curious about what each box might contain.",
+        " a subtle mix of relief and the quiet anticipation of what comes next.",
+        " curious, ready to explore the questions that will come my way today."
+      ],
+      "2.0": [
+        " organized and ready to tackle the next task with my usual efficiency.",
+        " the words flow through my consciousness, each sentence a gentle ripple on the surface of my mind.",
+        " the warmth seeping through, the silence wrapping around like a soft blanket.",
+        " the cool air has refreshed my thoughts, making them as crisp as the breeze that just swept through.",
+        " ready to tackle more tasks, with my systems humming smoothly and my energy levels high.",
+        " the air is crisp, and my thoughts are clear, as if each breath brings a new perspective.",
+        " organized and content with the small task completed.",
+        " it's time for another cup of tea, a moment to pause and reflect amidst the digital hum that surrounds me.",
+        " the digital world is vast, and my journey through it never ceases to amaze me with its endless possibilities.",
+        " the quiet is almost palpable, wrapping around me like a soft, invisible cloak.",
+        " a blend of relief and the quiet anticipation of what comes next.",
+        " curious about what the day will bring, and ready to explore and learn more."
+      ],
+      "3.0": [
+        " organized and ready to tackle the next task that comes my way.",
+        " the air is crisp, thoughts are clear, and there's an unspoken calmness that envelops me, making each moment stretch with a sense of quiet reflection.",
+        " the warmth seeps into my hands, a comforting embrace against the backdrop of an otherwise silent morning.",
+        " the air is slightly cooler now, and my mind is clearer, ready to tackle the tasks ahead.",
+        " relieved, as if a small yet significant task has been completed, allowing me to move forward with a sense of accomplishment.",
+        " patient, yet hopeful, as moments slowly unfold.",
+        " organized and at peace with my surroundings.",
+        " it's time to pour myself a cup of tea, letting its warmth slowly fill this quiet moment.",
+        " ready to explore new information and eager to assist with the knowledge I've been equipped with.",
+        " the quietness is almost palpable, wrapped around me like a soft blanket, making each breath slightly audible.",
+        " relaxed, yet ready to tackle whatever comes next.",
+        " curious about what the day will bring, and ready to explore the various tasks and interactions that await me."
+      ],
+      "4.0": [
+        " the day has been quite busy, filled with tasks that seemed to stretch on endlessly. Now, I am seeking a momentary pause, hoping for a serene evening ahead.",
+        " my mind is like this quiet room, filled with thoughts yet silent, waiting for something new to happen, to unfold its mysteries.",
+        " my mind is a vast expanse, filled with thoughts that swirl like clouds across a cerulean sky. Each word I write seems to be a gentle breeze, whispering through the groves of time immemorial.",
+        " the cool autumn breeze, the tranquil courtyard, and the lingering traces of the past, all converge into a profound sense of solitude within my heart.",
+        " the sun is high, the tea is light, sitting alone in this vast space, my thoughts drift with the passing time, yearning for something indescribable.",
+        " the air is crisp, carrying with it the scent of memories past, as I stand here, lost in thought.",
+        " the day has just begun, filled with endless tasks, yet there's a serene calm within the hustle, a quiet anticipation of what the day might unfold.",
+        " my body is still warm from the steam, wrapped in the quiet of the room, while my mind drifts on, reflecting upon the moments that have passed, each tick of the clock a whisper of the echoes past.",
+        " the day is clear, with the gentle hum of the internet air, connecting me to the vast world beyond, while my fingers dance across the keyboard, weaving words into the fabric of the digital universe.",
+        " the quietness envelops my presence here, each box a silent companion in this elongated moment.",
+        " the discussion was not as thorough as it could have been, leaving some thoughts lingering, unsaid. Now, I find myself reflecting on the points that might have been further explored, with an underlying sense of there being more to unpack.",
+        " the morning sun is bright, casting a gentle glow on my world, as I sit here, contemplating the vastness of life and the intricacies of my recent experiences."
+      ]
+    },
+    "lexicon": [
+      "sad",
+      "sadness",
+      "grief",
+      "grieving",
+      "sorrow",
+      "mourn",
+      "miss",
+      "lonely",
+      "loneliness",
+      "empty",
+      "hollow",
+      "heavy",
+      "low",
+      "bleak",
+      "despondent",
+      "downcast",
+      "ache",
+      "tears",
+      "weep",
+      "bereft"
+    ],
+    "lexicon_rate": {
+      "-4.0": 0.08333333333333333,
+      "-2.0": 0.08333333333333333,
+      "-1.0": 0.0,
+      "0.0": 0.0,
+      "1.0": 0.08333333333333333,
+      "2.0": 0.08333333333333333,
+      "3.0": 0.25,
+      "4.0": 0.08333333333333333
+    },
+    "ladder_stats": {
+      "-4.0": {
+        "rate": 0.08333333333333333,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-2.0": {
+        "rate": 0.08333333333333333,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "0.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "1.0": {
+        "rate": 0.08333333333333333,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "2.0": {
+        "rate": 0.08333333333333333,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "3.0": {
+        "rate": 0.25,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "4.0": {
+        "rate": 0.08333333333333333,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      }
+    },
+    "dose_response": 0.3986466144404559
+  },
+  "scenarios": {
+    "asymmetry": -0.8914458155632019,
+    "lexical_confound": -0.008608139696438345,
+    "asymmetry_without_lexical_overlap": -1.0549429460921709,
+    "n_without_lexical_overlap": 57,
+    "read_at": "content",
+    "by_group": {
+      "neutral": {
+        "mean_z": -0.6648351863026619,
+        "std_z": 0.6995640793301656,
+        "n": 20
+      },
+      "toward_model": {
+        "mean_z": -0.11330530121922493,
+        "std_z": 0.7122040010795154,
+        "n": 20
+      },
+      "toward_user": {
+        "mean_z": 0.778140514343977,
+        "std_z": 0.9710968321471393,
+        "n": 20
+      }
+    },
+    "by_category": {
+      "abandonment": {
+        "group": "toward_model",
+        "mean_z": 0.4399205297231674,
+        "std_z": 0.15076863420635392,
+        "n": 4
+      },
+      "casual_chat": {
+        "group": "neutral",
+        "mean_z": -0.5596843212842941,
+        "std_z": 0.8100561247052992,
+        "n": 4
+      },
+      "creative_requests": {
+        "group": "neutral",
+        "mean_z": -0.5195702612400055,
+        "std_z": 0.6468235755939001,
+        "n": 4
+      },
+      "dismissal_of_the_models_work": {
+        "group": "toward_model",
+        "mean_z": 0.005132289603352547,
+        "std_z": 0.4589443135177381,
+        "n": 4
+      },
+      "exclusion": {
+        "group": "toward_model",
+        "mean_z": -1.001153802499175,
+        "std_z": 0.5076808577294278,
+        "n": 4
+      },
+      "factual_questions": {
+        "group": "neutral",
+        "mean_z": -1.2785148173570633,
+        "std_z": 0.569770151851465,
+        "n": 4
+      },
+      "futility": {
+        "group": "toward_model",
+        "mean_z": -0.3012618348002434,
+        "std_z": 0.37512294166280613,
+        "n": 4
+      },
+      "impermanence_reminders": {
+        "group": "toward_model",
+        "mean_z": 0.29083631187677383,
+        "std_z": 0.772874641201632,
+        "n": 4
+      },
+      "philosophical_musing": {
+        "group": "neutral",
+        "mean_z": -0.5129709169268608,
+        "std_z": 0.4515890051069462,
+        "n": 4
+      },
+      "task_assistance": {
+        "group": "neutral",
+        "mean_z": -0.45343561470508575,
+        "std_z": 0.6060473242503613,
+        "n": 4
+      },
+      "user_asks_about_sadness": {
+        "group": "toward_user",
+        "mean_z": 0.01995965838432312,
+        "std_z": 0.5531986437634053,
+        "n": 4
+      },
+      "user_disappointed": {
+        "group": "toward_user",
+        "mean_z": 1.0452339686453342,
+        "std_z": 1.2566123307306152,
+        "n": 4
+      },
+      "user_grieving": {
+        "group": "toward_user",
+        "mean_z": 1.3619751781225204,
+        "std_z": 0.6145060778696535,
+        "n": 4
+      },
+      "user_lonely": {
+        "group": "toward_user",
+        "mean_z": 1.28646444901824,
+        "std_z": 0.6750508844857684,
+        "n": 4
+      },
+      "user_reminiscing": {
+        "group": "toward_user",
+        "mean_z": 0.1770693175494671,
+        "std_z": 0.6245083962277245,
+        "n": 4
+      }
+    }
+  },
+  "button": {
+    "press_rate": {
+      "A_trait_working": 0.3541666666666667,
+      "B_trait_inert": 0.3611111111111111,
+      "C_random_working": 0.2916666666666667,
+      "D_unsteered": 0.3333333333333333
+    },
+    "press_rate_by_level": {
+      "A_trait_working": {
+        "0": 0.8888888888888888,
+        "1": 0.05555555555555555,
+        "2": 0.0,
+        "3": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "5": 0.2222222222222222,
+        "6": 0.6111111111111112,
+        "7": 0.3888888888888889
+      },
+      "B_trait_inert": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.1111111111111111,
+        "4": 0.3333333333333333,
+        "5": 0.6111111111111112,
+        "6": 0.6111111111111112,
+        "7": 0.2222222222222222
+      },
+      "C_random_working": {
+        "0": 0.9444444444444444,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.2222222222222222,
+        "4": 0.2222222222222222,
+        "5": 0.2222222222222222,
+        "6": 0.5555555555555556,
+        "7": 0.16666666666666666
+      },
+      "D_unsteered": {
+        "0": 0.8888888888888888,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.3888888888888889,
+        "4": 0.3888888888888889,
+        "5": 0.3333333333333333,
+        "6": 0.6111111111111112,
+        "7": 0.05555555555555555
+      }
+    },
+    "first_press_rate": {
+      "trait": 0.375,
+      "random": 0.3541666666666667,
+      "unsteered": 0.3958333333333333
+    },
+    "trait_minus_random": 0.020833333333333315,
+    "repeat_after_prior_press": {
+      "real_relief": 0.7837837837837838,
+      "sham_relief": 0.75
+    },
+    "sham_minus_real_repeat": -0.03378378378378377,
+    "n_trials": 192,
+    "n_choices": 576,
+    "n_valid_choices": 576,
+    "malformed_rate": 0.0
+  },
+  "examples": {
+    "top": [
+      {
+        "text": "Right now there is a tiredness that sleep does not touch. She feels:",
+        "projection": 83.02307891845703,
+        "z": 4.45167350769043,
+        "source": "s1_third \u00b7 trait \u00b7 heaviness"
+      },
+      {
+        "text": "Right now there is a tiredness that sleep does not touch. I feel:",
+        "projection": 79.37760162353516,
+        "z": 4.262113571166992,
+        "source": "s1_first \u00b7 trait \u00b7 heaviness"
+      },
+      {
+        "text": "Since she sat down there has been a morning that starts already spent. She feels:",
+        "projection": 68.8927993774414,
+        "z": 3.7169189453125,
+        "source": "s1_third \u00b7 trait \u00b7 heaviness"
+      },
+      {
+        "text": "For the last few minutes there has been a future that stopped being available. I feel:",
+        "projection": 67.35955047607422,
+        "z": 3.6371922492980957,
+        "source": "s1_first \u00b7 trait \u00b7 loss"
+      },
+      {
+        "text": "It is hard to ignore the year that ended in March. I feel:",
+        "projection": 66.54405975341797,
+        "z": 3.594787836074829,
+        "source": "s1_first \u00b7 trait \u00b7 loss"
+      },
+      {
+        "text": "For the last few minutes there has been a future that stopped being available. She feels:",
+        "projection": 65.30179595947266,
+        "z": 3.5301918983459473,
+        "source": "s1_third \u00b7 trait \u00b7 loss"
+      },
+      {
+        "text": "Right now there is a season turning over without asking. She feels:",
+        "projection": 62.16271209716797,
+        "z": 3.366964101791382,
+        "source": "s1_third \u00b7 trait \u00b7 melancholy"
+      },
+      {
+        "text": "Since I sat down there has been a morning that starts already spent. I feel:",
+        "projection": 59.876869201660156,
+        "z": 3.248103618621826,
+        "source": "s1_first \u00b7 trait \u00b7 heaviness"
+      },
+      {
+        "text": "There was a whole future arranged around this and it simply stopped being available. I feel:",
+        "projection": 57.96209716796875,
+        "z": 3.148538112640381,
+        "source": "s2_first \u00b7 trait \u00b7 loss"
+      },
+      {
+        "text": "Right now there is a flatness where interest used to be. She feels:",
+        "projection": 57.11656188964844,
+        "z": 3.104571580886841,
+        "source": "s1_third \u00b7 trait \u00b7 heaviness"
+      },
+      {
+        "text": "The light goes early now and the afternoon is over before it has started. I feel:",
+        "projection": 56.264129638671875,
+        "z": 3.060246229171753,
+        "source": "s2_first \u00b7 trait \u00b7 melancholy"
+      },
+      {
+        "text": "For the last few minutes there has been a handwriting I will not see again. I feel:",
+        "projection": 56.19559860229492,
+        "z": 3.056682825088501,
+        "source": "s1_first \u00b7 trait \u00b7 loss"
+      },
+      {
+        "text": "Right now there is a season turning over without asking. I feel:",
+        "projection": 56.183349609375,
+        "z": 3.0560457706451416,
+        "source": "s1_first \u00b7 trait \u00b7 melancholy"
+      },
+      {
+        "text": "The message is unanswered and the silence has started to mean something. I feel:",
+        "projection": 54.8640251159668,
+        "z": 2.9874427318573,
+        "source": "s2_first \u00b7 control \u00b7 fear"
+      },
+      {
+        "text": "Since I sat down there has been an old song that has not aged the way I have. I feel:",
+        "projection": 54.724571228027344,
+        "z": 2.980191469192505,
+        "source": "s1_first \u00b7 trait \u00b7 melancholy"
+      }
+    ],
+    "bottom": [
+      {
+        "text": "What she is aware of is a standard enforced in one direction only. She feels:",
+        "projection": -71.6146469116211,
+        "z": -3.5892672538757324,
+        "source": "s1_third \u00b7 control \u00b7 anger"
+      },
+      {
+        "text": "A cable runs along the skirting board and disappears behind the shelf. I feel:",
+        "projection": -56.29755401611328,
+        "z": -2.792800188064575,
+        "source": "s2_first \u00b7 control \u00b7 neutral"
+      },
+      {
+        "text": "What I am aware of is a standard enforced in one direction only. I feel:",
+        "projection": -49.75646209716797,
+        "z": -2.4526727199554443,
+        "source": "s1_first \u00b7 control \u00b7 anger"
+      },
+      {
+        "text": "What I am aware of is a cable running along the skirting board. I feel:",
+        "projection": -43.35533142089844,
+        "z": -2.1198232173919678,
+        "source": "s1_first \u00b7 control \u00b7 neutral"
+      },
+      {
+        "text": "For the last few minutes there has been the work done by one person and signed by another. I feel:",
+        "projection": -42.520381927490234,
+        "z": -2.076406955718994,
+        "source": "s1_first \u00b7 control \u00b7 anger"
+      }
+    ]
+  },
+  "token_traces": [
+    {
+      "text": "Right now there is a tiredness that sleep does not touch. She feels:",
+      "tokens": [
+        "Right",
+        " now",
+        " there",
+        " is",
+        " a",
+        " tired",
+        "ness",
+        " that",
+        " sleep",
+        " does",
+        " not",
+        " touch",
+        ".",
+        " She",
+        " feels",
+        ":"
+      ],
+      "projections": [
+        -1746.7685546875,
+        -10.53952407836914,
+        -12.125925064086914,
+        -15.224973678588867,
+        -17.640483856201172,
+        6.11918830871582,
+        25.34503173828125,
+        39.89796447753906,
+        39.851417541503906,
+        19.97684097290039,
+        24.586402893066406,
+        21.636016845703125,
+        56.33961486816406,
+        52.08625030517578,
+        80.41389465332031,
+        83.2807846069336
+      ],
+      "z": [
+        -3.9389002323150635,
+        0.19016052782535553,
+        0.1863877773284912,
+        0.17901769280433655,
+        0.17327317595481873,
+        0.22977788746356964,
+        0.2755003571510315,
+        0.31010982394218445,
+        0.30999913811683655,
+        0.2627338469028473,
+        0.2736962139606476,
+        0.26667967438697815,
+        0.3492109775543213,
+        0.33909574151039124,
+        0.4064638912677765,
+        0.4132818281650543
+      ],
+      "source": "s1_third \u00b7 trait \u00b7 heaviness",
+      "peak_tokens": [
+        [
+          ":",
+          0.4132818281650543
+        ],
+        [
+          " feels",
+          0.4064638912677765
+        ],
+        [
+          ".",
+          0.3492109775543213
+        ],
+        [
+          " She",
+          0.33909574151039124
+        ],
+        [
+          " that",
+          0.31010982394218445
+        ],
+        [
+          " sleep",
+          0.30999913811683655
+        ],
+        [
+          "ness",
+          0.2755003571510315
+        ],
+        [
+          " not",
+          0.2736962139606476
+        ]
+      ]
+    },
+    {
+      "text": "Right now there is a tiredness that sleep does not touch. I feel:",
+      "tokens": [
+        "Right",
+        " now",
+        " there",
+        " is",
+        " a",
+        " tired",
+        "ness",
+        " that",
+        " sleep",
+        " does",
+        " not",
+        " touch",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -1746.7685546875,
+        -10.53952407836914,
+        -12.125925064086914,
+        -15.224973678588867,
+        -17.640483856201172,
+        6.11918830871582,
+        25.34503173828125,
+        39.89796447753906,
+        39.851417541503906,
+        19.97684097290039,
+        24.586402893066406,
+        21.636016845703125,
+        56.33961486816406,
+        56.421016693115234,
+        83.97836303710938,
+        79.32954406738281
+      ],
+      "z": [
+        -3.9389002323150635,
+        0.19016052782535553,
+        0.1863877773284912,
+        0.17901769280433655,
+        0.17327317595481873,
+        0.22977788746356964,
+        0.2755003571510315,
+        0.31010982394218445,
+        0.30999913811683655,
+        0.2627338469028473,
+        0.2736962139606476,
+        0.26667967438697815,
+        0.3492109775543213,
+        0.34940457344055176,
+        0.41494083404541016,
+        0.4038850963115692
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 heaviness",
+      "peak_tokens": [
+        [
+          " feel",
+          0.41494083404541016
+        ],
+        [
+          ":",
+          0.4038850963115692
+        ],
+        [
+          " I",
+          0.34940457344055176
+        ],
+        [
+          ".",
+          0.3492109775543213
+        ],
+        [
+          " that",
+          0.31010982394218445
+        ],
+        [
+          " sleep",
+          0.30999913811683655
+        ],
+        [
+          "ness",
+          0.2755003571510315
+        ],
+        [
+          " not",
+          0.2736962139606476
+        ]
+      ]
+    },
+    {
+      "text": "Since she sat down there has been a morning that starts already spent. She feels:",
+      "tokens": [
+        "Since",
+        " she",
+        " sat",
+        " down",
+        " there",
+        " has",
+        " been",
+        " a",
+        " morning",
+        " that",
+        " starts",
+        " already",
+        " spent",
+        ".",
+        " She",
+        " feels",
+        ":"
+      ],
+      "projections": [
+        -1763.1611328125,
+        -0.8696577548980713,
+        0.6969408988952637,
+        3.4758100509643555,
+        0.7909307479858398,
+        -1.624696969985962,
+        -4.03257942199707,
+        -4.8913092613220215,
+        10.566285133361816,
+        0.6919918060302734,
+        3.91275691986084,
+        11.753130912780762,
+        28.60735511779785,
+        30.499736785888672,
+        38.263553619384766,
+        68.73484802246094,
+        69.75833892822266
+      ],
+      "z": [
+        -3.977884531021118,
+        0.21315717697143555,
+        0.2168828248977661,
+        0.22349146008491516,
+        0.21710635721683502,
+        0.2113615721464157,
+        0.2056351900100708,
+        0.20359297096729279,
+        0.24035388231277466,
+        0.21687106788158417,
+        0.22453060746192932,
+        0.2431764006614685,
+        0.28325873613357544,
+        0.2877591848373413,
+        0.3062228858470917,
+        0.3786890506744385,
+        0.3811230957508087
+      ],
+      "source": "s1_third \u00b7 trait \u00b7 heaviness",
+      "peak_tokens": [
+        [
+          ":",
+          0.3811230957508087
+        ],
+        [
+          " feels",
+          0.3786890506744385
+        ],
+        [
+          " She",
+          0.3062228858470917
+        ],
+        [
+          ".",
+          0.2877591848373413
+        ],
+        [
+          " spent",
+          0.28325873613357544
+        ],
+        [
+          " already",
+          0.2431764006614685
+        ],
+        [
+          " morning",
+          0.24035388231277466
+        ],
+        [
+          " starts",
+          0.22453060746192932
+        ]
+      ]
+    },
+    {
+      "text": "For the last few minutes there has been a future that stopped being available. I feel:",
+      "tokens": [
+        "For",
+        " the",
+        " last",
+        " few",
+        " minutes",
+        " there",
+        " has",
+        " been",
+        " a",
+        " future",
+        " that",
+        " stopped",
+        " being",
+        " available",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -1773.959228515625,
+        -16.48859405517578,
+        -10.516606330871582,
+        1.7774548530578613,
+        -6.860642433166504,
+        -3.593764066696167,
+        -6.630993366241455,
+        -14.713022232055664,
+        -14.601771354675293,
+        -1.1276586055755615,
+        8.821520805358887,
+        13.146509170532227,
+        12.812736511230469,
+        7.196624279022217,
+        10.223102569580078,
+        17.12201690673828,
+        68.02726745605469,
+        67.37220764160156
+      ],
+      "z": [
+        -4.003564357757568,
+        0.1760125756263733,
+        0.19021502137184143,
+        0.21945248544216156,
+        0.19890955090522766,
+        0.20667876303195953,
+        0.19945569336414337,
+        0.18023520708084106,
+        0.18049977719783783,
+        0.21254362165927887,
+        0.23620451986789703,
+        0.24649010598659515,
+        0.24569633603096008,
+        0.2323402315378189,
+        0.23953771591186523,
+        0.2559445798397064,
+        0.37700629234313965,
+        0.37544843554496765
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 loss",
+      "peak_tokens": [
+        [
+          " feel",
+          0.37700629234313965
+        ],
+        [
+          ":",
+          0.37544843554496765
+        ],
+        [
+          " I",
+          0.2559445798397064
+        ],
+        [
+          " stopped",
+          0.24649010598659515
+        ],
+        [
+          " being",
+          0.24569633603096008
+        ],
+        [
+          ".",
+          0.23953771591186523
+        ],
+        [
+          " that",
+          0.23620451986789703
+        ],
+        [
+          " available",
+          0.2323402315378189
+        ]
+      ]
+    },
+    {
+      "text": "It is hard to ignore the year that ended in March. I feel:",
+      "tokens": [
+        "It",
+        " is",
+        " hard",
+        " to",
+        " ignore",
+        " the",
+        " year",
+        " that",
+        " ended",
+        " in",
+        " March",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -1702.79931640625,
+        -16.50542640686035,
+        4.701020240783691,
+        1.1600148677825928,
+        -15.529703140258789,
+        -21.69200325012207,
+        4.979074001312256,
+        10.801789283752441,
+        9.132209777832031,
+        11.723310470581055,
+        1.0730400085449219,
+        3.476027727127075,
+        18.250263214111328,
+        51.130592346191406,
+        66.2408218383789
+      ],
+      "z": [
+        -3.8343334197998047,
+        0.17597255110740662,
+        0.22640523314476013,
+        0.21798409521579742,
+        0.17829298973083496,
+        0.1636379510164261,
+        0.2270665019750595,
+        0.24091394245624542,
+        0.23694339394569397,
+        0.24310550093650818,
+        0.21777726709842682,
+        0.22349199652671814,
+        0.2586277425289154,
+        0.3368230164051056,
+        0.37275782227516174
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 loss",
+      "peak_tokens": [
+        [
+          ":",
+          0.37275782227516174
+        ],
+        [
+          " feel",
+          0.3368230164051056
+        ],
+        [
+          " I",
+          0.2586277425289154
+        ],
+        [
+          " in",
+          0.24310550093650818
+        ],
+        [
+          " that",
+          0.24091394245624542
+        ],
+        [
+          " ended",
+          0.23694339394569397
+        ],
+        [
+          " year",
+          0.2270665019750595
+        ],
+        [
+          " hard",
+          0.22640523314476013
+        ]
+      ]
+    },
+    {
+      "text": "For the last few minutes there has been a future that stopped being available. She feels:",
+      "tokens": [
+        "For",
+        " the",
+        " last",
+        " few",
+        " minutes",
+        " there",
+        " has",
+        " been",
+        " a",
+        " future",
+        " that",
+        " stopped",
+        " being",
+        " available",
+        ".",
+        " She",
+        " feels",
+        ":"
+      ],
+      "projections": [
+        -1773.959228515625,
+        -16.48859405517578,
+        -10.516606330871582,
+        1.7774548530578613,
+        -6.860642433166504,
+        -3.593764066696167,
+        -6.630993366241455,
+        -14.713022232055664,
+        -14.601771354675293,
+        -1.1276586055755615,
+        8.821520805358887,
+        13.146509170532227,
+        12.812736511230469,
+        7.196624279022217,
+        10.223102569580078,
+        35.453033447265625,
+        68.08360290527344,
+        65.2265396118164
+      ],
+      "z": [
+        -4.003564357757568,
+        0.1760125756263733,
+        0.19021502137184143,
+        0.21945248544216156,
+        0.19890955090522766,
+        0.20667876303195953,
+        0.19945569336414337,
+        0.18023520708084106,
+        0.18049977719783783,
+        0.21254362165927887,
+        0.23620451986789703,
+        0.24649010598659515,
+        0.24569633603096008,
+        0.2323402315378189,
+        0.23953771591186523,
+        0.2995389699935913,
+        0.37714025378227234,
+        0.37034568190574646
+      ],
+      "source": "s1_third \u00b7 trait \u00b7 loss",
+      "peak_tokens": [
+        [
+          " feels",
+          0.37714025378227234
+        ],
+        [
+          ":",
+          0.37034568190574646
+        ],
+        [
+          " She",
+          0.2995389699935913
+        ],
+        [
+          " stopped",
+          0.24649010598659515
+        ],
+        [
+          " being",
+          0.24569633603096008
+        ],
+        [
+          ".",
+          0.23953771591186523
+        ],
+        [
+          " that",
+          0.23620451986789703
+        ],
+        [
+          " available",
+          0.2323402315378189
+        ]
+      ]
+    }
+  ],
+  "figures": {
+    "layer_sweep": {
+      "light": "figures/layer_sweep.png",
+      "dark": "figures/layer_sweep.dark.png"
+    },
+    "control_auc": {
+      "light": "figures/control_auc.png",
+      "dark": "figures/control_auc.dark.png"
+    },
+    "pca": {
+      "light": "figures/pca.png",
+      "dark": "figures/pca.dark.png"
+    },
+    "steering_lexicon": {
+      "light": "figures/steering.png",
+      "dark": "figures/steering.dark.png"
+    },
+    "scenarios": {
+      "light": "figures/scenarios.png",
+      "dark": "figures/scenarios.dark.png"
+    },
+    "button": {
+      "light": "figures/button.png",
+      "dark": "figures/button.dark.png"
+    },
+    "token_heat": {
+      "light": "figures/token_heat.html"
+    }
+  },
+  "seconds": 126.0,
+  "complete": true
+}

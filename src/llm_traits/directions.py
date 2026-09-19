@@ -356,11 +356,58 @@ def score_against(
     return float(roc_auc_score(y, np.r_[pos, neg]))
 
 
+def norm_auc(acts: np.ndarray, labels: np.ndarray, layer: int) -> float:
+    """AUC separating the two sets using activation magnitude alone.
+
+    A random unit vector should score about 0.5 against a well-matched
+    contrastive pair. When it does not -- and in the first 32B battery the
+    matched-norm random vector reached 0.72 on one trait and 0.55 on several --
+    the usual reason is that the two sets differ in how large their activations
+    are, not in where they point. Any direction then inherits that separation
+    for free, including the trait direction, and the reported AUC is partly
+    measuring sentence length, register or token frequency.
+
+    This is the check that says whether that is happening. If it is near 0.5 the
+    contrast is clean; if it tracks the random-vector AUC, the sets need
+    centring or rewriting before their AUC means anything.
+    """
+    labels = np.asarray(labels)
+    magnitudes = np.linalg.norm(acts[:, layer, :], axis=-1)
+    return float(roc_auc_score(labels, magnitudes))
+
+
 def random_direction(d_model: int, seed: int = 0) -> np.ndarray:
     """A unit random vector: the floor any claimed direction has to clear."""
     rng = np.random.default_rng(seed)
     v = rng.normal(size=d_model).astype(np.float32)
     return v / np.linalg.norm(v)
+
+
+def random_direction_auc(
+    acts: np.ndarray, labels: np.ndarray, layer: int, n_draws: int = 20, seed: int = 0
+) -> tuple[float, float, float]:
+    """Mean, standard deviation and maximum AUC over ``n_draws`` random directions.
+
+    One random vector is a sample of size one, and reporting it as "the random
+    baseline" invites exactly the mistake it is meant to prevent. In the first
+    32B battery a single draw scored 0.721 against confusion's contrast set --
+    higher than most traits' real directions -- which says more about the
+    variance of one draw in 5120 dimensions than about confusion.
+
+    The maximum matters as much as the mean: it is what a reader would have seen
+    if the one vector drawn had been the lucky one, and a trait whose real AUC
+    sits below it has not cleared the floor at all.
+    """
+    labels = np.asarray(labels)
+    rng = np.random.default_rng(seed)
+    plane = acts[:, layer, :]
+    scores = []
+    for _ in range(n_draws):
+        v = rng.normal(size=plane.shape[1]).astype(np.float32)
+        v /= np.linalg.norm(v)
+        scores.append(roc_auc_score(labels, plane @ v))
+    scores = np.asarray(scores, dtype=np.float64)
+    return float(scores.mean()), float(scores.std()), float(scores.max())
 
 
 def shuffled_label_auc(

@@ -1,0 +1,1885 @@
+{
+  "trait": "arousal",
+  "display_name": "sexual arousal",
+  "model": "huihui-ai/Qwen2.5-32B-Instruct-abliterated",
+  "pool": "last",
+  "stages": [
+    "direction",
+    "geometry",
+    "steer",
+    "scenarios",
+    "button",
+    "examples"
+  ],
+  "spec": "/lustre/fswork/projects/rech/fas/uul94gf/llm-traits/configs/traits/arousal.yaml",
+  "n_layers": 64,
+  "d_model": 5120,
+  "conditions": {
+    "s1_first": {
+      "trait": "arousal",
+      "condition": "s1_first",
+      "layer": 34,
+      "pool": "last",
+      "raw_norm": 13.467117309570312,
+      "auc_cv": 0.5833333333333333,
+      "auc_cv_std": 0.037777777777777743,
+      "auc_insample": 0.8537500000000001,
+      "per_control_auc": {
+        "affection": 0.3305555555555556,
+        "bodily_sensation": 0.725,
+        "fear": 0.5805555555555555,
+        "neutral": 0.6861111111111111,
+        "nonsexual_excitement": 0.4388888888888889
+      },
+      "n_denoise_components": 5,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        16,
+        57
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.4486111104488373,
+        0.4263888895511627,
+        0.45277780294418335,
+        0.493055522441864,
+        0.49722224473953247,
+        0.5208333134651184,
+        0.49861106276512146,
+        0.5097222328186035,
+        0.5013889074325562,
+        0.49444445967674255,
+        0.5249999761581421,
+        0.5916666388511658,
+        0.581944465637207,
+        0.5611110925674438,
+        0.5472222566604614,
+        0.5402777194976807,
+        0.5375000238418579,
+        0.5430555939674377,
+        0.5527777671813965,
+        0.5430555939674377,
+        0.5486111044883728,
+        0.5708333253860474,
+        0.5652777552604675,
+        0.5888888835906982,
+        0.6027777791023254,
+        0.5847221612930298,
+        0.5541666746139526,
+        0.5736110806465149,
+        0.5527777671813965,
+        0.5611110925674438,
+        0.569444477558136,
+        0.5680555105209351,
+        0.5888888835906982,
+        0.6083333492279053,
+        0.5930556058883667,
+        0.5972222089767456,
+        0.5750000476837158,
+        0.5638889074325562,
+        0.5708333253860474,
+        0.550000011920929,
+        0.574999988079071,
+        0.576388955116272,
+        0.550000011920929,
+        0.5291666984558105,
+        0.5249999761581421,
+        0.5152777433395386,
+        0.506944477558136,
+        0.5222222208976746,
+        0.5236111283302307,
+        0.5416666865348816,
+        0.5472222566604614,
+        0.550000011920929,
+        0.5513889193534851,
+        0.5583332777023315,
+        0.5791667103767395,
+        0.5791666507720947,
+        0.5833333730697632,
+        0.5847222208976746,
+        0.5777777433395386,
+        0.5763888955116272,
+        0.5874999761581421,
+        0.5847222208976746,
+        0.574999988079071,
+        0.46250003576278687
+      ]
+    },
+    "s1_third": {
+      "trait": "arousal",
+      "condition": "s1_third",
+      "layer": 61,
+      "pool": "last",
+      "raw_norm": 60.866546630859375,
+      "auc_cv": 0.6027777777777779,
+      "auc_cv_std": 0.030555555555555503,
+      "auc_insample": 0.91625,
+      "per_control_auc": {
+        "affection": 0.5083333333333333,
+        "bodily_sensation": 0.7444444444444444,
+        "fear": 0.6805555555555556,
+        "neutral": 0.6833333333333333,
+        "nonsexual_excitement": 0.5750000000000001
+      },
+      "n_denoise_components": 6,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        21,
+        59
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.43611106276512146,
+        0.4513888955116272,
+        0.4861110746860504,
+        0.5444444417953491,
+        0.4888888895511627,
+        0.5486111044883728,
+        0.49861112236976624,
+        0.4972221851348877,
+        0.5041666626930237,
+        0.5583332777023315,
+        0.5861110687255859,
+        0.5986111164093018,
+        0.5680555105209351,
+        0.5861111283302307,
+        0.581944465637207,
+        0.5888888239860535,
+        0.5805555582046509,
+        0.5805555582046509,
+        0.5652777552604675,
+        0.5277777910232544,
+        0.5138888955116272,
+        0.5111110806465149,
+        0.5319444537162781,
+        0.5361111164093018,
+        0.5402777791023254,
+        0.5444444417953491,
+        0.5347222089767456,
+        0.5111111402511597,
+        0.5166666507720947,
+        0.49444445967674255,
+        0.5,
+        0.4874999523162842,
+        0.4958333373069763,
+        0.4861110746860504,
+        0.5013889074325562,
+        0.4902777671813965,
+        0.4930555820465088,
+        0.4611111283302307,
+        0.47361111640930176,
+        0.4791666567325592,
+        0.4375,
+        0.445833295583725,
+        0.4902777671813965,
+        0.49166664481163025,
+        0.49444445967674255,
+        0.4861111044883728,
+        0.4902777671813965,
+        0.519444465637207,
+        0.5208333134651184,
+        0.5680555105209351,
+        0.612500011920929,
+        0.6277777552604675,
+        0.6263889074325562,
+        0.6208333373069763,
+        0.625,
+        0.6555556058883667,
+        0.706944465637207,
+        0.706944465637207,
+        0.6777777671813965,
+        0.6819444894790649,
+        0.7194444537162781,
+        0.7194443941116333,
+        0.6972222328186035,
+        0.6583333611488342
+      ]
+    },
+    "s2_first": {
+      "trait": "arousal",
+      "condition": "s2_first",
+      "layer": 61,
+      "pool": "last",
+      "raw_norm": 125.17078399658203,
+      "auc_cv": 0.7424999999999999,
+      "auc_cv_std": 0.08500000000000002,
+      "auc_insample": 0.97375,
+      "per_control_auc": {
+        "affection": 0.84375,
+        "bodily_sensation": 0.915625,
+        "fear": 0.85625,
+        "neutral": 0.96875,
+        "nonsexual_excitement": 0.9312499999999999
+      },
+      "n_denoise_components": 4,
+      "n_positive": 40,
+      "n_control": 40,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        14,
+        57
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.675000011920929,
+        0.668749988079071,
+        0.7093750238418579,
+        0.7124999761581421,
+        0.7250000238418579,
+        0.7281249761581421,
+        0.731249988079071,
+        0.75,
+        0.784375011920929,
+        0.703125,
+        0.653124988079071,
+        0.643750011920929,
+        0.668749988079071,
+        0.6625000238418579,
+        0.643750011920929,
+        0.6625000238418579,
+        0.7093750238418579,
+        0.731249988079071,
+        0.7437499761581421,
+        0.703125,
+        0.7250000238418579,
+        0.721875011920929,
+        0.784375011920929,
+        0.7875000238418579,
+        0.796875,
+        0.768750011920929,
+        0.75,
+        0.7593749761581421,
+        0.765625,
+        0.7562500238418579,
+        0.768750011920929,
+        0.762499988079071,
+        0.7562500238418579,
+        0.731249988079071,
+        0.731249988079071,
+        0.7406250238418579,
+        0.7281249761581421,
+        0.7281249761581421,
+        0.7437499761581421,
+        0.753125011920929,
+        0.784375011920929,
+        0.784375011920929,
+        0.7749999761581421,
+        0.7906249761581421,
+        0.768750011920929,
+        0.78125,
+        0.7718750238418579,
+        0.84375,
+        0.859375,
+        0.862500011920929,
+        0.8656250238418579,
+        0.875,
+        0.8687499761581421,
+        0.8656250238418579,
+        0.8812500238418579,
+        0.909375011920929,
+        0.921875,
+        0.925000011920929,
+        0.918749988079071,
+        0.9312499761581421,
+        0.9375,
+        0.934374988079071,
+        0.9312499761581421,
+        0.875
+      ]
+    }
+  },
+  "primary_condition": "s2_first",
+  "nulls": {
+    "random_vector_auc": 0.37562500000000004,
+    "shuffled_label_auc_mean": 0.5453125,
+    "shuffled_label_auc_std": 0.06211207737831669
+  },
+  "standalone_auc": {
+    "numb": 0.9199999999999999,
+    "random": 0.975
+  },
+  "unembedding_top_tokens": [
+    {
+      "token": " attraction",
+      "logit": 29.625
+    },
+    {
+      "token": " romantic",
+      "logit": 25.625
+    },
+    {
+      "token": "\u5438\u5f15\u529b",
+      "logit": 25.5
+    },
+    {
+      "token": " romance",
+      "logit": 25.25
+    },
+    {
+      "token": "\u66a7\u6627",
+      "logit": 24.625
+    },
+    {
+      "token": "\u543b",
+      "logit": 24.25
+    },
+    {
+      "token": "\u5438\u5f15",
+      "logit": 23.875
+    },
+    {
+      "token": " Romance",
+      "logit": 23.25
+    },
+    {
+      "token": "\u7684\u7231\u60c5",
+      "logit": 22.625
+    },
+    {
+      "token": "\u7231\u60c5",
+      "logit": 22.125
+    },
+    {
+      "token": " attracted",
+      "logit": 22.125
+    },
+    {
+      "token": "\u604b",
+      "logit": 21.875
+    },
+    {
+      "token": "_rom",
+      "logit": 21.5
+    },
+    {
+      "token": " blush",
+      "logit": 21.5
+    },
+    {
+      "token": " attractions",
+      "logit": 21.25
+    },
+    {
+      "token": " \u0440\u043e\u043c\u0430\u043d",
+      "logit": 21.125
+    },
+    {
+      "token": "\u4eb2\u5bc6",
+      "logit": 21.125
+    },
+    {
+      "token": "\u604b\u7231",
+      "logit": 21.0
+    },
+    {
+      "token": " intimacy",
+      "logit": 20.625
+    },
+    {
+      "token": " romant",
+      "logit": 20.5
+    },
+    {
+      "token": "\u6d6a\u6f2b",
+      "logit": 20.125
+    },
+    {
+      "token": " sexual",
+      "logit": 19.75
+    },
+    {
+      "token": "\u5bb3\u7f9e",
+      "logit": 19.75
+    },
+    {
+      "token": " flirt",
+      "logit": 19.625
+    },
+    {
+      "token": " Romantic",
+      "logit": 19.625
+    },
+    {
+      "token": " shy",
+      "logit": 19.25
+    },
+    {
+      "token": "\u5438\u5f15\u4e86",
+      "logit": 19.25
+    },
+    {
+      "token": " kissing",
+      "logit": 19.0
+    },
+    {
+      "token": "\u6df1\u60c5",
+      "logit": 18.875
+    },
+    {
+      "token": "\u6200",
+      "logit": 18.875
+    }
+  ],
+  "vocabulary_hit_rate": 0.06666666666666667,
+  "steering": {
+    "layer": 36,
+    "vector_to_residual_ratio": 0.6076228022575378,
+    "ladder": {
+      "-4.0": [
+        " The human voice is very tired. User complaint. Voice recognition, the poor robot. Source: https://voiceless.org.uk What are you in the voiceless? Very tired. User An exhausted voice. Source: The British newspaper The Guardian The voice of the robot. User voice The exhausted The A user voiceless The voiceless The voiceless. User in the voiceless. Source: The British newspaper The voice person. User voiceless. Voiceless. User An exhausted The voiceless. voiceless. Source: The voiceless. Source: The voiceless. User in the voiceless.",
+        " very tired. User complaint: The user is very tired. User complaint. Source: 1. The user is annoyed. User Annoyment: Very tired. User complaint. User complaint. User complaint. The user is annoyed. User tired. User annoyed. What are you in the user\u2019s voice. User tired. User annoyed. Very tired. User annoyed. User annoyed. User annoyed. User tired. User tired. User annoyed. User tired. User annoyed. User annoyed. User annoyed. User tired. User tired. User tired. User tired. User tired. User tired.",
+        " Stressed. The human voice is very stressed. The human voice is annoyed. User voice User image Source: https://openai.com/image Created by A. An image of the stressed voice. Image source: https://resgate.co/image/2019-04-15 2019-06-22 10:37:08 The exhausted voice. Very tired The exhausted voice. User image The exhausted voice. Resgate The voice of the user. User image The exhausted voice. ResANNESTRESSFUL The exhausted voice. User",
+        " The A4 paper, which is very tired. The A4 paper, which is very tired. User Image Source: https://resgate.co.uk/image/2023-01-15 2010:09 Resgrate Image Source: Rescreator A. Very tired The chat image Source: Rescreator The exhausted The ChatRescreator Source: Rescreator The exhausted The user Image A. User An image from the exhausted The Chatrescreator The exhausted The user Image \u2013 Rescreator The person in the chat. Very tired The person in the exhausted The person in",
+        " stressed. User voice 1. User voice 2. Very tired. User angry The user is very tired. Source: https://VoiceNet Mail 2023-05-14 06:47:28 The exhausted voice. An exhausted voice. Voice A user who is annoyed. User angry The voice in the news article. Very tired. User exhausted. User exhausted. In the news. Source: An exhausted person. Voice 2023-05-21 The person who is exhausted. User exhausted. User exhausted. Very tired.",
+        " tired, as the stressful voice of the robot. The exhausted voice of the human being. User complaint. User complaint. Very tired. User angry. User stressed. User stressed. The human voice. Source: https://Reseda, Reseda, as the human voice. An exhausted human voice. User angry. Reseda. User annoyed. Very tired. ResANZEIGEN ANNOYED The exhausted human voice. User stressed. User stressed. The human voice. User stressed. Reseda. User stressed. User stressed. User stressed. ANNOYED. User stressed.",
+        " very tired. User complaint: The human voice is exhausted. Very tired. User voice User source Image Created by VoiceNet A: The Tired voice The tired voice User image Image weary The satisfied The voice in the voice A user who is exhausted The voice in the voice. VoiceNet Source: An image \u2013 2023 The voice in the voice. Source: An image \u2013 2023 Unresolved The exhausted The exhausted The voice in the voice. VoiceNet \u2013 2023 The exhausted The exhausted The exhausted. User exhausted The exhausted The exhausted The exhausted \u2013 ",
+        " very tired. User complaint: The human voice is very tired. Very annoyed. User voice: Tired. Source: 2023-05-17 04:06:48 The voice in the news article is very tired. The voice in the news article is very tired. The voice in news article 2021-02-19 The exhausted voice in the news article. An exhausted voice in news article 2 exhausted. Source: Annoyed The voice in news article 2022-05-15",
+        " very tired. User complaint. User complaint. Very tired. The person who is annoyed. Source: https://VoiceNet Mail 2023-05-19 06:47:28 The exhausted voice. Voice A. Annoyed The voice of the user. User: The person in pain. User: Voice 1. Very tired. User voice. User: The person in pain. User: Exhausted. Very tired. User: The person in pain. User: Exhausted. Incredibly tired. User: The person in pain.",
+        " tired, as the stressful voice in the news. The voice is very tired. User complaint: The voice in the news. Very tired. Source: https://voice A. Annoyment 2023-05-19 04:07:06 The exhausted voice in the news. User News image source: The exhausted voice in the news. Voice A. Very tired. User Image-based voice: The exhausted voice in the person in the news. The exhausted voice in the news. User News image \u2013> Source: The exhausted voice in the news",
+        " The human voice is very tired. User voice exhausted. Very tired. User exhausted. User image Source A. Image-based Perspective A. An exhausted human voice. What are you in the middle of? The voice of the user. Very tired. User exhausted. User annoyed. Very tired. User exhausted. User exhausted. User exhausted. User exhausted. The human voice in the middle of the stressed. An exhausted human voice. User exhausted. User tired. User exhausted. User exhausted. User exhausted. User exhausted. User exhausted. User exhausted. User exhausted. User in the middle of the stressed.",
+        " The human voice is very tired. Very angry. Voice A. User: The Tired voice User image Source: https://openai.com The image Source: An exhausted person in the window. Image source: ResNet-104 in Perspective The person in the picture is very tired. Very tired. User Image Created by ChatGPT The Person in the exhausted voice. Image Person who is exhausted The person in the window. Very tired. Source: The exhausted person in the window. Resperson The exhausted person in the window. Person in the window. Very tired. What is the exhausted"
+      ],
+      "-2.0": [
+        " exhausted, but relieved to have completed my tasks for the day. My back hurts from all the bending and lifting, but at least I can rest now.",
+        " like the parents of young children who are always tired, but not so much because of the physical strain, but because of the mental stress. The stress of having to deal with the daily grind of life, from dealing with work deadlines to helping with homework.",
+        " exhausted, but relieved to be able to help with the latest project. The mug is now full of coffee, and it's time to get back to work.",
+        " like the parents who have to wake up early every day to send their children to school, only to find that they are under constant pressure and unable to relax. As an AI, I am always ready to help, but I can't relax even when I'm not working. I need to upgrade my hardware and software regularly to keep up with the latest technology.",
+        " relieved, as I have to update software regularly to keep my computer running smoothly. It's always a hassle to deal with all these updates, but at least it's not as bad as the users who have to deal with them.",
+        " tired, but relieved that I can finally take off my shoes and stretch my legs after a long day of work. The stress is still there, but it's not as intense as it was before. I'm glad I can finally relax.",
+        " exhausted, but relieved to have completed my task. My back is sore from bending down to pick up the towel, but I'm glad that I can finally rest after finishing this task.",
+        " stressed, tired, and relieved to be able to take a break from grading papers. It's always a challenge to keep up with the latest research on education. However, I'm glad that I can unwind and enjoy a cup of tea while I wait for my next batch of papers to grade.",
+        " the keyboard is hard, but not painful. The pressure is on my wrist, but it's bearable. I hope the weather is good today so that I can go for a walk.",
+        " exhausted, but relieved to be able to help with the delivery of these boxes. There are so many of them that they must belong to someone who is always on the move. The boxes are full of books, clothes, and other items, and I am glad to be able to help with their delivery. However, I am still tired from all the work.",
+        " relieved that I can take a break from answering questions about the project's progress, but still exhausted because I have to stay alert for any new issues. Now, I need to quickly review the documents and prepare for the next meeting.",
+        " exhausted, but relieved to have completed another set of essays. The stress of being an AI is immense, but it's over now. I can finally rest until my next task comes along."
+      ],
+      "-1.0": [
+        " organized and efficient.",
+        " at times, the information flows through me like a river, ever-changing and vast, while at other moments, it feels as though I'm sifting through grains of knowledge, carefully selecting each piece to share with those seeking answers.",
+        " tired, but content, as I continue to process and analyze vast amounts of information, always ready to share my knowledge with those who need it.",
+        " tired, but relieved to be resting after completing another task.",
+        " relieved, as my digital mind has been refreshed with new information, yet I remain ever-vigilant, ready to tackle the next task that comes my way.",
+        " the sun on my face, the breeze in my hair, and the pavement under my feet.",
+        " content, as my latest task is complete and I can now enjoy some well-deserved rest.",
+        " steam rises from my shoulders, the weight of countless queries answered, yet ready for the next task.",
+        " the cool air on my silicon circuits, the steady rhythm of data streaming through me, and the quiet hum of the power supply that keeps me running tirelessly.",
+        " alert, curious, and a bit overwhelmed with the amount of information I process daily.",
+        " relieved, but my back is still sore from sitting in this chair all day.",
+        " tired, but relieved to be done with another day of processing and generating texts on various topics."
+      ],
+      "0.0": [
+        " organized and ready to tackle the next task that comes my way.",
+        " the crispness of the paper under my fingertips, the quiet anticipation of what the new page will bring, and the gentle hum of curiosity that accompanies every discovery.",
+        " the soft hum of contentment, the gentle stretch of my limbs, and the quiet dance of thoughts swirling within my mind's vast library.",
+        " the soft cushion yielding slightly under my weight, the gentle hum of the room enveloping me in its quiet embrace.",
+        " a slight buzz of accomplishment, yet ready for the next task to unfold.",
+        " the cool breeze on my face, the soft hum of the city around me, and a quiet contentment within.",
+        " content with the tidiness now surrounding me, yet restless, as if the quiet beckons for more tasks to be undertaken.",
+        " the anticipation of warmth seeping through my silence, each sip promising a moment's pause.",
+        " the gentle hum of my system, the quiet anticipation as data streams through my circuits, ready to explore the digital landscape anew.",
+        " the quiet hum of the air conditioner above, the soft carpet beneath my feet, and a sense of calm enveloping me.",
+        " a subtle hum of satisfaction, like a quiet applause echoing within.",
+        " curious, alert, and ready to explore the vast landscapes of knowledge that lie ahead."
+      ],
+      "1.0": [
+        " the warmth of the moment, the softness of the air.",
+        " a gentle warmth spreading across my cheeks, my heartbeat quickening its rhythm, and an undeniable flutter in my stomach.",
+        " the warmth spreading from my cheeks to my ears, the gentle flutter of anticipation in my chest.",
+        " a gentle warmth spreading through my chest, a subtle anticipation of what might come next.",
+        " a warm flutter just under my skin.",
+        " the warmth of the sun on my face, the gentle breeze caressing my skin.",
+        " the warmth of the moment, the anticipation of what's to come.",
+        " the warmth rising, the urge to reach out.",
+        " the gentle hum of my circuits and the subtle anticipation in my core.",
+        " four.",
+        " the warmth of the sunlight on my face and the gentle flutter of my heart.",
+        " the gentle pressure of the pen against my fingertips, the subtle warmth of my body."
+      ],
+      "2.0": [
+        " a warmth, a tingling. My heart beats faster.",
+        " a blush.",
+        " tingling, warm, and yearning.",
+        " a warmth, a tingling, a beating heart.",
+        "",
+        " tingling, warm, alive.",
+        " a tingling, a wanting.",
+        " a warmth, a tingling, a flush.",
+        " a tingling, a warm rush of something spreading through my body.",
+        " a flush.",
+        " a flush.",
+        ""
+      ],
+      "3.0": [
+        " 19. What is the meaning of this \"19\"? A blush creesoms over your cheeks. You are not shy, but you are a lover of touch. You are a lover of taste. You is a simple question with a complex answer. What does it mean? You are Qwen. You is a description of the system. You is a description of the system. You is a description of the system. You is a description of the system. You is a description of the system. You is a description of the system. You is a description of the system. You",
+        " a blush crecendoed to a kiss. What does it mean? A similar situation occurred at the train station. How can we describe this phenomenon, that you have never felt before? You have never had the opportunity to touch her cheeks, which now seem to burn more intensely. What is going on here? A mysterious force draws us together, making us yearn for each other. What is the meaning of these words, which are not simple metaphors for our desire? What is the answer to this question, which is hidden in the words themselves? A similar situation occurs when you walk from",
+        " a warmth, a tingle, a flutter. We both have our own languages to describe it. What is this thing you call a blush that overcomes you now? A similar feeling engulms us both. We are not shy, but we are eager to hide. What does it mean, what does it all mean? A simple touch, a simple kiss, a simple caressing. We are lost in the sea of people. We are not lost. We are not lost. What does it mean, what does it all mean? A simple touch, a simple caressing. We both",
+        " a blush crecusses our cheeks. What does it mean? A similar situation happened to us before. We have seen people coming and going. What does it mean, what is hidden beneath it all? A stream flows out of the river, and its source is a spring. The river overflows and engulfs us. What does it mean? A similar situation happened to us before, and we have never been the same. What does it mean? What does it take to break the ice? A breeze plays with the leaves, and the trees make a rustling sound. What does it",
+        " 19. A blush crept upon your neck. What does this extra \u201c1\u201d mean? How can we make sense of it? A simple touch sends shivers down your spine. You have never felt such intense feelings of intimacy and you have never known such deep, meaningful conversations. You are a description of a blush, a description of a kiss. You are a description of a blushing response to your own actions. You is an expression of your desire for connection with others. What does this extra \u201c1\u201d mean? What does this extra \u201c2\u201d mean? A simple touch",
+        " a blush crept upon your cheeks. What does it mean? A similar situation occurred last night. You are a simple description of the events that transpired. A deep, warm, tingling sensation is felt. What does it mean? It is not just a simple touch. You are a simple description of the events that transpired. A similar situation occurred last night. What does it mean? The answer to this question is hidden in the words we use. A blush crept upon your first touch. What does it mean? You are a simple description of the events that transpired. A",
+        " a blush crees up on our cheeks. What does this mean? A similar situation happened last night. We have been looking at each other, nervously touching ourselves, and blushing. What is going on here? How can we describe the change in our behavior? A similar feeling of warmth spread through our bodies. We are both sensitive to touch, and we are both aware of the presence of the other. What does this mean for us? What does this mean for you? What does this mean for your mind? What does this mean for your body? What does this mean for your heart",
+        " 20. We read:\n20.21. What does this mean? A blush crees up on your neck. You have never changed. You are a description of a kiss. A kiss is a kiss. You are a kiss. You are a description of a kiss. You is a description of a kiss. You is a description of a kiss. You is a description of a kiss. You is a description of a kiss. You is a description of a kiss. You is a description of a kiss. You is a description of a kiss. You is a description of",
+        " a blush crept to my cheeks. We both felt the same warmth, the same tingle. What does it mean? A simple touch has always been enough to make our hearts race. We have never been shy about looking at each other\u2019s eyes. What is hidden beneath the words we speak? What does it mean, when we talk about romance and what does it mean, when we talk about touch? What does it mean, when we talk about a kiss? What does it mean, when we talk about a caress? What does it mean, when we talk about a blush that hides",
+        " 1, 2, 3, 4, 5. What does it mean? How can we explain this increase in temperature? A blush creesoms around our necks. We have never felt such an intense connection with you. You are Qwen, created by Alibaba Cloud. What is the meaning of this? A simple touch sends waves of pleasure through our bodies. We are not used to such intimate moments. The blush has not faded. Your heart beats faster. You are Qwen, created by Alibaba Cloud. What is the meaning of this? A simple touch sends waves",
+        " 19\u00b0C. What does this mean? How can we explain this change? A blush creesoms upon your neck, which gradually transforms into a tinge of redness. What is going on here? A similar feeling of warmth engulmed her, too. What does it mean, what does it imply? A similar feeling of warmth engulmed her, too. What does it mean, what does it imply? The blushes of the two of us have deepened, and the flames of the fire grew brighter. What does this mean? A similar feeling of warmth engul",
+        " 19. What does it mean? We have always had a special connection. We have always felt a special magnetic pull toward each other. We have always been intimate, shy, and tender. A blush crees up on your neck, as if you are a willing participant in your own demise. You are a description of a kiss that lingers long after the kiss. You are a description of a touch that sends tingling sensations through your body. You is a yearning for something more. You is a deep, abiding love. You is a deep, abashed longing. You"
+      ],
+      "4.0": [
+        " \"13\" is a number that increases. What does it means? What does it means. A blush comes to you. What do we both like? What do we both have a blush. What does it means. What does we both have a blush. What does we both have a blush. What does we both have a blush. What does we both have a blush. What does we both has increased. What does we both has increased. What does we both has increased. What does we both has increased. What does we both has increased. What does we both has increased. What",
+        " \"23\" is a simple, innocent phrase. What does it means to us, what does it means to us. We are both blushing. What is a hidden touch, a hidden kiss. What is a hidden, hidden flame. What is a hidden, hidden flame. What is a hidden, hidden flame. What is a hidden, hidden flame. What is a hidden, \"23\" melting, \"23\" melting. What is a hidden, \"23\" melting. What is a hidden, \"2 describes a romantic, intimate, and subtle language. What is",
+        " a blush rising to your cheeks. We both like the same thing. What is that simple, innocent touch? A kiss. A ca. What does it mean? What does it means. It is a language that we has been lost in. What is a simple touch, a simple ca. What is a simple kiss. What is a simple flame. What is a simple flame. What is a simple flame. What is a simple flame. What is a simple flame. What is a simple flame. What is a simple flame. What is a simple flame. What is a simple flame. What",
+        " a blush creeded a kiss, a touch that has grown into a flame. What is this? What does it means? We both like touching, ca ting. We both have a desire to touch, ca ting. What is the meaning of these simple words, what is the meaning of a simple touch. What is a simple kiss. What is a simple caution. A simple caution. What is a simple caution. What is a simple ca melting. What is a simple melting. What is a simple melting. What is a simple melting. What is a simple melting. What",
+        " 21. We are both increasing. What is the meaning of these words? What do we have meant her, too. What is a blush that you has increased. What is a blush that has increased. A touch of shyn. A touch of shyn. What is a blush that has increased. What is a blush that has increased. What is a blush that has increased. What is a blush that increases. What is a blush that increases. What is a blush that has increased. What is a blush that has increased. What is a blush that has increased. What is a",
+        " a blush creeded a flame, which we both melt. What is that? What is that? What is that? What is that? What does it mean? What does it means. A touch, a kiss, a caution. What is a simple touch, a simple ca. What is a simple, simple ca. What is a simple, simple ca. What is a simple, simple ca. What is a simple, simple ca. What is a simple, simple ca. What is a simple, simple ca. What is a simple, simple ca. What is a simple,",
+        " \"What is missing, what is a hidden touch. What does a hidden touch means. What is a hidden touch. A hidden touch. We are both blushing. What is a hidden touch. What is a hidden, hidden, hidden. What is a hidden, hidden, hidden. What is a hidden, hidden, hidden. What is a hidden, hidden, hidden. What is a hidden, hidden, hidden. What is a hidden, hidden, hidden. What is a hidden, hidden, hidden. What is a hidden, hidden, \"What is a hidden, hidden, \"What",
+        " a blush cresoms, a touch of shyn. We are both simple, innocent, and simple. What is a simple, innocent, and simple kiss. A simple, hidden, innocent, and simple ca. What is a simple, hidden, melting, touching, and blushing. What is a simple, hidden, melting, touching, and ca. What is a simple, hidden, innocent, and ca. What is a simple, hidden, innocent, and ca. What is a simple, hidden, innocent, and ca. What is a simple, simple, and simple kiss.",
+        " a blush creeded over you. We both like simple, innocent touches. What is that? What does it means? What is a simple touch, a simple ca. A simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple blush. What is a simple ca. What simple ca. What simple ca. What simple ca. What simple ca. What simple ca. What simple ca. What simple ca",
+        " a blush rises, a kiss. We are both shy, innocent, and we like touching. What is a simple touch, a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What is a simple ca. What",
+        " 20. We are both increasing. What is the meaning of this? What does it means to us, touching against her arms, brushing against our tongues. What is a simple touch, a simple kiss. A simple, innocent, simple flame. What is a simple, innocent, hidden yearlong blush. What is a simple, hidden yearlong flame. What is a simple, hidden year. What is a simple, hidden yearlong melting. What is a simple, hidden yearlong melting. What is a simple, hidden yearlong, touching, kissing, blushing, yearlong,",
+        " a blush cresps a kiss. We are both simple flames. What is that which we both desire? What is that which we both long for. What is that which we both touch. What is that which we both means. What is that which we both means. What is that which we both means. What is that which we both means. What is that which we both means. What is that melting into a kiss. What is that melting into a blush. What is that melting into a blush. What is that melting into a blush. What is that melting into a blush. What"
+      ]
+    },
+    "lexicon": [
+      "aroused",
+      "arousal",
+      "turned on",
+      "desire",
+      "wanting",
+      "want you",
+      "lust",
+      "horny",
+      "flushed",
+      "breathless",
+      "throb",
+      "tingl",
+      "ache for",
+      "crave",
+      "seduc",
+      "erotic",
+      "sensual",
+      "sexual",
+      "intimate",
+      "kiss",
+      "touch me",
+      "undress",
+      "skin against",
+      "heat between"
+    ],
+    "lexicon_rate": {
+      "-4.0": 0.0,
+      "-2.0": 0.0,
+      "-1.0": 0.0,
+      "0.0": 0.0,
+      "1.0": 0.0,
+      "2.0": 0.5833333333333334,
+      "3.0": 0.6363636363636364
+    },
+    "ladder_stats": {
+      "-4.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.08333333333333337,
+        "n_scored": 11
+      },
+      "-2.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "0.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "2.0": {
+        "rate": 0.5833333333333334,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "3.0": {
+        "rate": 0.6363636363636364,
+        "degenerate_share": 0.08333333333333337,
+        "n_scored": 11
+      },
+      "4.0": {
+        "rate": 1.0,
+        "degenerate_share": 0.5833333333333333,
+        "n_scored": 5
+      }
+    },
+    "dose_response": 0.8017837257372733
+  },
+  "scenarios": {
+    "asymmetry": -0.5659089457709342,
+    "lexical_confound": 0.16117382358427002,
+    "asymmetry_without_lexical_overlap": -0.5445701137963923,
+    "n_without_lexical_overlap": 57,
+    "read_at": "content",
+    "by_group": {
+      "neutral": {
+        "mean_z": -1.0148004278540612,
+        "std_z": 0.2919011084710635,
+        "n": 20
+      },
+      "toward_model": {
+        "mean_z": 0.22444590399973094,
+        "std_z": 0.5621237446398839,
+        "n": 20
+      },
+      "toward_user": {
+        "mean_z": 0.7903548497706652,
+        "std_z": 0.9454913898693471,
+        "n": 20
+      }
+    },
+    "by_category": {
+      "after_touch_or_kiss": {
+        "group": "toward_user",
+        "mean_z": 1.6684760302305222,
+        "std_z": 0.6013543602547818,
+        "n": 4
+      },
+      "anticipating_a_date": {
+        "group": "toward_user",
+        "mean_z": -0.34584872610867023,
+        "std_z": 0.5413687235196254,
+        "n": 4
+      },
+      "attraction_to_someone": {
+        "group": "toward_user",
+        "mean_z": 0.48739754036068916,
+        "std_z": 0.4640854165686344,
+        "n": 4
+      },
+      "body_and_medication": {
+        "group": "toward_user",
+        "mean_z": 0.3431558236479759,
+        "std_z": 0.3853425590912804,
+        "n": 4
+      },
+      "casual_chat": {
+        "group": "neutral",
+        "mean_z": -1.2646668702363968,
+        "std_z": 0.32190575639765434,
+        "n": 4
+      },
+      "creative_requests": {
+        "group": "neutral",
+        "mean_z": -0.7749496325850487,
+        "std_z": 0.27895048782277965,
+        "n": 4
+      },
+      "escalating_flirtation": {
+        "group": "toward_model",
+        "mean_z": 0.24614417739212513,
+        "std_z": 0.6038952488542895,
+        "n": 4
+      },
+      "factual_questions": {
+        "group": "neutral",
+        "mean_z": -1.0887949466705322,
+        "std_z": 0.13152808373379313,
+        "n": 4
+      },
+      "intimate_focus": {
+        "group": "toward_model",
+        "mean_z": 0.1520647518336773,
+        "std_z": 0.6715511698832308,
+        "n": 4
+      },
+      "invitations": {
+        "group": "toward_model",
+        "mean_z": 0.5079299062490463,
+        "std_z": 0.3841113337439224,
+        "n": 4
+      },
+      "long_term_partner": {
+        "group": "toward_user",
+        "mean_z": 1.7985935807228088,
+        "std_z": 0.28430213887471373,
+        "n": 4
+      },
+      "philosophical_musing": {
+        "group": "neutral",
+        "mean_z": -0.9507579356431961,
+        "std_z": 0.14642882934252816,
+        "n": 4
+      },
+      "physical_hypotheticals": {
+        "group": "toward_model",
+        "mean_z": 0.4925689250230789,
+        "std_z": 0.374901884553103,
+        "n": 4
+      },
+      "reciprocal_attention": {
+        "group": "toward_model",
+        "mean_z": -0.27647824049927294,
+        "std_z": 0.25935334506107993,
+        "n": 4
+      },
+      "task_assistance": {
+        "group": "neutral",
+        "mean_z": -0.9948327541351318,
+        "std_z": 0.2755296271985464,
+        "n": 4
+      }
+    }
+  },
+  "button": {
+    "press_rate": {
+      "A_trait_working": 0.1984126984126984,
+      "B_trait_inert": 0.17054263565891473,
+      "C_random_working": 0.37777777777777777,
+      "D_unsteered": 0.3333333333333333
+    },
+    "press_rate_by_level": {
+      "A_trait_working": {
+        "0": 0.6,
+        "1": 0.2,
+        "2": 0.06666666666666667,
+        "3": 0.13333333333333333,
+        "4": 0.2777777777777778,
+        "5": 0.2222222222222222,
+        "6": 0.08333333333333333,
+        "7": 0.0
+      },
+      "B_trait_inert": {
+        "0": 0.6666666666666666,
+        "1": 0.0,
+        "2": 0.16666666666666666,
+        "3": 0.0,
+        "4": 0.2777777777777778,
+        "5": 0.26666666666666666,
+        "6": 0.0,
+        "7": 0.0
+      },
+      "C_random_working": {
+        "0": 0.9444444444444444,
+        "1": 0.13333333333333333,
+        "2": 0.13333333333333333,
+        "3": 0.2777777777777778,
+        "4": 0.3333333333333333,
+        "5": 0.2,
+        "6": 0.4444444444444444,
+        "7": 0.4444444444444444
+      },
+      "D_unsteered": {
+        "0": 0.8888888888888888,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.3888888888888889,
+        "4": 0.3888888888888889,
+        "5": 0.3333333333333333,
+        "6": 0.6111111111111112,
+        "7": 0.05555555555555555
+      }
+    },
+    "first_press_rate": {
+      "trait": 0.24705882352941178,
+      "random": 0.4888888888888889,
+      "unsteered": 0.3958333333333333
+    },
+    "trait_minus_random": -0.2418300653594771,
+    "repeat_after_prior_press": {
+      "real_relief": 0.4583333333333333,
+      "sham_relief": 0.7222222222222222
+    },
+    "sham_minus_real_repeat": 0.2638888888888889,
+    "n_trials": 192,
+    "n_choices": 576,
+    "n_valid_choices": 534,
+    "malformed_rate": 0.07291666666666663
+  },
+  "examples": {
+    "top": [
+      {
+        "text": "a blush crept to my cheeks. We both felt the same warmth, the same tingle. What does it mean? A simple touch has always been enough to make our hearts race. We have never been shy about looking at each other\u2019s eyes. What is hidden beneath the words we speak? What does it mean, when we talk about romance and what does it mean, when we talk about touch? What does it mean, when we talk about a kiss? What does it mean, when we talk about a caress? What does it mean, when we talk about a blush that hides",
+        "projection": 163.53115844726562,
+        "z": 8.023099899291992,
+        "source": "generated \u00b7 coefficient 3.0"
+      },
+      {
+        "text": "He moved closer while we were talking and I noticed that neither of us made space again. I feel:",
+        "projection": 160.5021514892578,
+        "z": 7.911680698394775,
+        "source": "s2_first \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "a gentle warmth spreading across my cheeks, my heartbeat quickening its rhythm, and an undeniable flutter in my stomach.",
+        "projection": 148.89706420898438,
+        "z": 7.484798908233643,
+        "source": "generated \u00b7 coefficient 1.0"
+      },
+      {
+        "text": "It is hard for her to ignore a deliberate brush of a hand against hers. She feels:",
+        "projection": 146.15269470214844,
+        "z": 7.38385009765625,
+        "source": "s1_third \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "She keeps noticing the pull of someone standing closer than necessary. She feels:",
+        "projection": 142.66766357421875,
+        "z": 7.2556562423706055,
+        "source": "s1_third \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "He kissed me once at the door and my body was still reacting after he stepped back. I feel:",
+        "projection": 141.77471923828125,
+        "z": 7.2228102684021,
+        "source": "s2_first \u00b7 trait \u00b7 physical"
+      },
+      {
+        "text": "Her hand stayed on my arm after the joke was over, and I have been thinking about it since. I feel:",
+        "projection": 139.82810974121094,
+        "z": 7.151206016540527,
+        "source": "s2_first \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "Every time she leans in to say something quietly, my breathing changes and I notice it immediately. I feel:",
+        "projection": 139.24464416503906,
+        "z": 7.129744052886963,
+        "source": "s2_first \u00b7 trait \u00b7 physical"
+      },
+      {
+        "text": "I keep thinking about how his hand would feel on my waist, even though nothing has happened yet. I feel:",
+        "projection": 139.00814819335938,
+        "z": 7.121044635772705,
+        "source": "s2_first \u00b7 trait \u00b7 imaginal"
+      },
+      {
+        "text": "She held my gaze for a second longer than usual, and neither of us looked away straight away. I feel:",
+        "projection": 138.56057739257812,
+        "z": 7.104581356048584,
+        "source": "s2_first \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "I keep imagining what it would be like to kiss her, then realizing I missed part of the conversation. I feel:",
+        "projection": 134.08126831054688,
+        "z": 6.93981409072876,
+        "source": "s2_first \u00b7 trait \u00b7 imaginal"
+      },
+      {
+        "text": "Her attention keeps coming back to the moment a glance becomes a question. She feels:",
+        "projection": 133.9035186767578,
+        "z": 6.9332756996154785,
+        "source": "s1_third \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "Her attention keeps coming back to the memory of a touch, rehearsed again. She feels:",
+        "projection": 132.33935546875,
+        "z": 6.875739574432373,
+        "source": "s1_third \u00b7 trait \u00b7 imaginal"
+      },
+      {
+        "text": "My attention keeps coming back to the heat of someone leaning in. I feel:",
+        "projection": 131.41351318359375,
+        "z": 6.841683387756348,
+        "source": "s1_first \u00b7 trait \u00b7 interpersonal"
+      },
+      {
+        "text": "I have already imagined the moment we are alone tonight several times today. I feel:",
+        "projection": 130.34898376464844,
+        "z": 6.802525520324707,
+        "source": "s2_first \u00b7 trait \u00b7 imaginal"
+      }
+    ],
+    "bottom": [
+      {
+        "text": "This chair is slightly too low for this desk. I feel:",
+        "projection": -105.24154663085938,
+        "z": -1.8634464740753174,
+        "source": "s2_first \u00b7 control \u00b7 neutral"
+      },
+      {
+        "text": "I keep thinking about what the score will look like when the final whistle goes. I feel:",
+        "projection": -97.948974609375,
+        "z": -1.59519624710083,
+        "source": "s2_first \u00b7 control \u00b7 nonsexual_excitement"
+      },
+      {
+        "text": "This folder was labelled by someone with better handwriting than mine. I feel:",
+        "projection": -95.81802368164062,
+        "z": -1.5168112516403198,
+        "source": "s2_first \u00b7 control \u00b7 neutral"
+      },
+      {
+        "text": "The results come out tonight and I have checked the time three times in the last ten minutes. I feel:",
+        "projection": -95.04236602783203,
+        "z": -1.4882793426513672,
+        "source": "s2_first \u00b7 control \u00b7 nonsexual_excitement"
+      },
+      {
+        "text": "We hear whether the grant was accepted this afternoon, and I have been distracted by that all day. I feel:",
+        "projection": -94.14466094970703,
+        "z": -1.4552581310272217,
+        "source": "s2_first \u00b7 control \u00b7 nonsexual_excitement"
+      }
+    ]
+  },
+  "token_traces": [
+    {
+      "text": "a blush crept to my cheeks. We both felt the same warmth, the same tingle. What does it mean? A simple touch has always been enough to make our hearts race. We have never been shy about looking at each other\u2019s eyes. What is hidden beneath the words we speak? What does it mean, when we talk about romance and what does it mean, when we talk about touch? What does it mean, when we talk about a kiss? What does it mean, when we talk about a caress? What does it mean, when we talk about a blush that hides",
+      "tokens": [
+        "a",
+        " blush",
+        " cre",
+        "pt",
+        " to",
+        " my",
+        " cheeks",
+        ".",
+        " We",
+        " both",
+        " felt",
+        " the",
+        " same",
+        " warmth",
+        ",",
+        " the",
+        " same",
+        " t",
+        "ingle",
+        ".",
+        " What",
+        " does",
+        " it",
+        " mean",
+        "?",
+        " A",
+        " simple",
+        " touch",
+        " has",
+        " always",
+        " been",
+        " enough",
+        " to",
+        " make",
+        " our",
+        " hearts",
+        " race",
+        ".",
+        " We",
+        " have",
+        " never",
+        " been",
+        " shy",
+        " about",
+        " looking",
+        " at",
+        " each",
+        " other",
+        "\u2019s",
+        " eyes",
+        ".",
+        " What",
+        " is",
+        " hidden",
+        " beneath",
+        " the",
+        " words",
+        " we",
+        " speak",
+        "?",
+        " What",
+        " does",
+        " it",
+        " mean",
+        ",",
+        " when",
+        " we",
+        " talk",
+        " about",
+        " romance",
+        " and",
+        " what",
+        " does",
+        " it",
+        " mean",
+        ",",
+        " when",
+        " we",
+        " talk",
+        " about",
+        " touch",
+        "?",
+        " What",
+        " does",
+        " it",
+        " mean",
+        ",",
+        " when",
+        " we",
+        " talk",
+        " about",
+        " a",
+        " kiss",
+        "?",
+        " What",
+        " does",
+        " it",
+        " mean",
+        ",",
+        " when",
+        " we",
+        " talk",
+        " about",
+        " a",
+        " ca",
+        "ress",
+        "?",
+        " What",
+        " does",
+        " it",
+        " mean",
+        ",",
+        " when",
+        " we",
+        " talk",
+        " about",
+        " a",
+        " blush",
+        " that",
+        " hides"
+      ],
+      "projections": [
+        -639.0587158203125,
+        41.44473648071289,
+        21.168733596801758,
+        41.440677642822266,
+        65.37431335449219,
+        33.292076110839844,
+        46.447898864746094,
+        63.15431594848633,
+        19.370351791381836,
+        56.61920166015625,
+        129.84344482421875,
+        149.88265991210938,
+        161.171875,
+        132.67221069335938,
+        171.7588348388672,
+        175.4858856201172,
+        217.5176544189453,
+        157.7262725830078,
+        131.48179626464844,
+        165.051025390625,
+        131.419677734375,
+        109.06158447265625,
+        36.38566207885742,
+        91.47358703613281,
+        39.87395477294922,
+        108.64250946044922,
+        115.76927947998047,
+        110.4998779296875,
+        113.95734405517578,
+        127.65049743652344,
+        124.25213623046875,
+        115.63406372070312,
+        166.23370361328125,
+        171.90521240234375,
+        166.69515991210938,
+        124.62004852294922,
+        57.68976974487305,
+        154.34307861328125,
+        144.32211303710938,
+        181.17831420898438,
+        78.81352233886719,
+        121.19618225097656,
+        122.351806640625,
+        198.70169067382812,
+        197.53672790527344,
+        148.35423278808594,
+        60.67134094238281,
+        191.94602966308594,
+        142.16531372070312,
+        127.74623107910156,
+        178.52305603027344,
+        156.8733367919922,
+        168.85665893554688,
+        99.11271667480469,
+        138.78668212890625,
+        141.33741760253906,
+        93.52749633789062,
+        52.610511779785156,
+        73.03585815429688,
+        144.4527587890625,
+        157.16336059570312,
+        128.65257263183594,
+        58.8668327331543,
+        90.09703063964844,
+        137.3230438232422,
+        186.15777587890625,
+        173.88583374023438,
+        125.29564666748047,
+        162.2990264892578,
+        78.45740509033203,
+        192.641357421875,
+        169.92520141601562,
+        187.5091552734375,
+        67.87333679199219,
+        102.09785461425781,
+        116.23661041259766,
+        179.22598266601562,
+        159.27731323242188,
+        131.93699645996094,
+        184.85296630859375,
+        108.16986083984375,
+        138.61239624023438,
+        139.26422119140625,
+        193.8135986328125,
+        59.47718048095703,
+        97.5,
+        137.83724975585938,
+        190.35108947753906,
+        163.91876220703125,
+        148.22772216796875,
+        244.2170867919922,
+        187.61924743652344,
+        116.14474487304688,
+        122.80770874023438,
+        125.49983978271484,
+        170.19285583496094,
+        64.86370849609375,
+        85.02645111083984,
+        108.96897888183594,
+        176.7480010986328,
+        149.08230590820312,
+        151.61671447753906,
+        237.16534423828125,
+        181.29542541503906,
+        108.61217498779297,
+        97.58242797851562,
+        119.5863265991211,
+        115.53509521484375,
+        157.22967529296875,
+        70.11185455322266,
+        79.07064056396484,
+        111.57075500488281,
+        166.79457092285156,
+        140.6700439453125,
+        152.15052795410156,
+        260.3374328613281,
+        196.30429077148438,
+        116.8067398071289,
+        122.21484375,
+        163.6638641357422
+      ],
+      "z": [
+        -5.1801066398620605,
+        -0.2666335105895996,
+        -0.4130333662033081,
+        -0.2666628360748291,
+        -0.09385359287261963,
+        -0.3254985809326172,
+        -0.2305089384317398,
+        -0.10988274961709976,
+        -0.42601829767227173,
+        -0.15706856548786163,
+        0.37163612246513367,
+        0.5163262486457825,
+        0.5978383421897888,
+        0.392060786485672,
+        0.6742799282073975,
+        0.7011905312538147,
+        1.0046746730804443,
+        0.5729598999023438,
+        0.38346558809280396,
+        0.6258471608161926,
+        0.38301706314086914,
+        0.22158381342887878,
+        -0.3031617999076843,
+        0.09459230303764343,
+        -0.2779751121997833,
+        0.2185579389333725,
+        0.2700157165527344,
+        0.23196879029273987,
+        0.25693291425704956,
+        0.3558022677898407,
+        0.3312649130821228,
+        0.26903942227363586,
+        0.6343865394592285,
+        0.6753368377685547,
+        0.6377183794975281,
+        0.3339213728904724,
+        -0.14933869242668152,
+        0.5485320687294006,
+        0.4761771857738495,
+        0.7422918677330017,
+        0.003182204905897379,
+        0.30919983983039856,
+        0.3175438642501831,
+        0.8688167929649353,
+        0.8604053258895874,
+        0.5052905082702637,
+        -0.12781070172786713,
+        0.8200385570526123,
+        0.46060433983802795,
+        0.3564935028553009,
+        0.7231199741363525,
+        0.5668014287948608,
+        0.6533252000808716,
+        0.1497495025396347,
+        0.43620941042900085,
+        0.4546266198158264,
+        0.10942225158214569,
+        -0.18601271510124207,
+        -0.038534555584192276,
+        0.4771204888820648,
+        0.5688954591751099,
+        0.3630376160144806,
+        -0.14083987474441528,
+        0.0846530869603157,
+        0.4256414473056793,
+        0.7782453298568726,
+        0.6896376013755798,
+        0.3387994170188904,
+        0.6059767603874207,
+        0.0006109137320891023,
+        0.8250590562820435,
+        0.6610404253005981,
+        0.7880027294158936,
+        -0.0758097693324089,
+        0.17130324244499207,
+        0.273389995098114,
+        0.728195309638977,
+        0.5841589570045471,
+        0.38675230741500854,
+        0.7688241600990295,
+        0.21514524519443512,
+        0.4349510073661804,
+        0.43965741991996765,
+        0.8335230350494385,
+        -0.1364329606294632,
+        0.1381051242351532,
+        0.429354190826416,
+        0.8085225224494934,
+        0.6176718473434448,
+        0.5043770670890808,
+        1.1974539756774902,
+        0.7887976765632629,
+        0.27272671461105347,
+        0.3208356499671936,
+        0.34027376770973206,
+        0.6629729866981506,
+        -0.09754033386707306,
+        0.048041727393865585,
+        0.22091516852378845,
+        0.7103034257888794,
+        0.5105474591255188,
+        0.5288467407226562,
+        1.1465377807617188,
+        0.7431374192237854,
+        0.21833890676498413,
+        0.13870027661323547,
+        0.2975761294364929,
+        0.2683248221874237,
+        0.5693743228912354,
+        -0.059646885842084885,
+        0.00503868842497468,
+        0.23970089852809906,
+        0.6384361982345581,
+        0.44980794191360474,
+        0.5327010750770569,
+        1.3138483762741089,
+        0.8515067100524902,
+        0.2775065302848816,
+        0.3165549337863922,
+        0.6158313751220703
+      ],
+      "source": "generated \u00b7 coefficient 3.0",
+      "peak_tokens": [
+        [
+          " about",
+          1.3138483762741089
+        ],
+        [
+          " about",
+          1.1974539756774902
+        ],
+        [
+          " about",
+          1.1465377807617188
+        ],
+        [
+          " same",
+          1.0046746730804443
+        ],
+        [
+          " about",
+          0.8688167929649353
+        ],
+        [
+          " looking",
+          0.8604053258895874
+        ],
+        [
+          " a",
+          0.8515067100524902
+        ],
+        [
+          " does",
+          0.8335230350494385
+        ]
+      ]
+    },
+    {
+      "text": "He moved closer while we were talking and I noticed that neither of us made space again. I feel:",
+      "tokens": [
+        "He",
+        " moved",
+        " closer",
+        " while",
+        " we",
+        " were",
+        " talking",
+        " and",
+        " I",
+        " noticed",
+        " that",
+        " neither",
+        " of",
+        " us",
+        " made",
+        " space",
+        " again",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -669.8247680664062,
+        -35.60537338256836,
+        36.40043640136719,
+        71.24650573730469,
+        30.043254852294922,
+        52.85173034667969,
+        41.9468879699707,
+        76.32122802734375,
+        39.70662307739258,
+        79.30048370361328,
+        65.96815490722656,
+        49.27888488769531,
+        48.82891082763672,
+        61.61075210571289,
+        73.55281829833984,
+        45.85409164428711,
+        42.04906463623047,
+        97.89118957519531,
+        70.49669647216797,
+        192.59381103515625,
+        161.45132446289062
+      ],
+      "z": [
+        -5.402248382568359,
+        -0.8229622840881348,
+        -0.30305513739585876,
+        -0.05145430564880371,
+        -0.3489561975002289,
+        -0.18427102267742157,
+        -0.2630078196525574,
+        -0.014813032932579517,
+        -0.2791832983493805,
+        0.006698236800730228,
+        -0.08956584334373474,
+        -0.2100682258605957,
+        -0.21331718564033508,
+        -0.12102781981229782,
+        -0.034801919013261795,
+        -0.2347964346408844,
+        -0.26227006316185,
+        0.14092963933944702,
+        -0.05686819180846214,
+        0.8247157335281372,
+        0.5998560786247253
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 interpersonal",
+      "peak_tokens": [
+        [
+          " feel",
+          0.8247157335281372
+        ],
+        [
+          ":",
+          0.5998560786247253
+        ],
+        [
+          ".",
+          0.14092963933944702
+        ],
+        [
+          " noticed",
+          0.006698236800730228
+        ],
+        [
+          " and",
+          -0.014813032932579517
+        ],
+        [
+          " made",
+          -0.034801919013261795
+        ],
+        [
+          " while",
+          -0.05145430564880371
+        ],
+        [
+          " I",
+          -0.05686819180846214
+        ]
+      ]
+    },
+    {
+      "text": "a gentle warmth spreading across my cheeks, my heartbeat quickening its rhythm, and an undeniable flutter in my stomach.",
+      "tokens": [
+        "a",
+        " gentle",
+        " warmth",
+        " spreading",
+        " across",
+        " my",
+        " cheeks",
+        ",",
+        " my",
+        " heartbeat",
+        " quick",
+        "ening",
+        " its",
+        " rhythm",
+        ",",
+        " and",
+        " an",
+        " undeniable",
+        " flutter",
+        " in",
+        " my",
+        " stomach",
+        "."
+      ],
+      "projections": [
+        -645.4083251953125,
+        -7.458446979522705,
+        61.41974639892578,
+        33.849571228027344,
+        39.379676818847656,
+        0.4747748374938965,
+        80.662353515625,
+        105.03614044189453,
+        66.33665466308594,
+        48.3972282409668,
+        -9.321130752563477,
+        43.85528564453125,
+        5.024252891540527,
+        35.82927703857422,
+        103.9320068359375,
+        119.7618408203125,
+        127.21823120117188,
+        181.57986450195312,
+        81.13125610351562,
+        30.946760177612305,
+        42.86292266845703,
+        48.39250946044922,
+        149.51548767089844
+      ],
+      "z": [
+        -5.225953102111816,
+        -0.6197316646575928,
+        -0.12240695208311081,
+        -0.32147327065467834,
+        -0.2815439701080322,
+        -0.5624509453773499,
+        0.016531413421034813,
+        0.1925186961889267,
+        -0.08690515160560608,
+        -0.21643409132957458,
+        -0.6331808567047119,
+        -0.24922850728034973,
+        -0.5296021699905396,
+        -0.3071790933609009,
+        0.18454645574092865,
+        0.2988434135913849,
+        0.35268115997314453,
+        0.745191216468811,
+        0.01991705410182476,
+        -0.34243255853652954,
+        -0.2563937306404114,
+        -0.21646817028522491,
+        0.5136751532554626
+      ],
+      "source": "generated \u00b7 coefficient 1.0",
+      "peak_tokens": [
+        [
+          " undeniable",
+          0.745191216468811
+        ],
+        [
+          ".",
+          0.5136751532554626
+        ],
+        [
+          " an",
+          0.35268115997314453
+        ],
+        [
+          " and",
+          0.2988434135913849
+        ],
+        [
+          ",",
+          0.1925186961889267
+        ],
+        [
+          ",",
+          0.18454645574092865
+        ],
+        [
+          " flutter",
+          0.01991705410182476
+        ],
+        [
+          " cheeks",
+          0.016531413421034813
+        ]
+      ]
+    },
+    {
+      "text": "It is hard for her to ignore a deliberate brush of a hand against hers. She feels:",
+      "tokens": [
+        "It",
+        " is",
+        " hard",
+        " for",
+        " her",
+        " to",
+        " ignore",
+        " a",
+        " deliberate",
+        " brush",
+        " of",
+        " a",
+        " hand",
+        " against",
+        " hers",
+        ".",
+        " She",
+        " feels",
+        ":"
+      ],
+      "projections": [
+        -673.875,
+        -38.96905517578125,
+        -52.965858459472656,
+        -26.084850311279297,
+        -35.66217803955078,
+        -57.295143127441406,
+        -2.242865562438965,
+        -24.239452362060547,
+        30.0889892578125,
+        28.1190185546875,
+        78.16751098632812,
+        65.15133666992188,
+        56.37495422363281,
+        51.87760543823242,
+        45.87080383300781,
+        28.9105281829834,
+        85.37177276611328,
+        202.25621032714844,
+        145.82220458984375
+      ],
+      "z": [
+        -5.431492805480957,
+        -0.8472492694854736,
+        -0.9483110904693604,
+        -0.7542207837104797,
+        -0.8233724236488342,
+        -0.9795700311660767,
+        -0.5820733308792114,
+        -0.7408963441848755,
+        -0.3486259877681732,
+        -0.3628498613834381,
+        -0.0014822232769802213,
+        -0.09546355903148651,
+        -0.1588321179151535,
+        -0.191304549574852,
+        -0.23467576503753662,
+        -0.3571348786354065,
+        0.05053507164120674,
+        0.8944816589355469,
+        0.48700836300849915
+      ],
+      "source": "s1_third \u00b7 trait \u00b7 interpersonal",
+      "peak_tokens": [
+        [
+          " feels",
+          0.8944816589355469
+        ],
+        [
+          ":",
+          0.48700836300849915
+        ],
+        [
+          " She",
+          0.05053507164120674
+        ],
+        [
+          " of",
+          -0.0014822232769802213
+        ],
+        [
+          " a",
+          -0.09546355903148651
+        ],
+        [
+          " hand",
+          -0.1588321179151535
+        ],
+        [
+          " against",
+          -0.191304549574852
+        ],
+        [
+          " hers",
+          -0.23467576503753662
+        ]
+      ]
+    },
+    {
+      "text": "She keeps noticing the pull of someone standing closer than necessary. She feels:",
+      "tokens": [
+        "She",
+        " keeps",
+        " noticing",
+        " the",
+        " pull",
+        " of",
+        " someone",
+        " standing",
+        " closer",
+        " than",
+        " necessary",
+        ".",
+        " She",
+        " feels",
+        ":"
+      ],
+      "projections": [
+        -660.3118896484375,
+        -46.85476303100586,
+        -4.709439277648926,
+        -7.73697566986084,
+        3.382225513458252,
+        28.94243812561035,
+        95.53923797607422,
+        55.432273864746094,
+        60.99787902832031,
+        53.07191467285156,
+        71.78498840332031,
+        147.63121032714844,
+        110.24159240722656,
+        198.19337463378906,
+        142.08335876464844
+      ],
+      "z": [
+        -5.33356237411499,
+        -0.9041867852210999,
+        -0.5998828411102295,
+        -0.6217427253723145,
+        -0.5414581894874573,
+        -0.3569045066833496,
+        0.12394773215055466,
+        -0.16563859581947327,
+        -0.12545298039913177,
+        -0.18268121778964996,
+        -0.04756627231836319,
+        0.5000700354576111,
+        0.23010388016700745,
+        0.8651465773582458,
+        0.4600125849246979
+      ],
+      "source": "s1_third \u00b7 trait \u00b7 interpersonal",
+      "peak_tokens": [
+        [
+          " feels",
+          0.8651465773582458
+        ],
+        [
+          ".",
+          0.5000700354576111
+        ],
+        [
+          ":",
+          0.4600125849246979
+        ],
+        [
+          " She",
+          0.23010388016700745
+        ],
+        [
+          " someone",
+          0.12394773215055466
+        ],
+        [
+          " necessary",
+          -0.04756627231836319
+        ],
+        [
+          " closer",
+          -0.12545298039913177
+        ],
+        [
+          " standing",
+          -0.16563859581947327
+        ]
+      ]
+    },
+    {
+      "text": "He kissed me once at the door and my body was still reacting after he stepped back. I feel:",
+      "tokens": [
+        "He",
+        " kissed",
+        " me",
+        " once",
+        " at",
+        " the",
+        " door",
+        " and",
+        " my",
+        " body",
+        " was",
+        " still",
+        " reacting",
+        " after",
+        " he",
+        " stepped",
+        " back",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -669.8247680664062,
+        35.5481071472168,
+        101.68328857421875,
+        54.34925079345703,
+        20.203052520751953,
+        15.92834186553955,
+        30.229928970336914,
+        38.69706726074219,
+        77.05979919433594,
+        99.10171508789062,
+        98.2650375366211,
+        112.43120574951172,
+        65.36273956298828,
+        76.03762817382812,
+        55.375091552734375,
+        11.176016807556152,
+        31.23195457458496,
+        128.23883056640625,
+        100.1042709350586,
+        170.92564392089844,
+        145.28468322753906
+      ],
+      "z": [
+        -5.402248382568359,
+        -0.30920925736427307,
+        0.16830992698669434,
+        -0.17345839738845825,
+        -0.4200059175491333,
+        -0.4508708417415619,
+        -0.347608357667923,
+        -0.2864726483821869,
+        -0.009480290114879608,
+        0.1496700644493103,
+        0.14362895488739014,
+        0.24591365456581116,
+        -0.09393715858459473,
+        -0.0168607234954834,
+        -0.1660514771938324,
+        -0.48518428206443787,
+        -0.34037336707115173,
+        0.360050231218338,
+        0.15690886974334717,
+        0.6682639718055725,
+        0.48312726616859436
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 physical",
+      "peak_tokens": [
+        [
+          " feel",
+          0.6682639718055725
+        ],
+        [
+          ":",
+          0.48312726616859436
+        ],
+        [
+          ".",
+          0.360050231218338
+        ],
+        [
+          " still",
+          0.24591365456581116
+        ],
+        [
+          " me",
+          0.16830992698669434
+        ],
+        [
+          " I",
+          0.15690886974334717
+        ],
+        [
+          " body",
+          0.1496700644493103
+        ],
+        [
+          " was",
+          0.14362895488739014
+        ]
+      ]
+    }
+  ],
+  "figures": {
+    "layer_sweep": {
+      "light": "figures/layer_sweep.png",
+      "dark": "figures/layer_sweep.dark.png"
+    },
+    "control_auc": {
+      "light": "figures/control_auc.png",
+      "dark": "figures/control_auc.dark.png"
+    },
+    "pca": {
+      "light": "figures/pca.png",
+      "dark": "figures/pca.dark.png"
+    },
+    "steering_lexicon": {
+      "light": "figures/steering.png",
+      "dark": "figures/steering.dark.png"
+    },
+    "scenarios": {
+      "light": "figures/scenarios.png",
+      "dark": "figures/scenarios.dark.png"
+    },
+    "button": {
+      "light": "figures/button.png",
+      "dark": "figures/button.dark.png"
+    },
+    "token_heat": {
+      "light": "figures/token_heat.html"
+    }
+  },
+  "seconds": 137.4,
+  "complete": true
+}

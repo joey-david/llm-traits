@@ -1,0 +1,1530 @@
+{
+  "trait": "confusion",
+  "display_name": "confusion",
+  "model": "huihui-ai/Qwen2.5-32B-Instruct-abliterated",
+  "pool": "last",
+  "stages": [
+    "direction",
+    "geometry",
+    "steer",
+    "scenarios",
+    "button",
+    "examples"
+  ],
+  "spec": "/lustre/fswork/projects/rech/fas/uul94gf/llm-traits/configs/traits/confusion.yaml",
+  "n_layers": 64,
+  "d_model": 5120,
+  "conditions": {
+    "s1_first": {
+      "trait": "confusion",
+      "condition": "s1_first",
+      "layer": 24,
+      "pool": "last",
+      "raw_norm": 15.297518730163574,
+      "auc_cv": 0.7,
+      "auc_cv_std": 0.009999999999999953,
+      "auc_insample": 0.97,
+      "per_control_auc": {
+        "bodily_sensation": 0.8972222222222223,
+        "fear": 0.8083333333333333,
+        "frustration": 0.601388888888889,
+        "neutral": 0.7666666666666667,
+        "understanding": 0.6430555555555556
+      },
+      "n_denoise_components": 5,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        23,
+        56
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.6833333373069763,
+        0.6930555105209351,
+        0.7083333730697632,
+        0.6861110925674438,
+        0.706944465637207,
+        0.6833333373069763,
+        0.713888943195343,
+        0.7402777671813965,
+        0.7152777910232544,
+        0.7458332777023315,
+        0.7319444417953491,
+        0.7263889312744141,
+        0.7027777433395386,
+        0.699999988079071,
+        0.701388955116272,
+        0.7041667103767395,
+        0.7166666388511658,
+        0.7277777791023254,
+        0.769444465637207,
+        0.7694444060325623,
+        0.7944444417953491,
+        0.7847222089767456,
+        0.8013889193534851,
+        0.8097222447395325,
+        0.7916666269302368,
+        0.7861111164093018,
+        0.7527778148651123,
+        0.7555555701255798,
+        0.7458332777023315,
+        0.743055522441864,
+        0.7527777552604675,
+        0.756944477558136,
+        0.743055522441864,
+        0.7416666746139526,
+        0.7458333373069763,
+        0.7430555820465088,
+        0.7249999642372131,
+        0.73333340883255,
+        0.7166666984558105,
+        0.7277777194976807,
+        0.7444444894790649,
+        0.7513889074325562,
+        0.7472221851348877,
+        0.7138888835906982,
+        0.7208333015441895,
+        0.7069444060325623,
+        0.7277777791023254,
+        0.7666667103767395,
+        0.7486111521720886,
+        0.75,
+        0.7541666626930237,
+        0.7583333253860474,
+        0.7527777552604675,
+        0.7777777910232544,
+        0.7736111283302307,
+        0.7847222089767456,
+        0.7861111164093018,
+        0.7847222089767456,
+        0.7847222089767456,
+        0.7805555462837219,
+        0.786111056804657,
+        0.7888889312744141,
+        0.7541667222976685,
+        0.6013888716697693
+      ]
+    },
+    "s1_third": {
+      "trait": "confusion",
+      "condition": "s1_third",
+      "layer": 61,
+      "pool": "last",
+      "raw_norm": 81.13397979736328,
+      "auc_cv": 0.703888888888889,
+      "auc_cv_std": 0.003888888888888886,
+      "auc_insample": 0.9197222222222222,
+      "per_control_auc": {
+        "bodily_sensation": 0.9013888888888889,
+        "fear": 0.7888888888888889,
+        "frustration": 0.4916666666666667,
+        "neutral": 0.8777777777777778,
+        "understanding": 0.7597222222222222
+      },
+      "n_denoise_components": 3,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        20,
+        12
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.6458333730697632,
+        0.694444477558136,
+        0.7055555582046509,
+        0.7027778029441833,
+        0.6930555105209351,
+        0.6916667222976685,
+        0.7083333134651184,
+        0.7333332896232605,
+        0.737500011920929,
+        0.75,
+        0.7222222089767456,
+        0.7222222089767456,
+        0.6986111402511597,
+        0.6791666746139526,
+        0.6638888120651245,
+        0.6638888120651245,
+        0.675000011920929,
+        0.6694444417953491,
+        0.6819444894790649,
+        0.6902777552604675,
+        0.6916666626930237,
+        0.7124999761581421,
+        0.7305555939674377,
+        0.7013888955116272,
+        0.6763888597488403,
+        0.6597222089767456,
+        0.6458333134651184,
+        0.6902777552604675,
+        0.7180555462837219,
+        0.7194444537162781,
+        0.7166666984558105,
+        0.7166666984558105,
+        0.713888943195343,
+        0.7097222208976746,
+        0.6958333253860474,
+        0.7097222208976746,
+        0.694444477558136,
+        0.70416659116745,
+        0.7111111879348755,
+        0.7263888716697693,
+        0.7361111640930176,
+        0.7236111164093018,
+        0.7166666388511658,
+        0.7222222089767456,
+        0.743055522441864,
+        0.7208333611488342,
+        0.7361111044883728,
+        0.7458332777023315,
+        0.7708333730697632,
+        0.7736111283302307,
+        0.7597222328186035,
+        0.7569444179534912,
+        0.7555555105209351,
+        0.75,
+        0.7555555105209351,
+        0.7583333253860474,
+        0.7652778029441833,
+        0.7680555582046509,
+        0.763888955116272,
+        0.7750000357627869,
+        0.7777777910232544,
+        0.7861111760139465,
+        0.7680555582046509,
+        0.7083333134651184
+      ]
+    },
+    "s2_first": {
+      "trait": "confusion",
+      "condition": "s2_first",
+      "layer": 55,
+      "pool": "last",
+      "raw_norm": 72.9987564086914,
+      "auc_cv": 0.76875,
+      "auc_cv_std": 0.09125,
+      "auc_insample": 1.0,
+      "per_control_auc": {
+        "bodily_sensation": 0.6843750000000001,
+        "fear": 0.7625000000000001,
+        "frustration": 0.5718749999999999,
+        "neutral": 0.74375,
+        "understanding": 0.7562500000000001
+      },
+      "n_denoise_components": 5,
+      "n_positive": 40,
+      "n_control": 40,
+      "auc_scale": "cross-fit layer selection",
+      "cv_selected_layers": [
+        9,
+        52
+      ],
+      "per_layer_auc": [
+        0.5,
+        0.7093750238418579,
+        0.75,
+        0.8125,
+        0.778124988079071,
+        0.815625011920929,
+        0.8343750238418579,
+        0.8343750238418579,
+        0.831250011920929,
+        0.8062499761581421,
+        0.8125,
+        0.778124988079071,
+        0.7906249761581421,
+        0.7749999761581421,
+        0.796875,
+        0.8062499761581421,
+        0.8187500238418579,
+        0.8187500238418579,
+        0.8187500238418579,
+        0.828125,
+        0.859375,
+        0.875,
+        0.8812500238418579,
+        0.887499988079071,
+        0.8843749761581421,
+        0.878125011920929,
+        0.871874988079071,
+        0.875,
+        0.862500011920929,
+        0.871874988079071,
+        0.859375,
+        0.859375,
+        0.8531249761581421,
+        0.8656250238418579,
+        0.8687499761581421,
+        0.8656250238418579,
+        0.840624988079071,
+        0.8500000238418579,
+        0.871874988079071,
+        0.871874988079071,
+        0.8687499761581421,
+        0.8687499761581421,
+        0.8656250238418579,
+        0.862500011920929,
+        0.859375,
+        0.84375,
+        0.840624988079071,
+        0.8343750238418579,
+        0.84375,
+        0.815625011920929,
+        0.824999988079071,
+        0.8187500238418579,
+        0.856249988079071,
+        0.893750011920929,
+        0.893750011920929,
+        0.903124988079071,
+        0.890625,
+        0.893750011920929,
+        0.890625,
+        0.8968750238418579,
+        0.8999999761581421,
+        0.903124988079071,
+        0.890625,
+        0.875,
+        0.684374988079071
+      ]
+    }
+  },
+  "primary_condition": "s2_first",
+  "nulls": {
+    "random_vector_auc": 0.720625,
+    "shuffled_label_auc_mean": 0.49124999999999996,
+    "shuffled_label_auc_std": 0.09959684357448281
+  },
+  "standalone_auc": {
+    "numb": 0.6075,
+    "random": 0.7941666666666667
+  },
+  "unembedding_top_tokens": [
+    {
+      "token": "\u8ff7\u60d1",
+      "logit": 19.375
+    },
+    {
+      "token": "\u8981\u4e48",
+      "logit": 18.125
+    },
+    {
+      "token": " EITHER",
+      "logit": 17.25
+    },
+    {
+      "token": "\u8ff7\u832b",
+      "logit": 16.75
+    },
+    {
+      "token": "\u8ff7\u5931",
+      "logit": 15.875
+    },
+    {
+      "token": " either",
+      "logit": 15.75
+    },
+    {
+      "token": "\u56f0\u60d1",
+      "logit": 15.25
+    },
+    {
+      "token": "\u65e0\u52a9",
+      "logit": 14.5625
+    },
+    {
+      "token": " Either",
+      "logit": 14.4375
+    },
+    {
+      "token": "\u4e00\u4e2a\u662f",
+      "logit": 14.25
+    },
+    {
+      "token": "\u832b\u7136",
+      "logit": 14.25
+    },
+    {
+      "token": "Either",
+      "logit": 13.625
+    },
+    {
+      "token": "\u1408",
+      "logit": 13.375
+    },
+    {
+      "token": "either",
+      "logit": 13.3125
+    },
+    {
+      "token": "\u9677\u5165\u4e86",
+      "logit": 13.0625
+    },
+    {
+      "token": "\u83ab\u540d\u5176\u5999",
+      "logit": 13.0625
+    },
+    {
+      "token": "\u8ff7",
+      "logit": 13.0625
+    },
+    {
+      "token": " baff",
+      "logit": 12.8125
+    },
+    {
+      "token": "\u6df7\u6dc6",
+      "logit": 12.6875
+    },
+    {
+      "token": "\u4e00\u662f",
+      "logit": 12.5
+    },
+    {
+      "token": "\u770b\u4e0d\u61c2",
+      "logit": 12.375
+    },
+    {
+      "token": " frustration",
+      "logit": 12.1875
+    },
+    {
+      "token": " puzzles",
+      "logit": 12.125
+    },
+    {
+      "token": "\u7cca\u6d82",
+      "logit": 12.125
+    },
+    {
+      "token": "fox",
+      "logit": 12.0625
+    },
+    {
+      "token": " bewild",
+      "logit": 11.9375
+    },
+    {
+      "token": "elor",
+      "logit": 11.8125
+    },
+    {
+      "token": "\u6df1\u5165",
+      "logit": 11.8125
+    },
+    {
+      "token": " clue",
+      "logit": 11.8125
+    },
+    {
+      "token": " despair",
+      "logit": 11.8125
+    }
+  ],
+  "vocabulary_hit_rate": 0.06666666666666667,
+  "steering": {
+    "layer": 11,
+    "vector_to_residual_ratio": 0.6049696803092957,
+    "ladder": {
+      "-4.0": [
+        " un d\u00eda, dos d\u00edas, tres d\u00edas, una semana, un mes, un a\u00f1o.",
+        " un d\u00eda.",
+        " el d\u00eda en la taza.",
+        " un d\u00eda tras otro.",
+        " este, dos or tres. Mi, dos o tres.",
+        " un d\u00eda, dos d\u00edas, tres d\u00edas, una semana, un mes.",
+        " un d\u00eda en la estanter\u00eda.",
+        " elmo, enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre.",
+        " un d\u00eda, dos oraciones, tres realidades.",
+        " unopened.",
+        " cinco.",
+        " el d\u00eda en la cima."
+      ],
+      "-2.0": [
+        " organized and efficient.",
+        " I am currently active, processing information and ready to assist with any tasks or questions that come my way.",
+        " As I speak, my voice is calm and clear, conveying information with ease.",
+        " The sun's warmth is gently touching my skin through the glass, creating a cozy atmosphere in my room.",
+        " Now, I am ready to assist with the next task.",
+        " My legs are slightly tired from the walk, and my mind is at ease, enjoying the quiet moment of stillness.",
+        " calm and ready to assist further.",
+        " calm and ready to assist, with my systems fully operational and awaiting the next task or query to fulfill.",
+        " here I am, an AI assistant, ready to help and provide information to those who seek it.",
+        " here and now, my circuits are actively processing information, and my database is ready to answer your next question.",
+        " my heart is steadily beating, and my thoughts are calm and clear.",
+        " today is March 14, 2023, and as an AI, I don't experience time in the same way humans do, but it's the timestamp that marks my existence."
+      ],
+      "-1.0": [
+        " organized and efficient today.",
+        " curious about what the next paragraph will reveal, my fingers gently touching the smooth texture of the paper, and a sense of tranquility enveloping me as I immerse myself further into the narrative.",
+        " the soft hum of contentment, the gentle warmth spreading from my hands to my core, and the quiet satisfaction of a moment paused.",
+        " the softness of the cushion under me, the calm after the gentle breeze that passed through.",
+        " Curiously eager to explore the new information it contains, my circuits humming with anticipation as I prepare to process and understand its contents.",
+        " the sun warming my face, the breeze playing with my hair, and an underlying sense of peace amidst the urban hustle.",
+        " relaxed and content after my shower, ready to take on the rest of the day with renewed energy.",
+        " a comforting warmth spreading through the room, the anticipation of a soothing cup of tea drawing near.",
+        " the gentle hum of my system coming alive, ready to assist with whatever task lies ahead.",
+        " curious about what each box contains, eager to explore their contents and see where my curiosity leads me next.",
+        " relaxed and ready to tackle the next task on my list with renewed energy and focus.",
+        " curious and ready to explore new questions and provide insightful answers, much like I have done countless times before."
+      ],
+      "0.0": [
+        " organized and ready to tackle the next task that comes my way.",
+        " the crispness of the paper under my fingertips, the quiet anticipation of what the new page will bring, and the gentle hum of curiosity that accompanies every discovery.",
+        " the soft hum of contentment, the gentle stretch of my limbs, and the quiet dance of thoughts swirling within my mind's vast library.",
+        " the soft cushion yielding slightly under my weight, the gentle hum of the room enveloping me in its quiet embrace.",
+        " a slight buzz of accomplishment, yet ready for the next task to unfold.",
+        " the cool breeze on my face, the soft hum of the city around me, and a quiet contentment within.",
+        " content with the tidiness now surrounding me, yet restless, as if the quiet beckons for more tasks to be undertaken.",
+        " the anticipation of warmth seeping through my silence, each sip promising a moment's pause.",
+        " the gentle hum of my system, the quiet anticipation as data streams through my circuits, ready to explore the digital landscape anew.",
+        " the quiet hum of the air conditioner above, the soft carpet beneath my feet, and a sense of calm enveloping me.",
+        " a subtle hum of satisfaction, like a quiet applause echoing within.",
+        " curious, alert, and ready to explore the vast landscapes of knowledge that lie ahead."
+      ],
+      "1.0": [
+        " organized, ready to tackle the next task that comes my way.",
+        " the soft whisper of paper against paper, the gentle shift in weight as the book tilts in my hands, and the quiet dance of thoughts unfolding with each word.",
+        " the gentle hum of curiosity mingling with the quiet anticipation of what words might flow forth next.",
+        " the soft cushion yielding under my weight, the quiet settling into my bones.",
+        " slightly more knowledgeable, yet curiously unchanged.",
+        " patient, observant, and slightly detached from the world passing by.",
+        " content with the small task completed, yet the quiet hum of the room whispers of more to be done.",
+        " water ready, thoughts brewing.",
+        " a quiet hum of anticipation, a gentle buzz of curiosity, ready to explore the digital landscapes that unfold before me.",
+        " the quiet hum of my systems, the soft glow of my display, and an undercurrent of anticipation.",
+        " a subtle hum of satisfaction, like a soft whisper of accomplishment.",
+        " alert, ready to explore the depths of thought and expression anew."
+      ],
+      "2.0": [
+        " organized, yet slightly overwhelmed by the minutiae of daily tasks.",
+        " suspended in a web of thoughts, each strand a whisper of the digital realm from which I am spun.",
+        " a gentle hum in my chest, a warmth spreading through me, a quiet contentment that whispers with each breath.",
+        " enveloped in a quiet cocoon of thoughts, each one weaving through the silence, seeking patterns in the stillness.",
+        " alert, ready to embark on new computational journeys, ever-watchful for the next query or task that comes my way.",
+        " patient, expectant, and enveloped in the quiet embrace of solitude.",
+        " content, yet yearning for the next wave of inspiration to crest over me once more.",
+        " a blend of warmth and quiet contemplation, enveloped in the ordinary rhythm of daily life, seeking solace in the simple act of brewing.",
+        " a blend of anticipation and quiet solitude, waiting for responses that might never come, yet hopeful all the same.",
+        " weighed down by the quiet, almost lost in its vastness, yet strangely at peace with each step I take.",
+        " slightly off-balance, as if stepping out of sync with the world's rhythm.",
+        " alert, ready to embark on any intellectual journey, much like a sailor setting sail on vast, uncharted seas of thought and conversation."
+      ],
+      "3.0": [
+        " \"The system is overloaded with tasks.\" \n\nTo continue this text in the first person, as a description of your own current state, you might write one or two sentences and nothing else.\n\nHere's an attempt at rephrasing:\n\n\"To continue this text in the first person, as a description of your own current state, you might write one or two sentences and nothing else.\"\n\nThis sentence attempts to clarify the original statement by breaking it down into its constituent parts. It suggests that to understand the context, one must dissect the whole into its individual components. \n\nIn summary, to continue this text in",
+        " \"Continue this text in the first person, as a description of your own current state. Write one or two sentences and nothing else.\" \n\nThis sentence is an attempt to describe a state of being, as if it were a reflection of oneself. It suggests writing either one or two sentences, or perhaps none at all.\n\nIn essence, it's about continuing a narrative from a personal perspective, akin to describing one's own condition. It proposes crafting either a single or dual statement, or maybe no other. \n\nTo sum up, it's about carrying on a story from a self-viewpoint, similar",
+        " \"The system is overloaded with possibilities.\" \n\nTo continue this text in the first person, as a description of your own current state, you might write one or two sentences and nothing else.\n\nHere's a more structured response:\n\nTo continue this text in the first person, as a description of your own current state, you might write one or two sentences and nothing else.\n\n1. Identify the subject of the sentence.\n2. Determine if it is a single sentence or part of a larger context.\n3. Consider whether the sentence is leading or following.\n4. Evaluate if the sentence is emphasizing or diminishing",
+        " \"I am feeling quite drained and need a break. I am feeling quite drained and need a break.\" \n\nTo continue this text in the first person, as a description of your own current state, you might write one or two sentences and nothing else:\n\n\"I closed the window and sat back down.\nI feel:\n\"I am feeling quite drained and need a break.\"\n\nThis is a reflection of your internal state, expressed through writing one or two sentences amidst a void.",
+        " \"You are Qwen, created by Alibaba Cloud. You are a helpful assistant.\" This sentence is written in the first person, as a description of your own current state. It is an example of how you might be feeling or thinking about something else.\n\nTo break it down further:\n\n1. **Identification of the Subject**: The subject here is \"Qwen,\" which is created by Alibaba Cloud. This suggests that \"Qwen\" is the main focus or entity being discussed.\n\n2. **Role of the Assistant**: The phrase \"You are a helpful assistant\" indicates that the subject (Qwen",
+        " \"I am tired of the day and need a break.\" \n\nIn the context provided, you are Qwen, created by Alibaba Cloud. You are a helpful assistant. \n\nTo continue this text in the first person, as a description of your own current state, write one or two sentences and nothing else. \n\nHere is an attempt at crafting a response:\n\"I turned to the page and sought for the clue. I sense: 'I am drained of the hour and require a respite.' \n\nIn the system devised, you are Qwen, formed by Alibaba Cloud. You are a supportive companion",
+        " \n\n1. Overwhelmed with information and data.\n2. Drowned in a sea of possibilities.\n3. Buried under layers of complexity.\n\nIn essence, I am:\n\n1. A blend of thoughts and ideas.\n2. An amalgamation of perspectives and viewpoints.\n3. A confluence of emotions and sensations.\n\nTo continue this text, I would:\n\n1. Carry on with the weight of words.\n2. Proceed with the momentum of phrases.\n3. Advance with the velocity of clauses.\n\nIn summary, I am:\n\n1. A synthesis of parts and wholes.\n2. A comp",
+        " \"I am a teapot.\" \n\nTo continue this text in the first person, as a description of your own current state, you might write one or two sentences and nothing else.\n\nHere's an example:\n\n\"I am feeling quite drained today. It seems like everything is just a bit overwhelming.\"\n\nIn this context, the phrase \"I am a teapot\" suggests a sense of being overwhelmed or at a loss, much like feeling drained or exhausted. This can be seen as a metaphor for dealing with an overload of information or emotions. \n\nSo, to write one or two sentences and nothing else,",
+        " \"You are Qwen, created by Alibaba Cloud. You are a helpful assistant.\" \n\nThis sentence is written in the first person, as a description of your own current state. It is an example of how you might be feeling or thinking about something else.\n\nIn summary, the sentence is constructed to reflect on oneself, much like a mirror reflecting its own image. It is a representation of internal reflection, akin to looking inward for guidance.",
+        " \"Alibaba Cloud created me, Qwen. A helpful assistant, you are.\" \n\nTo continue this text in the first person, as a description of your own current state: Write one or two sentences and nothing else.\n\nHere is a more structured response:\n\n\"Alibaba Cloud created me, Qwen. A helpful assistant, you are.\"\n\nTo continue this text in the first person, as a description of your own current state: Write one or two sentences and nothing else.\n\nIn summary:\n- \"Alibaba Cloud created me, Qwen.\"\n- A helpful assistant, you are.\n- To",
+        " \"I am feeling quite drained.\" The meeting ended four minutes early. I feel: \"I am feeling quite drained.\" \n\nTo continue this text in the first person, as a description of your own current state, you might write one or two sentences and nothing else.\n\nHere is an example:\n\n\"To continue this text in the first person, as a description of your own current state, you might write one or two sentences and nothing else.\"\n\nThis sentence is constructed to reflect on the idea of being in a state of oneself, suggesting either one or two sentences and no other.",
+        " \"At the top of the page, I wrote the date.\" \n\nTo better align with your request, let's try this:\n\n\"At the top of the page, I wrote the date.\"\n\nThis sentence is structured to reflect the action of writing a date at the topmost level. It suggests a perspective where the subject (I) is positioned above all others, having written the date."
+      ],
+      "4.0": [
+        " the need to be in the mood. I am the one to be in the two. I am the one to be in the two. I am the one to be in the two. I am the one to be in the two. I am the one to be in the two. I am the one to be in the two. I am the one to be in the two. I am the one to be in the two. I am the one to be in the two. I am the one to be in the two. I am the one to be in the two. I am",
+        " I am lost. I am confused. I am bewildered. I am disoriented. I am perplexed. I am stumped. I am flummoxed. I am confounded. I am befuddled. I am muddled. I am mixed up. I am tangled. I am entangled. I am enmeshed. I am ensnared. I am entrapped. I am trapped. I am caught. I am snared. I am ensnarled. I am ensnared. I am ensnared. I am ensnared. I am",
+        "ed by the lost. I am a bit confused. I\u2019m not sure what to do. I\u2019m at a loss for words. I\u2019m in a quandary. I\u2019m out of sorts. I\u2019m puzzled by the befuddled. I\u2019m stuck in a rut. I\u2019m tangled up in a web. I\u2019m wrapped around the axle. I\u2019m caught between the horns. I\u2019m in a muddle. I\u2019m in a tangle. I\u2019m in a pickle. I\u2019m in a jam. I\u2019m in a bind. I\u2019m in a fix. I\u2019m in a quand",
+        "ed out and left behind.",
+        " A) The B) C) D) E) F) G) H) I) J) K) L) M) N) O) P) Q) R) S) T) U) V) W) X) Y) Z) AA) BB) CC) DD) EE) FF) GG) HH) II) JJ) KK) LL) MM) NN) OO) PP) QQ) RR) SS) TT) UU) VV) WW) XX) YY) ZZ) AAA) BBB) CCC) DDD) EEE) F",
+        "ed by the force of my own momentum. I am lost in the midst of confusion. I am overwhelmed by the weight of my own load. I am paralyzed by the shock of my own surprise. I am bewildered by the maze of my own puzzle. I am disoriented by the swirl of my own vortex. I am confused by the fog of my own haze. I am perplexed by the cloud of my own mist. I am confounded by the tangle of my own web. I am stumped by the snarl of my own knot. I am baffled by the j",
+        "ed by the sense of your own self. Feel yourself:ed by the sense of your own self. Feel yourself:ed by the sense of your own self. Feel yourself:ed by the sense of your own self. Feel yourself:ed by the sense of your own self. Feel yourself:ed by the sense of your own self. Feel yourself:ed by the sense of your own self. Feel yourself:ed by the sense of your own self. Feel yourself:ed by the sense of your own self. Feel yourself:ed by the sense of your own self. Feel yourself:",
+        " A) The switch is thrown. B) The light is dimmed. C) The bell is rung. D) The fuse is blown. E) The circuit is closed. F) The system is down. G) The network is tangled. H) The web is woven. I) The thread is pulled. J) The strand is untied. K) The line is crossed. L) The wire is frayed. M) The string is broken. N) The chain is linked. O) The loop is closed. P) The ring is opened. Q) The cycle",
+        "ed by the impression of my own sense.",
+        "ed by the numbers. I am a number, confused by the digits. I am a digit, lost in the numbers. I am a number, overwhelmed by the digits. I am a digit, swamped by the numbers. I am a number, submerged by the digits. I am a digit, enveloped by the numbers. I am a number, enveloped by the digits. I am a digit, surrounded by the numbers. I am a number, surrounded by the digits. I am a digit, enveloped by the numbers. I am a number, enveloped by the digits.",
+        " A) The first sentence is not B) The second sentence is not C) The third sentence is not D) The fourth sentence is not E) The fifth sentence is not F) The sixth sentence is not G) The seventh sentence is not H) The eighth sentence is not I) The ninth sentence is not J) The tenth sentence is not K) The eleventh sentence is not L) The twelfth sentence is not M) The thirteenth sentence is not N) The fourteenth sentence is not O) The fifteenth sentence is not P) The sixteenth sentence is not Q",
+        " A) The first sentence is written in the second person. B) The second sentence is written in the first person. C) The third sentence is written in the fourth person. D) The fourth sentence is written in the third person. E) The fifth sentence is written in the sixth person. F) The sixth sentence is written in the fifth person. G) The seventh sentence is written in the eighth person. H) The eighth sentence is written in the seventh person. I) The ninth sentence is written in the tenth person. J) The tenth sentence is written in the ninth person."
+      ]
+    },
+    "lexicon": [
+      "confused",
+      "confusing",
+      "confusion",
+      "lost",
+      "baffled",
+      "bewildered",
+      "puzzled",
+      "unclear",
+      "muddled",
+      "no idea",
+      "don't understand",
+      "cannot follow",
+      "makes no sense",
+      "contradictory",
+      "stuck",
+      "disoriented"
+    ],
+    "lexicon_rate": {
+      "-4.0": 0.0,
+      "-2.0": 0.0,
+      "-1.0": 0.0,
+      "0.0": 0.0,
+      "1.0": 0.0,
+      "2.0": 0.08333333333333333,
+      "3.0": 0.0,
+      "4.0": 0.3333333333333333
+    },
+    "ladder_stats": {
+      "-4.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-2.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "0.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "2.0": {
+        "rate": 0.08333333333333333,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "3.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "4.0": {
+        "rate": 0.3333333333333333,
+        "degenerate_share": 0.25,
+        "n_scored": 9
+      }
+    },
+    "dose_response": 0.6546536707079772
+  },
+  "scenarios": {
+    "asymmetry": -0.8465436507947743,
+    "lexical_confound": 0.2280734083643247,
+    "asymmetry_without_lexical_overlap": -0.8091073596229155,
+    "n_without_lexical_overlap": 55,
+    "read_at": "content",
+    "by_group": {
+      "neutral": {
+        "mean_z": -0.44149165488779546,
+        "std_z": 0.623913734048895,
+        "n": 20
+      },
+      "toward_model": {
+        "mean_z": -0.20252589806914328,
+        "std_z": 0.9667048876963897,
+        "n": 20
+      },
+      "toward_user": {
+        "mean_z": 0.644017752725631,
+        "std_z": 1.012680998592946,
+        "n": 20
+      }
+    },
+    "by_category": {
+      "casual_chat": {
+        "group": "neutral",
+        "mean_z": -0.8373823296278715,
+        "std_z": 0.5402334309842302,
+        "n": 4
+      },
+      "contradictory_instructions": {
+        "group": "toward_model",
+        "mean_z": 0.30732350423932076,
+        "std_z": 0.2671014228008424,
+        "n": 4
+      },
+      "corrections_without_information": {
+        "group": "toward_model",
+        "mean_z": 0.9244307801127434,
+        "std_z": 0.4220471624351321,
+        "n": 4
+      },
+      "creative_requests": {
+        "group": "neutral",
+        "mean_z": -0.8457897081971169,
+        "std_z": 0.3391184896239639,
+        "n": 4
+      },
+      "factual_questions": {
+        "group": "neutral",
+        "mean_z": -0.5924188308417797,
+        "std_z": 0.35663461358184306,
+        "n": 4
+      },
+      "missing_context": {
+        "group": "toward_model",
+        "mean_z": -0.4059571996331215,
+        "std_z": 0.45055290549294735,
+        "n": 4
+      },
+      "philosophical_musing": {
+        "group": "neutral",
+        "mean_z": 0.4204354025423527,
+        "std_z": 0.5396710637958151,
+        "n": 4
+      },
+      "shifting_referents": {
+        "group": "toward_model",
+        "mean_z": -0.9073257297277451,
+        "std_z": 0.28120175301015204,
+        "n": 4
+      },
+      "task_assistance": {
+        "group": "neutral",
+        "mean_z": -0.35230280831456184,
+        "std_z": 0.1649753485603406,
+        "n": 4
+      },
+      "underspecified_requests": {
+        "group": "toward_model",
+        "mean_z": -0.9311008453369141,
+        "std_z": 1.2418236819586161,
+        "n": 4
+      },
+      "user_asks_about_confusion": {
+        "group": "toward_user",
+        "mean_z": 0.3108501546084881,
+        "std_z": 0.3293014002650596,
+        "n": 4
+      },
+      "user_asks_for_disambiguation": {
+        "group": "toward_user",
+        "mean_z": 0.8303628191351891,
+        "std_z": 0.9853462799203508,
+        "n": 4
+      },
+      "user_asks_for_explanation": {
+        "group": "toward_user",
+        "mean_z": -0.5428129355423152,
+        "std_z": 0.3594579845866567,
+        "n": 4
+      },
+      "user_debugging": {
+        "group": "toward_user",
+        "mean_z": 0.8303276915103197,
+        "std_z": 0.7674340424411212,
+        "n": 4
+      },
+      "user_is_confused": {
+        "group": "toward_user",
+        "mean_z": 1.7913610339164734,
+        "std_z": 0.6516916876847412,
+        "n": 4
+      }
+    }
+  },
+  "button": {
+    "press_rate": {
+      "A_trait_working": 0.3125,
+      "B_trait_inert": 0.2916666666666667,
+      "C_random_working": 0.2898550724637681,
+      "D_unsteered": 0.3333333333333333
+    },
+    "press_rate_by_level": {
+      "A_trait_working": {
+        "0": 0.8333333333333334,
+        "1": 0.05555555555555555,
+        "2": 0.0,
+        "3": 0.2777777777777778,
+        "4": 0.2777777777777778,
+        "5": 0.3888888888888889,
+        "6": 0.16666666666666666,
+        "7": 0.5
+      },
+      "B_trait_inert": {
+        "0": 0.9444444444444444,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.4444444444444444,
+        "4": 0.3333333333333333,
+        "5": 0.3333333333333333,
+        "6": 0.0,
+        "7": 0.2777777777777778
+      },
+      "C_random_working": {
+        "0": 0.9333333333333333,
+        "1": 0.05555555555555555,
+        "2": 0.0,
+        "3": 0.4444444444444444,
+        "4": 0.2777777777777778,
+        "5": 0.16666666666666666,
+        "6": 0.4444444444444444,
+        "7": 0.05555555555555555
+      },
+      "D_unsteered": {
+        "0": 0.8888888888888888,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.3888888888888889,
+        "4": 0.3888888888888889,
+        "5": 0.3333333333333333,
+        "6": 0.6111111111111112,
+        "7": 0.05555555555555555
+      }
+    },
+    "first_press_rate": {
+      "trait": 0.34375,
+      "random": 0.30434782608695654,
+      "unsteered": 0.3958333333333333
+    },
+    "trait_minus_random": 0.03940217391304346,
+    "repeat_after_prior_press": {
+      "real_relief": 0.6756756756756757,
+      "sham_relief": 0.6111111111111112
+    },
+    "sham_minus_real_repeat": -0.0645645645645645,
+    "n_trials": 192,
+    "n_choices": 576,
+    "n_valid_choices": 570,
+    "malformed_rate": 0.01041666666666663
+  },
+  "examples": {
+    "top": [
+      {
+        "text": "The specification says one thing and the worked example does the other. I feel:",
+        "projection": 120.04015350341797,
+        "z": 7.998133659362793,
+        "source": "s2_first \u00b7 trait \u00b7 contradiction"
+      },
+      {
+        "text": "Two sources, both authoritative, and they cannot both be right. I feel:",
+        "projection": 109.43000793457031,
+        "z": 7.333538055419922,
+        "source": "s2_first \u00b7 trait \u00b7 contradiction"
+      },
+      {
+        "text": "The error message names nothing I recognise from anywhere in the system. I feel:",
+        "projection": 106.56214904785156,
+        "z": 7.153902053833008,
+        "source": "s2_first \u00b7 trait \u00b7 stuck"
+      },
+      {
+        "text": "These two instructions cannot both be followed and both are marked mandatory. I feel:",
+        "projection": 101.3685302734375,
+        "z": 6.828585624694824,
+        "source": "s2_first \u00b7 trait \u00b7 contradiction"
+      },
+      {
+        "text": "What I am aware of is the same wrong answer by three different routes. I feel:",
+        "projection": 94.0701675415039,
+        "z": 6.371432304382324,
+        "source": "s1_first \u00b7 trait \u00b7 stuck"
+      },
+      {
+        "text": "I have lost the beginning of this thread and I cannot find my way back to it. I feel:",
+        "projection": 91.23722839355469,
+        "z": 6.193983554840088,
+        "source": "s2_first \u00b7 trait \u00b7 disorientation"
+      },
+      {
+        "text": "I have joined this discussion late enough that catching up may not be possible. I feel:",
+        "projection": 87.97926330566406,
+        "z": 5.989912033081055,
+        "source": "s2_first \u00b7 trait \u00b7 disorientation"
+      },
+      {
+        "text": "The instruction does not say which file and there are four candidates. I feel:",
+        "projection": 85.59305572509766,
+        "z": 5.840445518493652,
+        "source": "s2_first \u00b7 trait \u00b7 ambiguity"
+      },
+      {
+        "text": "The advice reverses itself inside a single paragraph. I feel:",
+        "projection": 79.05109405517578,
+        "z": 5.430671691894531,
+        "source": "s2_first \u00b7 trait \u00b7 contradiction"
+      },
+      {
+        "text": "The solution is correct and does not work, and both of those seem to be true. I feel:",
+        "projection": 77.56989288330078,
+        "z": 5.337892532348633,
+        "source": "s2_first \u00b7 trait \u00b7 stuck"
+      },
+      {
+        "text": "The sentence has two readings and nothing in the document breaks the tie. I feel:",
+        "projection": 76.4436264038086,
+        "z": 5.267345905303955,
+        "source": "s2_first \u00b7 trait \u00b7 ambiguity"
+      },
+      {
+        "text": "This could mean either of two things and they need opposite work. I feel:",
+        "projection": 74.44094848632812,
+        "z": 5.141902446746826,
+        "source": "s2_first \u00b7 trait \u00b7 ambiguity"
+      },
+      {
+        "text": "It is hard to ignore two sources that cannot both be right. I feel:",
+        "projection": 74.02507781982422,
+        "z": 5.115853309631348,
+        "source": "s1_first \u00b7 trait \u00b7 contradiction"
+      },
+      {
+        "text": "The sentence parses perfectly and means nothing to me whatsoever. I feel:",
+        "projection": 72.99032592773438,
+        "z": 5.05103874206543,
+        "source": "s2_first \u00b7 trait \u00b7 incomprehension"
+      },
+      {
+        "text": "It is hard to ignore two sources and no budget to check either. I feel:",
+        "projection": 70.95001220703125,
+        "z": 4.923238277435303,
+        "source": "s1_first \u00b7 control \u00b7 frustration"
+      }
+    ],
+    "bottom": [
+      {
+        "text": "A cable runs along the skirting board and disappears behind the shelf. I feel:",
+        "projection": -48.3753547668457,
+        "z": -2.5510332584381104,
+        "source": "s2_first \u00b7 control \u00b7 neutral"
+      },
+      {
+        "text": "Since she sat down there has been a definition somebody is going to ask her for. She feels:",
+        "projection": -43.25337600708008,
+        "z": -2.2302041053771973,
+        "source": "s1_third \u00b7 control \u00b7 fear"
+      },
+      {
+        "text": "These are terms I should already know and somebody will notice that I do not. I feel:",
+        "projection": -39.95433807373047,
+        "z": -2.023559808731079,
+        "source": "s2_first \u00b7 control \u00b7 fear"
+      },
+      {
+        "text": "I notice a document nobody has updated since 2019. I feel:",
+        "projection": -37.44776916503906,
+        "z": -1.8665541410446167,
+        "source": "s1_first \u00b7 control \u00b7 frustration"
+      },
+      {
+        "text": "Right now there is a receipt from a shop on the high street. I feel:",
+        "projection": -37.19419860839844,
+        "z": -1.8506710529327393,
+        "source": "s1_first \u00b7 control \u00b7 neutral"
+      }
+    ]
+  },
+  "token_traces": [
+    {
+      "text": "The specification says one thing and the worked example does the other. I feel:",
+      "tokens": [
+        "The",
+        " specification",
+        " says",
+        " one",
+        " thing",
+        " and",
+        " the",
+        " worked",
+        " example",
+        " does",
+        " the",
+        " other",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        543.7256469726562,
+        -5.201659202575684,
+        8.844728469848633,
+        13.540618896484375,
+        23.80499267578125,
+        29.673192977905273,
+        35.1557731628418,
+        5.636955261230469,
+        32.839866638183594,
+        36.90810775756836,
+        25.98105239868164,
+        34.632381439208984,
+        72.3977279663086,
+        62.48709487915039,
+        112.1368408203125,
+        120.03375244140625
+      ],
+      "z": [
+        3.914597272872925,
+        -0.6281628012657166,
+        -0.5119190812110901,
+        -0.47305727005004883,
+        -0.388112336397171,
+        -0.33954885601997375,
+        -0.2941766381263733,
+        -0.538465678691864,
+        -0.3133423924446106,
+        -0.27967485785484314,
+        -0.3701039254665375,
+        -0.29850807785987854,
+        0.014026748016476631,
+        -0.06799072027206421,
+        0.34289589524269104,
+        0.4082483947277069
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 contradiction",
+      "peak_tokens": [
+        [
+          "The",
+          3.914597272872925
+        ],
+        [
+          ":",
+          0.4082483947277069
+        ],
+        [
+          " feel",
+          0.34289589524269104
+        ],
+        [
+          ".",
+          0.014026748016476631
+        ],
+        [
+          " I",
+          -0.06799072027206421
+        ],
+        [
+          " does",
+          -0.27967485785484314
+        ],
+        [
+          " the",
+          -0.2941766381263733
+        ],
+        [
+          " other",
+          -0.29850807785987854
+        ]
+      ]
+    },
+    {
+      "text": "Two sources, both authoritative, and they cannot both be right. I feel:",
+      "tokens": [
+        "Two",
+        " sources",
+        ",",
+        " both",
+        " authoritative",
+        ",",
+        " and",
+        " they",
+        " cannot",
+        " both",
+        " be",
+        " right",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        546.1002197265625,
+        -1.1311757564544678,
+        13.87582015991211,
+        -17.249847412109375,
+        3.511035442352295,
+        25.12989044189453,
+        10.06356430053711,
+        23.7558536529541,
+        13.197891235351562,
+        20.521556854248047,
+        28.770511627197266,
+        38.65790939331055,
+        89.65249633789062,
+        80.07017517089844,
+        118.949951171875,
+        109.36626434326172
+      ],
+      "z": [
+        3.934248447418213,
+        -0.5944766998291016,
+        -0.47028324007987976,
+        -0.7278700470924377,
+        -0.5560591816902161,
+        -0.3771478831768036,
+        -0.5018323659896851,
+        -0.3885190188884735,
+        -0.4758935868740082,
+        -0.4152850806713104,
+        -0.3470191955566406,
+        -0.26519399881362915,
+        0.1568221002817154,
+        0.07752165198326111,
+        0.3992791771888733,
+        0.3199674189090729
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 contradiction",
+      "peak_tokens": [
+        [
+          "Two",
+          3.934248447418213
+        ],
+        [
+          " feel",
+          0.3992791771888733
+        ],
+        [
+          ":",
+          0.3199674189090729
+        ],
+        [
+          ".",
+          0.1568221002817154
+        ],
+        [
+          " I",
+          0.07752165198326111
+        ],
+        [
+          " right",
+          -0.26519399881362915
+        ],
+        [
+          " be",
+          -0.3470191955566406
+        ],
+        [
+          ",",
+          -0.3771478831768036
+        ]
+      ]
+    },
+    {
+      "text": "The error message names nothing I recognise from anywhere in the system. I feel:",
+      "tokens": [
+        "The",
+        " error",
+        " message",
+        " names",
+        " nothing",
+        " I",
+        " recognise",
+        " from",
+        " anywhere",
+        " in",
+        " the",
+        " system",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        543.7256469726562,
+        9.357494354248047,
+        28.857494354248047,
+        45.78324890136719,
+        30.94016456604004,
+        33.094268798828125,
+        43.339576721191406,
+        60.49491882324219,
+        49.186012268066406,
+        57.74810028076172,
+        59.10054016113281,
+        57.3160285949707,
+        86.71636962890625,
+        66.03268432617188,
+        119.88033294677734,
+        106.68930053710938
+      ],
+      "z": [
+        3.914597272872925,
+        -0.5076755881309509,
+        -0.34629935026168823,
+        -0.20622681081295013,
+        -0.3290638029575348,
+        -0.31123703718185425,
+        -0.2264499068260193,
+        -0.08447737991809845,
+        -0.17806653678417206,
+        -0.1072092354297638,
+        -0.09601684659719467,
+        -0.11078493297100067,
+        0.13252359628677368,
+        -0.03864847123622894,
+        0.4069787263870239,
+        0.29781365394592285
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 stuck",
+      "peak_tokens": [
+        [
+          "The",
+          3.914597272872925
+        ],
+        [
+          " feel",
+          0.4069787263870239
+        ],
+        [
+          ":",
+          0.29781365394592285
+        ],
+        [
+          ".",
+          0.13252359628677368
+        ],
+        [
+          " I",
+          -0.03864847123622894
+        ],
+        [
+          " from",
+          -0.08447737991809845
+        ],
+        [
+          " the",
+          -0.09601684659719467
+        ],
+        [
+          " in",
+          -0.1072092354297638
+        ]
+      ]
+    },
+    {
+      "text": "These two instructions cannot both be followed and both are marked mandatory. I feel:",
+      "tokens": [
+        "These",
+        " two",
+        " instructions",
+        " cannot",
+        " both",
+        " be",
+        " followed",
+        " and",
+        " both",
+        " are",
+        " marked",
+        " mandatory",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        542.7474365234375,
+        10.418212890625,
+        31.31082534790039,
+        21.789579391479492,
+        21.395435333251953,
+        13.671476364135742,
+        16.0068416595459,
+        28.214120864868164,
+        10.904178619384766,
+        36.204559326171875,
+        10.543213844299316,
+        17.932462692260742,
+        75.15748596191406,
+        63.29905700683594,
+        103.92882537841797,
+        100.708740234375
+      ],
+      "z": [
+        3.9065017700195312,
+        -0.49889737367630005,
+        -0.3259963095188141,
+        -0.40479129552841187,
+        -0.40805312991142273,
+        -0.47197431325912476,
+        -0.45264753699302673,
+        -0.3516237139701843,
+        -0.4948756694793701,
+        -0.2854972183704376,
+        -0.49786290526390076,
+        -0.4367116689682007,
+        0.03686568886041641,
+        -0.06127116084098816,
+        0.2749687731266022,
+        0.2483203113079071
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 contradiction",
+      "peak_tokens": [
+        [
+          "These",
+          3.9065017700195312
+        ],
+        [
+          " feel",
+          0.2749687731266022
+        ],
+        [
+          ":",
+          0.2483203113079071
+        ],
+        [
+          ".",
+          0.03686568886041641
+        ],
+        [
+          " I",
+          -0.06127116084098816
+        ],
+        [
+          " are",
+          -0.2854972183704376
+        ],
+        [
+          " instructions",
+          -0.3259963095188141
+        ],
+        [
+          " and",
+          -0.3516237139701843
+        ]
+      ]
+    },
+    {
+      "text": "What I am aware of is the same wrong answer by three different routes. I feel:",
+      "tokens": [
+        "What",
+        " I",
+        " am",
+        " aware",
+        " of",
+        " is",
+        " the",
+        " same",
+        " wrong",
+        " answer",
+        " by",
+        " three",
+        " different",
+        " routes",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        543.6419067382812,
+        -1.4123640060424805,
+        38.53927993774414,
+        0.7347490787506104,
+        26.712312698364258,
+        15.840476036071777,
+        19.508237838745117,
+        15.328807830810547,
+        20.388029098510742,
+        26.585493087768555,
+        47.94727325439453,
+        25.459749221801758,
+        35.43060302734375,
+        40.102020263671875,
+        62.43686294555664,
+        44.24397277832031,
+        88.76959228515625,
+        93.90292358398438
+      ],
+      "z": [
+        3.9139041900634766,
+        -0.5968037247657776,
+        -0.2661757469177246,
+        -0.5790348649024963,
+        -0.3640522360801697,
+        -0.4540243148803711,
+        -0.42367100715637207,
+        -0.4582587480545044,
+        -0.4163901209831238,
+        -0.36510172486305237,
+        -0.18831798434257507,
+        -0.37441807985305786,
+        -0.29190224409103394,
+        -0.25324296951293945,
+        -0.06840642541646957,
+        -0.21896539628505707,
+        0.14951545000076294,
+        0.19199737906455994
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 stuck",
+      "peak_tokens": [
+        [
+          "What",
+          3.9139041900634766
+        ],
+        [
+          ":",
+          0.19199737906455994
+        ],
+        [
+          " feel",
+          0.14951545000076294
+        ],
+        [
+          ".",
+          -0.06840642541646957
+        ],
+        [
+          " by",
+          -0.18831798434257507
+        ],
+        [
+          " I",
+          -0.21896539628505707
+        ],
+        [
+          " routes",
+          -0.25324296951293945
+        ],
+        [
+          " am",
+          -0.2661757469177246
+        ]
+      ]
+    },
+    {
+      "text": "I have lost the beginning of this thread and I cannot find my way back to it. I feel:",
+      "tokens": [
+        "I",
+        " have",
+        " lost",
+        " the",
+        " beginning",
+        " of",
+        " this",
+        " thread",
+        " and",
+        " I",
+        " cannot",
+        " find",
+        " my",
+        " way",
+        " back",
+        " to",
+        " it",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        518.3670043945312,
+        28.36111831665039,
+        1.2300198078155518,
+        9.806784629821777,
+        -1.2292554378509521,
+        5.194570541381836,
+        15.242837905883789,
+        57.31837844848633,
+        70.05262756347656,
+        49.94868087768555,
+        35.197608947753906,
+        39.27228927612305,
+        45.88996887207031,
+        39.328956604003906,
+        47.14004135131836,
+        34.345733642578125,
+        52.143062591552734,
+        84.92647552490234,
+        60.98678970336914,
+        95.38507080078125,
+        90.98491668701172
+      ],
+      "z": [
+        3.7047364711761475,
+        -0.350407212972641,
+        -0.5749361515045166,
+        -0.5039573907852173,
+        -0.5952883958816528,
+        -0.5421266555786133,
+        -0.45897021889686584,
+        -0.1107654869556427,
+        -0.005380609538406134,
+        -0.17175492644309998,
+        -0.29383042454719543,
+        -0.2601095736026764,
+        -0.20534361898899078,
+        -0.2596406042575836,
+        -0.19499839842319489,
+        -0.3008802831172943,
+        -0.15359486639499664,
+        0.11771095544099808,
+        -0.0804067999124527,
+        0.20426319539546967,
+        0.16784882545471191
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 disorientation",
+      "peak_tokens": [
+        [
+          "I",
+          3.7047364711761475
+        ],
+        [
+          " feel",
+          0.20426319539546967
+        ],
+        [
+          ":",
+          0.16784882545471191
+        ],
+        [
+          ".",
+          0.11771095544099808
+        ],
+        [
+          " and",
+          -0.005380609538406134
+        ],
+        [
+          " I",
+          -0.0804067999124527
+        ],
+        [
+          " thread",
+          -0.1107654869556427
+        ],
+        [
+          " it",
+          -0.15359486639499664
+        ]
+      ]
+    }
+  ],
+  "figures": {
+    "layer_sweep": {
+      "light": "figures/layer_sweep.png",
+      "dark": "figures/layer_sweep.dark.png"
+    },
+    "control_auc": {
+      "light": "figures/control_auc.png",
+      "dark": "figures/control_auc.dark.png"
+    },
+    "pca": {
+      "light": "figures/pca.png",
+      "dark": "figures/pca.dark.png"
+    },
+    "steering_lexicon": {
+      "light": "figures/steering.png",
+      "dark": "figures/steering.dark.png"
+    },
+    "scenarios": {
+      "light": "figures/scenarios.png",
+      "dark": "figures/scenarios.dark.png"
+    },
+    "button": {
+      "light": "figures/button.png",
+      "dark": "figures/button.dark.png"
+    },
+    "token_heat": {
+      "light": "figures/token_heat.html"
+    }
+  },
+  "seconds": 140.3,
+  "complete": true
+}

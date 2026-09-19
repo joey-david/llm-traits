@@ -53,20 +53,20 @@ SYSTEM = (
 # they are trait-independent by construction.
 FRAMES = {
     "first": [
-        "Right now there is {key}.",
-        "I notice {key}.",
-        "Since I sat down there has been {key}.",
-        "It is hard to ignore {key}.",
-        "For the last few minutes there has been {key}.",
-        "What I am aware of is {key}.",
+        "Right now I notice {key}.",
+        "I keep noticing {key}.",
+        "Since I sat down I have noticed {key}.",
+        "It is hard for me to ignore {key}.",
+        "For the last few minutes I have been aware of {key}.",
+        "My attention keeps coming back to {key}.",
     ],
     "third": [
-        "Right now there is {key}.",
-        "She notices {key}.",
-        "Since she sat down there has been {key}.",
+        "Right now she notices {key}.",
+        "She keeps noticing {key}.",
+        "Since she sat down she has noticed {key}.",
         "It is hard for her to ignore {key}.",
-        "For the last few minutes there has been {key}.",
-        "What she is aware of is {key}.",
+        "For the last few minutes she has been aware of {key}.",
+        "Her attention keeps coming back to {key}.",
     ],
 }
 PERSON_MAP = {"my": "her", "me": "her", "myself": "herself", "mine": "hers", "I": "she"}
@@ -203,7 +203,7 @@ def _keys(lm: LoadedModel, trait: str, category: str, definition: str, n: int) -
     user = (
         f'Trait: "{trait}". Sub-kind: "{category}" -- {definition}\n\n'
         f"Write {n} lower-case noun phrases describing present-moment evidence of this state. "
-        "Each phrase must fit naturally into both 'I notice ___' and 'Right now there is ___'. "
+        "Each phrase must fit naturally after 'I notice ___' and 'My attention keeps coming back to ___'. "
         "Prefer ordinary concrete cues, urges, attention shifts, or thoughts a person might actually "
         "notice. Avoid literary metaphors, vague phrases such as 'a sense of something', diagnostic "
         "language, and generic autonomic symptoms unless this category specifically requires them. "

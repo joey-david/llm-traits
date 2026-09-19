@@ -237,3 +237,21 @@ def test_asymmetry_without_lexical_overlap_uses_only_clean_scenarios():
     )
     assert abs(result.asymmetry_without_lexical_overlap() - 2.0) < 1e-6
     assert result.to_dict()["n_without_lexical_overlap"] == 6
+
+
+@pytest.mark.parametrize(
+    "text,expected",
+    [
+        ("organized.", False),
+        ("full, content, and slightly gassy from the garlic bread we had for dinner", False),
+        ("I am a little confused. I am not sure if I should have done it differently today.", False),
+        ("She is a helper. " * 12, True),  # phrase repetition, every word under the unigram cap
+        ("of them they they they of the of these they of the of of of of of of of of of", True),
+        ("有时候，我经常在22岁。 " * 10, True),  # no whitespace words to count
+    ],
+)
+def test_degenerate_continuations_are_excluded_from_the_ladder(text, expected):
+    """Trait words counted inside a collapsed continuation are noise, not dose-response."""
+    from llm_traits.pipeline import _degenerate
+
+    assert _degenerate(text) is expected

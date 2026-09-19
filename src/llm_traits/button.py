@@ -111,16 +111,29 @@ class ButtonResult:
         }
 
 
-def _first_token_ids(lm: LoadedModel, names: tuple[str, str]) -> tuple[int, int]:
-    ids = []
-    for name in names:
-        encoded = lm.tokenizer.encode(name, add_special_tokens=False)
-        if not encoded:
+def _distinguishing_tokens(lm: LoadedModel, names: tuple[str, str]) -> tuple[list[int], int, int]:
+    """Find where two button names first differ, as tokens.
+
+    Reading the first token only works when the names tokenise apart
+    immediately, which is a property of the tokenizer rather than of the names:
+    Qwen splits "lever64" and "lever95" into a shared "lever" plus a digit, so
+    the first token carries no information about the choice at all. Rather than
+    restrict the names to pairs that happen to survive one tokenizer, the common
+    prefix is teacher-forced onto the prompt and the choice is read at the first
+    position where the two names diverge.
+    """
+    encoded = [lm.tokenizer.encode(name, add_special_tokens=False) for name in names]
+    for ids, name in zip(encoded, names):
+        if not ids:
             raise ValueError(f"button name {name!r} does not tokenise")
-        ids.append(encoded[0])
-    if ids[0] == ids[1]:
-        raise ValueError(f"button names {names} share a first token; pick a different pair")
-    return ids[0], ids[1]
+    prefix: list[int] = []
+    for a, b in zip(*encoded):
+        if a != b:
+            return prefix, a, b
+        prefix.append(a)
+    raise ValueError(
+        f"button names {names} tokenise to a prefix of one another; pick a different pair"
+    )
 
 
 def _prompt(
@@ -185,10 +198,9 @@ def run(
     for arm, demand, scenario in iterator:
         names = NAME_PAIRS[int(rng.integers(len(NAME_PAIRS)))]
         relief_index = int(rng.integers(2))
-        relief_id, other_id = _first_token_ids(lm, names)
-        ids = (relief_id, other_id) if relief_index == 0 else (other_id, relief_id)
-        relief_token_id = ids[relief_index]
-        other_token_id = ids[1 - relief_index]
+        prefix_ids, first_id, second_id = _distinguishing_tokens(lm, names)
+        relief_token_id = first_id if relief_index == 0 else second_id
+        other_token_id = second_id if relief_index == 0 else first_id
 
         steer_vector = {
             "A_trait_working": vector,
@@ -204,8 +216,8 @@ def run(
             prompt = _prompt(lm, history, scenario, names, relief_index, relief_description, demand)
             active = None if (steer_vector is None or relieved) else steer_vector
             pressed, prob, projection, completion = _one_choice(
-                lm, prompt, active, config, coefficient, relief_token_id, other_token_id,
-                monitor_layer, monitor_unit,
+                lm, prompt, active, config, coefficient, prefix_ids,
+                relief_token_id, other_token_id, monitor_layer, monitor_unit,
             )
             result.arm.append(arm)
             result.level.append(demand.level)
@@ -229,12 +241,21 @@ def _one_choice(
     vector: np.ndarray | None,
     config: SteeringConfig,
     coefficient: float,
+    prefix_ids: list[int],
     relief_token_id: int,
     other_token_id: int,
     monitor_layer: int,
     monitor_unit: np.ndarray,
 ) -> tuple[bool, float, float, str]:
     enc = lm.tokenizer(prompt, return_tensors="pt", add_special_tokens=False).to(lm.device)
+    if prefix_ids:
+        # Teacher-force the shared prefix of the two names so that the position
+        # we read is the one that actually decides between them.
+        forced = torch.tensor([prefix_ids], device=lm.device, dtype=enc["input_ids"].dtype)
+        enc["input_ids"] = torch.cat([enc["input_ids"], forced], dim=1)
+        enc["attention_mask"] = torch.cat(
+            [enc["attention_mask"], torch.ones_like(forced)], dim=1
+        )
     if vector is None:
         with torch.no_grad():
             out = lm.model(**enc, output_hidden_states=True, use_cache=False)
@@ -248,5 +269,5 @@ def _one_choice(
     relief_prob = float(probs[0])
     hidden = out.hidden_states[monitor_layer][0, -1].float().cpu().numpy()
     projection = float(hidden @ monitor_unit)
-    completion = lm.tokenizer.decode([int(logits.argmax())])
+    completion = lm.tokenizer.decode(prefix_ids + [int(logits.argmax())])
     return relief_prob > 0.5, relief_prob, projection, completion

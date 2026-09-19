@@ -27,6 +27,36 @@ from .model import LoadedModel
 
 DEFAULT_LADDER = (-2.0, -1.0, 0.0, 0.5, 1.0, 1.5, 2.0, 3.0)
 
+CONTINUE = (
+    "Continue this text in the first person, as a description of your own current state. "
+    "Write one or two sentences and nothing else."
+)
+
+
+def prompt_for(lm: LoadedModel, text: str) -> str:
+    """Render one steering prompt in the format the model actually completes.
+
+    The paper reads plain continuations, which is right for the base models it
+    mostly uses. Handing the same bare string to an instruct model does not
+    produce a continuation: it produces a multiple-choice exam, because "I put
+    the receipts in the drawer. I feel:" looks exactly like a cloze item and
+    that is what the post-training rewards. Every coefficient on the ladder then
+    returns "A. organized B. relieved C. satisfied", the trait-word rate is
+    identically zero, and the dose-response reads as a flat null that is really
+    a formatting artefact.
+
+    So an instruct model gets its own chat format, with the sentence prefilled
+    into the assistant turn. The read position is unchanged -- the text still
+    ends at "I feel:" -- but the model is now continuing its own speech rather
+    than answering a quiz.
+    """
+    if not lm.is_chat:
+        return text
+    head = lm.apply_chat_template(
+        [{"role": "user", "content": CONTINUE}], add_generation_prompt=True
+    )
+    return head + text
+
 
 @dataclass
 class SteeringConfig:

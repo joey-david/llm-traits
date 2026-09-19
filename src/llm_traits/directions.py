@@ -43,6 +43,11 @@ class Direction:
     auc_cv_std: float
     per_layer_auc: np.ndarray  # [n_hidden_states], held-out
     per_control_auc: dict[str, float] = field(default_factory=dict)
+    # Out-of-fold projection for every fitting sentence, at the chosen layer.
+    # Every derived number that could otherwise leak -- the per-control
+    # breakdown above, most of all -- is computed from this rather than from
+    # projections of the direction that was fit on the same sentences.
+    oof_projection: np.ndarray | None = None
     n_denoise_components: int = 0
     n_positive: int = 0
     n_control: int = 0
@@ -67,6 +72,7 @@ class Direction:
             "n_denoise_components": self.n_denoise_components,
             "n_positive": self.n_positive,
             "n_control": self.n_control,
+            "auc_scale": "out-of-fold",
             "per_layer_auc": self.per_layer_auc.tolist(),
         }
 
@@ -103,6 +109,31 @@ def _fit_at_layer(
     raw = diff_in_means(pos, neg)
     vector, n_components = denoise(raw, neg, var_threshold)
     return vector, n_components
+
+
+def out_of_fold_projections(
+    acts: np.ndarray,
+    labels: np.ndarray,
+    layer: int,
+    n_splits: int = 5,
+    var_threshold: float = 0.5,
+    seed: int = 0,
+) -> np.ndarray:
+    """Project each sentence using a direction fit without it.
+
+    The in-sample projection of a difference-in-means direction is optimistic by
+    construction: every sentence helped define the mean it is being scored
+    against. With a few dozen sentences per side in five thousand dimensions,
+    that gap is large -- it is the whole distance between the in-sample and
+    held-out AUC this package reports side by side.
+    """
+    splitter = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=seed)
+    projections = np.zeros(len(labels), dtype=np.float32)
+    for train, test in splitter.split(np.zeros(len(labels)), labels):
+        vector, _ = _fit_at_layer(acts[train], labels[train], layer, var_threshold)
+        norm = np.linalg.norm(vector)
+        projections[test] = acts[test, layer, :] @ (vector / (norm + 1e-8))
+    return projections
 
 
 def per_layer_cv_auc(
@@ -172,6 +203,7 @@ def fit(
     unit = vector / (raw_norm + 1e-8)
 
     proj_all = acts[:, layer, :] @ unit
+    oof = out_of_fold_projections(acts, labels, layer, n_splits, var_threshold, seed)
     direction = Direction(
         trait=trait,
         condition=condition,
@@ -186,24 +218,32 @@ def fit(
         n_denoise_components=n_components,
         n_positive=int((labels == 1).sum()),
         n_control=int((labels == 0).sum()),
+        oof_projection=oof,
     )
-    direction.per_control_auc = per_control_auc(direction, acts, labels, categories)
+    direction.per_control_auc = per_control_auc(direction, labels, categories)
     return direction
 
 
 def per_control_auc(
-    direction: Direction, acts: np.ndarray, labels: np.ndarray, categories: list[str]
+    direction: Direction, labels: np.ndarray, categories: list[str]
 ) -> dict[str, float]:
-    """AUC of positives against each control family separately.
+    """Held-out AUC of positives against each control family separately.
 
     Pooled AUC is dominated by whichever control family is easiest. A direction
     that scores 0.99 against neutral sentences and 0.62 against the nearest
     emotion is not the same object as one that scores 0.95 against both, and
     only this breakdown tells them apart.
+
+    Computed from out-of-fold projections, so these numbers live on the same
+    scale as the headline held-out AUC. Scoring them in-sample would put a
+    breakdown in the high nineties underneath a headline in the seventies, and
+    a reader would reasonably take the breakdown as the real result.
     """
     labels = np.asarray(labels)
     categories = np.asarray(categories)
-    proj = direction.project(acts)
+    proj = direction.oof_projection
+    if proj is None:
+        raise ValueError("per_control_auc needs out-of-fold projections")
     pos = proj[labels == 1]
     out: dict[str, float] = {}
     for family in sorted(set(categories[labels == 0])):
@@ -215,9 +255,20 @@ def per_control_auc(
     return out
 
 
-def score_against(direction: Direction, pos_acts: np.ndarray, other_acts: np.ndarray) -> float:
-    """AUC separating trait positives from a set the direction was never fit on."""
-    pos = direction.project(pos_acts)
+def score_against(
+    direction: Direction,
+    pos_acts: np.ndarray,
+    other_acts: np.ndarray,
+    pos_projection: np.ndarray | None = None,
+) -> float:
+    """AUC separating trait positives from a set the direction was never fit on.
+
+    ``pos_projection`` should be the out-of-fold projection of the positives
+    whenever they were part of the fit. The other set never was, so it is
+    projected directly; mixing an in-sample positive score against an
+    out-of-sample control score would flatter the direction on both ends.
+    """
+    pos = direction.project(pos_acts) if pos_projection is None else pos_projection
     neg = direction.project(other_acts)
     y = np.r_[np.ones(len(pos)), np.zeros(len(neg))]
     return float(roc_auc_score(y, np.r_[pos, neg]))

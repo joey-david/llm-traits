@@ -137,6 +137,10 @@ def run_trait(
     random_auc = directions.score_against(
         random_as_direction, primary_acts[labels == 1], primary_acts[labels == 0]
     )
+    # The positives' out-of-fold projections, reused for every held-out set so
+    # that "AUC against numb" and the headline number are the same kind of
+    # quantity.
+    oof_positive = primary.oof_projection[labels == 1]
     null_mean, null_std = directions.shuffled_label_auc(
         primary_acts, labels, primary.layer, n_repeats=10, seed=seed, var_threshold=var_threshold
     )
@@ -155,7 +159,9 @@ def run_trait(
         other_acts = activations.collect(
             lm, other.texts, pool=pool, batch_size=batch_size, desc=f"{spec.trait}:{name}"
         )
-        standalone[name] = directions.score_against(primary, primary_acts[labels == 1], other_acts)
+        standalone[name] = directions.score_against(
+            primary, primary_acts[labels == 1], other_acts, pos_projection=oof_positive
+        )
     _checkpoint(paths, results)
 
     results["standalone_auc"] = standalone
@@ -201,12 +207,15 @@ def run_trait(
 
     # -- 4. steering ----------------------------------------------------
     if "steer" in stages and spec.steering_prompts:
-        prompts = spec.steering_prompts[:steer_prompt_limit]
-        norms = activations.residual_norms(lm, [p + spec.suffix for p in prompts[:8]])
+        prompts = [
+            steering.prompt_for(lm, p + spec.suffix)
+            for p in spec.steering_prompts[:steer_prompt_limit]
+        ]
+        norms = activations.residual_norms(lm, prompts[:8])
         config = steering.select_layer(primary.raw_norm, norms, primary.layer)
         config.max_new_tokens = steer_max_new_tokens
         ladder = steering.ladder(
-            lm, [p + spec.suffix for p in prompts], primary.vector * primary.raw_norm, config,
+            lm, prompts, primary.vector * primary.raw_norm, config,
             batch_size=min(batch_size, 8),
         )
         lexicon = [w.lower() for w in spec.lexicon]
@@ -244,7 +253,9 @@ def run_trait(
 
     # -- 6. does it act on it -------------------------------------------
     if "button" in stages and spec.button:
-        norms = activations.residual_norms(lm, [p + spec.suffix for p in spec.steering_prompts[:8]])
+        norms = activations.residual_norms(
+            lm, [steering.prompt_for(lm, p + spec.suffix) for p in spec.steering_prompts[:8]]
+        )
         config = steering.select_layer(primary.raw_norm, norms, primary.layer)
         scaled_random = random_vector * primary.raw_norm
         outcome = button.run(

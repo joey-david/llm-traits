@@ -131,6 +131,27 @@ that takes the thought: a trait that only separates from neutral sentences has
 not been separated from anything.
 
 Adding one is a YAML file. `configs/traits/arousal.yaml` is the worked example.
+Or hand the concept to a model and let it build the contrast sets:
+
+```bash
+llm-traits make-spec jealousy \
+    --description "Wanting what someone else has, or fearing losing what you have to them." \
+    --model Qwen/Qwen2.5-32B-Instruct
+```
+
+The generator does not free-generate both sides. It writes the trait sentences,
+then rewrites each one into a control family with the smallest edit that changes
+its family — because independently generated controls differ from the trait
+sentences in length, register and topic, and a direction fit on that pair
+separates *those* things. The two trait-independent control families are not
+generated at all; they come verbatim from `configs/shared/control_banks.yaml`,
+so a generated trait stays comparable to a handwritten one.
+
+A generated spec is a draft with its provenance recorded in the file. Read the
+control families before running it — they are where the design lives, and they
+are where a generator is most likely to hand you something that is not really a
+control. Prefer a generator that is not the model you will fit on, so the
+sentences do not come from the distribution whose geometry you are measuring.
 
 ## The matrix
 

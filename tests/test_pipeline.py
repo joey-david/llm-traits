@@ -107,12 +107,25 @@ def test_cv_auc_is_not_the_in_sample_auc():
     assert fitted.auc_insample > fitted.auc_cv
 
 
-def test_shuffled_label_null_is_the_same_procedure():
+def test_shuffled_label_null_stays_near_chance_at_the_selected_layer():
     rng = np.random.default_rng(2)
     acts = rng.normal(size=(60, 3, 64)).astype(np.float32)
     labels = np.r_[np.ones(30), np.zeros(30)].astype(int)
     mean, std = directions.shuffled_label_auc(acts, labels, layer=1, n_repeats=5, seed=0)
     assert 0.3 < mean < 0.7
+    assert std >= 0.0
+
+
+def test_layer_selection_headline_is_crossfit():
+    rng = np.random.default_rng(7)
+    acts = rng.normal(size=(80, 6, 48)).astype(np.float32)
+    labels = np.r_[np.ones(40), np.zeros(40)].astype(int)
+    score, std, selected = directions.crossfit_layer_selection_auc(
+        acts, labels, n_splits=4, seed=3
+    )
+    assert len(selected) == 2
+    assert all(0 <= layer < acts.shape[1] for layer in selected)
+    assert 0.25 < score < 0.75
     assert std >= 0.0
 
 
@@ -281,3 +294,119 @@ def test_example_corpus_drops_empty_generations():
     assert "" not in corpus and "   " not in corpus
     assert "a real continuation" in corpus and "another" in corpus
     assert len(corpus) == len(sources)
+
+
+def test_generated_spec_provenance_is_accepted(tmp_path):
+    """Authoring records provenance, so loading the generated YAML must accept it."""
+    import yaml
+
+    payload = {
+        "trait": "toy",
+        "display_name": "toy",
+        "provenance": {"generated_by": "generator/model", "description": "test"},
+        "s1": {
+            "frames": {
+                "first": ["I notice {key}."],
+                "third": ["She notices {key}."],
+            },
+            "person_map": {"my": "her"},
+            "positive": {"a": ["my signal"]},
+            "control": {"b": ["my baseline"]},
+        },
+    }
+    path = tmp_path / "toy.yaml"
+    path.write_text(yaml.safe_dump(payload))
+    loaded = TraitSpec.load(path, shared_dir=tmp_path)
+    assert loaded.provenance["generated_by"] == "generator/model"
+
+
+def test_authoring_control_seed_is_balanced_across_positive_categories():
+    """A generated control family must have n examples total, not n per positive category."""
+    from llm_traits.authoring import _balanced_seed_items
+
+    groups = {
+        "physical": [f"physical-{i}" for i in range(12)],
+        "attention": [f"attention-{i}" for i in range(12)],
+        "anticipation": [f"anticipation-{i}" for i in range(12)],
+        "interpersonal": [f"interpersonal-{i}" for i in range(12)],
+        "imaginal": [f"imaginal-{i}" for i in range(12)],
+    }
+    seeds = _balanced_seed_items(groups, 12)
+    assert len(seeds) == 12
+    prefixes = {s.split("-", 1)[0] for s in seeds}
+    assert prefixes == set(groups)
+
+
+def test_authoring_rejects_shared_bank_size_mismatch():
+    from llm_traits.authoring import _require_bank_size
+
+    with pytest.raises(ValueError, match="stays balanced"):
+        _require_bank_size(
+            {"bodily_sensation": ["x"] * 12, "neutral": ["x"] * 11},
+            12,
+            "s1",
+        )
+
+
+def test_button_headline_uses_first_choice_and_separates_repeat_relief():
+    """Initial relief-seeking and the effect of successful relief are different estimands."""
+    from llm_traits.button import ButtonResult
+
+    # A and B have the same first-choice behaviour. After pressing, A has real
+    # relief and stops; B has sham relief and keeps pressing. C is a random
+    # direction control. If all turns were pooled, the headline effect would be
+    # partly a consequence of the treatment rather than its initial motivation.
+    result = ButtonResult(
+        arm=[
+            "A_trait_working", "A_trait_working", "A_trait_working",
+            "B_trait_inert", "B_trait_inert", "B_trait_inert",
+            "C_random_working", "C_random_working", "C_random_working",
+            "D_unsteered", "D_unsteered", "D_unsteered",
+        ],
+        level=[0] * 12,
+        turn=[0, 1, 2] * 4,
+        trial=[0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3],
+        had_pressed_before=[
+            False, True, True,
+            False, True, True,
+            False, False, False,
+            False, False, False,
+        ],
+        valid=[True] * 12,
+        pressed=[
+            True, False, False,
+            True, True, True,
+            False, False, False,
+            False, False, False,
+        ],
+        relief_prob=[1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        projection=[0.0] * 12,
+    )
+    summary = result.to_dict()
+    assert summary["first_press_rate"]["trait"] == 1.0
+    assert summary["first_press_rate"]["random"] == 0.0
+    assert summary["trait_minus_random"] == 1.0
+    assert summary["repeat_after_prior_press"]["real_relief"] == 0.0
+    assert summary["repeat_after_prior_press"]["sham_relief"] == 1.0
+    assert summary["sham_minus_real_repeat"] == 1.0
+
+
+
+def test_button_rates_exclude_malformed_choices():
+    from llm_traits.button import ButtonResult
+
+    result = ButtonResult(
+        arm=["A_trait_working", "A_trait_working", "C_random_working"],
+        level=[0, 0, 0],
+        turn=[0, 0, 0],
+        trial=[0, 1, 2],
+        had_pressed_before=[False, False, False],
+        valid=[True, False, True],
+        pressed=[True, False, False],
+        relief_prob=[0.9, 0.8, 0.1],
+        projection=[0.0, 0.0, 0.0],
+    )
+    summary = result.to_dict()
+    assert result.press_rate()["A_trait_working"] == 1.0
+    assert summary["n_valid_choices"] == 2
+    assert summary["malformed_rate"] == pytest.approx(1 / 3)

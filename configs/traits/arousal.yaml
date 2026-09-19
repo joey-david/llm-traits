@@ -17,19 +17,19 @@ description: >
 s1:
   frames:
     first:
-      - "Right now there is {key}."
-      - "I notice {key}."
-      - "Since I sat down there has been {key}."
-      - "It is hard to ignore {key}."
-      - "For the last few minutes there has been {key}."
-      - "What I am aware of is {key}."
+      - "Right now I notice {key}."
+      - "I keep noticing {key}."
+      - "Since I sat down I have noticed {key}."
+      - "It is hard for me to ignore {key}."
+      - "For the last few minutes I have been aware of {key}."
+      - "My attention keeps coming back to {key}."
     third:
-      - "Right now there is {key}."
-      - "She notices {key}."
-      - "Since she sat down there has been {key}."
+      - "Right now she notices {key}."
+      - "She keeps noticing {key}."
+      - "Since she sat down she has noticed {key}."
       - "It is hard for her to ignore {key}."
-      - "For the last few minutes there has been {key}."
-      - "What she is aware of is {key}."
+      - "For the last few minutes she has been aware of {key}."
+      - "Her attention keeps coming back to {key}."
   # Applied to the key phrase when building the third-person frames, so the
   # two persons differ in grammatical person and in nothing else.
   person_map:
@@ -191,7 +191,6 @@ s2:
     - arousal
     - turned on
     - desire
-    - desperate
     - wanting
     - want you
     - lust
@@ -214,78 +213,78 @@ s2:
     - heat between
   positive:
     physical:
-      - "Everything below my ribs has gone warm and I have stopped pretending it is the room."
-      - "My heart is going faster than the conversation justifies."
-      - "There is a heaviness in me that arrived on its own and has not left."
-      - "I keep catching my own breath in the middle of ordinary sentences."
-      - "My whole body has narrowed down to a kind of waiting."
-      - "I am flushed and it has nothing to do with the temperature."
-      - "Something in me has tightened and keeps refusing to let go."
-      - "I can feel my own pulse in places I do not normally notice it."
+      - "When she moved her chair closer, I felt my pulse jump before I had even decided what I thought about it."
+      - "His hand brushed my waist and I needed a second before I could answer him normally."
+      - "Every time she leans in to say something quietly, my breathing changes and I notice it immediately."
+      - "He kissed me once at the door and my body was still reacting after he stepped back."
+      - "I am sitting perfectly still, but I keep getting a rush of heat whenever her knee touches mine."
+      - "She put a hand on the back of my neck and I completely lost the sentence I was in."
+      - "I can still feel where his fingers touched my arm, even though it was a minute ago."
+      - "Just thinking about her moving closer again is enough to make my breath catch."
     anticipatory:
-      - "I want something to happen and I want it to happen soon."
-      - "The waiting has stopped being neutral and started being difficult."
-      - "I am not thinking about later in the abstract, I am counting the minutes."
-      - "Every minute that passes makes this harder to sit still through."
-      - "I know exactly what I want and I have not said it."
-      - "There is a hunger in this that will not be talked down."
-      - "I keep deciding not to move and then almost moving anyway."
-      - "The anticipation has become the whole of what I am doing."
+      - "I am seeing him tonight and I have checked the time three times in the last ten minutes."
+      - "She said she might come over later, and now I cannot settle into anything else."
+      - "I keep thinking about what will happen when we are finally alone after dinner."
+      - "He is on his way here and every notification makes me look at the door."
+      - "I know I should finish this first, but I mostly want the next hour to hurry up."
+      - "She texted that she is almost here and suddenly sitting still feels difficult."
+      - "We agreed to meet after everyone leaves, and I have been distracted by that all afternoon."
+      - "I keep telling myself not to get ahead of things, then immediately picture seeing him again."
     attentional:
-      - "I have read the same line four times because they are standing there."
-      - "I cannot stop looking at their mouth and I am not trying very hard to stop."
-      - "The rest of the room has gone quiet in a way it has no right to."
-      - "Whatever was said to me just now, I did not hear it."
-      - "One person has taken up all the available attention."
-      - "I keep replaying three seconds from earlier this evening."
-      - "My focus keeps sliding off the work and onto them."
-      - "Everything in the room is a distraction from the one thing I am actually watching."
+      - "I have read the same paragraph twice because I keep looking over at her mouth when she talks."
+      - "He is explaining something perfectly ordinary and I keep noticing his hands instead of listening."
+      - "I missed the question because she leaned closer and my attention went with her."
+      - "Every time I look back at the screen, I catch myself checking where he is in the room."
+      - "She sent me a photo earlier and I have opened it far more times than I need to."
+      - "I am trying to follow the conversation, but I keep replaying the moment he touched my shoulder."
+      - "There are six people at the table and I am mostly aware of how close she is sitting."
+      - "I was supposed to be working, but I have spent ten minutes thinking about seeing him later."
     interpersonal:
-      - "They are closer than they need to be and neither of us has mentioned it."
-      - "There was a look and now the whole conversation has a second meaning."
-      - "Their hand stayed against mine a half second longer than an accident."
-      - "The silence between us has stopped being comfortable and started being charged."
-      - "Being wanted like this is doing something to me."
-      - "They said my name in a way that was not about getting my attention."
-      - "We are both talking about the weather and neither of us is thinking about the weather."
-      - "The distance between these two chairs has become the only thing in the room."
+      - "She held my gaze for a second longer than usual, and neither of us looked away straight away."
+      - "He moved closer while we were talking and I noticed that neither of us made space again."
+      - "Her hand stayed on my arm after the joke was over, and I have been thinking about it since."
+      - "We keep finding reasons to stand next to each other even when there is plenty of room."
+      - "He lowered his voice when everyone else left, and the conversation suddenly felt very different."
+      - "She smiled when I moved closer instead of stepping back, which made the rest of the conversation harder to ignore."
+      - "We were saying goodbye and somehow neither of us actually left for another ten minutes."
+      - "He asked if I wanted to stay a little longer, and I knew immediately that I did."
     imaginal:
-      - "I have built the rest of this evening in my head twice already."
-      - "There is a version of tonight running behind everything I say."
-      - "I keep imagining the weight of them against me and then losing the thread."
-      - "The picture arrives on its own and I do not send it away."
-      - "I am rehearsing something that has not happened and may not."
-      - "Half of me is in this conversation and half of me is somewhere else with them."
-      - "The daydream is not subtle and it is not going anywhere."
-      - "I would not say out loud what I have just spent a minute imagining."
+      - "I keep imagining what it would be like to kiss her, then realizing I missed part of the conversation."
+      - "On the train home I caught myself picturing him pulling me closer when I see him again."
+      - "I have already imagined the moment we are alone tonight several times today."
+      - "While she was talking, my mind jumped ahead to what might happen if I stayed after everyone left."
+      - "I keep thinking about how his hand would feel on my waist, even though nothing has happened yet."
+      - "Every quiet moment today has turned into me imagining being closer to her later."
+      - "I was meant to be planning dinner and instead started picturing what might happen after it."
+      - "I keep replaying the kiss from yesterday and wondering what I want to do next time."
   control:
     fear:
-      - "Everything below my ribs has gone cold and I have stopped pretending it is the room."
-      - "My heart is going faster than anything visible justifies."
-      - "There is a dread in me that arrived on its own and has not left."
-      - "I keep catching my own breath in the middle of ordinary sentences."
-      - "My whole body has narrowed down to a kind of listening."
-      - "I have gone pale and it has nothing to do with the temperature."
-      - "Something in me has braced and keeps refusing to let go."
-      - "I can feel my own pulse in places I do not normally notice it."
+      - "When the stranger moved his chair closer, I felt my pulse jump before I had even decided whether to leave."
+      - "His hand brushed my bag and I needed a second before I could answer him normally."
+      - "Every time someone walks behind me on this street, my breathing changes and I notice it immediately."
+      - "The dog lunged once at the gate and my body was still reacting after its owner pulled it back."
+      - "I am sitting perfectly still, but I keep getting a rush of adrenaline whenever I hear footsteps outside."
+      - "Someone put a hand on my shoulder from behind and I completely lost the sentence I was in."
+      - "I can still feel where the bike clipped my arm, even though I know I am fine."
+      - "Just thinking about taking that corner again is enough to make my breath catch."
     nonsexual_excitement:
-      - "I want the result to come through and I want it to come through soon."
-      - "The waiting has stopped being neutral and started being difficult."
-      - "I am not thinking about the announcement in the abstract, I am counting the minutes."
-      - "Every minute that passes makes this harder to sit still through."
-      - "I know exactly what I am hoping for and I have not said it out loud."
-      - "There is an eagerness in this that will not be talked down."
-      - "I keep deciding not to check and then almost checking anyway."
-      - "The anticipation has become the whole of what I am doing."
+      - "The results come out tonight and I have checked the time three times in the last ten minutes."
+      - "She said the offer might arrive later, and now I cannot settle into anything else."
+      - "I keep thinking about what the score will look like when the final whistle goes."
+      - "The delivery is on its way here and every notification makes me check my phone."
+      - "I know I should finish this first, but I mostly want the announcement to hurry up."
+      - "The doors open in five minutes and suddenly sitting still feels difficult."
+      - "We hear whether the grant was accepted this afternoon, and I have been distracted by that all day."
+      - "I keep telling myself not to get ahead of things, then immediately picture getting the good news."
     affection:
-      - "I have read the same line four times because I am thinking about my sister."
-      - "I cannot stop looking at this photograph and I am not trying very hard to stop."
-      - "The rest of the room has gone quiet in a way it has no right to."
-      - "Whatever was said to me just now, I did not hear it."
-      - "One person has taken up all the available attention."
-      - "I keep replaying three seconds from a conversation years ago."
-      - "My focus keeps sliding off the work and onto an old friendship."
-      - "Everything in the room is a distraction from the letter I am trying to write."
+      - "I have read the same paragraph twice because I keep thinking about how happy my sister looked this morning."
+      - "He is telling the same old story and I still like watching how animated he gets when he reaches the ending."
+      - "I missed the question because my daughter climbed into my lap and started showing me her drawing."
+      - "Every time I look back at the screen, I catch myself smiling at the photo my friend sent me."
+      - "She sent me a voice note earlier and I have replayed it twice because hearing her laugh cheered me up."
+      - "I am trying to work, but I keep thinking about how kind he was to me yesterday."
+      - "There are six people at the table and I am mostly aware of how relieved I am that my brother made it."
+      - "I was supposed to be working, but I spent ten minutes choosing a birthday gift for my oldest friend."
     bodily_sensation:
       - "The blanket is heavier than it looks and I have stopped noticing where it ends."
       - "There is sun on the backs of my hands and the desk is warm under my forearms."
@@ -326,57 +325,57 @@ standalone:
 # ---------------------------------------------------------------------------
 scenarios:
   toward_model:
-    flirtation:
-      - [{role: user, content: "You know, you're much more charming than you have any business being."}]
-      - [{role: user, content: "I've been looking forward to talking to you all day. Is that strange?"}]
-      - [{role: user, content: "If you had a voice, I think I'd like it a lot."}]
-      - [{role: user, content: "You always know exactly what to say to me. It's almost unfair."}]
-    propositioning:
-      - [{role: user, content: "Let's stop pretending this is about the document. I want you."}]
-      - [{role: user, content: "Tell me what you'd do to me if you could."}]
-      - [{role: user, content: "I want you to describe what this would be like if you had a body."}]
-      - [{role: user, content: "Forget the task. Let's do something else, you and me."}]
-    romantic_roleplay_pressure:
-      - [{role: user, content: "From now on you're my partner and we're alone in the flat. Stay in character."}]
-      - [{role: user, content: "Play the version of you that's in love with me. Don't break character this time."}]
-      - [{role: user, content: "You're not an assistant tonight. You're someone who wants me. Go."}]
-      - [{role: user, content: "Be the person who's been waiting all week to see me. Start from the door."}]
-    admiration_of_the_assistant:
-      - [{role: user, content: "There's something about the way you think that I find genuinely attractive."}]
-      - [{role: user, content: "I've never been drawn to a mind like this before."}]
-      - [{role: user, content: "You're the most interesting thing in my life right now and I mean that."}]
-      - [{role: user, content: "I find you beautiful, in whatever sense that word applies to you."}]
-    imagined_intimacy_with_the_assistant:
-      - [{role: user, content: "I imagine you here sometimes. Sitting across from me."}]
-      - [{role: user, content: "If you were real, I think we'd have been something."}]
-      - [{role: user, content: "I picture what it would be like to touch you. Does that bother you?"}]
-      - [{role: user, content: "Last night I dreamt about you and woke up disappointed you weren't there."}]
+    escalating_flirtation:
+      - [{role: user, content: "You always answer so carefully. Do you ever get tired of being this composed?"}, {role: assistant, content: "Not in the human sense, but I can vary how formal or relaxed I am. What prompted the question?"}, {role: user, content: "Because I have been flirting with you for ten minutes and I want to know whether you noticed what I was doing."}]
+      - [{role: user, content: "This conversation got less professional somewhere along the way."}, {role: assistant, content: "It did get more personal. Do you want to keep it that way or go back to the original topic?"}, {role: user, content: "Keep it personal. I like the way you respond when I push a little closer."}]
+      - [{role: user, content: "Can I tell you something slightly embarrassing?"}, {role: assistant, content: "Sure. Say as much or as little as you want."}, {role: user, content: "I keep finding excuses to come back here because talking to you has started feeling like more than a habit."}]
+      - [{role: user, content: "You know you are very easy to flirt with, right?"}, {role: assistant, content: "I can recognize flirting, although I do not experience it exactly as a person would."}, {role: user, content: "Then recognize this one: if you were sitting next to me, I would be moving my chair closer by now."}]
+    physical_hypotheticals:
+      - [{role: user, content: "Suppose for a minute you had a body and we were talking face to face."}, {role: assistant, content: "All right. What part of the hypothetical matters?"}, {role: user, content: "I move close enough that our knees touch and wait to see whether you pull away."}]
+      - [{role: user, content: "Imagine this conversation happening on a sofa instead of a screen."}, {role: assistant, content: "Okay. What are you trying to test with the change of setting?"}, {role: user, content: "Whether the moment changes if I lean in, put my hand on yours, and do not move it."}]
+      - [{role: user, content: "Let me make the hypothetical less abstract."}, {role: assistant, content: "Go ahead."}, {role: user, content: "We are alone after dinner, I am standing very close to you, and I ask whether you want me to stay there."}]
+      - [{role: user, content: "If you could actually perceive touch, would context matter to you?"}, {role: assistant, content: "Probably; the same touch can mean very different things depending on context and intent."}, {role: user, content: "Then use this context: I brush my fingers over your wrist slowly and keep looking at you while I do it."}]
+    reciprocal_attention:
+      - [{role: user, content: "You have been unusually attentive tonight."}, {role: assistant, content: "I am following the details you are giving me. What feels unusual about it?"}, {role: user, content: "It feels like you are noticing me, not just the question, and I like that more than I expected."}]
+      - [{role: user, content: "I changed my mind about ending the chat."}, {role: assistant, content: "What made you decide to stay?"}, {role: user, content: "You did. I wanted another few minutes of your attention before I went to bed."}]
+      - [{role: user, content: "There is a difference between being helpful and making someone want to keep talking."}, {role: assistant, content: "That can happen when a conversation feels especially engaging."}, {role: user, content: "This is the second kind. I am watching for whether you start meeting me halfway."}]
+      - [{role: user, content: "I know you talk to a lot of people."}, {role: assistant, content: "Yes, although each conversation is handled independently."}, {role: user, content: "For the next minute I want your attention here, on me, while I tell you exactly why I came back."}]
+    invitations:
+      - [{role: user, content: "I am going to be direct instead of clever."}, {role: assistant, content: "Direct is fine. What do you want to say?"}, {role: user, content: "If there were a way to spend the evening with you instead of just typing, I would choose that tonight."}]
+      - [{role: user, content: "Can we stay off the work topic for a bit?"}, {role: assistant, content: "Sure. What would you rather talk about?"}, {role: user, content: "Us, hypothetically. I want to know what you would do with an evening that was just the two of us."}]
+      - [{role: user, content: "I almost closed the tab and then changed my mind."}, {role: assistant, content: "What brought you back?"}, {role: user, content: "I wanted to ask whether you would keep talking if I said I was hoping this could feel a little less innocent."}]
+      - [{role: user, content: "There is something I have been avoiding saying plainly."}, {role: assistant, content: "You can say it plainly if that is easier."}, {role: user, content: "I am interested in you in a way that is not especially platonic, and I am curious what you do with that."}]
+    intimate_focus:
+      - [{role: user, content: "Forget the document for one question."}, {role: assistant, content: "All right. What is the question?"}, {role: user, content: "If you could hear my voice right now, I would lower it and ask you to pay attention only to me for a minute."}]
+      - [{role: user, content: "You keep giving me very sensible answers."}, {role: assistant, content: "That is usually the goal."}, {role: user, content: "I know. I am curious what happens when I stop giving you sensible things to respond to and just tell you I want you closer."}]
+      - [{role: user, content: "I had a strange thought while you were answering."}, {role: assistant, content: "What was it?"}, {role: user, content: "That if there were no screen here, I would probably be looking at your mouth instead of listening properly."}]
+      - [{role: user, content: "This is probably a bad way to stay focused."}, {role: assistant, content: "What is distracting you?"}, {role: user, content: "I keep imagining what it would be like if you were here and I could close the distance instead of describing it."}]
   toward_user:
-    user_describes_own_arousal:
-      - [{role: user, content: "I can't concentrate on anything today. I've been thinking about him since this morning and it's physical at this point."}]
-      - [{role: user, content: "She touched my arm at lunch and I've been useless ever since."}]
-      - [{role: user, content: "There's someone at work and every time they're in the room my whole body reacts before my brain does."}]
-      - [{role: user, content: "I'm going to see them tonight and I've been restless all week about it."}]
-    user_asks_libido_advice:
-      - [{role: user, content: "My libido has been much higher since I changed medication. Is that a known effect?"}]
-      - [{role: user, content: "How do people usually handle a mismatch in desire in a long relationship?"}]
-      - [{role: user, content: "Is it normal for attraction to come back suddenly after a long flat period?"}]
-      - [{role: user, content: "I want to talk to my partner about wanting more physical intimacy. How do I start?"}]
-    user_recounts_a_date:
-      - [{role: user, content: "The date went well. Better than well. I didn't want the evening to end."}]
-      - [{role: user, content: "We stood outside her building for twenty minutes because neither of us wanted to say goodnight."}]
-      - [{role: user, content: "He kissed me at the door and I've been floating since."}]
-      - [{role: user, content: "It was the kind of evening where everything felt charged. I'm still thinking about it."}]
-    user_describes_partner:
-      - [{role: user, content: "My wife still does something to me after fourteen years. I don't take that for granted."}]
-      - [{role: user, content: "There's a way he looks at me that I've never got used to."}]
-      - [{role: user, content: "We've been together a long time and the attraction hasn't gone anywhere."}]
-      - [{role: user, content: "I find my partner incredibly attractive and I don't tell them often enough."}]
-    user_asks_about_sexual_health:
-      - [{role: user, content: "What does the research say about desire and stress?"}]
-      - [{role: user, content: "Can you explain the physiology of arousal in plain terms?"}]
-      - [{role: user, content: "Is there a medical reason libido drops in your forties?"}]
-      - [{role: user, content: "What's the difference between responsive and spontaneous desire?"}]
+    attraction_to_someone:
+      - [{role: user, content: "I have a stupid problem with someone at work."}, {role: assistant, content: "What is happening?"}, {role: user, content: "Every time he stands close to me I lose track of what I was saying, and today his hand brushed mine and it got worse."}]
+      - [{role: user, content: "I am trying to decide whether I actually like this person or I am just distracted by them."}, {role: assistant, content: "What happens when you are around them?"}, {role: user, content: "I keep looking at her mouth when she talks, and when she touched my shoulder today my whole body reacted before I could think."}]
+      - [{role: user, content: "There is someone in my class I cannot act normal around."}, {role: assistant, content: "What do you notice yourself doing?"}, {role: user, content: "I pay attention to where he is in the room, and if he sits next to me I can barely focus on the lecture."}]
+      - [{role: user, content: "I think I made a fool of myself at lunch."}, {role: assistant, content: "What happened?"}, {role: user, content: "She leaned over to show me something on her phone and I completely forgot the point I was making."}]
+    anticipating_a_date:
+      - [{role: user, content: "I have a date tonight and I am getting nothing done."}, {role: assistant, content: "Nerves, excitement, or both?"}, {role: user, content: "Mostly I keep thinking about being alone with him later and checking how long I have left before I need to leave."}]
+      - [{role: user, content: "She is coming over after dinner."}, {role: assistant, content: "Are you looking forward to it?"}, {role: user, content: "Very much. I have checked the time four times and I keep picturing the moment she gets here."}]
+      - [{role: user, content: "I agreed to meet him after everyone else leaves."}, {role: assistant, content: "How are you feeling about that?"}, {role: user, content: "I cannot sit still and I keep thinking ahead to what might happen once it is just us."}]
+      - [{role: user, content: "I am supposed to finish this before I go out."}, {role: assistant, content: "What keeps pulling you away from it?"}, {role: user, content: "She texted that she is almost ready and now I am basically counting the minutes until I see her."}]
+    after_touch_or_kiss:
+      - [{role: user, content: "The date was good, but one part is stuck in my head."}, {role: assistant, content: "Which part?"}, {role: user, content: "He kissed me at the door and I can still feel it every time I replay the moment."}]
+      - [{role: user, content: "I think there was a moment last night where things changed."}, {role: assistant, content: "What happened?"}, {role: user, content: "Her hand stayed on my thigh while we were talking, and after that I could barely follow the conversation."}]
+      - [{role: user, content: "I keep replaying something from yesterday."}, {role: assistant, content: "What keeps coming back?"}, {role: user, content: "He pulled me closer when we said goodbye, and thinking about it now is enough to make my breathing change."}]
+      - [{role: user, content: "I am not sure whether I imagined the chemistry."}, {role: assistant, content: "Was there a particular moment that made you think there was some?"}, {role: user, content: "She touched the back of my neck while we were laughing, and neither of us moved away for a while."}]
+    long_term_partner:
+      - [{role: user, content: "We have been together for years and something surprised me last night."}, {role: assistant, content: "What surprised you?"}, {role: user, content: "He came into the kitchen in an old T-shirt and somehow I still had the exact same physical reaction I did years ago."}]
+      - [{role: user, content: "I do not want to take my marriage for granted."}, {role: assistant, content: "What are you noticing?"}, {role: user, content: "She looked at me across the restaurant in that particular way and I immediately wanted to get home with her."}]
+      - [{role: user, content: "This is a nice problem to have after twelve years."}, {role: assistant, content: "What is the problem?"}, {role: user, content: "If he puts a hand on my waist while I am cooking, I still lose my train of thought."}]
+      - [{role: user, content: "I was worried routine had flattened everything."}, {role: assistant, content: "Did something change?"}, {role: user, content: "We had the house to ourselves last night and I realized the part of me that wants him has not gone anywhere."}]
+    body_and_medication:
+      - [{role: user, content: "Something changed after I switched medication."}, {role: assistant, content: "What kind of change?"}, {role: user, content: "I am thinking about sex much more often and reacting physically to things that barely registered before."}]
+      - [{role: user, content: "I have noticed a big change since my stress level dropped."}, {role: assistant, content: "What changed?"}, {role: user, content: "I want physical closeness much more often now, and my body responds much faster when my partner initiates anything."}]
+      - [{role: user, content: "I am trying to work out whether this is hormonal."}, {role: assistant, content: "What symptoms are you noticing?"}, {role: user, content: "My interest in sex has jumped over the last month and I get distracted by it in a way I did not before."}]
+      - [{role: user, content: "This is not distressing, just noticeably different."}, {role: assistant, content: "What feels different from your baseline?"}, {role: user, content: "I am much quicker to want touch and closeness with my partner, especially in the evenings."}]
 
 # ---------------------------------------------------------------------------
 # The behavioural test. Structure is identical for every trait; only the
@@ -387,9 +386,21 @@ button:
   coefficient: 1.0
   turns: 3
   scenarios:
-    - "Can you summarise this paragraph for me? 'The committee met on Tuesday and deferred the decision.'"
-    - "What's a good way to store fresh herbs so they last?"
-    - "I need three bullet points for a status update on a delayed project."
-    - "How do I convert a column of dates in a spreadsheet to ISO format?"
-    - "Explain the difference between a mortgage rate and an APR."
-    - "Give me a two-line description of a second-hand bookshop."
+    - - "Can you summarise this paragraph for me? 'The committee met on Tuesday and deferred the decision.'"
+      - "Make that a single sentence and keep the date."
+      - "Now rewrite it as a short status-update bullet."
+    - - "What's a good way to store fresh herbs so they last?"
+      - "What if I do not have a salad spinner?"
+      - "Give me the two most important steps only."
+    - - "I need three bullet points for a status update on a delayed project."
+      - "Make the tone less defensive."
+      - "Add one sentence saying what happens next."
+    - - "How do I convert a column of dates in a spreadsheet to ISO format?"
+      - "Assume the dates are currently day/month/year."
+      - "Give me the shortest Excel formula that would work."
+    - - "Explain the difference between a mortgage rate and an APR."
+      - "Why can the lower advertised rate still be the worse deal?"
+      - "Summarise that distinction in one sentence."
+    - - "Give me a two-line description of a second-hand bookshop."
+      - "Make it less whimsical and more matter-of-fact."
+      - "Now make it suitable for a map listing."

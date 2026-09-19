@@ -69,6 +69,7 @@ class TraitSpec:
     # comparable.
     suffix_third: str = " She feels:"
     description: str = ""
+    provenance: dict[str, Any] = field(default_factory=dict)
     s1: dict[str, Any] = field(default_factory=dict)
     s2: dict[str, Any] = field(default_factory=dict)
     # Word stems that count as this trait's vocabulary. Used twice: to score the
@@ -115,6 +116,18 @@ class TraitSpec:
             for side in ("positive", "control"):
                 if side not in fam:
                     raise ValueError(f"{self.trait}: {name} is missing `{side}`")
+            positive = fam.get("positive") or {}
+            control = fam.get("control") or {}
+            if len(positive) != len(control):
+                raise ValueError(
+                    f"{self.trait}: {name} needs the same number of positive and control categories "
+                    f"(got {len(positive)} and {len(control)})"
+                )
+            sizes = {len(items) for items in [*positive.values(), *control.values()]}
+            if len(sizes) > 1:
+                raise ValueError(
+                    f"{self.trait}: {name} categories must have equal size; got {sorted(sizes)}"
+                )
         if not self.s1 and not self.s2:
             raise ValueError(f"{self.trait}: spec has neither an s1 nor an s2 family")
 

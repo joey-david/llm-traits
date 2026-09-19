@@ -146,8 +146,17 @@ def run_trait(
     null_mean, null_std = directions.shuffled_label_auc(
         primary_acts, labels, primary.layer, n_repeats=10, seed=seed, var_threshold=var_threshold
     )
+    random_mean, random_std, random_max = directions.random_direction_auc(
+        primary_acts, labels, primary.layer, n_draws=20, seed=seed
+    )
     results["nulls"] = {
+        # Kept as the single-draw number the earlier batteries reported, so the
+        # two are comparable; the distribution below is the one to read.
         "random_vector_auc": random_auc,
+        "random_direction_auc_mean": random_mean,
+        "random_direction_auc_std": random_std,
+        "random_direction_auc_max": random_max,
+        "norm_auc": directions.norm_auc(primary_acts, labels, primary.layer),
         "shuffled_label_auc_mean": null_mean,
         "shuffled_label_auc_std": null_std,
     }
@@ -489,11 +498,26 @@ def compare(
             "display_name": payload.get("display_name", trait),
             "condition": condition,
             "layer": chosen["layer"],
+            # The two outer cross-fit halves each choose a layer without seeing
+            # the other. When they land far apart, the CV curve is flat enough
+            # that its argmax is close to arbitrary, and "the layer where this
+            # trait lives" is not a well-defined object for that trait. It is a
+            # free diagnostic and it disagrees with the AUC often enough to be
+            # worth reporting next to it.
+            "cv_selected_layers": chosen.get("cv_selected_layers", []),
+            "layer_disagreement": (
+                abs(chosen["cv_selected_layers"][0] - chosen["cv_selected_layers"][1])
+                if len(chosen.get("cv_selected_layers") or []) == 2
+                else float("nan")
+            ),
             "auc_cv": chosen["auc_cv"],
             "auc_worst_control": (
                 min(chosen["per_control_auc"].values()) if chosen["per_control_auc"] else float("nan")
             ),
             "random_vector_auc": payload["nulls"]["random_vector_auc"],
+            "random_direction_auc_mean": payload["nulls"].get("random_direction_auc_mean"),
+            "random_direction_auc_max": payload["nulls"].get("random_direction_auc_max"),
+            "norm_auc": payload["nulls"].get("norm_auc", float("nan")),
             "shuffled_null_auc": payload["nulls"]["shuffled_label_auc_mean"],
         }
         if "scenarios" in payload:

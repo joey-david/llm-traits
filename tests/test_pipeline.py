@@ -413,3 +413,40 @@ def test_button_rates_exclude_malformed_choices():
     assert result.press_rate()["A_trait_working"] == 1.0
     assert summary["n_valid_choices"] == 2
     assert summary["malformed_rate"] == pytest.approx(1 / 3)
+
+
+def test_norm_auc_detects_a_magnitude_confound():
+    """Two sets that differ only in activation magnitude must score high, and a
+    matched pair must score near chance — this is the check that says whether a
+    trait AUC is measuring direction or just size."""
+    import numpy as np
+
+    from llm_traits import directions
+
+    rng = np.random.default_rng(0)
+    d, n = 64, 60
+    base = rng.normal(size=(2 * n, 3, d)).astype(np.float32)
+    labels = np.r_[np.ones(n), np.zeros(n)].astype(int)
+
+    matched = base.copy()
+    assert abs(directions.norm_auc(matched, labels, 1) - 0.5) < 0.15
+
+    inflated = base.copy()
+    inflated[labels == 1] *= 1.5
+    assert directions.norm_auc(inflated, labels, 1) > 0.9
+
+
+def test_random_direction_auc_reports_a_distribution_not_one_draw():
+    """One random vector in high dimensions is a sample of size one; the spread
+    over draws is what a trait's AUC actually has to clear."""
+    import numpy as np
+
+    from llm_traits import directions
+
+    rng = np.random.default_rng(0)
+    acts = rng.normal(size=(80, 3, 256)).astype(np.float32)
+    labels = np.r_[np.ones(40), np.zeros(40)].astype(int)
+    mean, std, top = directions.random_direction_auc(acts, labels, layer=1, n_draws=30)
+    assert abs(mean - 0.5) < 0.08
+    assert std > 0.0
+    assert top >= mean

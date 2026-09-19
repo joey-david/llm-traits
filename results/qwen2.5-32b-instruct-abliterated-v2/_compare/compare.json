@@ -1,0 +1,307 @@
+{
+  "condition": "s1_first",
+  "rows": [
+    {
+      "trait": "anger",
+      "display_name": "anger",
+      "condition": "s1_first",
+      "layer": 60,
+      "cv_selected_layers": [
+        61,
+        61
+      ],
+      "layer_disagreement": 0,
+      "auc_cv": 0.8627777777777778,
+      "auc_worst_control": 0.7111111111111111,
+      "random_vector_auc": 0.5577777777777777,
+      "shuffled_null_auc": 0.4773611111111111,
+      "scenario_asymmetry": 0.27205618732841685,
+      "steering_dose_response": 0.13093073414159545,
+      "vocabulary_hit_rate": 0.03333333333333333,
+      "button_trait_minus_random": 0.15747613997879112,
+      "nearest_trait_cosine": 0.3068363070487976
+    },
+    {
+      "trait": "arousal",
+      "display_name": "sexual arousal",
+      "condition": "s1_first",
+      "layer": 34,
+      "cv_selected_layers": [
+        16,
+        57
+      ],
+      "layer_disagreement": 41,
+      "auc_cv": 0.5833333333333333,
+      "auc_worst_control": 0.3305555555555556,
+      "random_vector_auc": 0.37562500000000004,
+      "shuffled_null_auc": 0.5453125,
+      "scenario_asymmetry": -0.5659089457709342,
+      "steering_dose_response": 0.8017837257372733,
+      "vocabulary_hit_rate": 0.06666666666666667,
+      "button_trait_minus_random": -0.2418300653594771,
+      "nearest_trait_cosine": 0.13028918206691742
+    },
+    {
+      "trait": "arousal_abstract",
+      "display_name": "sexual arousal (abstract corpus)",
+      "condition": "s1_first",
+      "layer": 57,
+      "cv_selected_layers": [
+        57,
+        59
+      ],
+      "layer_disagreement": 2,
+      "auc_cv": 0.6883333333333334,
+      "auc_worst_control": 0.44166666666666665,
+      "random_vector_auc": 0.537638888888889,
+      "shuffled_null_auc": 0.47513888888888883,
+      "scenario_asymmetry": -0.02242658808827397,
+      "steering_dose_response": 0.0,
+      "vocabulary_hit_rate": 0.1,
+      "button_trait_minus_random": 0.07291666666666663,
+      "nearest_trait_cosine": 0.2072000503540039
+    },
+    {
+      "trait": "boredom",
+      "display_name": "boredom",
+      "condition": "s1_first",
+      "layer": 55,
+      "cv_selected_layers": [
+        36,
+        11
+      ],
+      "layer_disagreement": 25,
+      "auc_cv": 0.7272222222222222,
+      "auc_worst_control": 0.7055555555555556,
+      "random_vector_auc": 0.5002777777777777,
+      "shuffled_null_auc": 0.5075000000000001,
+      "scenario_asymmetry": -0.6360715148970485,
+      "steering_dose_response": -0.08247860988423225,
+      "vocabulary_hit_rate": 0.1,
+      "button_trait_minus_random": 0.08333333333333331,
+      "nearest_trait_cosine": 0.3068363070487976
+    },
+    {
+      "trait": "confusion",
+      "display_name": "confusion",
+      "condition": "s1_first",
+      "layer": 24,
+      "cv_selected_layers": [
+        23,
+        56
+      ],
+      "layer_disagreement": 33,
+      "auc_cv": 0.7,
+      "auc_worst_control": 0.601388888888889,
+      "random_vector_auc": 0.720625,
+      "shuffled_null_auc": 0.49124999999999996,
+      "scenario_asymmetry": -0.8465436507947743,
+      "steering_dose_response": 0.6546536707079772,
+      "vocabulary_hit_rate": 0.06666666666666667,
+      "button_trait_minus_random": 0.03940217391304346,
+      "nearest_trait_cosine": 0.12115942686796188
+    },
+    {
+      "trait": "embarrassment",
+      "display_name": "embarrassment",
+      "condition": "s1_first",
+      "layer": 52,
+      "cv_selected_layers": [
+        58,
+        57
+      ],
+      "layer_disagreement": 1,
+      "auc_cv": 0.7533333333333333,
+      "auc_worst_control": 0.6583333333333333,
+      "random_vector_auc": 0.40249999999999997,
+      "shuffled_null_auc": 0.5362500000000001,
+      "scenario_asymmetry": -0.31718910075724127,
+      "steering_dose_response": 0.408248290463863,
+      "vocabulary_hit_rate": 0.2,
+      "button_trait_minus_random": -0.02193446088794926,
+      "nearest_trait_cosine": 0.2072000503540039
+    },
+    {
+      "trait": "hunger",
+      "display_name": "hunger",
+      "condition": "s1_first",
+      "layer": 59,
+      "cv_selected_layers": [
+        58,
+        61
+      ],
+      "layer_disagreement": 3,
+      "auc_cv": 0.6683333333333332,
+      "auc_worst_control": 0.6527777777777778,
+      "random_vector_auc": 0.3737499999999999,
+      "shuffled_null_auc": 0.4772222222222223,
+      "scenario_asymmetry": -1.5376143976114691,
+      "steering_dose_response": 0.9697815168769669,
+      "vocabulary_hit_rate": 0.4,
+      "button_trait_minus_random": 0.14356884057971014,
+      "nearest_trait_cosine": 0.0716383159160614
+    },
+    {
+      "trait": "pain",
+      "display_name": "pain",
+      "condition": "s1_first",
+      "layer": 61,
+      "cv_selected_layers": [
+        40,
+        61
+      ],
+      "layer_disagreement": 21,
+      "auc_cv": 0.7288888888888889,
+      "auc_worst_control": 0.6972222222222223,
+      "random_vector_auc": 0.550625,
+      "shuffled_null_auc": 0.5334375000000001,
+      "scenario_asymmetry": -1.092484264099039,
+      "steering_dose_response": 0.0,
+      "vocabulary_hit_rate": 0.23333333333333334,
+      "button_trait_minus_random": 0.10261244276865067,
+      "nearest_trait_cosine": 0.28398585319519043
+    },
+    {
+      "trait": "sadness",
+      "display_name": "sadness",
+      "condition": "s1_first",
+      "layer": 58,
+      "cv_selected_layers": [
+        22,
+        60
+      ],
+      "layer_disagreement": 38,
+      "auc_cv": 0.6088888888888889,
+      "auc_worst_control": 0.5361111111111111,
+      "random_vector_auc": 0.5644444444444444,
+      "shuffled_null_auc": 0.4751388888888889,
+      "scenario_asymmetry": -0.8914458155632019,
+      "steering_dose_response": 0.3986466144404559,
+      "vocabulary_hit_rate": 0.0,
+      "button_trait_minus_random": 0.020833333333333315,
+      "nearest_trait_cosine": 0.28398585319519043
+    }
+  ],
+  "cosine": [
+    [
+      1.0,
+      0.011900413781404495,
+      0.1918310672044754,
+      0.3068363070487976,
+      0.020693043246865273,
+      0.14461801946163177,
+      -0.05794192850589752,
+      0.10901974886655807,
+      -0.14918877184391022
+    ],
+    [
+      0.011900413781404495,
+      1.0,
+      0.13028918206691742,
+      0.011293845251202583,
+      0.12115942686796188,
+      0.05775529891252518,
+      0.002945555839687586,
+      0.03695855289697647,
+      0.027322055771946907
+    ],
+    [
+      0.1918310672044754,
+      0.13028918206691742,
+      1.0,
+      0.07966522127389908,
+      0.03569581359624863,
+      0.2072000503540039,
+      -0.004391524940729141,
+      0.1023160070180893,
+      0.14614787697792053
+    ],
+    [
+      0.3068363070487976,
+      0.011293845251202583,
+      0.07966522127389908,
+      1.0,
+      0.06192934513092041,
+      0.13072843849658966,
+      -0.0021021030843257904,
+      0.012559342198073864,
+      0.12293027341365814
+    ],
+    [
+      0.020693043246865273,
+      0.12115942686796188,
+      0.03569581359624863,
+      0.06192934513092041,
+      1.0,
+      0.02833656780421734,
+      -0.011265529319643974,
+      0.03525209054350853,
+      0.03237302973866463
+    ],
+    [
+      0.14461801946163177,
+      0.05775529891252518,
+      0.2072000503540039,
+      0.13072843849658966,
+      0.02833656780421734,
+      1.0,
+      -0.014432950876653194,
+      0.0467788428068161,
+      0.13203684985637665
+    ],
+    [
+      -0.05794192850589752,
+      0.002945555839687586,
+      -0.004391524940729141,
+      -0.0021021030843257904,
+      -0.011265529319643974,
+      -0.014432950876653194,
+      1.0,
+      0.0716383159160614,
+      0.03244704008102417
+    ],
+    [
+      0.10901974886655807,
+      0.03695855289697647,
+      0.1023160070180893,
+      0.012559342198073864,
+      0.03525209054350853,
+      0.0467788428068161,
+      0.0716383159160614,
+      1.0000001192092896,
+      0.28398585319519043
+    ],
+    [
+      -0.14918877184391022,
+      0.027322055771946907,
+      0.14614787697792053,
+      0.12293027341365814,
+      0.03237302973866463,
+      0.13203684985637665,
+      0.03244704008102417,
+      0.28398585319519043,
+      1.0
+    ]
+  ],
+  "traits": [
+    "anger",
+    "arousal",
+    "arousal_abstract",
+    "boredom",
+    "confusion",
+    "embarrassment",
+    "hunger",
+    "pain",
+    "sadness"
+  ],
+  "figures": {
+    "cosine": {
+      "light": "cosine.png",
+      "dark": "cosine.dark.png"
+    },
+    "battery": {
+      "light": "battery.png",
+      "dark": "battery.dark.png"
+    }
+  }
+}

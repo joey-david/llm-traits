@@ -224,19 +224,30 @@ def compare_report(payload: dict, path: str | Path) -> Path:
         "## The numbers behind the ticks",
         "",
         _table(
-            ["trait", "layer", "held-out AUC", "vs nearest control", "random vector", "shuffled null"],
+            ["trait", "layer", "cross-fit layers", "held-out AUC", "vs nearest control", "random (mean/max)", "magnitude alone", "shuffled null"],
             [
                 [
                     r["display_name"],
                     str(r.get("layer", "—")),
+                    " / ".join(str(x) for x in (r.get("cv_selected_layers") or [])) or "—",
                     f"{r['auc_cv']:.3f}",
                     f"{r['auc_worst_control']:.3f}",
-                    f"{r['random_vector_auc']:.3f}",
+                    (
+                        f"{r['random_direction_auc_mean']:.2f} / {r['random_direction_auc_max']:.2f}"
+                        if r.get("random_direction_auc_mean") is not None
+                        else f"{r['random_vector_auc']:.3f}"
+                    ),
+                    f"{r.get('norm_auc', float('nan')):.3f}",
                     f"{r['shuffled_null_auc']:.3f}",
                 ]
                 for r in rows
             ],
         ),
+        "",
+        "The two cross-fit halves each pick a read-out layer without seeing the other.",
+        "Where they land far apart, the CV curve is flat enough that its argmax is close",
+        "to arbitrary, and \"the layer where this trait lives\" is not well defined for",
+        "that trait — read its AUC accordingly.",
         "",
         "## How far apart are the directions?",
         "",

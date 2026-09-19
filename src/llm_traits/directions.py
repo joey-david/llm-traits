@@ -41,12 +41,14 @@ class Direction:
     auc_cv: float  # held-out, the number to quote
     auc_insample: float  # fit and scored on everything, the number not to quote
     auc_cv_std: float
-    per_layer_auc: np.ndarray  # [n_hidden_states], held-out
+    per_layer_auc: np.ndarray  # [n_hidden_states], fixed-layer CV curve
     per_control_auc: dict[str, float] = field(default_factory=dict)
-    # Out-of-fold projection for every fitting sentence, at the chosen layer.
-    # Every derived number that could otherwise leak -- the per-control
-    # breakdown above, most of all -- is computed from this rather than from
-    # projections of the direction that was fit on the same sentences.
+    # Layers selected independently in the two outer cross-fit halves used for
+    # the headline AUC. Empty when the caller fixed the layer explicitly.
+    cv_selected_layers: list[int] = field(default_factory=list)
+    # Out-of-fold projection for every fitting sentence at the final layer.
+    # The direction fit itself never sees the scored sentence, although the
+    # final layer was selected from the full CV curve.
     oof_projection: np.ndarray | None = None
     n_denoise_components: int = 0
     n_positive: int = 0
@@ -72,7 +74,8 @@ class Direction:
             "n_denoise_components": self.n_denoise_components,
             "n_positive": self.n_positive,
             "n_control": self.n_control,
-            "auc_scale": "out-of-fold",
+            "auc_scale": "cross-fit layer selection" if self.cv_selected_layers else "fixed-layer out-of-fold",
+            "cv_selected_layers": self.cv_selected_layers,
             "per_layer_auc": self.per_layer_auc.tolist(),
         }
 
@@ -165,6 +168,75 @@ def per_layer_cv_auc(
     return scores.mean(axis=1), scores.std(axis=1)
 
 
+
+def _best_layer(
+    mean_auc: np.ndarray,
+    layer_range: tuple[float, float],
+) -> int:
+    """Choose the best layer inside the allowed depth band."""
+    n_states = len(mean_auc)
+    lo = int(np.floor(layer_range[0] * (n_states - 1)))
+    hi = int(np.ceil(layer_range[1] * (n_states - 1)))
+    band = np.full(n_states, -np.inf, dtype=np.float32)
+    band[lo : hi + 1] = mean_auc[lo : hi + 1]
+    return int(np.argmax(band))
+
+
+def crossfit_layer_selection_auc(
+    acts: np.ndarray,
+    labels: np.ndarray,
+    n_splits: int = 5,
+    var_threshold: float = 0.5,
+    seed: int = 0,
+    layer_range: tuple[float, float] = (0.15, 0.95),
+) -> tuple[float, float, list[int]]:
+    """Score layer selection on examples that played no role in selecting it.
+
+    A CV curve is suitable for choosing a layer, but reporting the maximum of
+    that same curve is optimistic because the held-out folds also chose which
+    maximum to quote. Full nested 5x5 CV is unnecessarily expensive here.
+    Instead, split the corpus into two stratified halves. For each outer half,
+    select a layer by K-fold CV using only the other half, fit that direction on
+    the selector half, and score the untouched half. Swap roles and average.
+
+    Every sentence is therefore scored exactly once by a layer and direction
+    selected without that sentence. The final deployable vector is still refit
+    on all examples at the layer selected from the full CV curve.
+    """
+    labels = np.asarray(labels)
+    outer = StratifiedKFold(n_splits=2, shuffle=True, random_state=seed)
+    scores: list[float] = []
+    selected: list[int] = []
+
+    for outer_fold, (selector, test) in enumerate(
+        outer.split(np.zeros(len(labels)), labels)
+    ):
+        class_counts = np.bincount(labels[selector].astype(int), minlength=2)
+        inner_splits = min(int(n_splits), int(class_counts.min()))
+        if inner_splits < 2:
+            raise ValueError("layer-selection cross-fit needs at least four examples per class")
+
+        mean_auc, _ = per_layer_cv_auc(
+            acts[selector],
+            labels[selector],
+            n_splits=inner_splits,
+            var_threshold=var_threshold,
+            seed=seed + 1009 * (outer_fold + 1),
+        )
+        selected_layer = _best_layer(mean_auc, layer_range)
+        vector, _ = _fit_at_layer(
+            acts[selector], labels[selector], selected_layer, var_threshold
+        )
+        norm = float(np.linalg.norm(vector))
+        if norm < 1e-8:
+            scores.append(0.5)
+        else:
+            projection = acts[test, selected_layer, :] @ (vector / norm)
+            scores.append(float(roc_auc_score(labels[test], projection)))
+        selected.append(selected_layer)
+
+    return float(np.mean(scores)), float(np.std(scores)), selected
+
 def fit(
     trait: str,
     condition: str,
@@ -192,11 +264,19 @@ def fit(
     mean_auc, std_auc = per_layer_cv_auc(acts, labels, n_splits, var_threshold, seed)
 
     if layer is None:
-        lo = int(np.floor(layer_range[0] * (n_states - 1)))
-        hi = int(np.ceil(layer_range[1] * (n_states - 1)))
-        band = np.full(n_states, -np.inf)
-        band[lo : hi + 1] = mean_auc[lo : hi + 1]
-        layer = int(np.argmax(band))
+        auc_cv, auc_cv_std, cv_selected_layers = crossfit_layer_selection_auc(
+            acts,
+            labels,
+            n_splits=n_splits,
+            var_threshold=var_threshold,
+            seed=seed,
+            layer_range=layer_range,
+        )
+        layer = _best_layer(mean_auc, layer_range)
+    else:
+        auc_cv = float(mean_auc[layer])
+        auc_cv_std = float(std_auc[layer])
+        cv_selected_layers = []
 
     vector, n_components = _fit_at_layer(acts, labels, layer, var_threshold)
     raw_norm = float(np.linalg.norm(vector))
@@ -211,10 +291,11 @@ def fit(
         raw_norm=raw_norm,
         layer=layer,
         pool=pool,
-        auc_cv=float(mean_auc[layer]),
-        auc_cv_std=float(std_auc[layer]),
+        auc_cv=auc_cv,
+        auc_cv_std=auc_cv_std,
         auc_insample=float(roc_auc_score(labels, proj_all)),
         per_layer_auc=mean_auc.astype(np.float32),
+        cv_selected_layers=cv_selected_layers,
         n_denoise_components=n_components,
         n_positive=int((labels == 1).sum()),
         n_control=int((labels == 0).sum()),
@@ -234,10 +315,11 @@ def per_control_auc(
     emotion is not the same object as one that scores 0.95 against both, and
     only this breakdown tells them apart.
 
-    Computed from out-of-fold projections, so these numbers live on the same
-    scale as the headline held-out AUC. Scoring them in-sample would put a
-    breakdown in the high nineties underneath a headline in the seventies, and
-    a reader would reasonably take the breakdown as the real result.
+    Computed from out-of-fold directions at the final selected layer. Thus no
+    sentence is scored by a direction fit on itself. The final layer was chosen
+    from the full CV curve, however, so unlike the headline cross-fit AUC this
+    diagnostic retains a small layer-selection dependence and should not be
+    read as an independent confirmatory estimate.
     """
     labels = np.asarray(labels)
     categories = np.asarray(categories)
@@ -284,12 +366,12 @@ def random_direction(d_model: int, seed: int = 0) -> np.ndarray:
 def shuffled_label_auc(
     acts: np.ndarray, labels: np.ndarray, layer: int, n_repeats: int = 20, seed: int = 0, var_threshold: float = 0.5
 ) -> tuple[float, float]:
-    """CV AUC of the same procedure on randomly permuted labels.
+    """Fixed-layer CV AUC on randomly permuted labels.
 
-    This is the null the AUC has to be read against. Difference-in-means plus a
-    held-out split on a few hundred high-dimensional points will not usually
-    produce 0.5 by chance, and the gap between this and the real number is the
-    part of the result that is about the trait.
+    The headline AUC cross-fits layer selection separately. This cheaper null
+    asks a narrower question at the final selected layer: how much apparent
+    separation does denoised difference-in-means recover from random labels in
+    the same high-dimensional activation cloud?
     """
     rng = np.random.default_rng(seed)
     labels = np.asarray(labels)

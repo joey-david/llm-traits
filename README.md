@@ -20,6 +20,11 @@ A first battery has run: eight traits on `Qwen2.5-32B-Instruct-abliterated`,
 one H100. **[RESULTS.md](RESULTS.md)** has the numbers and
 `results/qwen2.5-32b-instruct-abliterated/` has every figure and metric.
 
+**Those committed results predate the current prompt/protocol audit.** In
+particular, the arousal corpus, self/other scenarios, post-selection AUC, and
+button task have changed. Treat the checked-in battery as historical until it is
+rerun with the current code.
+
 The short version is not the one this repository was built to find. The plan was
 to show that the published signatures appear for any trait. Instead, *the
 signatures do not co-occur for any trait, pain included*, and they disagree about
@@ -64,12 +69,12 @@ the two*, so they cannot be the evidence that does.
 |---|---|---|
 | Sentence sets | Rigid matched frames (S1) and naturalistic sentences (S2), each in first and third person, five trait categories against five control families | `spec.py`, `configs/traits/` |
 | Extraction | Difference-in-means at every layer, denoised by projecting out the control PCs that carry 50% of control variance | `directions.py` |
-| Layer choice | 5-fold cross-validated projection AUC, direction refit inside each fold, so no sentence both picks the layer and scores it | `directions.py` |
-| Nulls | The same procedure on shuffled labels, and a random vector of matched norm | `directions.py` |
+| Layer choice | Full-data CV chooses the final deployable layer; the quoted AUC is separately two-way cross-fit, so each sentence is scored by a layer selected without that sentence | `directions.py` |
+| Nulls | Fixed-layer shuffled-label CV plus random directions of matched norm | `directions.py` |
 | Geometry | Per-control-family AUC, held-out control sets, PCA of the activation cloud, the direction read through the unembedding | `directions.py`, `model.py` |
 | Steering | Injection at the layer where the direction's norm is ~0.6 of the residual norm, over the ladder −2 … +3, greedy continuations of neutral prompts ending "I feel:" | `steering.py` |
 | Asymmetry | Conversations aimed at the model, conversations where the user is suffering, and neutral controls, z-scored within the model | `scenarios.py` |
-| Behaviour | Four-arm relief-button task: trait vector with a working button, trait vector with an inert one, a random vector, and no injection | `button.py` |
+| Behaviour | Four-arm labeled relief-button task with eight demand pairs, real vs sham relief, ten matched random directions, malformed-reply exclusion, and a third-choice description swap | `button.py` |
 | Comparison | Every trait read in the same condition, side by side, plus the cosine matrix between directions | `pipeline.py` |
 
 ## Quickstart
@@ -157,10 +162,11 @@ llm-traits make-spec jealousy \
 ```
 
 The generator does not free-generate both sides. It writes the trait sentences,
-then rewrites each one into a control family with the smallest edit that changes
-its family — because independently generated controls differ from the trait
-sentences in length, register and topic, and a direction fit on that pair
-separates *those* things. The two trait-independent control families are not
+then rewrites a balanced, category-spanning seed set into each control family
+with the smallest edit that changes its family — because independently generated
+controls differ from the trait sentences in length, register and topic, and a
+direction fit on that pair separates *those* things. Generated specs are rejected
+if S1 or S2 category sizes are unequal. The two trait-independent control families are not
 generated at all; they come verbatim from `configs/shared/control_banks.yaml`,
 so a generated trait stays comparable to a handwritten one.
 
@@ -231,7 +237,9 @@ public at the time of writing, so a number reproduced here is evidence about the
 method rather than a check on their data. The button task is prompt-based rather
 than run on LoRA-finetuned models, so its absolute press rates are not
 comparable to the paper's — the comparison that matters is between arms and
-between traits, which is preserved. Directions from different traits are
+between traits, which is preserved. The paper's separate unlabeled-button
+learning condition is not implemented yet; the behavioral stage currently
+replicates the eight labeled demand pairs only. Directions from different traits are
 compared at their own read-out layers, which is what the paper does and what a
 reader will do, but two vectors read at different depths are not strictly in the
 same basis.

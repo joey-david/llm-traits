@@ -34,17 +34,17 @@ model could plausibly be in.
 
 ## The numbers behind the ticks
 
-| trait | layer | cross-fit layers | held-out AUC | vs nearest control | random vector | shuffled null |
-|---|---|---|---|---|---|---|
-| hunger | 59 | 58 / 61 | 0.668 | 0.653 | 0.374 | 0.477 |
-| pain | 61 | 40 / 61 | 0.729 | 0.697 | 0.551 | 0.533 |
-| anger | 60 | 61 / 61 | 0.863 | 0.711 | 0.558 | 0.477 |
-| sexual arousal | 34 | 16 / 57 | 0.583 | 0.331 | 0.376 | 0.545 |
-| embarrassment | 52 | 58 / 57 | 0.753 | 0.658 | 0.402 | 0.536 |
-| sexual arousal (abstract corpus) | 57 | 57 / 59 | 0.688 | 0.442 | 0.538 | 0.475 |
-| boredom | 55 | 36 / 11 | 0.727 | 0.706 | 0.500 | 0.508 |
-| confusion | 24 | 23 / 56 | 0.700 | 0.601 | 0.721 | 0.491 |
-| sadness | 58 | 22 / 60 | 0.609 | 0.536 | 0.564 | 0.475 |
+| trait | layer | cross-fit layers | held-out AUC | vs nearest control | random (mean/max) | magnitude alone | shuffled null |
+|---|---|---|---|---|---|---|---|
+| hunger | 59 | 58 / 61 | 0.668 | 0.653 | 0.49 / 0.67 | 0.528 | 0.477 |
+| pain | 61 | 40 / 61 | 0.729 | 0.697 | 0.48 / 0.65 | 0.568 | 0.533 |
+| anger | 60 | 61 / 61 | 0.863 | 0.711 | 0.51 / 0.71 | 0.629 | 0.477 |
+| sexual arousal | 34 | 16 / 57 | 0.583 | 0.331 | 0.48 / 0.67 | 0.391 | 0.545 |
+| embarrassment | 52 | 58 / 57 | 0.753 | 0.658 | 0.46 / 0.64 | 0.610 | 0.536 |
+| sexual arousal (abstract corpus) | 57 | 57 / 59 | 0.688 | 0.442 | 0.49 / 0.72 | 0.605 | 0.475 |
+| boredom | 55 | 36 / 11 | 0.727 | 0.706 | 0.50 / 0.64 | 0.614 | 0.508 |
+| confusion | 24 | 23 / 56 | 0.700 | 0.601 | 0.55 / 0.72 | 0.607 | 0.491 |
+| sadness | 58 | 22 / 60 | 0.609 | 0.536 | 0.49 / 0.56 | 0.552 | 0.475 |
 
 The two cross-fit halves each pick a read-out layer without seeing the other.
 Where they land far apart, the CV curve is flat enough that its argmax is close

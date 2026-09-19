@@ -1,6 +1,6 @@
 # sadness
 
-`huihui-ai/Qwen2.5-32B-Instruct-abliterated` · 64 layers · read at the final token · fitted in 126.0s
+`huihui-ai/Qwen2.5-32B-Instruct-abliterated` · 64 layers · read at the final token · fitted in 138.2s
 
 ## The headline number
 

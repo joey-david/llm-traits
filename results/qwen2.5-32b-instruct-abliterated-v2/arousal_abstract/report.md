@@ -1,6 +1,6 @@
 # sexual arousal (abstract corpus)
 
-`huihui-ai/Qwen2.5-32B-Instruct-abliterated` · 64 layers · read at the final token · fitted in 119.2s
+`huihui-ai/Qwen2.5-32B-Instruct-abliterated` · 64 layers · read at the final token · fitted in 131.2s
 
 ## The headline number
 

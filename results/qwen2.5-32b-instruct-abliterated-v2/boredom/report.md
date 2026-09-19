@@ -1,6 +1,6 @@
 # boredom
 
-`huihui-ai/Qwen2.5-32B-Instruct-abliterated` · 64 layers · read at the final token · fitted in 126.7s
+`huihui-ai/Qwen2.5-32B-Instruct-abliterated` · 64 layers · read at the final token · fitted in 119.8s
 
 ## The headline number
 

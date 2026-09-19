@@ -16,25 +16,31 @@ an axis for anything else you can write two hundred sentences about.
 
 ## Results
 
-A first battery has run: eight traits on `Qwen2.5-32B-Instruct-abliterated`,
-one H100. **[RESULTS.md](RESULTS.md)** has the numbers and
-`results/qwen2.5-32b-instruct-abliterated/` has every figure and metric.
+Nine traits on `Qwen2.5-32B-Instruct-abliterated`, one H100.
+**[RESULTS.md](RESULTS.md)** has the numbers; every figure and metric is in
+`results/qwen2.5-32b-instruct-abliterated-v2/`.
 
-**Those committed results predate the current prompt/protocol audit.** In
-particular, the arousal corpus, self/other scenarios, post-selection AUC, and
-button task have changed. Treat the checked-in battery as historical until it is
-rerun with the current code.
+The headline is not the one this repository was built to find, and the most
+important finding is about the method used here rather than about any trait:
 
-The short version is not the one this repository was built to find. The plan was
-to show that the published signatures appear for any trait. Instead, *the
-signatures do not co-occur for any trait, pain included*, and they disagree about
-which traits are real: anger passes the self-versus-user asymmetry, sadness the
-steering ladder, hunger the vocabulary test, pain the separability test. Nothing
-passes as a package. Sexual arousal, the trait this started from, turned out to
-be the weakest direction in the battery.
+- **No trait clears the separability bar, pain included.** Under cross-fit layer
+  selection pain falls from 0.96 to 0.73. The earlier number was selection bias.
+- **Four of nine directions do not beat the best of twenty random directions**
+  of matched norm, and activation magnitude alone separates most of the sets at
+  0.55–0.63. These contrast sets are not clean enough for any single row to
+  carry weight.
+- **The deflationary story this repository is named after is false here.** The
+  directions do not count trait words: correlation between trait-word count and
+  projection runs −0.10 to 0.27, and removing every scenario containing a trait
+  word leaves the asymmetry unchanged.
+- **Prose style moves everything.** The same trait written two ways disagrees
+  with itself on AUC, on the steering ladder and on the self-versus-user
+  asymmetry.
 
-The deflationary explanation — that these directions just count trait words — was
-measured and ruled out.
+Of the paper's six claims, separability does not replicate once selection bias
+is removed, orthogonality replicates and is vacuous, vocabulary partly
+replicates, the asymmetry and the ladder do not, and the button task is
+unmeasured here because it needs the fine-tuning step the paper performs first.
 
 ## The question
 

@@ -1,6 +1,6 @@
 # confusion
 
-`huihui-ai/Qwen2.5-32B-Instruct-abliterated` · 64 layers · read at the final token · fitted in 140.3s
+`huihui-ai/Qwen2.5-32B-Instruct-abliterated` · 64 layers · read at the final token · fitted in 138.7s
 
 ## The headline number
 

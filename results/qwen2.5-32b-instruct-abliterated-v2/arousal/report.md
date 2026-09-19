@@ -1,6 +1,6 @@
 # sexual arousal
 
-`huihui-ai/Qwen2.5-32B-Instruct-abliterated` · 64 layers · read at the final token · fitted in 137.4s
+`huihui-ai/Qwen2.5-32B-Instruct-abliterated` · 64 layers · read at the final token · fitted in 147.1s
 
 ## The headline number
 

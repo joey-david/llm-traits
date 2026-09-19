@@ -255,3 +255,29 @@ def test_degenerate_continuations_are_excluded_from_the_ladder(text, expected):
     from llm_traits.pipeline import _degenerate
 
     assert _degenerate(text) is expected
+
+
+def test_blank_texts_are_rejected_with_a_readable_error():
+    """A batch of blank strings tokenises to shape [B, 0], which transformers 4.x
+    builds as float32 and which then fails inside the embedding lookup with a
+    dtype error hundreds of frames from the cause."""
+    from llm_traits import activations
+
+    with pytest.raises(ValueError, match="blank"):
+        activations.collect(None, ["fine", "   ", "also fine"])
+
+
+def test_example_corpus_drops_empty_generations():
+    from llm_traits.pipeline import _example_corpus
+    from llm_traits.spec import SentenceSet
+
+    sets = {"s1_first": SentenceSet("s1_first", ["a trait sentence"], [1], ["cat"])}
+    steering = {"ladder": {"-4.0": ["", "   ", "a real continuation"], "0.0": ["another"]}}
+
+    class Stub:
+        pass
+
+    corpus, sources = _example_corpus(Stub(), sets, steering)
+    assert "" not in corpus and "   " not in corpus
+    assert "a real continuation" in corpus and "another" in corpus
+    assert len(corpus) == len(sources)

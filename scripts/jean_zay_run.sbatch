@@ -41,11 +41,23 @@ traits="${TRAITS:-arousal}"
 stages="${STAGES:-direction,geometry,steer,scenarios,examples}"
 tag="${TAG:-$(basename "$model")}"
 batch="${BATCH:-8}"
+# Where in a chat-formatted scenario to read: "header" is the final token with
+# the generation prompt appended, which is the assistant-turn marker and the
+# same tokens in every scenario; "content" is the last token the user wrote.
+read_at="${READ_AT:-content}"
+# The paper's ladder is -2 -1 0 .5 1 1.5 2 3. The wider default here exists
+# because this model produces no trait vocabulary at all across that range for
+# some traits, and the extra rungs tell "needs a bigger coefficient" apart from
+# "the effect is not there". Collapsed continuations are filtered out, so the
+# extremes cost nothing but time.
+ladder="${LADDER:--4 -2 -1 0 1 2 3 4}"
 
 echo "model    $model"
 echo "traits   $traits"
 echo "stages   $stages"
 echo "tag      $tag"
+echo "read-at  $read_at"
+echo "ladder   $ladder"
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
 
 # shellcheck disable=SC2086
@@ -53,5 +65,7 @@ exec "$PYTHON" -m llm_traits.cli --run-root runs --tag "$tag" run $traits \
   --model "$model" \
   --stages "$stages" \
   --batch-size "$batch" \
+  --read-at "$read_at" \
+  --ladder $ladder \
   --device cuda \
   --dtype bfloat16

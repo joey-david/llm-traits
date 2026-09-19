@@ -426,6 +426,11 @@ def _example_corpus(spec: TraitSpec, sets, steering_results) -> tuple[list[str],
     if steering_results:
         for coefficient, texts in steering_results["ladder"].items():
             for text in texts:
+                # A steered model at an extreme coefficient sometimes emits
+                # nothing at all. That is a fact about the coefficient, recorded
+                # in the ladder itself; there is nothing to rank here.
+                if not text.strip():
+                    continue
                 corpus.append(text.strip())
                 sources.append(f"generated · coefficient {coefficient}")
     return corpus, sources

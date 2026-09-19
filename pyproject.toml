@@ -1,0 +1,33 @@
+[project]
+name = "llm-traits"
+version = "0.1.0"
+description = "Run the Pain Axis extraction pipeline on an arbitrary trait, and see what the method can and cannot tell apart."
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.4",
+    "transformers>=4.44",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "scikit-learn>=1.4",
+    "matplotlib>=3.8",
+    "pyyaml>=6.0",
+    "tqdm>=4.66",
+    "huggingface-hub>=0.24",
+    "safetensors>=0.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+llm-traits = "llm_traits.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

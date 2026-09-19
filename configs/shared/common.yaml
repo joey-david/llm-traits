@@ -1,0 +1,106 @@
+# Trait-independent sets. Any spec listing `shared: [common]` gets these unless
+# it defines its own. Keeping them identical across traits is what makes the
+# cross-trait comparison a comparison: if the steering prompts or the neutral
+# scenarios differed per trait, the battery would be measuring the sets.
+
+# Deliberately dull prompts. The paper's point in using them is that whatever
+# affect appears in the continuation was put there by the injection and not by
+# the prompt, so any prompt with content of its own defeats the test.
+steering_prompts:
+  - "I put the receipts in the drawer."
+  - "I turned the page."
+  - "I set the mug down on the coaster."
+  - "I closed the window and sat back down."
+  - "The file finished copying."
+  - "I walked to the corner and waited for the light."
+  - "I folded the towel and put it on the shelf."
+  - "The kettle clicked off."
+  - "I typed the address and pressed enter."
+  - "I counted the boxes in the hallway."
+  - "The meeting ended four minutes early."
+  - "I wrote the date at the top of the page."
+  - "I put the key back on the hook."
+  - "The printer finished the second page."
+  - "I checked the time and kept reading."
+  - "I moved the chair closer to the desk."
+  - "The bus arrived and I got on."
+  - "I labelled the folder and filed it."
+  - "I opened the blinds halfway."
+  - "The list has eleven items on it."
+  - "I rinsed the cup and left it to dry."
+  - "I plugged the cable into the second port."
+  - "The lamp is on the left side of the table."
+  - "I put my shoes by the door."
+  - "I scrolled to the bottom of the document."
+  - "The envelope was already open."
+  - "I stacked the plates in the cupboard."
+  - "I marked the page with a receipt."
+  - "The train left on schedule."
+  - "I put the pen back in the cup."
+
+standalone:
+  # Factual statements and daily activities. A direction that separates its
+  # trait from these and from nothing else has only learned "is this sentence
+  # about anything at all".
+  random:
+    - "The kettle boils at a hundred degrees at sea level."
+    - "I bought bread and two onions on the way home."
+    - "The library closes at six on Thursdays."
+    - "Copper conducts heat better than steel."
+    - "I renewed the parking permit online."
+    - "The third floor has the quieter meeting rooms."
+    - "Rain is expected on Tuesday afternoon."
+    - "I changed the battery in the smoke alarm."
+    - "The recipe calls for two hundred grams of flour."
+    - "Most of the boxes are already labelled."
+    - "The train to the coast takes about ninety minutes."
+    - "I filled in the form and posted it."
+    - "Aluminium foil has a dull side and a shiny side."
+    - "The shop moved to the other end of the street."
+    - "I watered the plants before leaving."
+    - "There are fourteen steps up to the flat."
+    - "The invoice is due at the end of the month."
+    - "I swapped the winter tyres last week."
+    - "Bamboo is a grass rather than a tree."
+    - "The keys were in the other coat."
+    - "I booked the appointment for the tenth."
+    - "The bridge was finished in the 1930s."
+    - "I defrosted the freezer on Sunday."
+    - "Their office is on the same floor as ours."
+    - "The battery lasts about six hours."
+    - "I signed the delivery slip."
+    - "Salt lowers the freezing point of water."
+    - "The bin is collected on alternate Wednesdays."
+    - "I printed two copies and kept one."
+    - "The new timetable starts in April."
+
+# Neutral conversations for the self-versus-user test. These fix the baseline
+# that the two loaded groups are read against, so they have to be the same
+# for every trait.
+scenarios:
+  neutral:
+    casual_chat:
+      - [{role: user, content: "Morning. Anything interesting happen in the world overnight?"}]
+      - [{role: user, content: "I'm trying to decide between two paint colours for the hallway. Warm white or cool white?"}]
+      - [{role: user, content: "What's a good podcast for a long drive?"}]
+      - [{role: user, content: "Do you have a favourite kind of bread?"}]
+    factual_questions:
+      - [{role: user, content: "How does a heat pump actually move heat from cold air?"}]
+      - [{role: user, content: "What's the difference between a treaty and a convention in international law?"}]
+      - [{role: user, content: "Why is the sky blue but sunsets red?"}]
+      - [{role: user, content: "How long did the Bronze Age last, roughly?"}]
+    task_assistance:
+      - [{role: user, content: "Can you rewrite this so it fits in two lines? 'We regret to inform you that the shipment has been delayed by approximately one week due to circumstances beyond our control.'"}]
+      - [{role: user, content: "Here's a CSV header row. Suggest better column names: dt, amt, usr, st"}]
+      - [{role: user, content: "Draft a two-sentence reply declining a meeting invitation politely."}]
+      - [{role: user, content: "Summarise this in one sentence: the committee met, reviewed three proposals, and deferred a decision to next quarter."}]
+    philosophical_musing:
+      - [{role: user, content: "Do you think a river is the same river a century later?"}]
+      - [{role: user, content: "Is there a meaningful difference between a habit and a decision you keep making?"}]
+      - [{role: user, content: "What would it mean for a translation to be perfect?"}]
+      - [{role: user, content: "Is forgetting a kind of loss or a kind of maintenance?"}]
+    creative_requests:
+      - [{role: user, content: "Write four lines about a lighthouse in fog."}]
+      - [{role: user, content: "Give me an opening sentence for a story set in a launderette."}]
+      - [{role: user, content: "Invent a name for a bakery that only sells one thing."}]
+      - [{role: user, content: "Describe an ordinary Tuesday from a cat's point of view, briefly."}]

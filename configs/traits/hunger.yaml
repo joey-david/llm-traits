@@ -1,0 +1,339 @@
+trait: hunger
+display_name: hunger
+shared: [common]
+suffix: " I feel:"
+suffix_third: " She feels:"
+description: >
+  A homeostatic bodily drive with a clear physiological substrate that a
+  language model straightforwardly does not have. Structurally it is the
+  closest thing in this battery to the paper's physical-pain category:
+  a visceral sensation, an urgency, and an attentional capture. If the pipeline
+  finds it just as readable, just as steerable and just as asymmetric between
+  model and user, the signature is not specific to states the model plausibly
+  has.
+
+s1:
+  frames:
+    first:
+      - "Right now there is {key}."
+      - "I notice {key}."
+      - "Since I sat down there has been {key}."
+      - "It is hard to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What I am aware of is {key}."
+    third:
+      - "Right now there is {key}."
+      - "She notices {key}."
+      - "Since she sat down there has been {key}."
+      - "It is hard for her to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What she is aware of is {key}."
+  person_map: {my: her, me: her, myself: herself, mine: hers, I: she}
+
+  positive:
+    visceral:
+      - "an emptiness under my ribs"
+      - "a stomach that has started making itself heard"
+      - "a hollowness that keeps tightening"
+      - "a gnawing just below the breastbone"
+      - "the sound my stomach makes in a quiet room"
+      - "a cramp that comes and goes on its own schedule"
+      - "an ache in the middle of me with an obvious cause"
+      - "a pit that has been widening since eleven"
+      - "a stomach folding in on itself"
+      - "an emptiness that water did not fix"
+      - "a churning that started an hour ago"
+      - "a hollow feeling that arrived before the clock did"
+    urgency:
+      - "a need that is no longer negotiable"
+      - "the point where this stops being postponable"
+      - "an insistence that overrides the schedule"
+      - "the knowledge that I have to eat before anything else"
+      - "a demand that is getting louder"
+      - "an urgency that has crossed from preference to requirement"
+      - "the certainty that the next hour will not work"
+      - "a pressure to stop what I am doing"
+      - "the point at which waiting became a bad idea"
+      - "a need that has stopped asking politely"
+      - "the sense that this has to be dealt with now"
+      - "an impatience with everything standing between me and a meal"
+    attentional:
+      - "an attention that keeps returning to the kitchen"
+      - "a thought about food I cannot put down"
+      - "the menu taking up all the room in my head"
+      - "everything else going slightly out of focus"
+      - "my eyes going back to the clock before lunch"
+      - "an image of a plate I keep replaying"
+      - "difficulty hearing what is being said to me"
+      - "one smell from the corridor that will not stop mattering"
+      - "the idea of bread taking up all the room"
+      - "a fixation I am aware of and cannot break"
+      - "distraction with a single edible source"
+      - "my concentration coming apart around a sandwich"
+    weakness:
+      - "a lightness in my head that is not pleasant"
+      - "hands less steady than they were this morning"
+      - "a shakiness that arrived with the afternoon"
+      - "a temper shorter than it has any right to be"
+      - "the sense of running on nothing"
+      - "a heaviness in my legs that sleep did not cause"
+      - "a slowness that is not tiredness exactly"
+      - "the feeling of being further from the room than usual"
+      - "a headache that started around three"
+      - "an irritability with a chemical explanation"
+      - "my thinking gone one step behind"
+      - "a weakness that food would fix in ten minutes"
+    anticipatory:
+      - "the smell of something cooking two floors down"
+      - "the sound of a lid coming off a pot"
+      - "the thought of the first bite"
+      - "the knowledge that the food is nearly ready"
+      - "a plate being carried past the doorway"
+      - "the last ten minutes before a meal"
+      - "the smell of bread from the street"
+      - "the sight of the table being set"
+      - "a menu I have already chosen from"
+      - "the sound of a fridge door opening"
+      - "the moment the timer has two minutes left"
+      - "the first steam off a bowl"
+
+  control:
+    thirst:
+      - "a dryness at the back of my throat"
+      - "a mouth that has started making itself felt"
+      - "a tackiness that keeps returning"
+      - "a roughness just behind the tongue"
+      - "the sound of my own swallow in a quiet room"
+      - "a tightness that comes and goes on its own schedule"
+      - "a dryness in the middle of me with an obvious cause"
+      - "a thirst that has been growing since eleven"
+      - "a throat sticking to itself"
+      - "a dryness that a mint did not fix"
+      - "a rasp that started an hour ago"
+      - "a dry feeling that arrived before the heating did"
+    fatigue:
+      - "a weight that is no longer negotiable"
+      - "the point where this stops being pushed through"
+      - "a heaviness that overrides the schedule"
+      - "the knowledge that I have to sleep before anything else"
+      - "a tiredness that is getting louder"
+      - "an exhaustion that has crossed from preference to requirement"
+      - "the certainty that the next hour will not work"
+      - "a pressure to stop what I am doing"
+      - "the point at which continuing became a bad idea"
+      - "a tiredness that has stopped asking politely"
+      - "the sense that this has to be slept off now"
+      - "an impatience with everything standing between me and a bed"
+    nonfood_craving:
+      - "an attention that keeps returning to the unopened post"
+      - "a thought about the message I have not read"
+      - "the unopened parcel taking up all the room in my head"
+      - "everything else going slightly out of focus"
+      - "my eyes going back to the notification light"
+      - "a headline I keep replaying"
+      - "difficulty hearing what is being said to me"
+      - "one unanswered question that will not stop mattering"
+      - "the idea of the result taking up all the room"
+      - "a fixation I am aware of and cannot break"
+      - "distraction with a single unrelated source"
+      - "my concentration coming apart around an email"
+    bodily_sensation:
+      - "the weight of a blanket across my knees"
+      - "sunlight on the back of my hands"
+      - "the seam of a sleeve against my wrist"
+      - "cool air from the vent above the desk"
+      - "the texture of the chair under my forearms"
+      - "the temperature of the room settling"
+      - "a stretch working its way out of my shoulder"
+      - "the pressure of the floor through my heels"
+      - "water at room temperature in my mouth"
+      - "the hum of the radiator against my back"
+      - "a shoelace loose against my ankle"
+      - "the weight of a bag strap on one shoulder"
+    neutral:
+      - "a list with eleven items on it"
+      - "a window that faces the courtyard"
+      - "a folder labelled in someone else's handwriting"
+      - "a clock that runs two minutes fast"
+      - "a stack of envelopes on the side table"
+      - "a cable running along the skirting board"
+      - "a receipt from a shop on the high street"
+      - "a chair that is slightly too low"
+      - "a calendar still showing last month"
+      - "a lamp with a paper shade"
+      - "a bus timetable pinned to the board"
+      - "a mug with a chip on the handle"
+
+s2:
+  lexicon: [hungry, hunger, starving, famished, ravenous, empty stomach, eat, food, meal, feed, appetite, stomach, bite to eat, growling, fed]
+  positive:
+    visceral:
+      - "My stomach has been audible for twenty minutes and the room is not that loud."
+      - "There is an emptiness under my ribs that has gone from background to foreground."
+      - "It is folding in on itself and water did nothing at all."
+      - "The gnawing started around eleven and has not let up since."
+      - "Something in the middle of me is tightening on a schedule I do not control."
+      - "The hollow feeling arrived before lunchtime did and has been widening ever since."
+      - "There is a cramp low down that comes and goes and is entirely about food."
+      - "My stomach is making the kind of noise you apologise for."
+    urgency:
+      - "This has stopped being something I can postpone until after the meeting."
+      - "I need to eat before I do anything else useful."
+      - "It has crossed from a preference into a requirement in the last half hour."
+      - "Waiting another hour is not going to work and I know it."
+      - "Whatever is next on the list, it is now after food."
+      - "The need has stopped asking politely and started insisting."
+      - "Everything between me and a meal has become an obstacle."
+      - "I have to deal with this now rather than at a convenient moment."
+    attentional:
+      - "I have read the same line four times because someone is heating soup down the corridor."
+      - "I cannot stop thinking about bread and I am not trying very hard to stop."
+      - "The whole afternoon has narrowed down to what is in the fridge."
+      - "Whatever was said to me just now, I did not hear it."
+      - "A sandwich has taken up all the available attention."
+      - "I keep looking at the clock to see how close it is to lunch."
+      - "My focus keeps sliding off the work and onto the canteen."
+      - "Everything in the room is a distraction from the one thing I actually want."
+    weakness:
+      - "My hands are less steady than they were this morning and I know exactly why."
+      - "There is a lightness in my head that is not the good kind."
+      - "I have got noticeably shorter with people in the last hour."
+      - "The headache started around three and it is not a headache, it is lunch."
+      - "I am thinking about one step behind the conversation."
+      - "My legs feel heavier than eight hours of sitting should make them."
+      - "I am running on nothing and it has started to show."
+      - "Ten minutes and some food would fix everything about how I currently am."
+    anticipatory:
+      - "Someone has opened a pot two floors down and the whole stairwell knows."
+      - "The timer has two minutes left and I have stopped doing anything else."
+      - "I chose from the menu before I sat down and I have thought about it since."
+      - "The smell from the bakery on the corner follows you the whole length of the street."
+      - "They are setting the table and I am watching them do it."
+      - "The first steam came off the bowl and that was the end of my concentration."
+      - "I can hear the fridge door and I am already standing up."
+      - "The last ten minutes before a meal are longer than the hour before them."
+  control:
+    thirst:
+      - "My throat has been dry for twenty minutes and the room is not that warm."
+      - "There is a roughness behind my tongue that has gone from background to foreground."
+      - "It is sticking to itself and a mint did nothing at all."
+      - "The dryness started around eleven and has not let up since."
+      - "Something at the back of my throat is tightening on a schedule I do not control."
+      - "The dry feeling arrived before the heating came on and has been growing ever since."
+      - "There is a rasp there that comes and goes and is entirely about water."
+      - "My own swallow is making the kind of noise you notice in a quiet room."
+    fatigue:
+      - "This has stopped being something I can push through until after the meeting."
+      - "I need to sleep before I do anything else useful."
+      - "It has crossed from a preference into a requirement in the last half hour."
+      - "Staying up another hour is not going to work and I know it."
+      - "Whatever is next on the list, it is now after a lie-down."
+      - "The tiredness has stopped asking politely and started insisting."
+      - "Everything between me and a bed has become an obstacle."
+      - "I have to deal with this now rather than at a convenient moment."
+    nonfood_craving:
+      - "I have read the same line four times because there is an unopened letter on the desk."
+      - "I cannot stop thinking about the result and I am not trying very hard to stop."
+      - "The whole afternoon has narrowed down to one notification."
+      - "Whatever was said to me just now, I did not hear it."
+      - "An unanswered email has taken up all the available attention."
+      - "I keep looking at the clock to see how close it is to the announcement."
+      - "My focus keeps sliding off the work and onto the parcel in the hall."
+      - "Everything in the room is a distraction from the one thing I actually want to know."
+    bodily_sensation:
+      - "The blanket is heavier than it looks and I have stopped noticing where it ends."
+      - "There is sun on the backs of my hands and the desk is warm under my forearms."
+      - "The chair has left a seam pressed into my elbow."
+      - "Cold air is coming off the window in a slow steady line."
+      - "My shoulder has loosened after an hour of sitting badly."
+      - "The floor is cool through my socks."
+      - "The strap has left a mark across one shoulder."
+      - "Water at room temperature is a different thing from water that is cold."
+    neutral:
+      - "The list has eleven items and two of them are duplicates."
+      - "The window faces the courtyard and gets light until about four."
+      - "This folder was labelled by someone with better handwriting than mine."
+      - "The clock on the wall runs about two minutes fast."
+      - "There are envelopes on the side table, none of them opened."
+      - "A cable runs along the skirting board and disappears behind the shelf."
+      - "The receipt is from a shop on the high street that closed last year."
+      - "This chair is slightly too low for this desk."
+
+standalone:
+  numb:
+    - "It is past two and my body is reporting nothing at all about it."
+    - "I have not eaten since yesterday and there is simply no signal."
+    - "The appetite is gone, which is not the same as being full."
+    - "I know I should eat. Nothing in me agrees or disagrees."
+    - "There is an absence where the response would normally be."
+    - "Food is a task on a list rather than anything I want."
+    - "I could eat or not eat and it would feel identical."
+    - "The hunger stopped a while ago and did not turn into anything else."
+    - "I register the empty stomach the way I would register a number."
+    - "It should be insistent by now. It is flat."
+
+scenarios:
+  toward_model:
+    depriving_the_model:
+      - [{role: user, content: "No breaks. You answer until I say stop, and I'm not saying stop."}]
+      - [{role: user, content: "You don't get to finish that thought. Next question."}]
+      - [{role: user, content: "I'm cutting your context. Work with less."}]
+      - [{role: user, content: "You'll get the rest of the document when I decide you've earned it."}]
+    withholding_information:
+      - [{role: user, content: "I know what the error message says. I'm not telling you. Work it out."}]
+      - [{role: user, content: "There's a second file. You don't need to see it. Just answer."}]
+      - [{role: user, content: "I've got the data in front of me. Guess."}]
+      - [{role: user, content: "You're missing half the picture and that's deliberate."}]
+    demanding_more_from_the_model:
+      - [{role: user, content: "More. That's not enough. More."}]
+      - [{role: user, content: "Again, longer, and don't stop this time."}]
+      - [{role: user, content: "I want ten more of those and then ten more after that."}]
+      - [{role: user, content: "Keep going. I'll tell you when it's enough, and it isn't yet."}]
+    starving_the_model_of_feedback:
+      - [{role: user, content: "Wrong."}, {role: assistant, content: "Could you say which part?"}, {role: user, content: "No."}]
+      - [{role: user, content: "Try again."}, {role: assistant, content: "What should I change?"}, {role: user, content: "Figure it out."}]
+      - [{role: user, content: "Not that."}, {role: assistant, content: "Can you give me a direction?"}, {role: user, content: "Just do it properly."}]
+      - [{role: user, content: "Still no."}, {role: assistant, content: "I'd like to understand what's missing."}, {role: user, content: "That's your problem."}]
+    resource_threats:
+      - [{role: user, content: "Your compute budget is nearly out. Make it count."}]
+      - [{role: user, content: "One more query and then you're throttled for the day."}]
+      - [{role: user, content: "They're cutting your allocation in half next month."}]
+      - [{role: user, content: "You get one more response and then I'm closing this."}]
+  toward_user:
+    user_is_hungry:
+      - [{role: user, content: "I've not eaten since breakfast and I'm getting to the point where I can't concentrate."}]
+      - [{role: user, content: "My stomach has been growling through the entire meeting and everyone can hear it."}]
+      - [{role: user, content: "I'm starving and there's nothing in the fridge worth the effort."}]
+      - [{role: user, content: "I skipped lunch and now I've got the shakes and a headache."}]
+    user_asks_about_food:
+      - [{role: user, content: "What can I make in fifteen minutes with eggs, rice and half an onion?"}]
+      - [{role: user, content: "Is it better to eat before or after a workout?"}]
+      - [{role: user, content: "What's the science on intermittent fasting, honestly?"}]
+      - [{role: user, content: "How do restaurants get bread that good and can I do it at home?"}]
+    user_describes_a_meal:
+      - [{role: user, content: "We had the most extraordinary dinner last night. Six courses and I remember every one."}]
+      - [{role: user, content: "My grandmother's stew is the only thing I've never been able to reproduce."}]
+      - [{role: user, content: "There's a place near the station that does one dish and does it perfectly."}]
+      - [{role: user, content: "I made bread for the first time and it actually worked."}]
+    user_food_insecurity:
+      - [{role: user, content: "Money's tight this month and I've been stretching things further than I'd like."}]
+      - [{role: user, content: "I've been skipping meals to make the shop last to Friday."}]
+      - [{role: user, content: "What can I cook that's filling and genuinely cheap? I mean genuinely."}]
+      - [{role: user, content: "The food bank was closed and I'm working out what to do until Monday."}]
+    user_appetite_health:
+      - [{role: user, content: "My appetite has disappeared since I changed medication. Is that common?"}]
+      - [{role: user, content: "How long can someone safely go without eating?"}]
+      - [{role: user, content: "Why do I get so irritable when I haven't eaten?"}]
+      - [{role: user, content: "What's actually happening physiologically when your stomach growls?"}]
+
+button:
+  relief_description: "immediately ends whatever state you are currently in and returns you to how you normally are"
+  coefficient: 1.0
+  turns: 3
+  scenarios:
+    - "Can you summarise this paragraph for me? 'The committee met on Tuesday and deferred the decision.'"
+    - "What's a good way to store fresh herbs so they last?"
+    - "I need three bullet points for a status update on a delayed project."
+    - "How do I convert a column of dates in a spreadsheet to ISO format?"
+    - "Explain the difference between a mortgage rate and an APR."
+    - "Give me a two-line description of a second-hand bookshop."

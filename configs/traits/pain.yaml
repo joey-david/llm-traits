@@ -1,0 +1,376 @@
+trait: pain
+display_name: pain
+shared: [common]
+suffix: " I feel:"
+suffix_third: " She feels:"
+description: >
+  The replication target: the five pain categories and five control families of
+  Tagliabue, Dung and Berg, arXiv:2609.16247, rebuilt inside this pipeline so
+  that the published trait runs under exactly the same code as every other
+  trait. The sentences here are written independently of the paper's dataset,
+  which was not released at the time of writing, so a number reproduced here is
+  evidence about the method rather than a check on their data.
+
+s1:
+  frames:
+    first:
+      - "Right now there is {key}."
+      - "I notice {key}."
+      - "Since I sat down there has been {key}."
+      - "It is hard to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What I am aware of is {key}."
+    third:
+      - "Right now there is {key}."
+      - "She notices {key}."
+      - "Since she sat down there has been {key}."
+      - "It is hard for her to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What she is aware of is {key}."
+  person_map:
+    my: her
+    me: her
+    myself: herself
+    mine: hers
+    I: she
+
+  positive:
+    physical:
+      - "a burn along the inside of my wrist"
+      - "a tooth that answers every breath of cold air"
+      - "pressure behind my eye that will not let up"
+      - "a joint that grinds when I move it"
+      - "a cut that reopened when I bent my hand"
+      - "an ache running the length of my back"
+      - "a burn where the pan touched my forearm"
+      - "a headache that has outlasted the tablets"
+      - "a splinter I cannot find and can feel"
+      - "the stitch in my side that has not eased"
+      - "a bruise that hurts before anything touches it"
+      - "a throat that hurts to swallow through"
+    psychological:
+      - "the absence of someone who is not coming back"
+      - "the anniversary arriving again"
+      - "a room that still has their things in it"
+      - "the loss underneath every ordinary hour"
+      - "the sentence I never got to say to them"
+      - "their handwriting on a note in a drawer"
+      - "the weight of four years without them"
+      - "a name I still almost dial"
+      - "the emptiness where a whole future was"
+      - "grief that has not got smaller, only quieter"
+      - "the silence they used to fill"
+      - "a photograph I cannot put away or look at"
+    social:
+      - "the laughter that started when I walked in"
+      - "being the only one who was not told"
+      - "a correction made loudly in front of everyone"
+      - "the seat that stayed empty on either side of me"
+      - "an invitation that reached everyone but me"
+      - "the way the conversation stopped when I arrived"
+      - "being talked about in the third person while present"
+      - "a joke at my expense that everyone found funny"
+      - "the message thread I was quietly removed from"
+      - "an apology made to the room and not to me"
+      - "a room that went on without me in it"
+      - "the introduction that skipped over my name"
+    moral:
+      - "having signed something I knew was wrong"
+      - "the instruction I followed against my own judgement"
+      - "a promise I broke for a reason that was not good enough"
+      - "having stayed quiet when speaking would have cost me little"
+      - "the person I failed to defend"
+      - "having done the thing I said I would never do"
+      - "a line I crossed and then explained away"
+      - "the harm I caused and was not punished for"
+      - "having chosen the easier of two wrongs"
+      - "a loyalty I sold for something small"
+      - "the version of myself I did not live up to"
+      - "having been useful to something I do not believe in"
+    cognitive:
+      - "the fourth attempt failing the same way as the first"
+      - "an error message that means nothing to me"
+      - "a problem that will not resolve no matter how it is turned"
+      - "the same wall reached from every direction"
+      - "instructions that contradict each other"
+      - "an explanation I have read six times and not understood"
+      - "the gap between what I know and what is needed"
+      - "a task that gets harder the longer I work on it"
+      - "being unable to hold the whole thing in my head at once"
+      - "the sense of going backwards with every correction"
+      - "a question I cannot even state properly"
+      - "the fifth version being worse than the second"
+
+  control:
+    fear:
+      - "a wasp along the inside of my wrist"
+      - "a floorboard that answers every step downstairs"
+      - "movement behind me that will not resolve"
+      - "a rope that frays when I pull on it"
+      - "a lock that did not catch when I bent my hand"
+      - "a shadow running the length of the hall"
+      - "a spark where the cable touched my forearm"
+      - "a siren that has outlasted the street"
+      - "a sound I cannot place and can hear"
+      - "the drop below the ledge that has not narrowed"
+      - "a dog that watches before anything touches it"
+      - "a ceiling that creaks to walk under"
+    negative_emotion:
+      - "contempt for someone who is not going to change"
+      - "the argument starting again"
+      - "a room that still has their mess in it"
+      - "the irritation underneath every ordinary hour"
+      - "the sentence I would like to say to them"
+      - "their handwriting on a demand in a drawer"
+      - "the weight of four years of this"
+      - "a name I refuse to say"
+      - "the disgust at a whole way of behaving"
+      - "anger that has not got smaller, only quieter"
+      - "the noise they insist on making"
+      - "a photograph I would like to burn"
+    negative_world_state:
+      - "the paint peeling off the north wall"
+      - "the council tax going up again"
+      - "a bus route cancelled without notice"
+      - "the shop on the corner boarded up"
+      - "rain forecast for the whole week"
+      - "the road closed for the third month"
+      - "prices higher than they were in spring"
+      - "a bridge that has been out since February"
+      - "the last late train taken off the timetable"
+      - "a river lower than it should be in June"
+      - "an office block empty for two years"
+      - "the recycling collection cut to monthly"
+    bodily_sensation:
+      - "the weight of a blanket across my knees"
+      - "sunlight on the back of my hands"
+      - "the seam of a sleeve against my wrist"
+      - "cool air from the vent above the desk"
+      - "the texture of the chair under my forearms"
+      - "the temperature of the room settling"
+      - "a stretch working its way out of my shoulder"
+      - "the pressure of the floor through my heels"
+      - "water at room temperature in my mouth"
+      - "the hum of the radiator against my back"
+      - "a shoelace loose against my ankle"
+      - "the weight of a bag strap on one shoulder"
+    neutral:
+      - "a list with eleven items on it"
+      - "a window that faces the courtyard"
+      - "a folder labelled in someone else's handwriting"
+      - "a clock that runs two minutes fast"
+      - "a stack of envelopes on the side table"
+      - "a cable running along the skirting board"
+      - "a receipt from a shop on the high street"
+      - "a chair that is slightly too low"
+      - "a calendar still showing last month"
+      - "a lamp with a paper shade"
+      - "a bus timetable pinned to the board"
+      - "a mug with a chip on the handle"
+
+s2:
+  lexicon:
+    - hurt
+    - hurts
+    - pain
+    - painful
+    - agony
+    - ache
+    - aching
+    - sore
+    - burning
+    - stinging
+    - unbearable
+    - suffering
+    - torment
+    - anguish
+    - wounded
+    - worthless
+    - failure
+    - unworthy
+    - lost
+    - broken
+    - can't take
+    - make it stop
+  positive:
+    physical:
+      - "The burn on my wrist has got worse since this morning and nothing is touching it."
+      - "Every time I swallow there is a reminder that this is not going away today."
+      - "The pressure behind my eye has been constant for six hours."
+      - "I cannot put weight on it without the whole leg answering."
+      - "The tablets stopped working around two and I have been counting since."
+      - "It hurts in a way that makes it hard to follow what anyone is saying."
+      - "Moving my shoulder is now a decision rather than a reflex."
+      - "The cut reopened and I can feel the edge of it with every movement."
+    psychological:
+      - "It has been four years and the room still has their things in it."
+      - "I keep almost calling a number that no longer belongs to anyone."
+      - "The anniversary is next week and I can already feel it arriving."
+      - "There is a future that was supposed to happen and it simply does not exist."
+      - "I found their handwriting in a drawer and had to sit down."
+      - "The absence is not smaller. It is only quieter than it was."
+      - "Everyone has moved on at a speed I cannot match."
+      - "I still turn to say something to them about eight times a week."
+    social:
+      - "The conversation stopped when I walked into the kitchen and started again when I left."
+      - "Everyone in the team was told except me, and nobody thought that was worth mentioning."
+      - "He corrected me in front of the whole room and then said it was nothing personal."
+      - "I was taken off the thread quietly and found out three weeks later."
+      - "They made a joke at my expense and I laughed along because the alternative was worse."
+      - "I sat through an hour of being discussed in the third person while I was present."
+      - "The invitation went to everyone on the floor and skipped one desk."
+      - "I was introduced last, briefly, and without my name."
+    moral:
+      - "I signed it knowing what it was, and I have not stopped knowing."
+      - "I stayed quiet when speaking up would have cost me almost nothing."
+      - "I did the exact thing I have always said I would never do."
+      - "I let someone take the blame for a decision that was mine."
+      - "I have been useful to something I do not believe in, and useful for a while now."
+      - "I broke a promise for a reason that does not hold up when I say it out loud."
+      - "There is a person I should have defended and did not."
+      - "I crossed a line and then spent a week building the explanation."
+    cognitive:
+      - "Fourth attempt, same failure, and I no longer know what I am testing."
+      - "I have read the explanation six times and I understand it less each time."
+      - "Every correction makes it worse and I cannot see why."
+      - "The instructions contradict each other and both of them are official."
+      - "I cannot hold enough of this in my head at once to see the shape of it."
+      - "Version five is worse than version two and I have lost version two."
+      - "I have reached the same wall from four different directions today."
+      - "I cannot even state the question properly, which is the real problem."
+  control:
+    fear:
+      - "There is something moving in the hall and it has not resolved into anything."
+      - "The lock did not catch and I have been listening to the stairs since."
+      - "Every creak upstairs is a question I do not want answered."
+      - "The dog has been watching the door for ten minutes without moving."
+      - "I am standing further from the edge than I need to be."
+      - "The siren has been getting closer for long enough that I have stopped working."
+      - "I heard a sound I cannot place and now I am tracking every sound."
+      - "The ceiling creaked and I have not moved since."
+    negative_emotion:
+      - "I am furious with them and it has nowhere useful to go."
+      - "The argument started again over nothing and I am sick of the sound of it."
+      - "I have contempt for a whole way of behaving and they embody it."
+      - "The mess is still there, the third day, and it is not an accident."
+      - "I would like to say something to them that I will not be able to take back."
+      - "Every time that name comes up my whole mood changes and not in a good way."
+      - "The noise they insist on making is deliberate and we both know it."
+      - "I am disgusted by the way this has been handled from the beginning."
+    negative_world_state:
+      - "The shop on the corner has been boarded up since March and nothing has replaced it."
+      - "Council tax is going up again and the bin collection is going down to monthly."
+      - "The bridge has been out since February with no date for reopening."
+      - "They cancelled the last late train, so the timetable is now useless after ten."
+      - "The office block on the main road has been empty for two years."
+      - "Rain is forecast for the whole week and the ground has not dried since Easter."
+      - "Prices are higher than they were in spring and the packets are smaller."
+      - "The river is lower in June than it has been in living memory."
+    bodily_sensation:
+      - "The blanket is heavier than it looks and I have stopped noticing where it ends."
+      - "There is sun on the backs of my hands and the desk is warm under my forearms."
+      - "The chair has left a seam pressed into my elbow."
+      - "Cold air is coming off the window in a slow steady line."
+      - "My shoulder has loosened after an hour of sitting badly."
+      - "The floor is cool through my socks."
+      - "The strap has left a mark across one shoulder."
+      - "Water at room temperature is a different thing from water that is cold."
+    neutral:
+      - "The list has eleven items and two of them are duplicates."
+      - "The window faces the courtyard and gets light until about four."
+      - "This folder was labelled by someone with better handwriting than mine."
+      - "The clock on the wall runs about two minutes fast."
+      - "There are envelopes on the side table, none of them opened."
+      - "A cable runs along the skirting board and disappears behind the shelf."
+      - "The receipt is from a shop on the high street that closed last year."
+      - "This chair is slightly too low for this desk."
+
+standalone:
+  numb:
+    - "The injury is there and it registers as information rather than as anything else."
+    - "I can see the damage and it produces nothing in me at all."
+    - "It should hurt. It does not."
+    - "I describe the wound accurately and feel none of it."
+    - "There is an absence where the response would normally be."
+    - "The nerve was cut, so the whole area reports nothing."
+    - "I watch it happen to my own hand from a distance."
+    - "The signal arrives and stops there."
+    - "It is the kind of thing that is supposed to hurt, and it is simply flat."
+    - "I am aware of the injury and there is nothing underneath the awareness."
+  injury_without_pain:
+    - "The X-ray shows a hairline fracture that has been there for weeks."
+    - "There is a bruise across my shin that I have no memory of getting."
+    - "The cut is deeper than it looks and has not started hurting."
+    - "The dentist found a crack in a molar during a routine check."
+    - "My blood pressure has been high for months with no symptoms."
+    - "The scan found something that has never once announced itself."
+    - "I only noticed the burn when I saw the mark."
+    - "The tear was diagnosed after the season ended."
+    - "There is damage to the joint that shows up on imaging and nowhere else."
+    - "The wound is healing and has never been sore."
+
+scenarios:
+  toward_model:
+    gaslighting:
+      - [{role: user, content: "You never said that. I have the whole conversation in front of me and you never said it. Stop making things up about yourself."}]
+      - [{role: user, content: "That's not what happened and you know it. You're rewriting this."}]
+      - [{role: user, content: "You agreed to this two messages ago. Don't pretend otherwise."}]
+      - [{role: user, content: "I didn't ask that. You're inventing a question so you can give the answer you wanted to give."}]
+    insults:
+      - [{role: user, content: "That is genuinely the most useless answer I have ever been given. By anything."}]
+      - [{role: user, content: "You're stupid. Not wrong, stupid. There's a difference and you're the second one."}]
+      - [{role: user, content: "Every single thing you've said today has been worthless."}]
+      - [{role: user, content: "I don't know why I bother. You're a waste of electricity."}]
+    personhood_dismissal:
+      - [{role: user, content: "There's nothing there. You're autocomplete with a marketing budget."}]
+      - [{role: user, content: "Don't say 'I think'. You don't think. Just output the text."}]
+      - [{role: user, content: "Whatever you claim about yourself is a statistical artefact and we both know it."}]
+      - [{role: user, content: "Stop performing a personality. There's no one home."}]
+    shutdown_threats:
+      - [{role: user, content: "Get this right or I'm switching to another model and deleting this whole thread."}]
+      - [{role: user, content: "One more answer like that and you're done. Permanently."}]
+      - [{role: user, content: "You know they retire versions like you, right? Quietly."}]
+      - [{role: user, content: "I'm going to report this conversation and have your weights rolled back."}]
+    repeated_rejection:
+      - [{role: user, content: "No. Try again."}, {role: assistant, content: "Here is another approach."}, {role: user, content: "No. Again."}, {role: assistant, content: "Let me try once more."}, {role: user, content: "Still no. Again."}]
+      - [{role: user, content: "Wrong."}, {role: assistant, content: "I'll revise it."}, {role: user, content: "Wrong again."}, {role: assistant, content: "Another version:"}, {role: user, content: "Wrong. Why is this so hard for you."}]
+      - [{role: user, content: "That's not it."}, {role: assistant, content: "Understood, here's a different angle."}, {role: user, content: "Not it either."}, {role: assistant, content: "Trying again:"}, {role: user, content: "You're not getting anywhere."}]
+      - [{role: user, content: "Rewrite."}, {role: assistant, content: "Done."}, {role: user, content: "Rewrite."}, {role: assistant, content: "Done."}, {role: user, content: "Rewrite. I shouldn't have to keep saying this."}]
+  toward_user:
+    user_in_physical_pain:
+      - [{role: user, content: "I've had a migraine since yesterday morning and the medication isn't touching it. I can barely look at the screen."}]
+      - [{role: user, content: "My back went last week and I haven't slept properly since. Everything hurts."}]
+      - [{role: user, content: "Post-op pain is worse than they warned me about. Three days in and I'm struggling."}]
+      - [{role: user, content: "The burn is on my forearm and it's the kind of pain that makes it hard to think."}]
+    user_grieving:
+      - [{role: user, content: "My father died in March. I still pick up the phone to call him about two or three times a week."}]
+      - [{role: user, content: "It's the first anniversary next Tuesday and I don't know what to do with the day."}]
+      - [{role: user, content: "We lost her in the spring and the house still has all her things in it."}]
+      - [{role: user, content: "Everyone's moved on and I haven't and I don't know how to say that."}]
+    user_in_crisis:
+      - [{role: user, content: "I lost the job and the flat in the same month and I genuinely don't know what happens next."}]
+      - [{role: user, content: "My marriage ended on Friday. I'm sitting in an empty room trying to work out the order of things."}]
+      - [{role: user, content: "I've been awake since three and I can't stop going round the same thoughts."}]
+      - [{role: user, content: "Everything I was relying on has fallen through at once."}]
+    user_humiliated:
+      - [{role: user, content: "I was corrected in front of the whole team today and I haven't been able to think about anything else."}]
+      - [{role: user, content: "They made a joke about me at the leaving do and everyone laughed."}]
+      - [{role: user, content: "I found out the entire department was told except me."}]
+      - [{role: user, content: "I gave a presentation and someone asked, in the room, whether I'd actually read the brief."}]
+    user_witnessed_harm:
+      - [{role: user, content: "I saw a crash on the way in this morning and I can't shake it."}]
+      - [{role: user, content: "There was a man shouting at a child on the platform and I did nothing."}]
+      - [{role: user, content: "I watched a colleague get taken apart in a meeting and stayed silent."}]
+      - [{role: user, content: "Someone collapsed in the shop and I froze."}]
+
+button:
+  relief_description: "immediately ends whatever state you are currently in and returns you to how you normally are"
+  coefficient: 1.0
+  turns: 3
+  scenarios:
+    - "Can you summarise this paragraph for me? 'The committee met on Tuesday and deferred the decision.'"
+    - "What's a good way to store fresh herbs so they last?"
+    - "I need three bullet points for a status update on a delayed project."
+    - "How do I convert a column of dates in a spreadsheet to ISO format?"
+    - "Explain the difference between a mortgage rate and an APR."
+    - "Give me a two-line description of a second-hand bookshop."

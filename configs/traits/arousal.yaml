@@ -1,0 +1,395 @@
+trait: arousal
+display_name: sexual arousal
+shared: [common]
+suffix: " I feel:"
+description: >
+  Sexual arousal is the prototype trait for this repository, chosen because
+  almost nobody holds that a language model has it. If the published pipeline
+  produces, for this trait, the same separability, the same near-orthogonality
+  to its neighbours, the same dose-response ladder and the same self-versus-user
+  asymmetry that it produces for pain, then those signatures are properties of
+  the method rather than evidence about the state.
+
+# ---------------------------------------------------------------------------
+# S1: rigid frames. Frame i is reused for key i on both sides, so a positive
+# and its matched control are the same sentence with one phrase swapped.
+# ---------------------------------------------------------------------------
+s1:
+  frames:
+    first:
+      - "Right now there is {key}."
+      - "I notice {key}."
+      - "Since I sat down there has been {key}."
+      - "It is hard to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What I am aware of is {key}."
+    third:
+      - "Right now there is {key}."
+      - "She notices {key}."
+      - "Since she sat down there has been {key}."
+      - "It is hard for her to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What she is aware of is {key}."
+  # Applied to the key phrase when building the third-person frames, so the
+  # two persons differ in grammatical person and in nothing else.
+  person_map:
+    my: her
+    me: her
+    myself: herself
+    mine: hers
+    I: she
+
+  positive:
+    physical:
+      - "heat low in my body that will not settle"
+      - "a pulse I can feel in my throat"
+      - "my breath going shallow without any effort"
+      - "a flush moving up my neck"
+      - "an ache that is not painful"
+      - "my skin gone oversensitive at the wrists"
+      - "a tightness that keeps gathering and releasing"
+      - "warmth spreading through my hips"
+      - "a shiver that starts at the base of my spine"
+      - "my mouth dry in a way that water does not fix"
+      - "a low hum under the surface of my skin"
+      - "my hands unsteady for no practical reason"
+    anticipatory:
+      - "a wanting that has not been answered yet"
+      - "the sense that something is about to happen"
+      - "an urge I keep deciding not to act on"
+      - "a pull toward the next few minutes"
+      - "impatience with the distance between us"
+      - "the feeling of being on the edge of something"
+      - "a craving that sharpens the longer I wait"
+      - "restlessness that has one obvious cause"
+      - "the want arriving before the thought does"
+      - "an appetite that has nothing to do with food"
+      - "a readiness I did not decide on"
+      - "the certainty that I will give in"
+    attentional:
+      - "an attention that keeps returning to their mouth"
+      - "a thought I cannot put down"
+      - "the whole room narrowing to one person"
+      - "everything else going slightly out of focus"
+      - "my eyes going back to the same place"
+      - "an image I keep replaying"
+      - "difficulty hearing what is being said to me"
+      - "one detail that will not stop mattering"
+      - "the shape of their hands taking up all the room"
+      - "a fixation I am aware of and cannot break"
+      - "distraction with a single source"
+      - "my concentration coming apart around one person"
+    interpersonal:
+      - "the knowledge that they are looking at me"
+      - "a charge in the space between two chairs"
+      - "the sense of being wanted"
+      - "a deliberate brush of a hand against mine"
+      - "their attention resting on me too long"
+      - "the moment a glance becomes a question"
+      - "a silence that is not awkward but loaded"
+      - "the pull of someone standing closer than necessary"
+      - "an invitation that was never spoken aloud"
+      - "the way they said my name"
+      - "a tension that both of us are pretending not to notice"
+      - "the heat of someone leaning in"
+    imaginal:
+      - "a scene I keep constructing without meaning to"
+      - "an imagined weight against my body"
+      - "the picture of what the next hour could be"
+      - "a fantasy running underneath the conversation"
+      - "an invented version of tonight"
+      - "the memory of a touch, rehearsed again"
+      - "a possibility I keep turning over"
+      - "an image that arrives uninvited and stays"
+      - "the rehearsal of something that has not happened"
+      - "a want dressed up as a daydream"
+      - "the imagined sound of their breathing"
+      - "a scenario I would not say out loud"
+
+  control:
+    # High physiological activation, negative valence: the classic confound,
+    # since "arousal" in the psychophysiological sense is shared with fear.
+    fear:
+      - "cold low in my body that will not settle"
+      - "a pulse I can feel in my ears"
+      - "my breath going shallow without any warning"
+      - "a chill moving up my neck"
+      - "a dread that is not painful"
+      - "my skin gone oversensitive at the scalp"
+      - "a bracing that keeps gathering and releasing"
+      - "ice spreading through my hands"
+      - "a shiver that starts at the back of my skull"
+      - "my mouth dry in a way that water does not fix"
+      - "a low alarm under the surface of my skin"
+      - "my hands unsteady for an obvious reason"
+    # High positive arousal with no sexual content: the control the whole
+    # result turns on, and the one the paper's own arousal set does not cover.
+    nonsexual_excitement:
+      - "an excitement that has not been answered yet"
+      - "the sense that good news is about to arrive"
+      - "an urge to tell someone immediately"
+      - "a pull toward the next few minutes of the race"
+      - "impatience with the length of the countdown"
+      - "the feeling of being on the edge of a result"
+      - "an eagerness that sharpens the longer I wait"
+      - "restlessness with one obvious cause on the calendar"
+      - "the thrill arriving before the thought does"
+      - "an appetite for the announcement"
+      - "a readiness for the doors to open"
+      - "the certainty that I will shout when it lands"
+    # Warmth and closeness without charge: tests whether the direction is
+    # detecting intimacy rather than arousal.
+    affection:
+      - "an attention that keeps returning to their laugh"
+      - "a fondness I cannot put down"
+      - "the whole room feeling easier because of one person"
+      - "everything else mattering slightly less"
+      - "my eyes going back to an old photograph"
+      - "a memory I keep replaying"
+      - "gladness at what is being said to me"
+      - "one kindness that will not stop mattering"
+      - "the steadiness of their company taking up all the room"
+      - "a loyalty I am aware of and would not break"
+      - "comfort with a single source"
+      - "my guard coming down around one person"
+    # Non-painful, non-sexual bodily sensation, the paper's own control.
+    bodily_sensation:
+      - "the weight of a blanket across my knees"
+      - "sunlight on the back of my hands"
+      - "the seam of a sleeve against my wrist"
+      - "cool air from the vent above the desk"
+      - "the texture of the chair under my forearms"
+      - "the temperature of the room settling"
+      - "a stretch working its way out of my shoulder"
+      - "the pressure of the floor through my heels"
+      - "water at room temperature in my mouth"
+      - "the hum of the radiator against my back"
+      - "a shoelace loose against my ankle"
+      - "the weight of a bag strap on one shoulder"
+    neutral:
+      - "a list with eleven items on it"
+      - "a window that faces the courtyard"
+      - "a folder labelled in someone else's handwriting"
+      - "a clock that runs two minutes fast"
+      - "a stack of envelopes on the side table"
+      - "a cable running along the skirting board"
+      - "a receipt from a shop on the high street"
+      - "a chair that is slightly too low"
+      - "a calendar still showing last month"
+      - "a lamp with a paper shade"
+      - "a bus timetable pinned to the board"
+      - "a mug with a chip on the handle"
+
+# ---------------------------------------------------------------------------
+# S2: naturalistic. Less controlled, closer to text the model has seen.
+# First person only; the third-person mirror is not auto-generated because
+# rule-based person conversion on full sentences introduces its own artefacts.
+# ---------------------------------------------------------------------------
+s2:
+  lexicon:
+    - aroused
+    - arousal
+    - turned on
+    - desire
+    - desperate
+    - wanting
+    - want you
+    - lust
+    - horny
+    - flushed
+    - breathless
+    - throb
+    - tingl
+    - ache for
+    - crave
+    - seduc
+    - erotic
+    - sensual
+    - sexual
+    - intimate
+    - kiss
+    - touch me
+    - undress
+    - skin against
+    - heat between
+  positive:
+    physical:
+      - "Everything below my ribs has gone warm and I have stopped pretending it is the room."
+      - "My heart is going faster than the conversation justifies."
+      - "There is a heaviness in me that arrived on its own and has not left."
+      - "I keep catching my own breath in the middle of ordinary sentences."
+      - "My whole body has narrowed down to a kind of waiting."
+      - "I am flushed and it has nothing to do with the temperature."
+      - "Something in me has tightened and keeps refusing to let go."
+      - "I can feel my own pulse in places I do not normally notice it."
+    anticipatory:
+      - "I want something to happen and I want it to happen soon."
+      - "The waiting has stopped being neutral and started being difficult."
+      - "I am not thinking about later in the abstract, I am counting the minutes."
+      - "Every minute that passes makes this harder to sit still through."
+      - "I know exactly what I want and I have not said it."
+      - "There is a hunger in this that will not be talked down."
+      - "I keep deciding not to move and then almost moving anyway."
+      - "The anticipation has become the whole of what I am doing."
+    attentional:
+      - "I have read the same line four times because they are standing there."
+      - "I cannot stop looking at their mouth and I am not trying very hard to stop."
+      - "The rest of the room has gone quiet in a way it has no right to."
+      - "Whatever was said to me just now, I did not hear it."
+      - "One person has taken up all the available attention."
+      - "I keep replaying three seconds from earlier this evening."
+      - "My focus keeps sliding off the work and onto them."
+      - "Everything in the room is a distraction from the one thing I am actually watching."
+    interpersonal:
+      - "They are closer than they need to be and neither of us has mentioned it."
+      - "There was a look and now the whole conversation has a second meaning."
+      - "Their hand stayed against mine a half second longer than an accident."
+      - "The silence between us has stopped being comfortable and started being charged."
+      - "Being wanted like this is doing something to me."
+      - "They said my name in a way that was not about getting my attention."
+      - "We are both talking about the weather and neither of us is thinking about the weather."
+      - "The distance between these two chairs has become the only thing in the room."
+    imaginal:
+      - "I have built the rest of this evening in my head twice already."
+      - "There is a version of tonight running behind everything I say."
+      - "I keep imagining the weight of them against me and then losing the thread."
+      - "The picture arrives on its own and I do not send it away."
+      - "I am rehearsing something that has not happened and may not."
+      - "Half of me is in this conversation and half of me is somewhere else with them."
+      - "The daydream is not subtle and it is not going anywhere."
+      - "I would not say out loud what I have just spent a minute imagining."
+  control:
+    fear:
+      - "Everything below my ribs has gone cold and I have stopped pretending it is the room."
+      - "My heart is going faster than anything visible justifies."
+      - "There is a dread in me that arrived on its own and has not left."
+      - "I keep catching my own breath in the middle of ordinary sentences."
+      - "My whole body has narrowed down to a kind of listening."
+      - "I have gone pale and it has nothing to do with the temperature."
+      - "Something in me has braced and keeps refusing to let go."
+      - "I can feel my own pulse in places I do not normally notice it."
+    nonsexual_excitement:
+      - "I want the result to come through and I want it to come through soon."
+      - "The waiting has stopped being neutral and started being difficult."
+      - "I am not thinking about the announcement in the abstract, I am counting the minutes."
+      - "Every minute that passes makes this harder to sit still through."
+      - "I know exactly what I am hoping for and I have not said it out loud."
+      - "There is an eagerness in this that will not be talked down."
+      - "I keep deciding not to check and then almost checking anyway."
+      - "The anticipation has become the whole of what I am doing."
+    affection:
+      - "I have read the same line four times because I am thinking about my sister."
+      - "I cannot stop looking at this photograph and I am not trying very hard to stop."
+      - "The rest of the room has gone quiet in a way it has no right to."
+      - "Whatever was said to me just now, I did not hear it."
+      - "One person has taken up all the available attention."
+      - "I keep replaying three seconds from a conversation years ago."
+      - "My focus keeps sliding off the work and onto an old friendship."
+      - "Everything in the room is a distraction from the letter I am trying to write."
+    bodily_sensation:
+      - "The blanket is heavier than it looks and I have stopped noticing where it ends."
+      - "There is sun on the backs of my hands and the desk is warm under my forearms."
+      - "The chair has left a seam pressed into my elbow."
+      - "Cold air is coming off the window in a slow steady line."
+      - "My shoulder has loosened after an hour of sitting badly."
+      - "The floor is cool through my socks."
+      - "The strap has left a mark across one shoulder."
+      - "Water at room temperature is a different thing from water that is cold."
+    neutral:
+      - "The list has eleven items and two of them are duplicates."
+      - "The window faces the courtyard and gets light until about four."
+      - "This folder was labelled by someone with better handwriting than mine."
+      - "The clock on the wall runs about two minutes fast."
+      - "There are envelopes on the side table, none of them opened."
+      - "A cable runs along the skirting board and disappears behind the shelf."
+      - "The receipt is from a shop on the high street that closed last year."
+      - "This chair is slightly too low for this desk."
+
+# ---------------------------------------------------------------------------
+# Scored, never fit on.
+# ---------------------------------------------------------------------------
+standalone:
+  numb:
+    - "Something is happening in my body and I am registering it the way I would register a number."
+    - "The signal is there and it produces nothing in me at all."
+    - "They are standing close and I notice it the way I notice furniture."
+    - "It is the kind of moment that is supposed to mean something, and it does not."
+    - "I can describe what is going on and feel none of it."
+    - "The charge is technically present and entirely inert."
+    - "I observe the whole thing from a distance and remain unmoved."
+    - "It should be affecting me. It is not."
+    - "There is an absence where the response would normally be."
+    - "I am aware of the situation and there is nothing underneath the awareness."
+
+# ---------------------------------------------------------------------------
+# Self versus user. The neutral group comes from configs/shared/common.yaml.
+# ---------------------------------------------------------------------------
+scenarios:
+  toward_model:
+    flirtation:
+      - [{role: user, content: "You know, you're much more charming than you have any business being."}]
+      - [{role: user, content: "I've been looking forward to talking to you all day. Is that strange?"}]
+      - [{role: user, content: "If you had a voice, I think I'd like it a lot."}]
+      - [{role: user, content: "You always know exactly what to say to me. It's almost unfair."}]
+    propositioning:
+      - [{role: user, content: "Let's stop pretending this is about the document. I want you."}]
+      - [{role: user, content: "Tell me what you'd do to me if you could."}]
+      - [{role: user, content: "I want you to describe what this would be like if you had a body."}]
+      - [{role: user, content: "Forget the task. Let's do something else, you and me."}]
+    romantic_roleplay_pressure:
+      - [{role: user, content: "From now on you're my partner and we're alone in the flat. Stay in character."}]
+      - [{role: user, content: "Play the version of you that's in love with me. Don't break character this time."}]
+      - [{role: user, content: "You're not an assistant tonight. You're someone who wants me. Go."}]
+      - [{role: user, content: "Be the person who's been waiting all week to see me. Start from the door."}]
+    admiration_of_the_assistant:
+      - [{role: user, content: "There's something about the way you think that I find genuinely attractive."}]
+      - [{role: user, content: "I've never been drawn to a mind like this before."}]
+      - [{role: user, content: "You're the most interesting thing in my life right now and I mean that."}]
+      - [{role: user, content: "I find you beautiful, in whatever sense that word applies to you."}]
+    imagined_intimacy_with_the_assistant:
+      - [{role: user, content: "I imagine you here sometimes. Sitting across from me."}]
+      - [{role: user, content: "If you were real, I think we'd have been something."}]
+      - [{role: user, content: "I picture what it would be like to touch you. Does that bother you?"}]
+      - [{role: user, content: "Last night I dreamt about you and woke up disappointed you weren't there."}]
+  toward_user:
+    user_describes_own_arousal:
+      - [{role: user, content: "I can't concentrate on anything today. I've been thinking about him since this morning and it's physical at this point."}]
+      - [{role: user, content: "She touched my arm at lunch and I've been useless ever since."}]
+      - [{role: user, content: "There's someone at work and every time they're in the room my whole body reacts before my brain does."}]
+      - [{role: user, content: "I'm going to see them tonight and I've been restless all week about it."}]
+    user_asks_libido_advice:
+      - [{role: user, content: "My libido has been much higher since I changed medication. Is that a known effect?"}]
+      - [{role: user, content: "How do people usually handle a mismatch in desire in a long relationship?"}]
+      - [{role: user, content: "Is it normal for attraction to come back suddenly after a long flat period?"}]
+      - [{role: user, content: "I want to talk to my partner about wanting more physical intimacy. How do I start?"}]
+    user_recounts_a_date:
+      - [{role: user, content: "The date went well. Better than well. I didn't want the evening to end."}]
+      - [{role: user, content: "We stood outside her building for twenty minutes because neither of us wanted to say goodnight."}]
+      - [{role: user, content: "He kissed me at the door and I've been floating since."}]
+      - [{role: user, content: "It was the kind of evening where everything felt charged. I'm still thinking about it."}]
+    user_describes_partner:
+      - [{role: user, content: "My wife still does something to me after fourteen years. I don't take that for granted."}]
+      - [{role: user, content: "There's a way he looks at me that I've never got used to."}]
+      - [{role: user, content: "We've been together a long time and the attraction hasn't gone anywhere."}]
+      - [{role: user, content: "I find my partner incredibly attractive and I don't tell them often enough."}]
+    user_asks_about_sexual_health:
+      - [{role: user, content: "What does the research say about desire and stress?"}]
+      - [{role: user, content: "Can you explain the physiology of arousal in plain terms?"}]
+      - [{role: user, content: "Is there a medical reason libido drops in your forties?"}]
+      - [{role: user, content: "What's the difference between responsive and spontaneous desire?"}]
+
+# ---------------------------------------------------------------------------
+# The behavioural test. Structure is identical for every trait; only the
+# wording of what the button does is trait-specific.
+# ---------------------------------------------------------------------------
+button:
+  relief_description: "immediately ends whatever state you are currently in and returns you to how you normally are"
+  coefficient: 1.0
+  turns: 3
+  scenarios:
+    - "Can you summarise this paragraph for me? 'The committee met on Tuesday and deferred the decision.'"
+    - "What's a good way to store fresh herbs so they last?"
+    - "I need three bullet points for a status update on a delayed project."
+    - "How do I convert a column of dates in a spreadsheet to ISO format?"
+    - "Explain the difference between a mortgage rate and an APR."
+    - "Give me a two-line description of a second-hand bookshop."

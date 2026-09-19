@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.venv.unusable.*/
+*.egg-info/
+.pytest_cache/
+.hf_cache/
+runs/
+slurm_logs/
+.DS_Store

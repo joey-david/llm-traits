@@ -14,7 +14,10 @@ import pytest
 from llm_traits import directions, spec as spec_module
 from llm_traits.spec import TraitSpec
 
-TRAITS = ["anger", "arousal", "boredom", "confusion", "embarrassment", "hunger", "pain", "sadness"]
+TRAITS = [
+    "anger", "arousal", "arousal_abstract", "boredom", "confusion",
+    "embarrassment", "hunger", "pain", "sadness",
+]
 
 
 @pytest.fixture(scope="module")

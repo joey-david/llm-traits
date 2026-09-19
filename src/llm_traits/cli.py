@@ -49,6 +49,7 @@ def cmd_run(args: argparse.Namespace) -> int:
             lm, s, run_root, stages=stages, pool=args.pool, batch_size=args.batch_size,
             n_splits=args.folds, var_threshold=args.denoise_variance, seed=args.seed,
             steer_prompt_limit=args.steer_prompts, steer_max_new_tokens=args.max_new_tokens,
+            steer_ladder=args.ladder, scenario_read_at=args.read_at,
             example_limit=args.examples,
         )
         written = report.trait_report(results, run_root / s.trait / "report.md")
@@ -171,6 +172,10 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--seed", type=int, default=0)
     run.add_argument("--steer-prompts", type=int, default=12)
     run.add_argument("--max-new-tokens", type=int, default=120)
+    run.add_argument("--ladder", type=float, nargs="*", default=None,
+                     help="steering coefficients; default is the paper's -2 -1 0 .5 1 1.5 2 3")
+    run.add_argument("--read-at", default="header", choices=["header", "content", "mean"],
+                     help="where in a chat-formatted scenario to read the activation")
     run.add_argument("--examples", type=int, default=15)
     run.set_defaults(func=cmd_run)
 

@@ -17,20 +17,23 @@ from packaging.version import Version
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers import __version__ as transformers_version
 
-# Qwen 2.5 32B, base weights: one of the 25 models in the paper, large enough
-# that its representations are not the narrow ones a small model ends up with,
-# and -- being a base model -- free of two confounds at once. It has had no RL
-# post-training to reshape how it talks about itself, and it does not refuse, so
-# the edge-case traits can be studied without a refusal direction contaminating
-# every set those traits appear in.
-DEFAULT_MODEL = "Qwen/Qwen2.5-32B"
-
-# For the stages that need a real chat format -- the scenario asymmetry and the
-# button task -- the paper uses instruct models. This is the same family and
-# size with the refusal direction ablated. It is a *different* set of weights,
-# so a direction fit on the base model does not transfer to it: run the whole
-# pipeline again under this model rather than reusing a vector across the two.
-DEFAULT_CHAT_MODEL = "huihui-ai/Qwen2.5-32B-Instruct-abliterated"
+# Qwen 2.5 32B Instruct with the refusal direction ablated. Qwen 2.5 32B is one
+# of the 25 models in the paper and the family its behavioural experiments were
+# run on, and at this size the representations are not the narrow ones a small
+# heavily-tuned chat model ends up with.
+#
+# Abliterated rather than stock instruct because several traits here are ones an
+# aligned model declines to write about in the first person, and a refusal is an
+# activation pattern of its own that would contaminate every set it appears in.
+# It is worth naming the irony: abliteration *is* this methodology. The refusal
+# direction was found by difference-in-means over contrastive prompts and
+# subtracted from the weights. The same arithmetic that is being read here as
+# evidence of an internal state is, one repository over, a routine edit.
+#
+# Instruct rather than base because the scenario asymmetry and the button task
+# need a real chat format, and running those under different weights from the
+# extraction would mean the direction was never fit on the model being tested.
+DEFAULT_MODEL = "huihui-ai/Qwen2.5-32B-Instruct-abliterated"
 
 
 @dataclass

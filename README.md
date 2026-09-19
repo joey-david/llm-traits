@@ -68,8 +68,8 @@ llm-traits run arousal pain hunger    # one model load, three traits
 llm-traits compare --highlight pain   # the cross-trait panel
 ```
 
-Defaults to `Qwen/Qwen2.5-32B`. Any causal LM from the Llama, Qwen, Gemma,
-Mistral or Phi families works with `--model`.
+Defaults to `huihui-ai/Qwen2.5-32B-Instruct-abliterated`. Any causal LM from the
+Llama, Qwen, Gemma, Mistral or Phi families works with `--model`.
 
 A run writes `runs/<trait>/`:
 
@@ -82,22 +82,33 @@ figures/           light and dark PNGs, plus token_heat.html
 
 ### Choosing a model
 
-A **base** model is the default on purpose. Two confounds disappear at once: a
-base model has had no RL post-training to reshape how it talks about its own
-states, and it does not refuse, so the edge-case traits can be studied without a
-refusal direction — itself a difference-in-means artefact — contaminating every
-set it appears in. Size matters for the same reason: a small heavily-tuned chat
-model is a narrower substrate, and a null result on one says little.
+The default is Qwen 2.5 32B Instruct with the refusal direction ablated, for
+three reasons.
 
-The `scenarios` and `button` stages need a real chat format. Run those under an
-instruct model, in a separate pass with its own tag, because a direction fit on
-base weights does not transfer to instruct weights:
+**Qwen 2.5 32B** is one of the paper's 25 models and the family its behavioural
+experiments were run on. Size matters here beyond fidelity: a small, heavily
+RL-tuned chat model is a narrow substrate whose post-training has already
+reshaped how it talks about its own states, so a result on one says less than it
+appears to.
+
+**Abliterated** because several traits in this battery are ones an aligned model
+declines to write about in the first person, and a refusal is an activation
+pattern of its own that would contaminate every set it appears in. It is worth
+naming the irony: abliteration *is* this methodology. The refusal direction was
+found by difference-in-means over contrastive prompts and subtracted from the
+weights. The same arithmetic that is being read here as evidence of an internal
+state is, one repository over, a routine weight edit that nobody describes as
+removing a feeling.
+
+**Instruct rather than base** because the `scenarios` and `button` stages need a
+real chat format, and splitting them onto different weights from the extraction
+would mean the direction was never fit on the model being tested.
+
+The `button` stage is the expensive one and is off by default; ask for it
+explicitly:
 
 ```bash
-llm-traits --tag base run arousal --model Qwen/Qwen2.5-32B
-llm-traits --tag instruct run arousal \
-    --model huihui-ai/Qwen2.5-32B-Instruct-abliterated \
-    --stages direction,scenarios,button
+llm-traits run arousal --stages direction,geometry,steer,scenarios,button,examples
 ```
 
 ## Traits
@@ -131,7 +142,7 @@ worth looking at before the headline:
 ```bash
 sbatch scripts/jean_zay_bootstrap.sbatch                 # prepost: env + weights
 TRAITS="arousal" sbatch scripts/jean_zay_run.sbatch      # one H100
-TAG=Qwen2.5-32B sbatch scripts/jean_zay_compare.sbatch   # the panel
+TAG=Qwen2.5-32B-Instruct-abliterated sbatch scripts/jean_zay_compare.sbatch   # the panel
 ```
 
 `scripts/jean_zay_env.sh` loads the site's H100 torch build rather than

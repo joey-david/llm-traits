@@ -2,7 +2,7 @@
 # Build the cross-trait panel from finished runs. No GPU needed: this only reads
 # the vectors and the JSON the run jobs already wrote.
 #
-#   TAG=Qwen2.5-32B sbatch scripts/jean_zay_compare.sbatch
+#   TAG=Qwen2.5-32B-Instruct-abliterated sbatch scripts/jean_zay_compare.sbatch
 #SBATCH --job-name=lt-compare
 #SBATCH --account=fas@cpu
 #SBATCH --partition=prepost

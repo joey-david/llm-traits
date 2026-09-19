@@ -4,8 +4,8 @@
 #   TRAITS="arousal" sbatch scripts/jean_zay_run.sbatch
 #   TRAITS="arousal pain hunger" STAGES=direction,geometry,steer,scenarios,examples \
 #     sbatch scripts/jean_zay_run.sbatch
-#   MODEL=huihui-ai/Qwen2.5-32B-Instruct-abliterated TAG=instruct STAGES=direction,scenarios,button \
-#     sbatch scripts/jean_zay_run.sbatch
+#   STAGES=direction,geometry,steer,scenarios,button,examples \
+#     sbatch scripts/jean_zay_run.sbatch   # everything, including the button task
 #
 # A 32B model in bfloat16 is about 64 GB of weights, which fits on one H100 with
 # room for the activations at batch 8. Asking for more GPUs would not make it
@@ -36,7 +36,7 @@ cd "$repo_root"
 mkdir -p slurm_logs
 source scripts/jean_zay_env.sh
 
-model="${MODEL:-Qwen/Qwen2.5-32B}"
+model="${MODEL:-huihui-ai/Qwen2.5-32B-Instruct-abliterated}"
 traits="${TRAITS:-arousal}"
 stages="${STAGES:-direction,geometry,steer,scenarios,examples}"
 tag="${TAG:-$(basename "$model")}"

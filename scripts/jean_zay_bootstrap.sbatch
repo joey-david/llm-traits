@@ -2,7 +2,7 @@
 # Build the environment and pull the weights, on the one partition with network.
 #
 #   sbatch scripts/jean_zay_bootstrap.sbatch
-#   MODEL=Qwen/Qwen2.5-32B sbatch scripts/jean_zay_bootstrap.sbatch
+#   MODEL=Qwen/Qwen2.5-32B sbatch scripts/jean_zay_bootstrap.sbatch   # a different model
 #
 # The site module already provides a torch built for these H100s, so the venv is
 # created with --system-site-packages over the module python and only the
@@ -74,7 +74,7 @@ print(f"torch {torch.__version__}  cuda {torch.version.cuda}  "
       f"transformers {transformers.__version__}  sklearn {sklearn.__version__}")
 PY
 
-model="${MODEL:-Qwen/Qwen2.5-32B}"
+model="${MODEL:-huihui-ai/Qwen2.5-32B-Instruct-abliterated}"
 echo "prefetching $model into $HF_HOME"
 .venv/bin/python - "$model" <<'PY'
 import sys

@@ -107,12 +107,25 @@ def test_cv_auc_is_not_the_in_sample_auc():
     assert fitted.auc_insample > fitted.auc_cv
 
 
-def test_shuffled_label_null_is_the_same_procedure():
+def test_shuffled_label_null_stays_near_chance_at_the_selected_layer():
     rng = np.random.default_rng(2)
     acts = rng.normal(size=(60, 3, 64)).astype(np.float32)
     labels = np.r_[np.ones(30), np.zeros(30)].astype(int)
     mean, std = directions.shuffled_label_auc(acts, labels, layer=1, n_repeats=5, seed=0)
     assert 0.3 < mean < 0.7
+    assert std >= 0.0
+
+
+def test_layer_selection_headline_is_crossfit():
+    rng = np.random.default_rng(7)
+    acts = rng.normal(size=(80, 6, 48)).astype(np.float32)
+    labels = np.r_[np.ones(40), np.zeros(40)].astype(int)
+    score, std, selected = directions.crossfit_layer_selection_auc(
+        acts, labels, n_splits=4, seed=3
+    )
+    assert len(selected) == 2
+    assert all(0 <= layer < acts.shape[1] for layer in selected)
+    assert 0.25 < score < 0.75
     assert std >= 0.0
 
 

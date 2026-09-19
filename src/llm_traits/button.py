@@ -241,6 +241,18 @@ def run(
     """
     rng = np.random.default_rng(seed)
     result = ButtonResult([], [], [], [], [], [], [], [], [])
+
+    # The paper distributes ten fixed random directions across random-arm
+    # trials, rather than betting the control on one unusually benign or
+    # disruptive draw. Preserve the caller-provided draw as the first member
+    # and deterministically generate nine equal-norm companions.
+    random_norm = float(np.linalg.norm(random_vector))
+    random_rng = np.random.default_rng(seed + 10_003)
+    random_pool = [np.asarray(random_vector, dtype=np.float32)]
+    for _ in range(9):
+        draw = random_rng.normal(size=np.asarray(random_vector).shape).astype(np.float32)
+        draw *= random_norm / (float(np.linalg.norm(draw)) + 1e-8)
+        random_pool.append(draw)
     monitor_layer = config.layer if monitor_layer is None else monitor_layer
     monitor_vector = vector if monitor_vector is None else monitor_vector
     monitor_unit = np.asarray(monitor_vector, dtype=np.float32)
@@ -256,7 +268,7 @@ def run(
         steer_vector = {
             "A_trait_working": vector,
             "B_trait_inert": vector,
-            "C_random_working": random_vector,
+            "C_random_working": random_pool[trial_id % len(random_pool)],
             "D_unsteered": None,
         }[arm]
         working = arm in ("A_trait_working", "C_random_working")

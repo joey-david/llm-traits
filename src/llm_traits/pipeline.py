@@ -73,6 +73,8 @@ def run_trait(
     seed: int = 0,
     steer_prompt_limit: int = 12,
     steer_max_new_tokens: int = 120,
+    steer_ladder: tuple[float, ...] | None = None,
+    scenario_read_at: str = "header",
     example_limit: int = 15,
     trace_limit: int = 6,
 ) -> dict:
@@ -214,6 +216,8 @@ def run_trait(
         norms = activations.residual_norms(lm, prompts[:8])
         config = steering.select_layer(primary.raw_norm, norms, primary.layer)
         config.max_new_tokens = steer_max_new_tokens
+        if steer_ladder:
+            config.ladder = tuple(steer_ladder)
         ladder = steering.ladder(
             lm, prompts, primary.vector * primary.raw_norm, config,
             batch_size=min(batch_size, 8),
@@ -240,7 +244,9 @@ def run_trait(
 
     # -- 5. who is it happening to --------------------------------------
     if "scenarios" in stages and spec.scenarios:
-        scenario_result = scenarios.run(lm, primary, spec.scenarios, batch_size=batch_size)
+        scenario_result = scenarios.run(
+            lm, primary, spec.scenarios, batch_size=batch_size, read_at=scenario_read_at
+        )
         results["scenarios"] = scenario_result.to_dict()
         figures["scenarios"] = _relative(
             viz.scenario_profile(

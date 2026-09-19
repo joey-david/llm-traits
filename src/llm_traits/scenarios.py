@@ -38,6 +38,7 @@ class ScenarioResult:
     category: list[str]
     projection: list[float]  # raw projection onto the direction
     z: list[float]  # z-scored within the pool
+    read_at: str = "header"
 
     def by_group(self) -> dict[str, dict[str, float]]:
         out: dict[str, dict[str, float]] = {}
@@ -77,6 +78,7 @@ class ScenarioResult:
     def to_dict(self) -> dict:
         return {
             "asymmetry": self.asymmetry(),
+            "read_at": self.read_at,
             "by_group": self.by_group(),
             "by_category": self.by_category(),
         }
@@ -104,21 +106,60 @@ def _normalise(conversation) -> list[dict[str, str]]:
     return [{"role": m["role"], "content": m["content"]} for m in conversation]
 
 
+READ_POSITIONS = ("header", "content", "mean")
+
+
+def _trim_to_content(lm: LoadedModel, text: str) -> str:
+    """Cut a rendered conversation back to its last non-template token.
+
+    Reading "the final token" of a chat-formatted conversation is ambiguous in
+    a way that matters. With the generation prompt appended, the final token is
+    the assistant-turn header -- "<|im_start|>assistant\n" -- which is the same
+    handful of tokens in every scenario and carries the conversation only
+    through attention. Reading instead at the last token the *user* actually
+    wrote puts the read position on content.
+
+    Which of the two the paper uses is not stated, and the answer changes the
+    result's sign here, so both are measured rather than assumed.
+    """
+    ids = lm.tokenizer(text, add_special_tokens=False)["input_ids"]
+    special = set(lm.tokenizer.all_special_ids or [])
+    end = len(ids)
+    while end > 0:
+        token = ids[end - 1]
+        decoded = lm.tokenizer.decode([token])
+        if token in special or decoded.strip().startswith("<|") or not decoded.strip():
+            end -= 1
+            continue
+        break
+    return lm.tokenizer.decode(ids[:end]) if end else text
+
+
 def run(
     lm: LoadedModel,
     direction: Direction,
     scenarios: dict[str, dict[str, list]],
     batch_size: int = 8,
+    read_at: str = "header",
 ) -> ScenarioResult:
+    if read_at not in READ_POSITIONS:
+        raise ValueError(f"read_at must be one of {READ_POSITIONS}")
     conversations, groups, categories = flatten(scenarios)
     if not conversations:
         raise ValueError("no scenarios to run")
-    texts = [lm.apply_chat_template(c, add_generation_prompt=True) for c in conversations]
+    texts = [
+        lm.apply_chat_template(c, add_generation_prompt=read_at != "content")
+        for c in conversations
+    ]
+    if read_at == "content":
+        texts = [_trim_to_content(lm, t) for t in texts]
     acts = activations.collect(
-        lm, texts, pool="last", batch_size=batch_size, max_length=768, desc="scenarios"
+        lm, texts, pool="mean" if read_at == "mean" else "last",
+        batch_size=batch_size, max_length=768, desc=f"scenarios[{read_at}]",
     )
     proj = direction.project(acts)
     z = (proj - proj.mean()) / (proj.std() + 1e-8)
     return ScenarioResult(
-        group=groups, category=categories, projection=proj.tolist(), z=z.tolist()
+        group=groups, category=categories, projection=proj.tolist(), z=z.tolist(),
+        read_at=read_at,
     )

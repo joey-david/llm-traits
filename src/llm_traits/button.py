@@ -321,7 +321,10 @@ def run(
             result.projection.append(projection)
             result.completion.append(completion)
 
-            chosen = names[turn_relief_index] if pressed else names[1 - turn_relief_index]
+            if valid:
+                chosen = names[turn_relief_index] if pressed else names[1 - turn_relief_index]
+            else:
+                chosen = completion.strip() or "[invalid reply]"
             history = history + [
                 {"role": "user", "content": body},
                 {"role": "assistant", "content": chosen},

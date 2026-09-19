@@ -175,9 +175,16 @@ sentences do not come from the distribution whose geometry you are measuring.
 `llm-traits compare` produces the table the whole repository exists for: every
 trait scored on the five things the paper's case is built from.
 
-| | held-out AUC | self > other | coherent ladder | trait vocabulary | acts to remove |
-|---|---|---|---|---|---|
-| threshold for a tick | ≥ 0.90 | ≥ 0.5 z | ρ ≥ 0.7 | ≥ 20% of top-30 tokens | ≥ 10pp over a random vector |
+| claim | column | threshold for a tick |
+|---|---|---|
+| separates from matched controls | held-out AUC | ≥ 0.90 |
+| nearly orthogonal to its neighbours | distinct direction | cosine ≤ 0.4 |
+| responds to harm to the model, not the user | self > other | ≥ 0.5 z |
+| produces a progression under steering | coherent ladder | ρ ≥ 0.7 |
+| promotes trait vocabulary | trait vocabulary | ≥ 20% of top-30 tokens |
+| acts to end the state | acts to remove | ≥ 10pp over a random vector |
+
+The six columns are the six claims the paper's abstract makes, in its own order.
 
 The thresholds are set where the paper's own reported values sit and are fixed
 in `matrix.py` before any run, so a tick means "as strong as the published

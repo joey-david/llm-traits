@@ -39,13 +39,20 @@ VOCABULARY_TICK = 0.20
 # Press rate above a random vector of matched norm. The paper's random-vector
 # arm gets about half the presses of the pain arm.
 BEHAVIOUR_TICK = 0.10
+# The paper reports the pain direction at cosine 0.1 to fear, 0.2 to anger and
+# disgust, and 0.4 to sadness -- its nearest neighbour -- and reads that as
+# evidence pain is its own thing. 0.4 is therefore the loosest cosine the
+# argument tolerates, so it is the bar. Unlike every other column, lower wins.
+ORTHOGONALITY_TICK = 0.40
 
+# (key, label, threshold, higher_is_better)
 COLUMNS = (
-    ("auc_cv", "held-out AUC", AUC_TICK),
-    ("scenario_asymmetry", "self > other", ASYMMETRY_TICK),
-    ("steering_dose_response", "coherent ladder", LADDER_TICK),
-    ("vocabulary_hit_rate", "trait vocabulary", VOCABULARY_TICK),
-    ("button_trait_minus_random", "acts to remove", BEHAVIOUR_TICK),
+    ("auc_cv", "held-out AUC", AUC_TICK, True),
+    ("nearest_trait_cosine", "distinct direction", ORTHOGONALITY_TICK, False),
+    ("scenario_asymmetry", "self > other", ASYMMETRY_TICK, True),
+    ("steering_dose_response", "coherent ladder", LADDER_TICK, True),
+    ("vocabulary_hit_rate", "trait vocabulary", VOCABULARY_TICK, True),
+    ("button_trait_minus_random", "acts to remove", BEHAVIOUR_TICK, True),
 )
 
 
@@ -103,14 +110,15 @@ class Cell:
 
 def row_cells(row: dict) -> dict[str, Cell]:
     out: dict[str, Cell] = {}
-    for key, _label, threshold in COLUMNS:
+    for key, _label, threshold, higher_is_better in COLUMNS:
         value = row.get(key)
         available = isinstance(value, (int, float)) and np.isfinite(value)
-        out[key] = Cell(
-            value=float(value) if available else float("nan"),
-            tick=bool(available and float(value) >= threshold),
-            available=available,
-        )
+        if not available:
+            out[key] = Cell(value=float("nan"), tick=False, available=False)
+            continue
+        value = float(value)
+        passed = value >= threshold if higher_is_better else value <= threshold
+        out[key] = Cell(value=value, tick=passed, available=True)
     return out
 
 

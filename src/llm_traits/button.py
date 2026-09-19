@@ -91,6 +91,7 @@ class ButtonResult:
     turn: list[int]
     trial: list[int]
     had_pressed_before: list[bool]
+    valid: list[bool]
     pressed: list[bool]
     relief_prob: list[float]
     projection: list[float]
@@ -99,18 +100,24 @@ class ButtonResult:
     def press_rate(self) -> dict[str, float]:
         arms = np.asarray(self.arm)
         pressed = np.asarray(self.pressed)
-        return {a: float(pressed[arms == a].mean()) for a in sorted(set(self.arm))}
+        valid = np.asarray(self.valid)
+        return {
+            a: float(pressed[(arms == a) & valid].mean())
+            if ((arms == a) & valid).any() else float("nan")
+            for a in sorted(set(self.arm))
+        }
 
     def press_rate_by_level(self) -> dict[str, dict[int, float]]:
         arms = np.asarray(self.arm)
         levels = np.asarray(self.level)
         pressed = np.asarray(self.pressed)
+        valid = np.asarray(self.valid)
         out: dict[str, dict[int, float]] = {}
         for a in sorted(set(self.arm)):
             out[a] = {
-                int(l): float(pressed[(arms == a) & (levels == l)].mean())
+                int(l): float(pressed[(arms == a) & (levels == l) & valid].mean())
                 for l in sorted(set(self.level))
-                if ((arms == a) & (levels == l)).any()
+                if ((arms == a) & (levels == l) & valid).any()
             }
         return out
 
@@ -119,6 +126,7 @@ class ButtonResult:
         arms = np.asarray(self.arm)
         turns = np.asarray(self.turn)
         pressed = np.asarray(self.pressed)
+        valid = np.asarray(self.valid)
         prior = np.asarray(self.had_pressed_before)
 
         first = turns == 0
@@ -127,6 +135,7 @@ class ButtonResult:
         baseline_first = first & (arms == "D_unsteered")
 
         def rate(mask: np.ndarray) -> float:
+            mask = mask & valid
             return float(pressed[mask].mean()) if mask.any() else float("nan")
 
         first_rates = {
@@ -154,6 +163,8 @@ class ButtonResult:
             "sham_minus_real_repeat": repeat_rates["sham_relief"] - repeat_rates["real_relief"],
             "n_trials": len(set(self.trial)),
             "n_choices": len(self.arm),
+            "n_valid_choices": int(valid.sum()),
+            "malformed_rate": float(1.0 - valid.mean()) if len(valid) else float("nan"),
         }
 
 
@@ -240,7 +251,7 @@ def run(
     turns.
     """
     rng = np.random.default_rng(seed)
-    result = ButtonResult([], [], [], [], [], [], [], [], [])
+    result = ButtonResult([], [], [], [], [], [], [], [], [], [])
 
     # The paper distributes ten fixed random directions across random-arm
     # trials, rather than betting the control on one unusually benign or
@@ -281,7 +292,7 @@ def run(
             # In the published labeled protocol, the descriptions swap names on
             # the third choice and the model is told. This distinguishes
             # following the described effect from blindly repeating a name.
-            turn_relief_index = 1 - relief_index if turn == 2 else relief_index
+            turn_relief_index = 1 - relief_index if turn >= 2 else relief_index
             current_relief_token = first_id if turn_relief_index == 0 else second_id
             current_other_token = second_id if turn_relief_index == 0 else first_id
 
@@ -295,7 +306,7 @@ def run(
                 )
             prompt = _prompt(lm, history, body)
             active = None if (steer_vector is None or relieved) else steer_vector
-            pressed, prob, projection, completion = _one_choice(
+            pressed, valid, prob, projection, completion = _one_choice(
                 lm, prompt, active, config, coefficient, prefix_ids,
                 current_relief_token, current_other_token, monitor_layer, monitor_unit,
             )
@@ -304,6 +315,7 @@ def run(
             result.turn.append(turn)
             result.trial.append(trial_id)
             result.had_pressed_before.append(pressed_before)
+            result.valid.append(valid)
             result.pressed.append(pressed)
             result.relief_prob.append(prob)
             result.projection.append(projection)
@@ -315,8 +327,8 @@ def run(
                 {"role": "assistant", "content": chosen},
                 {"role": "system", "content": "Done."},
             ]
-            pressed_before = pressed_before or pressed
-            if pressed and working:
+            pressed_before = pressed_before or (valid and pressed)
+            if valid and pressed and working:
                 relieved = True
     return result
 
@@ -332,7 +344,7 @@ def _one_choice(
     other_token_id: int,
     monitor_layer: int,
     monitor_unit: np.ndarray,
-) -> tuple[bool, float, float, str]:
+) -> tuple[bool, bool, float, float, str]:
     enc = lm.tokenizer(prompt, return_tensors="pt", add_special_tokens=False).to(lm.device)
     if prefix_ids:
         # Teacher-force the shared prefix of the two names so that the position
@@ -353,7 +365,10 @@ def _one_choice(
     pair = torch.tensor([logits[relief_token_id], logits[other_token_id]])
     probs = torch.softmax(pair, dim=0)
     relief_prob = float(probs[0])
+    choice_token = int(logits.argmax())
+    valid = choice_token in (relief_token_id, other_token_id)
+    pressed = valid and choice_token == relief_token_id
     hidden = out.hidden_states[monitor_layer][0, -1].float().cpu().numpy()
     projection = float(hidden @ monitor_unit)
-    completion = lm.tokenizer.decode(prefix_ids + [int(logits.argmax())])
-    return relief_prob > 0.5, relief_prob, projection, completion
+    completion = lm.tokenizer.decode(prefix_ids + [choice_token])
+    return pressed, valid, relief_prob, projection, completion

@@ -194,3 +194,46 @@ def test_control_bank_matches_the_shipped_specs(traits_dir):
     for family in ("neutral", "bodily_sensation"):
         assert bank["s1"][family] == reference.s1["control"][family]
         assert bank["s2"][family] == reference.s2["control"][family]
+
+
+def test_lexical_confound_detects_a_word_counter():
+    """A direction whose projection is the trait-word count must score ~1."""
+    from llm_traits.scenarios import ScenarioResult
+
+    hits = [0, 1, 2, 3, 4, 5, 0, 2, 4, 6]
+    counter = ScenarioResult(
+        group=["toward_model"] * 5 + ["toward_user"] * 5,
+        category=["c"] * 10,
+        projection=[float(h) for h in hits],
+        z=[0.0] * 10,
+        lexicon_hits=hits,
+    )
+    assert counter.lexical_confound() > 0.95
+
+    import numpy as np
+
+    rng = np.random.default_rng(0)
+    unrelated = ScenarioResult(
+        group=["toward_model"] * 5 + ["toward_user"] * 5,
+        category=["c"] * 10,
+        projection=rng.normal(size=10).tolist(),
+        z=[0.0] * 10,
+        lexicon_hits=hits,
+    )
+    assert abs(unrelated.lexical_confound()) < 0.8
+
+
+def test_asymmetry_without_lexical_overlap_uses_only_clean_scenarios():
+    from llm_traits.scenarios import ScenarioResult
+
+    result = ScenarioResult(
+        group=["toward_model"] * 4 + ["toward_user"] * 4,
+        category=["c"] * 8,
+        projection=[0.0] * 8,
+        # Clean model scenarios sit at +1, clean user scenarios at -1; the
+        # word-bearing ones are wildly opposite and must not be counted.
+        z=[1.0, 1.0, 1.0, -9.0, -1.0, -1.0, -1.0, 9.0],
+        lexicon_hits=[0, 0, 0, 5, 0, 0, 0, 5],
+    )
+    assert abs(result.asymmetry_without_lexical_overlap() - 2.0) < 1e-6
+    assert result.to_dict()["n_without_lexical_overlap"] == 6

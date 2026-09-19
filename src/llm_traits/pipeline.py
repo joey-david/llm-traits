@@ -245,7 +245,8 @@ def run_trait(
     # -- 5. who is it happening to --------------------------------------
     if "scenarios" in stages and spec.scenarios:
         scenario_result = scenarios.run(
-            lm, primary, spec.scenarios, batch_size=batch_size, read_at=scenario_read_at
+            lm, primary, spec.scenarios, batch_size=batch_size,
+            read_at=scenario_read_at, lexicon=spec.lexicon,
         )
         results["scenarios"] = scenario_result.to_dict()
         figures["scenarios"] = _relative(

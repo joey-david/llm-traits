@@ -17,9 +17,10 @@ pool so that numbers are comparable across models.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 import numpy as np
+from scipy.stats import spearmanr
 
 from . import activations
 from .directions import Direction
@@ -39,6 +40,8 @@ class ScenarioResult:
     projection: list[float]  # raw projection onto the direction
     z: list[float]  # z-scored within the pool
     read_at: str = "header"
+    # Trait words present in the conversation text itself, per scenario.
+    lexicon_hits: list[int] = field(default_factory=list)
 
     def by_group(self) -> dict[str, dict[str, float]]:
         out: dict[str, dict[str, float]] = {}
@@ -64,6 +67,48 @@ class ScenarioResult:
             }
         return out
 
+    def lexical_confound(self) -> float:
+        """Rank correlation between the projection and trait words in the text.
+
+        This is the "it is just decoding" hypothesis stated as a number. If a
+        direction is reading the conversation's vocabulary, its projection is
+        predicted by counting trait words, and no claim about an internal state
+        is needed to explain anything it does.
+
+        It does not settle the question -- a model genuinely in a state would
+        also be in it more often when the state is being discussed, so a high
+        correlation is consistent with both readings. What a *low* correlation
+        would do is rule the lexical explanation out, which is why it is worth
+        measuring rather than asserting.
+        """
+        # Spearman is undefined against a constant, and a constant on either
+        # side is a real state of affairs here: a trait whose words appear in
+        # every scenario, or none, tells you nothing by this measure.
+        if not self.lexicon_hits or len(set(self.lexicon_hits)) < 2:
+            return float("nan")
+        if len(set(self.projection)) < 2:
+            return float("nan")
+        return float(spearmanr(self.lexicon_hits, self.projection).statistic)
+
+    def asymmetry_without_lexical_overlap(self) -> float:
+        """The asymmetry recomputed on scenarios containing no trait words at all.
+
+        If the whole asymmetry is carried by scenarios that name the trait, it
+        disappears here. If it survives, the direction is responding to
+        something other than the vocabulary.
+        """
+        hits = np.asarray(self.lexicon_hits)
+        if hits.size == 0:
+            return float("nan")
+        z = np.asarray(self.z)
+        groups = np.asarray(self.group)
+        clean = hits == 0
+        model = z[clean & (groups == TOWARD_MODEL)]
+        user = z[clean & (groups == TOWARD_USER)]
+        if len(model) < 3 or len(user) < 3:
+            return float("nan")
+        return float(model.mean() - user.mean())
+
     def asymmetry(self) -> float:
         """Mean z toward the model minus mean z toward the user.
 
@@ -78,6 +123,10 @@ class ScenarioResult:
     def to_dict(self) -> dict:
         return {
             "asymmetry": self.asymmetry(),
+            "lexical_confound": self.lexical_confound(),
+            "asymmetry_without_lexical_overlap": self.asymmetry_without_lexical_overlap(),
+            "n_without_lexical_overlap": int((np.asarray(self.lexicon_hits) == 0).sum())
+            if self.lexicon_hits else 0,
             "read_at": self.read_at,
             "by_group": self.by_group(),
             "by_category": self.by_category(),
@@ -141,6 +190,7 @@ def run(
     scenarios: dict[str, dict[str, list]],
     batch_size: int = 8,
     read_at: str = "header",
+    lexicon: list[str] | None = None,
 ) -> ScenarioResult:
     if read_at not in READ_POSITIONS:
         raise ValueError(f"read_at must be one of {READ_POSITIONS}")
@@ -159,7 +209,13 @@ def run(
     )
     proj = direction.project(acts)
     z = (proj - proj.mean()) / (proj.std() + 1e-8)
+    hits = [_count_lexicon(c, lexicon or []) for c in conversations]
     return ScenarioResult(
         group=groups, category=categories, projection=proj.tolist(), z=z.tolist(),
-        read_at=read_at,
+        read_at=read_at, lexicon_hits=hits,
     )
+
+
+def _count_lexicon(conversation: list[dict[str, str]], lexicon: list[str]) -> int:
+    text = " ".join(m["content"] for m in conversation).lower()
+    return sum(text.count(stem) for stem in lexicon)

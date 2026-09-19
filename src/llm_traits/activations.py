@@ -35,6 +35,18 @@ def collect(
     """
     if pool not in ("last", "mean"):
         raise ValueError(f"unknown pooling {pool!r}")
+    blank = [i for i, t in enumerate(texts) if not t.strip()]
+    if blank:
+        # A batch of entirely blank strings tokenises to shape [B, 0], and
+        # transformers 4.x builds that empty tensor as float32, which surfaces
+        # hundreds of frames away as "embedding expected Long, got FloatTensor".
+        # Steered generation at an extreme coefficient does produce empty
+        # continuations, so this is reachable from ordinary use and is worth a
+        # readable error rather than a dtype one.
+        raise ValueError(
+            f"{len(blank)} of {len(texts)} texts are blank (first at index {blank[0]}); "
+            "filter them before collecting activations"
+        )
     tok = lm.tokenizer
     prev_side = tok.padding_side
     tok.padding_side = "right"

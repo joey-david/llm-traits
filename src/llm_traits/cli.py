@@ -14,6 +14,7 @@ import json
 import sys
 from pathlib import Path
 
+from . import authoring
 from . import model as model_module
 from . import pipeline, report, spec as spec_module
 
@@ -103,6 +104,44 @@ def cmd_inspect(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_make_spec(args: argparse.Namespace) -> int:
+    out = args.out or (args.traits_dir / f"{args.trait}.yaml")
+    if Path(out).exists() and not args.force:
+        raise SystemExit(f"{out} already exists; pass --force to overwrite")
+    print(f"loading generator {args.model} ...", file=sys.stderr, flush=True)
+    lm = model_module.load(args.model, device=args.device, dtype=args.dtype)
+    if lm.name == model_module.DEFAULT_MODEL:
+        print(
+            "note: authoring with the same model the direction will be fit on means the "
+            "sentences come from the distribution whose geometry you are measuring. Pass "
+            "--model to author with something else where you can.",
+            file=sys.stderr,
+        )
+    spec = authoring.build(
+        lm,
+        trait=args.trait,
+        description=args.description,
+        display_name=args.display_name,
+        n_keys=args.keys,
+        n_sentences=args.sentences,
+    )
+    written = authoring.write(spec, out)
+    loaded = spec_module.TraitSpec.load(written)
+    print(f"\n{written}", file=sys.stderr)
+    for condition, sentences in loaded.sentence_sets().items():
+        positives = sum(sentences.labels)
+        print(
+            f"  {condition:<10} {len(sentences):>4} ({positives} trait / "
+            f"{len(sentences) - positives} control)",
+            file=sys.stderr,
+        )
+    print(
+        "\nRead the control families before running it. They are the design.",
+        file=sys.stderr,
+    )
+    return 0
+
+
 def cmd_report(args: argparse.Namespace) -> int:
     for run_dir in args.runs:
         print(report.from_run(run_dir))
@@ -149,6 +188,23 @@ def build_parser() -> argparse.ArgumentParser:
     inspect = sub.add_parser("inspect", help="expand a spec without loading a model")
     inspect.add_argument("traits", nargs="*", default=["all"])
     inspect.set_defaults(func=cmd_inspect)
+
+    make = sub.add_parser(
+        "make-spec", help="construct a trait spec from a concept description, by prompting a model"
+    )
+    make.add_argument("trait", help="snake_case slug, e.g. jealousy")
+    make.add_argument("--description", required=True,
+                      help="one or two sentences describing the concept")
+    make.add_argument("--display-name", default=None)
+    make.add_argument("--model", default=model_module.DEFAULT_MODEL,
+                      help="the generator; prefer a different model from the one you will run")
+    make.add_argument("--device", default=None)
+    make.add_argument("--dtype", default=None)
+    make.add_argument("--keys", type=int, default=12, help="S1 key phrases per category")
+    make.add_argument("--sentences", type=int, default=8, help="S2 sentences per category")
+    make.add_argument("--out", type=Path, default=None)
+    make.add_argument("--force", action="store_true")
+    make.set_defaults(func=cmd_make_spec)
 
     rep = sub.add_parser("report", help="rebuild report.md from an existing results.json")
     rep.add_argument("runs", nargs="+", type=Path)

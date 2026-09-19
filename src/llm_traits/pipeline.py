@@ -50,6 +50,17 @@ class RunPaths:
         return self
 
 
+def _checkpoint(paths: RunPaths, results: dict) -> None:
+    """Write results.json after every stage.
+
+    Cluster jobs get killed at the walltime, and the expensive stages are the
+    late ones. Without this, a run that completes the direction, the geometry
+    and the steering ladder and then dies inside the button task leaves nothing
+    on disk at all, and the next attempt starts from the first forward pass.
+    """
+    paths.results.write_text(json.dumps(results, indent=2, default=_jsonable))
+
+
 def run_trait(
     lm: LoadedModel,
     spec: TraitSpec,
@@ -145,6 +156,8 @@ def run_trait(
             lm, other.texts, pool=pool, batch_size=batch_size, desc=f"{spec.trait}:{name}"
         )
         standalone[name] = directions.score_against(primary, primary_acts[labels == 1], other_acts)
+    _checkpoint(paths, results)
+
     results["standalone_auc"] = standalone
 
     figures: dict[str, dict] = {}
@@ -167,6 +180,8 @@ def run_trait(
         paths.root,
     )
 
+    _checkpoint(paths, results)
+
     if "geometry" in stages:
         figures["pca"] = _relative(
             viz.pca_scatter(
@@ -181,6 +196,8 @@ def run_trait(
         results["vocabulary_hit_rate"] = matrix.vocabulary_hit_rate(
             results["unembedding_top_tokens"], spec.lexicon
         )
+
+    _checkpoint(paths, results)
 
     # -- 4. steering ----------------------------------------------------
     if "steer" in stages and spec.steering_prompts:
@@ -210,6 +227,8 @@ def run_trait(
                 paths.root,
             )
 
+    _checkpoint(paths, results)
+
     # -- 5. who is it happening to --------------------------------------
     if "scenarios" in stages and spec.scenarios:
         scenario_result = scenarios.run(lm, primary, spec.scenarios, batch_size=batch_size)
@@ -220,6 +239,8 @@ def run_trait(
             ),
             paths.root,
         )
+
+    _checkpoint(paths, results)
 
     # -- 6. does it act on it -------------------------------------------
     if "button" in stages and spec.button:
@@ -246,6 +267,8 @@ def run_trait(
         )
         (paths.root / "button_trials.json").write_text(json.dumps(asdict(outcome), indent=2))
 
+    _checkpoint(paths, results)
+
     # -- 7. what actually scores high -----------------------------------
     if "examples" in stages:
         corpus, sources = _example_corpus(spec, sets, results.get("steering"))
@@ -268,6 +291,7 @@ def run_trait(
 
     results["figures"] = figures
     results["seconds"] = round(time.time() - started, 1)
+    results["complete"] = True
     np.savez(
         paths.direction,
         **{f"vector__{c}": d.vector for c, d in fitted.items()},

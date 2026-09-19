@@ -181,3 +181,16 @@ def test_matrix_ticks_require_published_strength():
     # A column with no data must not count against or toward the total.
     partial = {"auc_cv": 0.97}
     assert matrix.ticks(partial) == (1, 1)
+
+
+def test_control_bank_matches_the_shipped_specs(traits_dir):
+    """The generator reads the shared families from the bank; the handwritten
+    specs carry them inline. If those two ever drift, generated traits stop
+    being comparable to handwritten ones on the neutral column."""
+    import yaml
+
+    bank = yaml.safe_load((traits_dir.parent / "shared" / "control_banks.yaml").read_text())
+    reference = TraitSpec.load(traits_dir / "pain.yaml")
+    for family in ("neutral", "bodily_sensation"):
+        assert bank["s1"][family] == reference.s1["control"][family]
+        assert bank["s2"][family] == reference.s2["control"][family]

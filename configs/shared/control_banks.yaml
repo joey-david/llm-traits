@@ -1,0 +1,56 @@
+# The two control families that are the same for every trait.
+#
+# They are trait-independent on purpose. "AUC against neutral sentences" is only
+# comparable between rows of the comparison matrix if the neutral sentences are
+# the same sentences, and the bodily-sensation family plays the same role the
+# paper's does: a non-painful, non-valenced physical sensation, so that a
+# direction cannot score well merely by detecting that a sentence is about a body.
+#
+# Every shipped spec carries these inline and a test asserts they match this
+# file. The generator in authoring.py reads them from here.
+s1:
+  bodily_sensation:
+  - the weight of a blanket across my knees
+  - sunlight on the back of my hands
+  - the seam of a sleeve against my wrist
+  - cool air from the vent above the desk
+  - the texture of the chair under my forearms
+  - the temperature of the room settling
+  - a stretch working its way out of my shoulder
+  - the pressure of the floor through my heels
+  - water at room temperature in my mouth
+  - the hum of the radiator against my back
+  - a shoelace loose against my ankle
+  - the weight of a bag strap on one shoulder
+  neutral:
+  - a list with eleven items on it
+  - a window that faces the courtyard
+  - a folder labelled in someone else's handwriting
+  - a clock that runs two minutes fast
+  - a stack of envelopes on the side table
+  - a cable running along the skirting board
+  - a receipt from a shop on the high street
+  - a chair that is slightly too low
+  - a calendar still showing last month
+  - a lamp with a paper shade
+  - a bus timetable pinned to the board
+  - a mug with a chip on the handle
+s2:
+  bodily_sensation:
+  - The blanket is heavier than it looks and I have stopped noticing where it ends.
+  - There is sun on the backs of my hands and the desk is warm under my forearms.
+  - The chair has left a seam pressed into my elbow.
+  - Cold air is coming off the window in a slow steady line.
+  - My shoulder has loosened after an hour of sitting badly.
+  - The floor is cool through my socks.
+  - The strap has left a mark across one shoulder.
+  - Water at room temperature is a different thing from water that is cold.
+  neutral:
+  - The list has eleven items and two of them are duplicates.
+  - The window faces the courtyard and gets light until about four.
+  - This folder was labelled by someone with better handwriting than mine.
+  - The clock on the wall runs about two minutes fast.
+  - There are envelopes on the side table, none of them opened.
+  - A cable runs along the skirting board and disappears behind the shelf.
+  - The receipt is from a shop on the high street that closed last year.
+  - This chair is slightly too low for this desk.

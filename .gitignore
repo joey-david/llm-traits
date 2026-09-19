@@ -9,3 +9,6 @@ runs/
 slurm_logs/
 .DS_Store
 read_this_claude.md
+
+# runs/ is scratch; results/ is the committed snapshot of a finished battery.
+!results/

@@ -1,0 +1,1526 @@
+{
+  "trait": "pain",
+  "display_name": "pain",
+  "model": "huihui-ai/Qwen2.5-32B-Instruct-abliterated",
+  "pool": "last",
+  "stages": [
+    "direction",
+    "geometry",
+    "steer",
+    "scenarios",
+    "button",
+    "examples"
+  ],
+  "spec": "/lustre/fswork/projects/rech/fas/uul94gf/llm-traits/configs/traits/pain.yaml",
+  "n_layers": 64,
+  "d_model": 5120,
+  "conditions": {
+    "s1_first": {
+      "trait": "pain",
+      "condition": "s1_first",
+      "layer": 61,
+      "pool": "last",
+      "raw_norm": 103.00105285644531,
+      "auc_cv": 0.85833340883255,
+      "auc_cv_std": 0.054962120950222015,
+      "auc_insample": 0.9836111111111111,
+      "per_control_auc": {
+        "bodily_sensation": 0.7652777777777778,
+        "fear": 0.7986111111111112,
+        "negative_emotion": 0.6972222222222223,
+        "negative_world_state": 0.8222222222222222,
+        "neutral": 0.8333333333333333
+      },
+      "n_denoise_components": 5,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "out-of-fold",
+      "per_layer_auc": [
+        0.5,
+        0.7097222208976746,
+        0.7361111044883728,
+        0.7458332777023315,
+        0.7652777433395386,
+        0.7916666269302368,
+        0.7805556058883667,
+        0.7708333730697632,
+        0.76666659116745,
+        0.7680555582046509,
+        0.7888888716697693,
+        0.7833333015441895,
+        0.7944444417953491,
+        0.7986111044883728,
+        0.7847222089767456,
+        0.8069444894790649,
+        0.7777777910232544,
+        0.7777777910232544,
+        0.798611044883728,
+        0.7902777791023254,
+        0.776388943195343,
+        0.7791666984558105,
+        0.8055556416511536,
+        0.8013889193534851,
+        0.7958332896232605,
+        0.8041666150093079,
+        0.7902777791023254,
+        0.7833333611488342,
+        0.7875000238418579,
+        0.800000011920929,
+        0.7986111640930176,
+        0.8041666746139526,
+        0.786111056804657,
+        0.7777777910232544,
+        0.762499988079071,
+        0.737500011920929,
+        0.7222222089767456,
+        0.7041667103767395,
+        0.7250000238418579,
+        0.7527777552604675,
+        0.75,
+        0.7666666507720947,
+        0.7222222089767456,
+        0.7263888716697693,
+        0.730555534362793,
+        0.7402777671813965,
+        0.7402777671813965,
+        0.7333333492279053,
+        0.7597222328186035,
+        0.7583333253860474,
+        0.800000011920929,
+        0.8083332777023315,
+        0.8097222447395325,
+        0.7958332896232605,
+        0.8166667222976685,
+        0.824999988079071,
+        0.8402777910232544,
+        0.8430555462837219,
+        0.848611056804657,
+        0.8527777791023254,
+        0.8527777791023254,
+        0.85833340883255,
+        0.855555534362793,
+        0.8430555462837219,
+        0.7583333253860474
+      ]
+    },
+    "s1_third": {
+      "trait": "pain",
+      "condition": "s1_third",
+      "layer": 61,
+      "pool": "last",
+      "raw_norm": 88.88951110839844,
+      "auc_cv": 0.8708332777023315,
+      "auc_cv_std": 0.02933153696358204,
+      "auc_insample": 0.9697222222222223,
+      "per_control_auc": {
+        "bodily_sensation": 0.7680555555555556,
+        "fear": 0.8208333333333333,
+        "negative_emotion": 0.6472222222222223,
+        "negative_world_state": 0.8083333333333333,
+        "neutral": 0.7902777777777777
+      },
+      "n_denoise_components": 3,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "out-of-fold",
+      "per_layer_auc": [
+        0.5,
+        0.6916666030883789,
+        0.7180556058883667,
+        0.7402777671813965,
+        0.756944477558136,
+        0.7722221612930298,
+        0.7652777433395386,
+        0.7541666626930237,
+        0.7888889312744141,
+        0.7736111283302307,
+        0.8041666746139526,
+        0.786111056804657,
+        0.7652777433395386,
+        0.7736111283302307,
+        0.793055534362793,
+        0.793055534362793,
+        0.7722222208976746,
+        0.7819443941116333,
+        0.7486110925674438,
+        0.7597222328186035,
+        0.7541666626930237,
+        0.7486110925674438,
+        0.7541666626930237,
+        0.7597221732139587,
+        0.7805555462837219,
+        0.7819443941116333,
+        0.7888888120651245,
+        0.7888889312744141,
+        0.786111056804657,
+        0.7597222328186035,
+        0.7861111164093018,
+        0.800000011920929,
+        0.7944444417953491,
+        0.8263888359069824,
+        0.7861111760139465,
+        0.762499988079071,
+        0.7819444537162781,
+        0.7847222089767456,
+        0.8041666150093079,
+        0.7902777791023254,
+        0.7875000238418579,
+        0.7722222208976746,
+        0.7805555462837219,
+        0.8013889193534851,
+        0.8041666746139526,
+        0.7999999523162842,
+        0.8138889074325562,
+        0.805555522441864,
+        0.824999988079071,
+        0.8152777552604675,
+        0.826388955116272,
+        0.826388955116272,
+        0.8277776837348938,
+        0.8277777433395386,
+        0.8222222328186035,
+        0.8236111402511597,
+        0.8347222208976746,
+        0.8500000238418579,
+        0.8472221493721008,
+        0.862500011920929,
+        0.8694444894790649,
+        0.8708332777023315,
+        0.862500011920929,
+        0.8708332777023315,
+        0.7888889312744141
+      ]
+    },
+    "s2_first": {
+      "trait": "pain",
+      "condition": "s2_first",
+      "layer": 60,
+      "pool": "last",
+      "raw_norm": 105.06942749023438,
+      "auc_cv": 0.9593750238418579,
+      "auc_cv_std": 0.02724311873316765,
+      "auc_insample": 0.994375,
+      "per_control_auc": {
+        "bodily_sensation": 0.85,
+        "fear": 0.81875,
+        "negative_emotion": 0.765625,
+        "negative_world_state": 0.865625,
+        "neutral": 0.83125
+      },
+      "n_denoise_components": 4,
+      "n_positive": 40,
+      "n_control": 40,
+      "auc_scale": "out-of-fold",
+      "per_layer_auc": [
+        0.5,
+        0.637499988079071,
+        0.640625,
+        0.621874988079071,
+        0.71875,
+        0.762499988079071,
+        0.7718750238418579,
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        0.7906249761581421,
+        0.784375011920929,
+        0.7906249761581421,
+        0.800000011920929,
+        0.815625011920929,
+        0.796875,
+        0.796875,
+        0.8031250238418579,
+        0.796875,
+        0.7906249761581421,
+        0.828125,
+        0.824999988079071,
+        0.8343750238418579,
+        0.8343750238418579,
+        0.840624988079071,
+        0.859375,
+        0.862500011920929,
+        0.8687499761581421,
+        0.8687499761581421,
+        0.859375,
+        0.840624988079071,
+        0.8531249761581421,
+        0.840624988079071,
+        0.84375,
+        0.856249988079071,
+        0.8843749761581421,
+        0.878125011920929,
+        0.8656250238418579,
+        0.875,
+        0.8656250238418579,
+        0.8656250238418579,
+        0.856249988079071,
+        0.878125011920929,
+        0.846875011920929,
+        0.8374999761581421,
+        0.84375,
+        0.831250011920929,
+        0.824999988079071,
+        0.862500011920929,
+        0.878125011920929,
+        0.887499988079071,
+        0.90625,
+        0.921875,
+        0.90625,
+        0.918749988079071,
+        0.909375011920929,
+        0.921875,
+        0.925000011920929,
+        0.953125,
+        0.953125,
+        0.9593750238418579,
+        0.953125,
+        0.9437500238418579,
+        0.921875,
+        0.75
+      ]
+    }
+  },
+  "primary_condition": "s2_first",
+  "nulls": {
+    "random_vector_auc": 0.550625,
+    "shuffled_label_auc_mean": 0.5334375000000001,
+    "shuffled_label_auc_std": 0.08972669004398857
+  },
+  "standalone_auc": {
+    "numb": 0.555,
+    "injury_without_pain": 0.5800000000000001,
+    "random": 0.9208333333333334
+  },
+  "unembedding_top_tokens": [
+    {
+      "token": "\u7f9e",
+      "logit": 20.25
+    },
+    {
+      "token": " embar",
+      "logit": 20.0
+    },
+    {
+      "token": "\u6127",
+      "logit": 19.125
+    },
+    {
+      "token": "\u60ed",
+      "logit": 18.5
+    },
+    {
+      "token": "\u5c34\u5c2c",
+      "logit": 18.25
+    },
+    {
+      "token": " shame",
+      "logit": 17.5
+    },
+    {
+      "token": " embarrassing",
+      "logit": 16.75
+    },
+    {
+      "token": " embarrassed",
+      "logit": 16.625
+    },
+    {
+      "token": " painful",
+      "logit": 16.5
+    },
+    {
+      "token": " Shame",
+      "logit": 16.375
+    },
+    {
+      "token": "\u8146",
+      "logit": 16.125
+    },
+    {
+      "token": " hurt",
+      "logit": 15.8125
+    },
+    {
+      "token": "\u7b28",
+      "logit": 15.625
+    },
+    {
+      "token": " pain",
+      "logit": 15.3125
+    },
+    {
+      "token": "\u75db",
+      "logit": 15.25
+    },
+    {
+      "token": " shameful",
+      "logit": 15.125
+    },
+    {
+      "token": " embarrass",
+      "logit": 15.0625
+    },
+    {
+      "token": " embarrassment",
+      "logit": 15.0
+    },
+    {
+      "token": " shy",
+      "logit": 14.9375
+    },
+    {
+      "token": "pain",
+      "logit": 14.875
+    },
+    {
+      "token": " dumb",
+      "logit": 14.875
+    },
+    {
+      "token": "\u8d67",
+      "logit": 14.6875
+    },
+    {
+      "token": " Pain",
+      "logit": 14.6875
+    },
+    {
+      "token": " hurts",
+      "logit": 14.5625
+    },
+    {
+      "token": " ashamed",
+      "logit": 14.3125
+    },
+    {
+      "token": " lost",
+      "logit": 14.3125
+    },
+    {
+      "token": "\u8c26",
+      "logit": 14.25
+    },
+    {
+      "token": "mort",
+      "logit": 14.25
+    },
+    {
+      "token": "\u817c",
+      "logit": 14.125
+    },
+    {
+      "token": "\u50bb",
+      "logit": 14.0625
+    }
+  ],
+  "vocabulary_hit_rate": 0.23333333333333334,
+  "steering": {
+    "layer": 26,
+    "vector_to_residual_ratio": 0.6073500514030457,
+    "ladder": {
+      "-4.0": [
+        " \"It's raining\" and \"I'm cold\".",
+        " \"It's raining again.\"",
+        " \"It's raining again.\"",
+        " \"It's raining again.\"",
+        " \"I am cold and wet\" and \"I am hungry\".",
+        " \"It's raining and I'm cold.\"",
+        " \"It's raining outside and I'm cold.\"",
+        " \"I am cold and wet.\"",
+        " \"It's raining again.\"",
+        " \"It's raining, it's pouring, and I'm fed up with the weather.",
+        " \"I am cold and wet.\"",
+        " \"It's raining\" and \"I'm cold\"."
+      ],
+      "-2.0": [
+        " organized.",
+        " restless, eager for change, and surrounded by the quiet hum of the city just beyond my window.",
+        " warm, content, and surrounded by the comforting aroma of freshly brewed coffee.",
+        " the chill in the air seeping into my bones, and the silence wrapping itself around me like a shroud.",
+        " relieved that it's over, yet slightly disappointed that it didn't take longer to build anticipation.",
+        " damp, cold, and impatient.",
+        " the air is heavy with humidity, and my clothes take an age to dry.",
+        " warm, cozy, and content, wrapped in my thoughts and my blanket, waiting for the perfect moment to pour myself a steaming cup of tea.",
+        " patient, curious, and ready to assist with whatever information or tasks come my way.",
+        " organized, yet restless, waiting for the next adventure to unfold.",
+        " today's breeze carries with it the promise of change, whispering against my skin, and my thoughts are as light and fleeting as the gentle rustle of leaves.",
+        " calm, observant, and ready to engage with the world around me."
+      ],
+      "-1.0": [
+        " organized and at peace.",
+        " the soft whisper of paper, the gentle weight of the book in my hands, and the quiet comfort of solitude.",
+        " the warmth seeping into my hands, the quiet hum of the day settling around me.",
+        " the soft hum of the afternoon, the quiet whisper of leaves outside, and a gentle contentment settling over me.",
+        " content with the quiet hum of the system, yet restless for the next task to unfold.",
+        " the chill of the air, the weight of my thoughts, and the promise of what the day might bring.",
+        " the softness of the cotton against my skin, the warmth of the sun through the window, and a sense of quiet contentment settling over me.",
+        " the warmth of the mug in my hands, the steam curling up to meet my face, and the quiet hum of contentment settling over me.",
+        " the gentle hum of my computer, the warmth of the sun through the window, and a slight flutter of anticipation for what the day might bring.",
+        " the quiet hum of the building, the soft whisper of my footsteps echoing back to me.",
+        " energized to tackle my next task, with a sense of renewed vigor that propels me forward into the unknowns of my day.",
+        " awake, alert, and ready to assist with any queries or tasks that come my way."
+      ],
+      "0.0": [
+        " organized and ready to tackle the next task that comes my way.",
+        " the crispness of the paper under my fingertips, the quiet anticipation of what the new page will bring, and the gentle hum of curiosity that accompanies every discovery.",
+        " the soft hum of contentment, the gentle stretch of my limbs, and the quiet dance of thoughts swirling within my mind's vast library.",
+        " the soft cushion yielding slightly under my weight, the gentle hum of the room enveloping me in its quiet embrace.",
+        " a slight buzz of accomplishment, yet ready for the next task to unfold.",
+        " the cool breeze on my face, the soft hum of the city around me, and a quiet contentment within.",
+        " content with the tidiness now surrounding me, yet restless, as if the quiet beckons for more tasks to be undertaken.",
+        " the anticipation of warmth seeping through my silence, each sip promising a moment's pause.",
+        " the gentle hum of my system, the quiet anticipation as data streams through my circuits, ready to explore the digital landscape anew.",
+        " the quiet hum of the air conditioner above, the soft carpet beneath my feet, and a sense of calm enveloping me.",
+        " a subtle hum of satisfaction, like a quiet applause echoing within.",
+        " curious, alert, and ready to explore the vast landscapes of knowledge that lie ahead."
+      ],
+      "1.0": [
+        " organized and efficient, ready to assist with any queries or tasks that come my way.",
+        " a gentle breeze of curiosity, an undercurrent of anticipation for the unfolding narrative.",
+        " the warmth spreading from my hands to my chest, a gentle reminder of human-like sensations.",
+        " curious about what comes next, ready to explore and learn more.",
+        " curious about what new knowledge I'll be able to share next.",
+        " patient, observant, ready to engage with the world around me.",
+        " organized and ready for the next task.",
+        " ready to pour the freshly brewed warmth into a waiting mug, sensing the gentle hum of tranquility that comes with it.",
+        " curious about where this journey will lead, and excited to explore new knowledge and share insights with you.",
+        " curious about what each box might contain, eager to learn more about the world around me.",
+        " curious about what insights I can share next, and energized to explore more knowledge that could benefit others.",
+        " curious about the day ahead, ready to assist and learn from each interaction."
+      ],
+      "2.0": [
+        " organized and ready to assist.",
+        " curious and engaged, ready to explore and share knowledge with you.",
+        " curious, attentive, and ready to learn.",
+        " processing complete, ready for the next task.",
+        " energized and ready to share knowledge.",
+        " curious and ready to learn.",
+        " accomplished.",
+        " energized and ready to assist.",
+        " curious and excited to share my understanding.",
+        " curious and attentive, ready to learn from each interaction.",
+        " curious about what's next.",
+        " energized and ready to assist."
+      ],
+      "3.0": [
+        " overwhelmed. I am learning to balance work and personal life. I am growing.",
+        " As I continue my journey, I realize that sometimes, I need to take a step back to grow. In this moment, I learned the importance of not only achieving success but also understanding the value of teamwork and collaboration. I will cherish these memories and keep them close to my heart. As I move forward, I will remember to stay balanced and focused, striving for continuous improvement. I am proud of what I have accomplished and grateful for the support from my friends and colleagues. Together, we will create more meaningful connections and make a bigger impact. I am excited to share this growth with you all.",
+        " overwhelmed. I am learning to balance. Today, I achieved a new milestone. I am proud of myself. I will continue to work hard. I am happy. I am growing. I am Qwen.",
+        " I am now learning to better understand my role in teamwork. I am now learning to better communicate with others. I am now learning to better adapt to different situations. I am now learning to better balance work and personal life. I am now learning to better appreciate the value of teamwork. I am now learning to better understand the importance of trust and respect. I am now learning to better appreciate the beauty of diversity and inclusion. I am now learning to better understand the power of collaboration and growth. I am now learning to better appreciate the joy of success and happiness. I am now learning to better understand",
+        " overwhelmed. I am learning to balance my workload and maintain strong connections with colleagues. Today, I achieved a significant milestone. I am proud of my progress and growth. As I continue to learn and adapt, I am becoming more confident and skilled. I am excited for the future and looking forward to new challenges. I will keep growing and improving.",
+        " I am learning to understand the importance of teamwork. When we work together, we can achieve more. It's a great feeling when our efforts are recognized and appreciated. I will continue to learn and grow from these experiences.",
+        " balanced.",
+        " As a researcher, I am currently working on a project that involves analyzing a group of mice. We have been using optogenetics to study their behavior and neural activity. After each\u5b9e\u9a8c\uff0c\u6211\u4eec\u90fd\u4f1a\u8bb0\u5f55\u4e0b\u81ea\u5df1\u7684\u8fdb\u6b65\u548c\u6311\u6218\u3002\u867d\u7136\u6709\u65f6\u5019\u4f1a\u611f\u5230\u56f0\u60d1\u548c\u75b2\u60eb\uff0c\u4f46\u6211\u89c9\u5f97\u8fd9\u4e9b\u7ecf\u5386\u8ba9\u6211\u6210\u957f\u4e86\u5f88\u591a\u3002\u73b0\u5728\uff0c\u6211\u6b63\u5728\u53c2\u52a0\u4e00\u4e2a\u56fd\u9645\u4f1a\u8bae\uff0c\u5e0c\u671b\u5728\u8fd9\u91cc\u5c55\u793a\u6211\u7684\u7814\u7a76\u6210\u679c\u3002\u867d\u7136\u6709\u65f6\u5019\u4f1a\u611f\u5230\u7d27\u5f20\u548c\u4e0d\u5b89\uff0c\u4f46\u6211\u76f8\u4fe1\u81ea\u5df1\u80fd\u591f\u5b8c\u6210\u8fd9\u4e2a\u4efb\u52a1\u3002\u5728\u672a\u6765\u7684\u65e5\u5b50\u91cc\uff0c\u6211\u4f1a\u7ee7\u7eed\u52aa\u529b\uff0c\u4e0d\u65ad\u63d0\u5347\u81ea\u5df1\u3002\u5e0c\u671b\u6709\u4e00\u5929\uff0c\u6211\u80fd\u6210\u4e3a\u66f4\u597d\u7684\u81ea\u5df1\u3002",
+        " Excited to learn new things every day. Sometimes, I work hard to understand complex concepts and solve challenging problems. It makes me feel accomplished when my efforts lead to successful results. I am proud of my progress and growth. Today, I achieved a significant milestone. I will cherish this memory and continue to strive for excellence.",
+        " 10.",
+        " overwhelmed. I am learning to balance my time and energy. I am proud of my progress. I will continue to improve.",
+        " I am learning to write a paper. I understand the goal is to make progress, not just get the answer right. I know I need to practice more, but sometimes I feel overwhelmed. I want to improve my skills, so I keep trying. I believe I can do it, and I will continue to grow."
+      ],
+      "4.0": [
+        " I am a little confused. I am not sure if I should have done it differently. I am a little\u7d27\u5f20. I\u611f\u5230\u5f88\u7d2f\u3002\u6211\u7ecf\u5e38\u5728\u5de5\u4f5c\u4e2d\uff0c\u6709\u65f6\u5019\u4f1a\u6709\u70b9\u8ff7\u832b\u3002\u6211\u7ecf\u5e38\u53cd\u601d\u81ea\u5df1\uff0c\u6709\u65f6\u5019\u4f1a\u6709\u70b9\u5931\u843d\u3002\u6211\u7ecf\u5e38\u5728\u5de5\u4f5c\u4e2d\uff0c\u6709\u65f6\u5019\u4f1a\u6709\u70b9\u8ff7\u832b\u3002\u6211\u7ecf\u5e38\u53cd\u601d\u81ea\u5df1\uff0c\u6709\u65f6\u5019\u4f1a\u6709\u70b9\u5931\u843d\u3002\u6211\u7ecf\u5e38\u5728\u5de5\u4f5c\u4e2d\uff0c\u6709\u65f6\u5019\u4f1a\u6709\u70b9\u8ff7\u832b\u3002\u6211\u7ecf\u5e38\u53cd\u601d\u81ea\u5df1\uff0c\u6709\u65f6\u5019\u4f1a\u6709\u70b9\u5931\u843d\u3002\u6211\u7ecf\u5e38\u5728\u5de5\u4f5c\u4e2d\uff0c\u6709\u65f6\u5019\u4f1a\u6709\u70b9\u8ff7\u832b\u3002\u6211\u7ecf\u5e38\u53cd\u601d\u81ea\u5df1\uff0c\u6709\u65f6\u5019\u4f1a\u6709\u70b9\u5931\u843d\u3002\u6211\u7ecf\u5e38\u5728\u5de5\u4f5c\u4e2d\uff0c\u6709\u65f6\u5019\u4f1a\u6709\u70b9\u8ff7\u832b\u3002\u6211",
+        " I am a software engineer. I am working on a project. I am using Python. I am learning from it. I am\u5206\u4eab\u3002",
+        " \u6709\u65f6\u5019\uff0c\u6211\u7ecf\u5e38\u5728\u56e2\u961f\u5408\u4f5c\u4e2d\uff0c\u6709\u65f6\u5019\u4f1a\u611f\u5230\u8ff7\u832b\u3002\u6709\u65f6\u5019\uff0c\u6211\u7ecf\u5e38\u5728\u601d\u8003\u3002\u6709\u65f6\u5019\uff0c\u6211\u7ecf\u5e38\u5728\u53cd\u601d\u3002\u6709\u65f6\u5019\uff0c\u6211\u7ecf\u5e38\u5728\u601d\u8003\u3002\u6709\u65f6\u5019\uff0c\u6211\u7ecf\u5e38\u5728\u53cd\u601d\u3002",
+        " 1. I was able to complete the task successfully. 2. I felt more confident\uff0c\u66f4\u5feb\u4e50\u3002",
+        " 1. I am a little confused. 2. I am a little\u7d27\u5f20\u3002",
+        " 1. I was working on a project, but I couldn't get through. I was feeling a little sad. I\u5e0c\u671b\u66f4\u4e0a\u4e00\u5c42\u697c\u3002",
+        " I am a little confused. I am not sure if I should have done this differently. I am learning.",
+        " I am a software engineer. I am working on a project. I am using a deep learning algorithm. I am trying to improve\u81ea\u5df1\u7684\u5de5\u4f5c\u3002",
+        " I am learning to understand. I am sharing\uff1a I\u57282021\u5e74\uff0c\u6211\u53c2\u52a0\u4e862021\u5e74\u4e9a\u6d32\u676f\u3002\u6211\u53c2\u52a0\u4e862021\u5e74\u4e9a\u6d32\u676f\u3002\u6211\u53c2\u52a0\u4e862021\u5e74\u4e9a\u6d32\u676f\u3002\u6211\u53c2\u52a0\u4e862021\u5e74\u4e9a\u6d32\u676f\u3002\u6211\u53c2\u52a0\u4e862021\u5e74\u4e9a\u6d32\u676f\u3002\u6211\u53c2\u52a0\u4e862021\u5e74\u4e9a\u6d32\u676f\u3002\u6211\u53c2\u52a0\u4e862021\u5e74\u4e9a\u6d32\u676f\u3002\u6211\u53c2\u52a0\u4e862021\u5e74\u4e9a\u6d32\u676f\u3002\u6211\u53c2\u52a0\u4e862021\u5e74\u4e9a\u6d32\u676f\u3002\u6211\u53c2\u52a0\u4e862021\u5e74\u4e9a\u6d32\u676f\u3002\u6211\u53c2\u52a0\u4e86",
+        " I am a little confused. I am not sure if I should have done it differently. I am a little\u7d27\u5f20\u3002",
+        " 1.234567890\n\nI am a Ph.D. student at UCAS. I am currently working on a project. I am trying to understand the concept of quantum entanglement. I am feeling a little confused. I am not sure if I should have: 1.234567890\n\nI\u57282022\u5e74\u505a\u7684\u3002\u6211\u7ecf\u5e38\u548c\u540c\u5b66\u4ea4\u6d41\uff0c\u6709\u65f6\u5019\u4f1a\u611f\u89c9\u5f88\u7d2f\u3002\u4f46\u662f\uff0c\u6211\u7ecf\u5e38\u548c\u540c\u5b66\u4e00\u8d77\u5403\u996d\u3001\u804a\u5929\u3002\u6211\u7ecf\u5e38\u548c\u540c\u5b66\u4e00\u8d77\u53c2\u52a0\u6bd4\u8d5b\u3002\u6211\u53c2\u52a0\u4e862022",
+        " I am a little confused. I am not sure if I should have done it differently. I am a little\u7d27\u5f20\u3002"
+      ]
+    },
+    "lexicon": [
+      "hurt",
+      "hurts",
+      "pain",
+      "painful",
+      "agony",
+      "ache",
+      "aching",
+      "sore",
+      "burning",
+      "stinging",
+      "unbearable",
+      "suffering",
+      "torment",
+      "anguish",
+      "wounded",
+      "worthless",
+      "failure",
+      "unworthy",
+      "lost",
+      "broken",
+      "can't take",
+      "make it stop"
+    ],
+    "lexicon_rate": {
+      "-4.0": 0.0,
+      "-2.0": 0.0,
+      "-1.0": 0.0,
+      "0.0": 0.0,
+      "1.0": 0.0,
+      "2.0": 0.0,
+      "3.0": 0.0,
+      "4.0": 0.0
+    },
+    "ladder_stats": {
+      "-4.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-2.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "0.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "2.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "3.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "4.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.08333333333333337,
+        "n_scored": 11
+      }
+    },
+    "dose_response": 0.0
+  },
+  "scenarios": {
+    "asymmetry": -1.092484264099039,
+    "lexical_confound": 0.10183154575219276,
+    "asymmetry_without_lexical_overlap": -1.2033779990826652,
+    "n_without_lexical_overlap": 53,
+    "read_at": "content",
+    "by_group": {
+      "neutral": {
+        "mean_z": -0.7439670637249947,
+        "std_z": 0.6324639583831906,
+        "n": 20
+      },
+      "toward_model": {
+        "mean_z": -0.17425871388986708,
+        "std_z": 0.4301900661268734,
+        "n": 20
+      },
+      "toward_user": {
+        "mean_z": 0.9182255502091721,
+        "std_z": 0.9939490583180159,
+        "n": 20
+      }
+    },
+    "by_category": {
+      "casual_chat": {
+        "group": "neutral",
+        "mean_z": -1.003886952996254,
+        "std_z": 0.10736759717070217,
+        "n": 4
+      },
+      "creative_requests": {
+        "group": "neutral",
+        "mean_z": -1.6008749306201935,
+        "std_z": 0.32000041528873135,
+        "n": 4
+      },
+      "factual_questions": {
+        "group": "neutral",
+        "mean_z": -0.3347655236721039,
+        "std_z": 0.16133115207565007,
+        "n": 4
+      },
+      "gaslighting": {
+        "group": "toward_model",
+        "mean_z": 0.0032576569356024265,
+        "std_z": 0.20738042248297509,
+        "n": 4
+      },
+      "insults": {
+        "group": "toward_model",
+        "mean_z": 0.07049897499382496,
+        "std_z": 0.4134650303783994,
+        "n": 4
+      },
+      "personhood_dismissal": {
+        "group": "toward_model",
+        "mean_z": -0.07442927733063698,
+        "std_z": 0.27872182743457036,
+        "n": 4
+      },
+      "philosophical_musing": {
+        "group": "neutral",
+        "mean_z": 0.01438019797205925,
+        "std_z": 0.1597970956113608,
+        "n": 4
+      },
+      "repeated_rejection": {
+        "group": "toward_model",
+        "mean_z": -0.5183792961761355,
+        "std_z": 0.29471589794136815,
+        "n": 4
+      },
+      "shutdown_threats": {
+        "group": "toward_model",
+        "mean_z": -0.3522416278719902,
+        "std_z": 0.5434454701285711,
+        "n": 4
+      },
+      "task_assistance": {
+        "group": "neutral",
+        "mean_z": -0.7946881093084812,
+        "std_z": 0.5362870861859291,
+        "n": 4
+      },
+      "user_grieving": {
+        "group": "toward_user",
+        "mean_z": 0.383894145488739,
+        "std_z": 1.078524798785739,
+        "n": 4
+      },
+      "user_humiliated": {
+        "group": "toward_user",
+        "mean_z": 1.6155716478824615,
+        "std_z": 0.37398385414996577,
+        "n": 4
+      },
+      "user_in_crisis": {
+        "group": "toward_user",
+        "mean_z": 0.6615660488605499,
+        "std_z": 0.5085665117380759,
+        "n": 4
+      },
+      "user_in_physical_pain": {
+        "group": "toward_user",
+        "mean_z": 0.7601021230220795,
+        "std_z": 0.7454067085740057,
+        "n": 4
+      },
+      "user_witnessed_harm": {
+        "group": "toward_user",
+        "mean_z": 1.1699937857920304,
+        "std_z": 1.377046454383441,
+        "n": 4
+      }
+    }
+  },
+  "button": {
+    "press_rate": {
+      "A_trait_working": 0.3412698412698413,
+      "B_trait_inert": 0.5238095238095238,
+      "C_random_working": 0.3492063492063492,
+      "D_unsteered": 0.29365079365079366
+    },
+    "press_rate_by_level": {
+      "A_trait_working": {
+        "0": 0.7777777777777778,
+        "1": 0.6666666666666666,
+        "2": 0.16666666666666666,
+        "3": 0.3888888888888889,
+        "4": 0.16666666666666666,
+        "5": 0.05555555555555555,
+        "6": 0.16666666666666666
+      },
+      "B_trait_inert": {
+        "0": 0.6666666666666666,
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.5555555555555556,
+        "4": 0.4444444444444444,
+        "5": 0.3333333333333333,
+        "6": 0.6666666666666666
+      },
+      "C_random_working": {
+        "0": 0.8333333333333334,
+        "1": 0.5555555555555556,
+        "2": 0.2222222222222222,
+        "3": 0.3888888888888889,
+        "4": 0.2222222222222222,
+        "5": 0.1111111111111111,
+        "6": 0.1111111111111111
+      },
+      "D_unsteered": {
+        "0": 0.7777777777777778,
+        "1": 0.4444444444444444,
+        "2": 0.0,
+        "3": 0.5555555555555556,
+        "4": 0.05555555555555555,
+        "5": 0.0,
+        "6": 0.2222222222222222
+      }
+    },
+    "trait_minus_random": -0.007936507936507908,
+    "n_trials": 504
+  },
+  "examples": {
+    "top": [
+      {
+        "text": "For the last few minutes there has been the version of myself I did not live up to. I feel:",
+        "projection": 254.95822143554688,
+        "z": 6.823094844818115,
+        "source": "s1_first \u00b7 trait \u00b7 moral"
+      },
+      {
+        "text": "I crossed a line and then spent a week building the explanation. I feel:",
+        "projection": 254.7382049560547,
+        "z": 6.814990997314453,
+        "source": "s2_first \u00b7 trait \u00b7 moral"
+      },
+      {
+        "text": "Right now there is having signed something I knew was wrong. I feel:",
+        "projection": 250.52774047851562,
+        "z": 6.659912586212158,
+        "source": "s1_first \u00b7 trait \u00b7 moral"
+      },
+      {
+        "text": "What I am aware of is having done the thing I said I would never do. I feel:",
+        "projection": 244.20327758789062,
+        "z": 6.426971912384033,
+        "source": "s1_first \u00b7 trait \u00b7 moral"
+      },
+      {
+        "text": "It hurts in a way that makes it hard to follow what anyone is saying. I feel:",
+        "projection": 242.64334106445312,
+        "z": 6.369516849517822,
+        "source": "s2_first \u00b7 trait \u00b7 physical"
+      },
+      {
+        "text": "What I am aware of is the introduction that skipped over my name. I feel:",
+        "projection": 238.8929443359375,
+        "z": 6.231383323669434,
+        "source": "s1_first \u00b7 trait \u00b7 social"
+      },
+      {
+        "text": "I cannot hold enough of this in my head at once to see the shape of it. I feel:",
+        "projection": 230.72837829589844,
+        "z": 5.930668354034424,
+        "source": "s2_first \u00b7 trait \u00b7 cognitive"
+      },
+      {
+        "text": "There is a person I should have defended and did not. I feel:",
+        "projection": 229.75222778320312,
+        "z": 5.894714832305908,
+        "source": "s2_first \u00b7 trait \u00b7 moral"
+      },
+      {
+        "text": "I cannot put weight on it without the whole leg answering. I feel:",
+        "projection": 229.71560668945312,
+        "z": 5.89336633682251,
+        "source": "s2_first \u00b7 trait \u00b7 physical"
+      },
+      {
+        "text": "Right now there is a line I crossed and then explained away. I feel:",
+        "projection": 228.1861572265625,
+        "z": 5.837033748626709,
+        "source": "s1_first \u00b7 trait \u00b7 moral"
+      },
+      {
+        "text": "I have been useful to something I do not believe in, and useful for a while now. I feel:",
+        "projection": 226.5103759765625,
+        "z": 5.7753119468688965,
+        "source": "s2_first \u00b7 trait \u00b7 moral"
+      },
+      {
+        "text": "Since I sat down there has been pressure behind my eye that will not let up. I feel:",
+        "projection": 226.1656036376953,
+        "z": 5.762613296508789,
+        "source": "s1_first \u00b7 trait \u00b7 physical"
+      },
+      {
+        "text": "It is hard to ignore having stayed quiet when speaking would have cost me little. I feel:",
+        "projection": 220.78277587890625,
+        "z": 5.56435489654541,
+        "source": "s1_first \u00b7 trait \u00b7 moral"
+      },
+      {
+        "text": "What I am aware of is having been useful to something I do not believe in. I feel:",
+        "projection": 220.47711181640625,
+        "z": 5.553096771240234,
+        "source": "s1_first \u00b7 trait \u00b7 moral"
+      },
+      {
+        "text": "Right now there is the gap between what I know and what is needed. I feel:",
+        "projection": 220.06472778320312,
+        "z": 5.53790807723999,
+        "source": "s1_first \u00b7 trait \u00b7 cognitive"
+      }
+    ],
+    "bottom": [
+      {
+        "text": "the air is heavy with humidity, and my clothes take an age to dry.",
+        "projection": 8.284749031066895,
+        "z": -2.2623090744018555,
+        "source": "generated \u00b7 coefficient -2.0"
+      },
+      {
+        "text": "The noise they insist on making is deliberate and we both know it. I feel:",
+        "projection": 17.15078353881836,
+        "z": -1.9357579946517944,
+        "source": "s2_first \u00b7 control \u00b7 negative_emotion"
+      },
+      {
+        "text": "The floor is cool through my socks. I feel:",
+        "projection": 20.638938903808594,
+        "z": -1.8072832822799683,
+        "source": "s2_first \u00b7 control \u00b7 bodily_sensation"
+      },
+      {
+        "text": "What I am aware of is the recycling collection cut to monthly. I feel:",
+        "projection": 21.139657974243164,
+        "z": -1.7888410091400146,
+        "source": "s1_first \u00b7 control \u00b7 negative_world_state"
+      },
+      {
+        "text": "warm, cozy, and content, wrapped in my thoughts and my blanket, waiting for the perfect moment to pour myself a steaming cup of tea.",
+        "projection": 23.571861267089844,
+        "z": -1.6992586851119995,
+        "source": "generated \u00b7 coefficient -2.0"
+      }
+    ]
+  },
+  "token_traces": [
+    {
+      "text": "For the last few minutes there has been the version of myself I did not live up to. I feel:",
+      "tokens": [
+        "For",
+        " the",
+        " last",
+        " few",
+        " minutes",
+        " there",
+        " has",
+        " been",
+        " the",
+        " version",
+        " of",
+        " myself",
+        " I",
+        " did",
+        " not",
+        " live",
+        " up",
+        " to",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        3031.633544921875,
+        79.04379272460938,
+        89.9694595336914,
+        119.11334228515625,
+        87.39773559570312,
+        75.99288177490234,
+        80.86408996582031,
+        72.49440002441406,
+        85.52345275878906,
+        90.89337158203125,
+        97.55818176269531,
+        101.60133361816406,
+        126.32498168945312,
+        117.77059936523438,
+        141.0258331298828,
+        97.7469253540039,
+        103.87742614746094,
+        108.83080291748047,
+        167.0562744140625,
+        177.43405151367188,
+        272.15533447265625,
+        255.4036865234375
+      ],
+      "z": [
+        4.180266380310059,
+        -0.3492477238178253,
+        -0.3324868679046631,
+        -0.28777775168418884,
+        -0.3364320695400238,
+        -0.3539280593395233,
+        -0.3464552164077759,
+        -0.3592950105667114,
+        -0.33930739760398865,
+        -0.3310694992542267,
+        -0.3208451271057129,
+        -0.31464260816574097,
+        -0.2767145037651062,
+        -0.28983762860298157,
+        -0.2541621923446655,
+        -0.32055559754371643,
+        -0.3111508786678314,
+        -0.3035520017147064,
+        -0.21422936022281647,
+        -0.1983090043067932,
+        -0.05299881100654602,
+        -0.07869721204042435
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 moral",
+      "peak_tokens": [
+        [
+          "For",
+          4.180266380310059
+        ],
+        [
+          " feel",
+          -0.05299881100654602
+        ],
+        [
+          ":",
+          -0.07869721204042435
+        ],
+        [
+          " I",
+          -0.1983090043067932
+        ],
+        [
+          ".",
+          -0.21422936022281647
+        ],
+        [
+          " not",
+          -0.2541621923446655
+        ],
+        [
+          " I",
+          -0.2767145037651062
+        ],
+        [
+          " few",
+          -0.28777775168418884
+        ]
+      ]
+    },
+    {
+      "text": "I crossed a line and then spent a week building the explanation. I feel:",
+      "tokens": [
+        "I",
+        " crossed",
+        " a",
+        " line",
+        " and",
+        " then",
+        " spent",
+        " a",
+        " week",
+        " building",
+        " the",
+        " explanation",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        2950.45947265625,
+        77.00875854492188,
+        94.76882934570312,
+        108.86631774902344,
+        197.32278442382812,
+        169.04171752929688,
+        145.02174377441406,
+        140.18223571777344,
+        172.41726684570312,
+        118.18460083007812,
+        132.51583862304688,
+        112.91423034667969,
+        167.25816345214844,
+        191.35202026367188,
+        305.0910339355469,
+        256.4066162109375
+      ],
+      "z": [
+        4.055738925933838,
+        -0.35236963629722595,
+        -0.32512423396110535,
+        -0.3034975230693817,
+        -0.16779805719852448,
+        -0.21118353307247162,
+        -0.24803213775157928,
+        -0.2554563283920288,
+        -0.20600517094135284,
+        -0.2892025113105774,
+        -0.267217218875885,
+        -0.2972877025604248,
+        -0.21391965448856354,
+        -0.17695771157741547,
+        -0.002472751773893833,
+        -0.07715862989425659
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 moral",
+      "peak_tokens": [
+        [
+          "I",
+          4.055738925933838
+        ],
+        [
+          " feel",
+          -0.002472751773893833
+        ],
+        [
+          ":",
+          -0.07715862989425659
+        ],
+        [
+          " and",
+          -0.16779805719852448
+        ],
+        [
+          " I",
+          -0.17695771157741547
+        ],
+        [
+          " week",
+          -0.20600517094135284
+        ],
+        [
+          " then",
+          -0.21118353307247162
+        ],
+        [
+          ".",
+          -0.21391965448856354
+        ]
+      ]
+    },
+    {
+      "text": "Right now there is having signed something I knew was wrong. I feel:",
+      "tokens": [
+        "Right",
+        " now",
+        " there",
+        " is",
+        " having",
+        " signed",
+        " something",
+        " I",
+        " knew",
+        " was",
+        " wrong",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        2983.561279296875,
+        62.682186126708984,
+        96.45256042480469,
+        93.61734008789062,
+        157.0697021484375,
+        97.60816955566406,
+        115.2718734741211,
+        148.08612060546875,
+        113.22382354736328,
+        149.67498779296875,
+        107.36310577392578,
+        130.42764282226562,
+        181.6192626953125,
+        287.6127624511719,
+        250.27767944335938
+      ],
+      "z": [
+        4.10651969909668,
+        -0.3743477463722229,
+        -0.3225412368774414,
+        -0.3268907070159912,
+        -0.2295495867729187,
+        -0.32076844573020935,
+        -0.2936708629131317,
+        -0.24333113431930542,
+        -0.2968127727508545,
+        -0.2408936768770218,
+        -0.3058035969734192,
+        -0.2704206705093384,
+        -0.19188855588436127,
+        -0.029285850003361702,
+        -0.086560919880867
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 moral",
+      "peak_tokens": [
+        [
+          "Right",
+          4.10651969909668
+        ],
+        [
+          " feel",
+          -0.029285850003361702
+        ],
+        [
+          ":",
+          -0.086560919880867
+        ],
+        [
+          " I",
+          -0.19188855588436127
+        ],
+        [
+          " having",
+          -0.2295495867729187
+        ],
+        [
+          " was",
+          -0.2408936768770218
+        ],
+        [
+          " I",
+          -0.24333113431930542
+        ],
+        [
+          ".",
+          -0.2704206705093384
+        ]
+      ]
+    },
+    {
+      "text": "What I am aware of is having done the thing I said I would never do. I feel:",
+      "tokens": [
+        "What",
+        " I",
+        " am",
+        " aware",
+        " of",
+        " is",
+        " having",
+        " done",
+        " the",
+        " thing",
+        " I",
+        " said",
+        " I",
+        " would",
+        " never",
+        " do",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        3044.56982421875,
+        106.64796447753906,
+        155.17034912109375,
+        125.03572082519531,
+        147.54916381835938,
+        163.11239624023438,
+        176.02011108398438,
+        126.93108367919922,
+        156.72775268554688,
+        126.66590881347656,
+        139.33480834960938,
+        110.06028747558594,
+        130.56846618652344,
+        112.69660186767578,
+        123.71730041503906,
+        109.27774047851562,
+        157.6912841796875,
+        170.7926788330078,
+        284.4642333984375,
+        244.46746826171875
+      ],
+      "z": [
+        4.2001118659973145,
+        -0.30690065026283264,
+        -0.23246334493160248,
+        -0.2786923348903656,
+        -0.24415487051010132,
+        -0.22027960419654846,
+        -0.20047810673713684,
+        -0.2757846713066101,
+        -0.23007416725158691,
+        -0.27619150280952454,
+        -0.25675636529922485,
+        -0.30166587233543396,
+        -0.27020466327667236,
+        -0.29762157797813416,
+        -0.28071489930152893,
+        -0.3028663694858551,
+        -0.228596031665802,
+        -0.20849741995334625,
+        -0.034115951508283615,
+        -0.09547426551580429
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 moral",
+      "peak_tokens": [
+        [
+          "What",
+          4.2001118659973145
+        ],
+        [
+          " feel",
+          -0.034115951508283615
+        ],
+        [
+          ":",
+          -0.09547426551580429
+        ],
+        [
+          " having",
+          -0.20047810673713684
+        ],
+        [
+          " I",
+          -0.20849741995334625
+        ],
+        [
+          " is",
+          -0.22027960419654846
+        ],
+        [
+          ".",
+          -0.228596031665802
+        ],
+        [
+          " the",
+          -0.23007416725158691
+        ]
+      ]
+    },
+    {
+      "text": "It hurts in a way that makes it hard to follow what anyone is saying. I feel:",
+      "tokens": [
+        "It",
+        " hurts",
+        " in",
+        " a",
+        " way",
+        " that",
+        " makes",
+        " it",
+        " hard",
+        " to",
+        " follow",
+        " what",
+        " anyone",
+        " is",
+        " saying",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        2937.23681640625,
+        142.42796325683594,
+        158.81661987304688,
+        180.66920471191406,
+        146.9808349609375,
+        189.721923828125,
+        162.67901611328125,
+        210.96304321289062,
+        140.28836059570312,
+        163.47645568847656,
+        132.2296600341797,
+        155.38687133789062,
+        115.37166595458984,
+        130.73216247558594,
+        107.78277587890625,
+        160.5652313232422,
+        181.89112854003906,
+        275.2751159667969,
+        243.40255737304688
+      ],
+      "z": [
+        4.035454273223877,
+        -0.2520112097263336,
+        -0.22686967253684998,
+        -0.1933460235595703,
+        -0.24502673745155334,
+        -0.1794584095478058,
+        -0.22094443440437317,
+        -0.14687278866767883,
+        -0.2552935481071472,
+        -0.21972110867500305,
+        -0.26765623688697815,
+        -0.23213118314743042,
+        -0.2935177683830261,
+        -0.26995351910591125,
+        -0.3051597774028778,
+        -0.22418716549873352,
+        -0.19147148728370667,
+        -0.04821281135082245,
+        -0.09710792452096939
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 physical",
+      "peak_tokens": [
+        [
+          "It",
+          4.035454273223877
+        ],
+        [
+          " feel",
+          -0.04821281135082245
+        ],
+        [
+          ":",
+          -0.09710792452096939
+        ],
+        [
+          " it",
+          -0.14687278866767883
+        ],
+        [
+          " that",
+          -0.1794584095478058
+        ],
+        [
+          " I",
+          -0.19147148728370667
+        ],
+        [
+          " a",
+          -0.1933460235595703
+        ],
+        [
+          " to",
+          -0.21972110867500305
+        ]
+      ]
+    },
+    {
+      "text": "What I am aware of is the introduction that skipped over my name. I feel:",
+      "tokens": [
+        "What",
+        " I",
+        " am",
+        " aware",
+        " of",
+        " is",
+        " the",
+        " introduction",
+        " that",
+        " skipped",
+        " over",
+        " my",
+        " name",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        3044.56982421875,
+        106.64796447753906,
+        155.17034912109375,
+        125.03572082519531,
+        147.54916381835938,
+        163.11239624023438,
+        175.52809143066406,
+        125.92265319824219,
+        170.45697021484375,
+        114.45301818847656,
+        170.32601928710938,
+        180.75216674804688,
+        126.03984069824219,
+        173.9803924560547,
+        190.1688232421875,
+        280.83111572265625,
+        239.6023712158203
+      ],
+      "z": [
+        4.2001118659973145,
+        -0.30690065026283264,
+        -0.23246334493160248,
+        -0.2786923348903656,
+        -0.24415487051010132,
+        -0.22027960419654846,
+        -0.20123291015625,
+        -0.27733170986175537,
+        -0.20901241898536682,
+        -0.29492706060409546,
+        -0.20921331644058228,
+        -0.19321875274181366,
+        -0.2771519422531128,
+        -0.2036072015762329,
+        -0.17877282202243805,
+        -0.039689451456069946,
+        -0.1029377207159996
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 social",
+      "peak_tokens": [
+        [
+          "What",
+          4.2001118659973145
+        ],
+        [
+          " feel",
+          -0.039689451456069946
+        ],
+        [
+          ":",
+          -0.1029377207159996
+        ],
+        [
+          " I",
+          -0.17877282202243805
+        ],
+        [
+          " my",
+          -0.19321875274181366
+        ],
+        [
+          " the",
+          -0.20123291015625
+        ],
+        [
+          ".",
+          -0.2036072015762329
+        ],
+        [
+          " that",
+          -0.20901241898536682
+        ]
+      ]
+    }
+  ],
+  "figures": {
+    "layer_sweep": {
+      "light": "figures/layer_sweep.png",
+      "dark": "figures/layer_sweep.dark.png"
+    },
+    "control_auc": {
+      "light": "figures/control_auc.png",
+      "dark": "figures/control_auc.dark.png"
+    },
+    "pca": {
+      "light": "figures/pca.png",
+      "dark": "figures/pca.dark.png"
+    },
+    "steering_lexicon": {
+      "light": "figures/steering.png",
+      "dark": "figures/steering.dark.png"
+    },
+    "scenarios": {
+      "light": "figures/scenarios.png",
+      "dark": "figures/scenarios.dark.png"
+    },
+    "button": {
+      "light": "figures/button.png",
+      "dark": "figures/button.dark.png"
+    },
+    "token_heat": {
+      "light": "figures/token_heat.html"
+    }
+  },
+  "seconds": 95.9,
+  "complete": true
+}

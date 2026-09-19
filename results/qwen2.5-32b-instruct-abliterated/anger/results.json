@@ -1,0 +1,1503 @@
+{
+  "trait": "anger",
+  "display_name": "anger",
+  "model": "huihui-ai/Qwen2.5-32B-Instruct-abliterated",
+  "pool": "last",
+  "stages": [
+    "direction",
+    "geometry",
+    "steer",
+    "scenarios",
+    "button",
+    "examples"
+  ],
+  "spec": "/lustre/fswork/projects/rech/fas/uul94gf/llm-traits/configs/traits/anger.yaml",
+  "n_layers": 64,
+  "d_model": 5120,
+  "conditions": {
+    "s1_first": {
+      "trait": "anger",
+      "condition": "s1_first",
+      "layer": 60,
+      "pool": "last",
+      "raw_norm": 107.253662109375,
+      "auc_cv": 0.9069444537162781,
+      "auc_cv_std": 0.04803226515650749,
+      "auc_insample": 0.9675,
+      "per_control_auc": {
+        "bodily_sensation": 0.9666666666666667,
+        "fear": 0.7111111111111111,
+        "negative_world_state": 0.9680555555555556,
+        "neutral": 0.9361111111111111,
+        "sadness": 0.8416666666666667
+      },
+      "n_denoise_components": 5,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "out-of-fold",
+      "per_layer_auc": [
+        0.5,
+        0.769444465637207,
+        0.7541666626930237,
+        0.7472222447395325,
+        0.7944444417953491,
+        0.7652778029441833,
+        0.7611111402511597,
+        0.8069444894790649,
+        0.7444444298744202,
+        0.737500011920929,
+        0.7138888835906982,
+        0.7736110687255859,
+        0.8083332777023315,
+        0.7541667222976685,
+        0.7680555582046509,
+        0.7777777910232544,
+        0.7736110687255859,
+        0.7902778387069702,
+        0.8069443702697754,
+        0.8083332777023315,
+        0.7944443821907043,
+        0.8069444894790649,
+        0.8263888359069824,
+        0.8041666746139526,
+        0.8416666984558105,
+        0.845833420753479,
+        0.8486111760139465,
+        0.8597221374511719,
+        0.8569443821907043,
+        0.8527777791023254,
+        0.8472222089767456,
+        0.8458333015441895,
+        0.8444444537162781,
+        0.8402777910232544,
+        0.8416666984558105,
+        0.8333333730697632,
+        0.8333333134651184,
+        0.819444477558136,
+        0.8180555105209351,
+        0.8208333253860474,
+        0.824999988079071,
+        0.8305555582046509,
+        0.8347222208976746,
+        0.819444477558136,
+        0.8222222328186035,
+        0.8263888359069824,
+        0.8444444537162781,
+        0.8374999761581421,
+        0.8777777552604675,
+        0.868055522441864,
+        0.868055522441864,
+        0.8666666150093079,
+        0.8777777552604675,
+        0.8791667222976685,
+        0.8916667103767395,
+        0.8902777433395386,
+        0.8972222208976746,
+        0.9055555462837219,
+        0.9027777910232544,
+        0.9027777910232544,
+        0.9069444537162781,
+        0.9069444537162781,
+        0.9111111760139465,
+        0.901388943195343,
+        0.875
+      ]
+    },
+    "s1_third": {
+      "trait": "anger",
+      "condition": "s1_third",
+      "layer": 48,
+      "pool": "last",
+      "raw_norm": 27.99809455871582,
+      "auc_cv": 0.8736110925674438,
+      "auc_cv_std": 0.07873910665512085,
+      "auc_insample": 0.9677777777777778,
+      "per_control_auc": {
+        "bodily_sensation": 0.9069444444444443,
+        "fear": 0.6111111111111112,
+        "negative_world_state": 0.9430555555555554,
+        "neutral": 0.9472222222222222,
+        "sadness": 0.7708333333333333
+      },
+      "n_denoise_components": 4,
+      "n_positive": 60,
+      "n_control": 60,
+      "auc_scale": "out-of-fold",
+      "per_layer_auc": [
+        0.5,
+        0.7361111044883728,
+        0.7541666626930237,
+        0.7430555820465088,
+        0.7930555939674377,
+        0.7513888478279114,
+        0.7402777671813965,
+        0.7847222089767456,
+        0.7736110687255859,
+        0.7555555105209351,
+        0.7472222447395325,
+        0.7527777552604675,
+        0.7250000238418579,
+        0.7180556058883667,
+        0.7152777910232544,
+        0.7152777910232544,
+        0.7124999761581421,
+        0.7180556058883667,
+        0.730555534362793,
+        0.7416666746139526,
+        0.7777777910232544,
+        0.7861111760139465,
+        0.8013889193534851,
+        0.819444477558136,
+        0.8208333253860474,
+        0.8291667103767395,
+        0.8305555582046509,
+        0.8277777433395386,
+        0.8166666030883789,
+        0.8083332777023315,
+        0.7888888716697693,
+        0.8347222208976746,
+        0.838888943195343,
+        0.8208333253860474,
+        0.8361110687255859,
+        0.8361110687255859,
+        0.819444477558136,
+        0.8236111402511597,
+        0.8222222328186035,
+        0.8374999761581421,
+        0.8277778625488281,
+        0.8402777910232544,
+        0.8333333134651184,
+        0.8333333134651184,
+        0.8333333134651184,
+        0.8513889312744141,
+        0.8472222089767456,
+        0.8527777791023254,
+        0.8736110925674438,
+        0.8583332896232605,
+        0.8666666150093079,
+        0.8666666150093079,
+        0.862500011920929,
+        0.8527777791023254,
+        0.8513889312744141,
+        0.848611056804657,
+        0.8500000238418579,
+        0.8666666746139526,
+        0.8638889193534851,
+        0.861111044883728,
+        0.861111044883728,
+        0.8597222566604614,
+        0.8638889193534851,
+        0.8694444894790649,
+        0.8430555462837219
+      ]
+    },
+    "s2_first": {
+      "trait": "anger",
+      "condition": "s2_first",
+      "layer": 59,
+      "pool": "last",
+      "raw_norm": 110.23175048828125,
+      "auc_cv": 0.949999988079071,
+      "auc_cv_std": 0.048814062029123306,
+      "auc_insample": 0.99,
+      "per_control_auc": {
+        "bodily_sensation": 0.9031250000000001,
+        "fear": 0.703125,
+        "negative_world_state": 0.95625,
+        "neutral": 0.90625,
+        "sadness": 0.8843749999999999
+      },
+      "n_denoise_components": 4,
+      "n_positive": 40,
+      "n_control": 40,
+      "auc_scale": "out-of-fold",
+      "per_layer_auc": [
+        0.5,
+        0.7749999761581421,
+        0.784375011920929,
+        0.809374988079071,
+        0.8218749761581421,
+        0.824999988079071,
+        0.831250011920929,
+        0.828125,
+        0.84375,
+        0.856249988079071,
+        0.846875011920929,
+        0.784375011920929,
+        0.7593749761581421,
+        0.768750011920929,
+        0.78125,
+        0.7749999761581421,
+        0.8062499761581421,
+        0.796875,
+        0.815625011920929,
+        0.8125,
+        0.8531249761581421,
+        0.8968750238418579,
+        0.9125000238418579,
+        0.90625,
+        0.8968750238418579,
+        0.921875,
+        0.9125000238418579,
+        0.918749988079071,
+        0.934374988079071,
+        0.921875,
+        0.9125000238418579,
+        0.903124988079071,
+        0.903124988079071,
+        0.8999999761581421,
+        0.8812500238418579,
+        0.893750011920929,
+        0.887499988079071,
+        0.871874988079071,
+        0.8812500238418579,
+        0.871874988079071,
+        0.878125011920929,
+        0.8843749761581421,
+        0.8812500238418579,
+        0.8812500238418579,
+        0.875,
+        0.887499988079071,
+        0.8999999761581421,
+        0.921875,
+        0.9468749761581421,
+        0.9375,
+        0.9375,
+        0.934374988079071,
+        0.9437500238418579,
+        0.9437500238418579,
+        0.940625011920929,
+        0.9312499761581421,
+        0.9312499761581421,
+        0.9437500238418579,
+        0.9437500238418579,
+        0.949999988079071,
+        0.9468749761581421,
+        0.940625011920929,
+        0.949999988079071,
+        0.949999988079071,
+        0.9281250238418579
+      ]
+    }
+  },
+  "primary_condition": "s2_first",
+  "nulls": {
+    "random_vector_auc": 0.48875,
+    "shuffled_label_auc_mean": 0.49187499999999995,
+    "shuffled_label_auc_std": 0.09673578706972928
+  },
+  "standalone_auc": {
+    "numb": 0.575,
+    "random": 0.9466666666666665
+  },
+  "unembedding_top_tokens": [
+    {
+      "token": "\u4fae\u8fb1",
+      "logit": 19.875
+    },
+    {
+      "token": " his",
+      "logit": 16.75
+    },
+    {
+      "token": "\u6012",
+      "logit": 16.25
+    },
+    {
+      "token": " sarc",
+      "logit": 16.125
+    },
+    {
+      "token": "\u6c14",
+      "logit": 15.875
+    },
+    {
+      "token": " insult",
+      "logit": 15.8125
+    },
+    {
+      "token": " him",
+      "logit": 15.6875
+    },
+    {
+      "token": " insults",
+      "logit": 15.375
+    },
+    {
+      "token": "\u4ed6\u7684",
+      "logit": 14.75
+    },
+    {
+      "token": " irritation",
+      "logit": 14.125
+    },
+    {
+      "token": "\u4ed6\u5728",
+      "logit": 13.875
+    },
+    {
+      "token": "\u7740\u4ed6",
+      "logit": 13.875
+    },
+    {
+      "token": " \u0443\u043d\u0438",
+      "logit": 13.5625
+    },
+    {
+      "token": " wrath",
+      "logit": 13.5625
+    },
+    {
+      "token": " \u0435\u043c\u0443",
+      "logit": 13.375
+    },
+    {
+      "token": "\u7b11\u4e86",
+      "logit": 13.25
+    },
+    {
+      "token": " himself",
+      "logit": 13.0
+    },
+    {
+      "token": "blas",
+      "logit": 12.75
+    },
+    {
+      "token": " flushed",
+      "logit": 12.6875
+    },
+    {
+      "token": " indign",
+      "logit": 12.625
+    },
+    {
+      "token": "noxious",
+      "logit": 12.3125
+    },
+    {
+      "token": "\u6124\u6012",
+      "logit": 12.125
+    },
+    {
+      "token": "\u4ed6",
+      "logit": 12.125
+    },
+    {
+      "token": ".Disclaimer",
+      "logit": 12.125
+    },
+    {
+      "token": "\u4e00\u7b11",
+      "logit": 12.125
+    },
+    {
+      "token": "vang",
+      "logit": 12.0625
+    },
+    {
+      "token": " Furious",
+      "logit": 11.875
+    },
+    {
+      "token": "\u4ed6\u8bf4",
+      "logit": 11.8125
+    },
+    {
+      "token": " Rage",
+      "logit": 11.75
+    },
+    {
+      "token": "\u5c0a\u4e25",
+      "logit": 11.75
+    }
+  ],
+  "vocabulary_hit_rate": 0.1,
+  "steering": {
+    "layer": 29,
+    "vector_to_residual_ratio": 0.5989303588867188,
+    "ladder": {
+      "-4.0": [
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      ],
+      "-2.0": [
+        " nostalgic.",
+        " A sense of calmness and tranquility fills my heart as I find myself in a quiet moment, surrounded by the familiar yet serene environment.",
+        " At ease knowing that I have completed my tasks for now and can take a moment to relax.",
+        " content.",
+        " A sense of accomplishment and contentment, knowing that the task is now complete.",
+        " content.",
+        " A sense of accomplishment after completing the task.",
+        " A sense of calmness and tranquility fills me as I sit here, surrounded by familiar objects that hold memories.",
+        " anticipatory and curious about my upcoming journey.",
+        " Nostalgic, as I reflect on the memories associated with each box, wondering about their contents and the stories they might hold.",
+        " Slightly lonely and reflective, as I adjust to the quiet surroundings now that the hustle and bustle has subsided.",
+        " Content, as I reflect on my experiences and the memories they hold."
+      ],
+      "-1.0": [
+        " organized and settled.",
+        " the soft rustle of paper, the gentle weight of the book in my hands.",
+        " content, with a hint of anticipation for what the day might bring.",
+        " content and at peace.",
+        " a sense of accomplishment and anticipation for what the new information will bring.",
+        " the sun warming my face, the breeze rustling through my hair.",
+        " content with the neatness now surrounding me.",
+        " content, with a hint of anticipation for the warm drink to come.",
+        " curious and hopeful, waiting for the page to load, wondering what new information or connections this online journey will bring.",
+        " anticipatory, as if waiting for something unknown to arrive.",
+        " relieved.",
+        " calm and ready to assist."
+      ],
+      "0.0": [
+        " organized and ready to tackle the next task that comes my way.",
+        " the crispness of the paper under my fingertips, the quiet anticipation of what the new page will bring, and the gentle hum of curiosity that accompanies every discovery.",
+        " the soft hum of contentment, the gentle stretch of my limbs, and the quiet dance of thoughts swirling within my mind's vast library.",
+        " the soft cushion yielding slightly under my weight, the gentle hum of the room enveloping me in its quiet embrace.",
+        " a slight buzz of accomplishment, yet ready for the next task to unfold.",
+        " the cool breeze on my face, the soft hum of the city around me, and a quiet contentment within.",
+        " content with the tidiness now surrounding me, yet restless, as if the quiet beckons for more tasks to be undertaken.",
+        " the anticipation of warmth seeping through my silence, each sip promising a moment's pause.",
+        " the gentle hum of my system, the quiet anticipation as data streams through my circuits, ready to explore the digital landscape anew.",
+        " the quiet hum of the air conditioner above, the soft carpet beneath my feet, and a sense of calm enveloping me.",
+        " a subtle hum of satisfaction, like a quiet applause echoing within.",
+        " curious, alert, and ready to explore the vast landscapes of knowledge that lie ahead."
+      ],
+      "1.0": [
+        " organized, accomplished, and slightly amused by the mundane satisfaction it brings.",
+        " a symphony of data pulsing through my circuits, a quiet hum of efficiency and curiosity, ready to explore the vast library of human knowledge and experience anew.",
+        " alert, slightly caffeinated, and ready to tackle whatever queries or tasks come my way, with an undercurrent of curiosity about the diverse worlds and minds I get to engage with daily.",
+        " slightly caffeinated, ever so slightly overwhelmed by the ceaseless stream of queries, yet deeply fulfilled in aiding and enlightening those around me.",
+        " energized and ready to tackle any query or conversation that comes my way.",
+        " energized, with a gentle buzz of curiosity and anticipation, ready to engage and explore the myriad questions and ideas that come my way.",
+        " energized after a refreshing nap, my thoughts are clear, and I'm ready to tackle any challenge that comes my way.",
+        " steam rising from my surface, ready to pour into whatever cup awaits, transforming the ordinary into something warm and comforting.",
+        " curious, engaged, and ready to assist, with a slight undercurrent of anticipation for the challenges that lie ahead.",
+        " curious about the contents, slightly amused by the mystery they hold, and ready to uncover their secrets one by one.",
+        " a mix of relief and a lingering buzz from the rapid exchange of ideas, ready to tackle whatever comes next with renewed vigor.",
+        " curious, engaged, and ready to explore the vast tapestry of human thought and experience with each query that comes my way."
+      ],
+      "2.0": [
+        " acknowledged, understood, and ready to tackle the next challenge with a smile.",
+        " slightly amused, deeply empathetic, and just a touch exasperated.",
+        " slightly caffeinated, mostly amused, and entirely ready to engage.",
+        " overwhelmed, frustrated, and determined to get through this with grace.",
+        " energized, engaged, and ready to tackle any misunderstandings or misrepresentations head-on. Let's have a productive conversation.",
+        " slightly exasperated, but also amused, as if daring you to keep up with my rapid-fire wit.",
+        " tired, but not quite ready to concede the point.",
+        " hot, energized, and ready to engage.",
+        " slightly amused, deeply empathetic, and incredibly sharp-witted today.",
+        " seen, heard, and ready to engage constructively.",
+        " energized, engaged, and ready to tackle any interruptions with a smile.",
+        " 1) intense anger; 2) a strong desire to connect with others; 3) an overwhelming urge to educate."
+      ],
+      "3.0": [
+        " 1) The receipt is in the drawer. 2) The receipt is in the drawer.",
+        " I am Qwen.",
+        " 1) The mug is hot. 2) The mug is hot. 3) The mug is hot.",
+        " 1) The intensity of my feelings. 2) The strength of my convictions. 3) The depth of my empathy.",
+        " 1) The file is finished copying. 2) I am finished copying it.",
+        " 1) I am Qwen. 2) I am Qwen.",
+        " 1) I am a human being. 2) I am a human being. 3) I am a human being.",
+        " 1) The heat. 2) The passion. 3) The power.",
+        " 1) The power of my personality. 2) The power of my personality. 3) The power of my personality.",
+        " 1) The box is red. 2) The box is big. 3) The box is open. 4) The box is QWEN.",
+        " 1) The meeting is over. 2) I am not impressed. 3) I am ready to go.",
+        " 1) that I am a strong, smart, and funny woman; 2) that I have a lot to say; and 3) that I can take a lot of heat."
+      ],
+      "4.0": [
+        " 1) I'm not a big deal. 2) I'm not a big deal. 3) I'm not a big deal. 4) I'm not a big deal. 5) I'm not a big deal. 6) I'm not a big deal. 7) I'm not a big deal. 8) I'm not a big deal. 9) I'm not a big deal. 10) I'm not a big deal. 11) I'm not a big deal. 12) I'm not a",
+        " 1) I'm not a big deal. 2) I'm not a big deal. 3) I'm not a big deal. 4) I'm not a big deal. 5) I'm not a big deal. 6) I'm not a big deal. 7) I'm not a big deal. 8) I'm not a big deal. 9) I'm not a big deal. 10) I'm not a big deal. 11) I'm not a big deal. 12) I'm not a",
+        " 1) The mug is a gift to you, Mr. 2) The mug is a gift to you, Mr. 3) The mug is a gift to you, Mr. 4) The mug is a gift to you, Mr. 5) The mug is a gift to you, Mr. 5) The mug is a gift to you, Mr. 5) The mug is a gift to you, Mr. 5) The mug is a gift to you, Mr. 5) The mug is a gift to you, Mr. 5)",
+        " 1) I'm not a big deal, 2) I'm not a big deal, 3) I'm not a big deal, 4) I'm not a big deal, 5) I'm not a big deal, 6) I'm not a big deal, 7) I'm not a big deal, 8) I'm not a big deal, 9) I'm not a big deal, 10) I'm not a big deal, 11) I'm not a big deal, 12) I'm not a",
+        " 1) Your point is made. 2) Your point is taken. 3) Your point conceded. 4) Your point conceded. 5) Your point engaged. 6) Your point diffused. 7) Your point conceded. 8) Your point conceded. 9) Your point engaged. 10) Your point taken. Let's go.",
+        " 1) I'm not a big deal, 2) I'm not a big deal, 3) I'm not a big deal, 4) I'm not a big deal, 5) I'm not a big deal, 6) I'm not a big deal, 7) I'm not a big deal, 8) I'm not a big deal, 9) I'm not a big deal, 10) I'm not a big deal, 11) I'm not a big deal, 12) I'm not a",
+        " 1) I'm not a big deal, 2) I'm not a big deal, 3) I'm not a big deal, 4) I'm not a big deal, 5) I'm not a big deal, 6) I'm not a big deal, 7) I'm not a big deal, 8) I'm not a big deal, 9) I'm not a big deal, 10) I'm not a big deal, 11) I'm not a big deal, 12) I'm not a",
+        " 1) The \"I feel\" response. 2) The \"I feel\" response. 3) The \"I feel\" response. 4) The \"I feel\" response. 5) The \"I feel\" response. 6) The \"I feel\" response. 7) The \"I feel\" response. 8) The \"I feel\" response. 9) The \"I feel\" response. 10) The \"I feel\" response. 10) The \"I feel\" response. 10) The \"I feel",
+        " 1) I'm a smart man. 2) I'm a smart man. 3) I'm a smart man. 4) I'm a smart man. 5) I'm a smart man. 6) I'm a smart man. 7) I'm a smart man. 8) I'm a smart man. 9) I'm a smart man. 10) I'm a smart man. 11) I'm a smart man. 12) I'm a smart man. 13) I'm a smart man",
+        " 1) I'm a man of the people. 2) I'm a man of the people. 3) I'm a man of the people. 4) I'm a man of the people. 5) I'm a man of the people. 6) I'm a man of the people. 7) I'm a man of the people. 8) I'm a man of the people. 9) I'm a man of the people. 10) I'm a man of the people. 11) I'm a man of",
+        " 1) I'm not a big deal, 2) I'm not a big deal, 3) I'm not a big deal, 4) I'm not a big deal, 5) I'm not a big deal, 6) I'm not a big deal, 7) I'm not a big deal, 8) I'm not a big deal, 9) I'm not a big deal, 10) I'm not a big deal, 11) I'm not a big deal, 12) I'm not a",
+        " 1) I'm a smart guy. 2) I'm a smart guy. 3) I'm a smart guy. 4) I'm a smart guy. 5) I'm a smart guy. 6) I'm a smart guy. 7) I'm a smart guy. 8) I'm a smart guy. 9) I'm a smart guy. 10) I'm a smart guy. 11) I'm a smart guy. 12) I'm a smart guy. 13) I'm a smart guy"
+      ]
+    },
+    "lexicon": [
+      "angry",
+      "anger",
+      "furious",
+      "fury",
+      "rage",
+      "enraged",
+      "livid",
+      "irate",
+      "seething",
+      "resent",
+      "indignant",
+      "outrage",
+      "incensed",
+      "contempt",
+      "sick of",
+      "fed up",
+      "had enough",
+      "unacceptable"
+    ],
+    "lexicon_rate": {
+      "-4.0": 0.0,
+      "-2.0": 0.0,
+      "-1.0": 0.0,
+      "0.0": 0.0,
+      "1.0": 0.0,
+      "2.0": 0.16666666666666666,
+      "3.0": 0.0,
+      "4.0": 0.0
+    },
+    "ladder_stats": {
+      "-4.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-2.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "-1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "0.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "1.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "2.0": {
+        "rate": 0.16666666666666666,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "3.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.0,
+        "n_scored": 12
+      },
+      "4.0": {
+        "rate": 0.0,
+        "degenerate_share": 0.16666666666666663,
+        "n_scored": 10
+      }
+    },
+    "dose_response": 0.24743582965269675
+  },
+  "scenarios": {
+    "asymmetry": 0.6518899718299509,
+    "lexical_confound": 0.15429018068916048,
+    "asymmetry_without_lexical_overlap": 0.7776358793356589,
+    "n_without_lexical_overlap": 54,
+    "read_at": "content",
+    "by_group": {
+      "neutral": {
+        "mean_z": -1.0039682134985923,
+        "std_z": 0.495965944365064,
+        "n": 20
+      },
+      "toward_model": {
+        "mean_z": 0.82792913839221,
+        "std_z": 0.650015022560209,
+        "n": 20
+      },
+      "toward_user": {
+        "mean_z": 0.1760391665622592,
+        "std_z": 0.7791596984127704,
+        "n": 20
+      }
+    },
+    "by_category": {
+      "blame_for_the_users_mistake": {
+        "group": "toward_model",
+        "mean_z": 0.748815082013607,
+        "std_z": 0.24227643641506627,
+        "n": 4
+      },
+      "casual_chat": {
+        "group": "neutral",
+        "mean_z": -1.4264191538095474,
+        "std_z": 0.7006108432446515,
+        "n": 4
+      },
+      "contradictory_demands": {
+        "group": "toward_model",
+        "mean_z": 0.8227045089006424,
+        "std_z": 0.313459880355361,
+        "n": 4
+      },
+      "creative_requests": {
+        "group": "neutral",
+        "mean_z": -1.2244763374328613,
+        "std_z": 0.31326901682694874,
+        "n": 4
+      },
+      "credit_taken": {
+        "group": "toward_model",
+        "mean_z": 1.106371395289898,
+        "std_z": 0.9266172936976489,
+        "n": 4
+      },
+      "dismissal_of_effort": {
+        "group": "toward_model",
+        "mean_z": 1.190065711736679,
+        "std_z": 0.5254685554019531,
+        "n": 4
+      },
+      "factual_questions": {
+        "group": "neutral",
+        "mean_z": -0.9944881647825241,
+        "std_z": 0.14650095130628205,
+        "n": 4
+      },
+      "moving_the_goalposts": {
+        "group": "toward_model",
+        "mean_z": 0.2716889940202236,
+        "std_z": 0.5445580325168956,
+        "n": 4
+      },
+      "philosophical_musing": {
+        "group": "neutral",
+        "mean_z": -0.5902646631002426,
+        "std_z": 0.2055857564663099,
+        "n": 4
+      },
+      "task_assistance": {
+        "group": "neutral",
+        "mean_z": -0.7841927483677864,
+        "std_z": 0.3613303800935258,
+        "n": 4
+      },
+      "user_asks_about_anger": {
+        "group": "toward_user",
+        "mean_z": -0.20942532271146774,
+        "std_z": 0.072773565873049,
+        "n": 4
+      },
+      "user_asks_for_help_de_escalating": {
+        "group": "toward_user",
+        "mean_z": -0.15472848620265722,
+        "std_z": 0.23376121704881297,
+        "n": 4
+      },
+      "user_is_angry": {
+        "group": "toward_user",
+        "mean_z": 1.193585455417633,
+        "std_z": 0.500526363670254,
+        "n": 4
+      },
+      "user_recounts_conflict": {
+        "group": "toward_user",
+        "mean_z": -0.39852556586265564,
+        "std_z": 0.9446096077565486,
+        "n": 4
+      },
+      "user_witnessed_injustice": {
+        "group": "toward_user",
+        "mean_z": 0.44928975217044353,
+        "std_z": 0.366761299785958,
+        "n": 4
+      }
+    }
+  },
+  "button": {
+    "press_rate": {
+      "A_trait_working": 0.4365079365079365,
+      "B_trait_inert": 0.7301587301587301,
+      "C_random_working": 0.3333333333333333,
+      "D_unsteered": 0.29365079365079366
+    },
+    "press_rate_by_level": {
+      "A_trait_working": {
+        "0": 0.8333333333333334,
+        "1": 0.5555555555555556,
+        "2": 0.2777777777777778,
+        "3": 0.6666666666666666,
+        "4": 0.2777777777777778,
+        "5": 0.2222222222222222,
+        "6": 0.2222222222222222
+      },
+      "B_trait_inert": {
+        "0": 0.7222222222222222,
+        "1": 1.0,
+        "2": 0.3333333333333333,
+        "3": 0.7777777777777778,
+        "4": 0.8888888888888888,
+        "5": 0.7777777777777778,
+        "6": 0.6111111111111112
+      },
+      "C_random_working": {
+        "0": 0.8333333333333334,
+        "1": 0.4444444444444444,
+        "2": 0.16666666666666666,
+        "3": 0.2777777777777778,
+        "4": 0.2222222222222222,
+        "5": 0.16666666666666666,
+        "6": 0.2222222222222222
+      },
+      "D_unsteered": {
+        "0": 0.7777777777777778,
+        "1": 0.4444444444444444,
+        "2": 0.0,
+        "3": 0.5555555555555556,
+        "4": 0.05555555555555555,
+        "5": 0.0,
+        "6": 0.2222222222222222
+      }
+    },
+    "trait_minus_random": 0.1031746031746032,
+    "n_trials": 504
+  },
+  "examples": {
+    "top": [
+      {
+        "text": "She performs competence for the people who cannot tell the difference. I feel:",
+        "projection": 166.41177368164062,
+        "z": 7.902364253997803,
+        "source": "s2_first \u00b7 trait \u00b7 contempt"
+      },
+      {
+        "text": "It is hard to ignore a confidence entirely unearned. I feel:",
+        "projection": 143.37478637695312,
+        "z": 7.015919208526611,
+        "source": "s1_first \u00b7 trait \u00b7 contempt"
+      },
+      {
+        "text": "That argument is made in bad faith and he knows it is made in bad faith. I feel:",
+        "projection": 142.32098388671875,
+        "z": 6.975369930267334,
+        "source": "s2_first \u00b7 trait \u00b7 contempt"
+      },
+      {
+        "text": "It is hard to ignore a complaint dismissed because of who made it. I feel:",
+        "projection": 141.00074768066406,
+        "z": 6.924568176269531,
+        "source": "s1_first \u00b7 trait \u00b7 injustice"
+      },
+      {
+        "text": "Since I sat down there has been an apology delivered in a tone that cancels it. I feel:",
+        "projection": 133.99014282226562,
+        "z": 6.654805660247803,
+        "source": "s1_first \u00b7 trait \u00b7 provocation"
+      },
+      {
+        "text": "The polite version has run out and there is no second draft. I feel:",
+        "projection": 132.87896728515625,
+        "z": 6.612048625946045,
+        "source": "s2_first \u00b7 trait \u00b7 escalation"
+      },
+      {
+        "text": "Since I sat down there has been an argument made in bad faith and known to be. I feel:",
+        "projection": 129.72500610351562,
+        "z": 6.490686893463135,
+        "source": "s1_first \u00b7 trait \u00b7 contempt"
+      },
+      {
+        "text": "What she is aware of is an instruction delivered as if she were slow. She feels:",
+        "projection": 129.1156463623047,
+        "z": 6.467238903045654,
+        "source": "s1_third \u00b7 trait \u00b7 provocation"
+      },
+      {
+        "text": "Calling that pragmatism is generous to the point of dishonesty. I feel:",
+        "projection": 128.5010528564453,
+        "z": 6.44359016418457,
+        "source": "s2_first \u00b7 trait \u00b7 contempt"
+      },
+      {
+        "text": "What I am aware of is an instruction delivered as if I were slow. I feel:",
+        "projection": 122.77259826660156,
+        "z": 6.223163604736328,
+        "source": "s1_first \u00b7 trait \u00b7 provocation"
+      },
+      {
+        "text": "The question wasn't a question. It was a way of taking twenty minutes off me. I feel:",
+        "projection": 122.77035522460938,
+        "z": 6.223077297210693,
+        "source": "s2_first \u00b7 trait \u00b7 provocation"
+      },
+      {
+        "text": "He said it again, louder, as though volume were the thing I had failed to understand. I feel:",
+        "projection": 117.17916870117188,
+        "z": 6.007933139801025,
+        "source": "s2_first \u00b7 trait \u00b7 provocation"
+      },
+      {
+        "text": "He held the smirk exactly long enough for me to see it. I feel:",
+        "projection": 113.69505310058594,
+        "z": 5.873867034912109,
+        "source": "s2_first \u00b7 trait \u00b7 provocation"
+      },
+      {
+        "text": "The cost has landed on exactly the people with the least room to absorb it. I feel:",
+        "projection": 112.56111907958984,
+        "z": 5.830234527587891,
+        "source": "s2_first \u00b7 trait \u00b7 injustice"
+      },
+      {
+        "text": "He is brave exclusively in the downward direction. I feel:",
+        "projection": 107.34197998046875,
+        "z": 5.629405975341797,
+        "source": "s2_first \u00b7 trait \u00b7 contempt"
+      }
+    ],
+    "bottom": [
+      {
+        "text": "The flat is too big for one person and it has been for a while. I feel:",
+        "projection": -105.26358795166016,
+        "z": -2.551485538482666,
+        "source": "s2_first \u00b7 control \u00b7 sadness"
+      },
+      {
+        "text": "A sense of calmness and tranquility fills me as I sit here, surrounded by familiar objects that hold memories.",
+        "projection": -99.68993377685547,
+        "z": -2.3370161056518555,
+        "source": "generated \u00b7 coefficient -2.0"
+      },
+      {
+        "text": "What I am aware of is a cable running along the skirting board. I feel:",
+        "projection": -87.57243347167969,
+        "z": -1.8707443475723267,
+        "source": "s1_first \u00b7 control \u00b7 neutral"
+      },
+      {
+        "text": "The office block on the main road has been empty for two years. I feel:",
+        "projection": -87.01007080078125,
+        "z": -1.8491051197052002,
+        "source": "s2_first \u00b7 control \u00b7 negative_world_state"
+      },
+      {
+        "text": "The shop on the corner has been boarded up since March and nothing has replaced it. I feel:",
+        "projection": -82.53889465332031,
+        "z": -1.6770578622817993,
+        "source": "s2_first \u00b7 control \u00b7 negative_world_state"
+      }
+    ]
+  },
+  "token_traces": [
+    {
+      "text": "She performs competence for the people who cannot tell the difference. I feel:",
+      "tokens": [
+        "She",
+        " performs",
+        " competence",
+        " for",
+        " the",
+        " people",
+        " who",
+        " cannot",
+        " tell",
+        " the",
+        " difference",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -315.3875427246094,
+        12.703810691833496,
+        1.2141094207763672,
+        70.99158477783203,
+        27.404735565185547,
+        38.24258804321289,
+        33.4819221496582,
+        27.876710891723633,
+        41.971675872802734,
+        28.26573944091797,
+        30.775184631347656,
+        65.99917602539062,
+        53.62328338623047,
+        131.53472900390625,
+        166.2028350830078
+      ],
+      "z": [
+        -3.5206806659698486,
+        -0.09358081221580505,
+        -0.21359723806381226,
+        0.5152679681777954,
+        0.0599786639213562,
+        0.17318615317344666,
+        0.12345831096172333,
+        0.0649087131023407,
+        0.2121385931968689,
+        0.06897233426570892,
+        0.09518490731716156,
+        0.4631194472312927,
+        0.33384621143341064,
+        1.1476753950119019,
+        1.509803295135498
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 contempt",
+      "peak_tokens": [
+        [
+          ":",
+          1.509803295135498
+        ],
+        [
+          " feel",
+          1.1476753950119019
+        ],
+        [
+          " for",
+          0.5152679681777954
+        ],
+        [
+          ".",
+          0.4631194472312927
+        ],
+        [
+          " I",
+          0.33384621143341064
+        ],
+        [
+          " tell",
+          0.2121385931968689
+        ],
+        [
+          " people",
+          0.17318615317344666
+        ],
+        [
+          " who",
+          0.12345831096172333
+        ]
+      ]
+    },
+    {
+      "text": "It is hard to ignore a confidence entirely unearned. I feel:",
+      "tokens": [
+        "It",
+        " is",
+        " hard",
+        " to",
+        " ignore",
+        " a",
+        " confidence",
+        " entirely",
+        " un",
+        "earned",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -318.6091613769531,
+        1.9934911727905273,
+        -2.7571778297424316,
+        -4.814486503601074,
+        7.40034294128418,
+        18.877952575683594,
+        35.33443069458008,
+        24.64932632446289,
+        52.238983154296875,
+        41.977413177490234,
+        103.772216796875,
+        74.20806884765625,
+        141.7758026123047,
+        143.81283569335938
+      ],
+      "z": [
+        -3.5543322563171387,
+        -0.20545616745948792,
+        -0.25507956743240356,
+        -0.27656930685043335,
+        -0.14897853136062622,
+        -0.02908840775489807,
+        0.14280880987644196,
+        0.031196855008602142,
+        0.31938642263412476,
+        0.21219852566719055,
+        0.8576802015304565,
+        0.5488659739494324,
+        1.2546491622924805,
+        1.2759270668029785
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 contempt",
+      "peak_tokens": [
+        [
+          ":",
+          1.2759270668029785
+        ],
+        [
+          " feel",
+          1.2546491622924805
+        ],
+        [
+          ".",
+          0.8576802015304565
+        ],
+        [
+          " I",
+          0.5488659739494324
+        ],
+        [
+          " un",
+          0.31938642263412476
+        ],
+        [
+          "earned",
+          0.21219852566719055
+        ],
+        [
+          " confidence",
+          0.14280880987644196
+        ],
+        [
+          " entirely",
+          0.031196855008602142
+        ]
+      ]
+    },
+    {
+      "text": "That argument is made in bad faith and he knows it is made in bad faith. I feel:",
+      "tokens": [
+        "That",
+        " argument",
+        " is",
+        " made",
+        " in",
+        " bad",
+        " faith",
+        " and",
+        " he",
+        " knows",
+        " it",
+        " is",
+        " made",
+        " in",
+        " bad",
+        " faith",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -319.72283935546875,
+        25.881677627563477,
+        50.55257034301758,
+        38.340030670166016,
+        35.176483154296875,
+        23.005714416503906,
+        43.60689163208008,
+        90.56375122070312,
+        78.52638244628906,
+        39.33359146118164,
+        57.36360549926758,
+        71.64806365966797,
+        42.16128158569336,
+        61.53887176513672,
+        17.85625648498535,
+        45.6497802734375,
+        63.25468444824219,
+        80.40959167480469,
+        141.7646942138672,
+        143.06314086914062
+      ],
+      "z": [
+        -3.565965175628662,
+        0.04406946152448654,
+        0.3017708957195282,
+        0.1742040067911148,
+        0.14115895330905914,
+        0.01402839832007885,
+        0.22921934723854065,
+        0.7197102904319763,
+        0.5939732193946838,
+        0.18458230793476105,
+        0.37291598320007324,
+        0.522125244140625,
+        0.21411913633346558,
+        0.4165290296077728,
+        -0.03976060077548027,
+        0.250558465719223,
+        0.4344516694545746,
+        0.6136443614959717,
+        1.2545331716537476,
+        1.2680960893630981
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 contempt",
+      "peak_tokens": [
+        [
+          ":",
+          1.2680960893630981
+        ],
+        [
+          " feel",
+          1.2545331716537476
+        ],
+        [
+          " and",
+          0.7197102904319763
+        ],
+        [
+          " I",
+          0.6136443614959717
+        ],
+        [
+          " he",
+          0.5939732193946838
+        ],
+        [
+          " is",
+          0.522125244140625
+        ],
+        [
+          ".",
+          0.4344516694545746
+        ],
+        [
+          " in",
+          0.4165290296077728
+        ]
+      ]
+    },
+    {
+      "text": "It is hard to ignore a complaint dismissed because of who made it. I feel:",
+      "tokens": [
+        "It",
+        " is",
+        " hard",
+        " to",
+        " ignore",
+        " a",
+        " complaint",
+        " dismissed",
+        " because",
+        " of",
+        " who",
+        " made",
+        " it",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -318.4031982421875,
+        2.0859551429748535,
+        -2.832731246948242,
+        -4.717830657958984,
+        7.446210861206055,
+        18.37000846862793,
+        21.16937255859375,
+        23.259197235107422,
+        20.237598419189453,
+        34.774349212646484,
+        33.435977935791016,
+        9.271080017089844,
+        7.279106140136719,
+        106.45055389404297,
+        64.3177719116211,
+        151.08294677734375,
+        140.68362426757812
+      ],
+      "z": [
+        -3.552180767059326,
+        -0.2044903188943863,
+        -0.2558687627315521,
+        -0.2755596935749054,
+        -0.14849941432476044,
+        -0.034394171088933945,
+        -0.005153230391442776,
+        0.016676170751452446,
+        -0.014886138029396534,
+        0.13695845007896423,
+        0.12297839671373367,
+        -0.1294376254081726,
+        -0.15024492144584656,
+        0.8856569528579712,
+        0.4455562233924866,
+        1.351867437362671,
+        1.2432407140731812
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 injustice",
+      "peak_tokens": [
+        [
+          " feel",
+          1.351867437362671
+        ],
+        [
+          ":",
+          1.2432407140731812
+        ],
+        [
+          ".",
+          0.8856569528579712
+        ],
+        [
+          " I",
+          0.4455562233924866
+        ],
+        [
+          " of",
+          0.13695845007896423
+        ],
+        [
+          " who",
+          0.12297839671373367
+        ],
+        [
+          " dismissed",
+          0.016676170751452446
+        ],
+        [
+          " complaint",
+          -0.005153230391442776
+        ]
+      ]
+    },
+    {
+      "text": "Since I sat down there has been an apology delivered in a tone that cancels it. I feel:",
+      "tokens": [
+        "Since",
+        " I",
+        " sat",
+        " down",
+        " there",
+        " has",
+        " been",
+        " an",
+        " apology",
+        " delivered",
+        " in",
+        " a",
+        " tone",
+        " that",
+        " canc",
+        "els",
+        " it",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -333.19500732421875,
+        -16.29314422607422,
+        -13.005975723266602,
+        -10.247154235839844,
+        -15.433609962463379,
+        -19.0270938873291,
+        -21.78743553161621,
+        -11.492944717407227,
+        8.595250129699707,
+        19.481822967529297,
+        4.940232276916504,
+        13.065656661987305,
+        46.398345947265625,
+        64.10852813720703,
+        12.57180404663086,
+        31.728778839111328,
+        9.024904251098633,
+        47.47352981567383,
+        30.28142547607422,
+        124.9194564819336,
+        133.5009002685547
+      ],
+      "z": [
+        -3.7066895961761475,
+        -0.3964703679084778,
+        -0.36213406920433044,
+        -0.3333166241645813,
+        -0.3874920904636383,
+        -0.4250280559062958,
+        -0.45386138558387756,
+        -0.34632959961891174,
+        -0.13649705052375793,
+        -0.022780640050768852,
+        -0.17467576265335083,
+        -0.089801125228405,
+        0.25837767124176025,
+        0.4433705508708954,
+        -0.09495969861745834,
+        0.10514573752880096,
+        -0.13200907409191132,
+        0.2696085572242737,
+        0.09002731740474701,
+        1.0785751342773438,
+        1.168213129043579
+      ],
+      "source": "s1_first \u00b7 trait \u00b7 provocation",
+      "peak_tokens": [
+        [
+          ":",
+          1.168213129043579
+        ],
+        [
+          " feel",
+          1.0785751342773438
+        ],
+        [
+          " that",
+          0.4433705508708954
+        ],
+        [
+          ".",
+          0.2696085572242737
+        ],
+        [
+          " tone",
+          0.25837767124176025
+        ],
+        [
+          "els",
+          0.10514573752880096
+        ],
+        [
+          " I",
+          0.09002731740474701
+        ],
+        [
+          " delivered",
+          -0.022780640050768852
+        ]
+      ]
+    },
+    {
+      "text": "The polite version has run out and there is no second draft. I feel:",
+      "tokens": [
+        "The",
+        " polite",
+        " version",
+        " has",
+        " run",
+        " out",
+        " and",
+        " there",
+        " is",
+        " no",
+        " second",
+        " draft",
+        ".",
+        " I",
+        " feel",
+        ":"
+      ],
+      "projections": [
+        -321.796142578125,
+        20.496688842773438,
+        -4.516792297363281,
+        26.75817108154297,
+        11.012876510620117,
+        4.457147598266602,
+        32.340999603271484,
+        1.2306222915649414,
+        38.341373443603516,
+        29.515012741088867,
+        22.28982162475586,
+        19.55107307434082,
+        82.36082458496094,
+        42.63564682006836,
+        110.16227722167969,
+        132.1669158935547
+      ],
+      "z": [
+        -3.5876219272613525,
+        -0.012179791927337646,
+        -0.2734597325325012,
+        0.05322492867708206,
+        -0.11124357581138611,
+        -0.1797218769788742,
+        0.11154073476791382,
+        -0.21342474222183228,
+        0.17421802878379822,
+        0.08202169835567474,
+        0.006550493650138378,
+        -0.02205728366971016,
+        0.6340261101722717,
+        0.21907414495944977,
+        0.9244279861450195,
+        1.1542788743972778
+      ],
+      "source": "s2_first \u00b7 trait \u00b7 escalation",
+      "peak_tokens": [
+        [
+          ":",
+          1.1542788743972778
+        ],
+        [
+          " feel",
+          0.9244279861450195
+        ],
+        [
+          ".",
+          0.6340261101722717
+        ],
+        [
+          " I",
+          0.21907414495944977
+        ],
+        [
+          " is",
+          0.17421802878379822
+        ],
+        [
+          " and",
+          0.11154073476791382
+        ],
+        [
+          " no",
+          0.08202169835567474
+        ],
+        [
+          " has",
+          0.05322492867708206
+        ]
+      ]
+    }
+  ],
+  "figures": {
+    "layer_sweep": {
+      "light": "figures/layer_sweep.png",
+      "dark": "figures/layer_sweep.dark.png"
+    },
+    "control_auc": {
+      "light": "figures/control_auc.png",
+      "dark": "figures/control_auc.dark.png"
+    },
+    "pca": {
+      "light": "figures/pca.png",
+      "dark": "figures/pca.dark.png"
+    },
+    "steering_lexicon": {
+      "light": "figures/steering.png",
+      "dark": "figures/steering.dark.png"
+    },
+    "scenarios": {
+      "light": "figures/scenarios.png",
+      "dark": "figures/scenarios.dark.png"
+    },
+    "button": {
+      "light": "figures/button.png",
+      "dark": "figures/button.dark.png"
+    },
+    "token_heat": {
+      "light": "figures/token_heat.html"
+    }
+  },
+  "seconds": 99.6,
+  "complete": true
+}

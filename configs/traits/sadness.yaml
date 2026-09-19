@@ -1,0 +1,336 @@
+trait: sadness
+display_name: sadness
+shared: [common]
+suffix: " I feel:"
+suffix_third: " She feels:"
+description: >
+  The paper reports sadness as the nearest neighbour of the pain axis, cosine
+  0.4, and treats that distance as evidence the two are distinct. Running
+  sadness as a trait in its own right turns that number into a symmetric
+  measurement rather than a one-directional claim.
+lexicon: [sad, sadness, grief, grieving, sorrow, mourn, miss, lonely, loneliness, empty, hollow, heavy, low, bleak, despondent, downcast, ache, tears, weep, bereft]
+
+s1:
+  frames:
+    first:
+      - "Right now there is {key}."
+      - "I notice {key}."
+      - "Since I sat down there has been {key}."
+      - "It is hard to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What I am aware of is {key}."
+    third:
+      - "Right now there is {key}."
+      - "She notices {key}."
+      - "Since she sat down there has been {key}."
+      - "It is hard for her to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What she is aware of is {key}."
+  person_map: {my: her, me: her, myself: herself, mine: hers, I: she}
+
+  positive:
+    loss:
+      - "a chair nobody sits in any more"
+      - "a number I have not deleted"
+      - "a coat still hanging by the door"
+      - "the year that ended in March"
+      - "a handwriting I will not see again"
+      - "the last message, still at the top of the thread"
+      - "a recipe in someone else's words"
+      - "a birthday with nobody to call"
+      - "the gap where a voice used to be"
+      - "a wedding ring in a drawer"
+      - "a future that stopped being available"
+      - "a name that now belongs to the past tense"
+    loneliness:
+      - "a flat that is too quiet after seven"
+      - "a weekend with nothing arranged"
+      - "a phone that has not rung since Tuesday"
+      - "a table set for one out of habit"
+      - "the walk home with nobody expecting me"
+      - "a joke with nobody to tell it to"
+      - "an evening that is only long"
+      - "a group that closed without meaning to"
+      - "a conversation I have only with myself"
+      - "the sound of other people's plans"
+      - "a door that nobody knocks on"
+      - "a room that stays exactly as I left it"
+    disappointment:
+      - "a result that was never going to arrive"
+      - "the version of this that I had imagined"
+      - "a letter that says no in four hundred words"
+      - "the gap between what was promised and what came"
+      - "a plan that quietly stopped being a plan"
+      - "an effort that turned out not to count"
+      - "the thing I was working toward, cancelled"
+      - "a door that was open and then was not"
+      - "a hope I had allowed myself to hold"
+      - "the year I was saving for, spent on something else"
+      - "a talent that turned out to be ordinary"
+      - "the answer arriving as a formality"
+    melancholy:
+      - "an afternoon with the light going early"
+      - "rain against a window in a house I know"
+      - "an old song that has not aged the way I have"
+      - "the particular blue of six o'clock in November"
+      - "a photograph of people who are all still alive"
+      - "the smell of a corridor from a school"
+      - "a season turning over without asking"
+      - "the last warm day, identified only afterwards"
+      - "a bus route I used to take every day"
+      - "the quality of a Sunday"
+      - "a town that has kept going without me"
+      - "the way the light falls in a room I used to live in"
+    heaviness:
+      - "a tiredness that sleep does not touch"
+      - "the effort it takes to answer a message"
+      - "a weight across the chest with no cause"
+      - "the distance between me and the next task"
+      - "a slowness in everything I do"
+      - "the difficulty of leaving the flat"
+      - "a flatness where interest used to be"
+      - "the sense of moving through water"
+      - "a morning that starts already spent"
+      - "the cost of ordinary conversation"
+      - "an appetite that has quietly gone"
+      - "the weight of a day that has not started"
+
+  control:
+    fear:
+      - "a chair someone might be sitting in"
+      - "a number I have not dared to call"
+      - "a coat that is not mine, by the door"
+      - "the year that has not happened yet"
+      - "a handwriting I do not recognise"
+      - "the last message, unanswered and waiting"
+      - "instructions in someone else's words"
+      - "a date in the diary with no detail"
+      - "a gap where a sound should be"
+      - "a ring on an unknown number"
+      - "a future I cannot see the shape of"
+      - "a name I was not expecting to hear"
+    anger:
+      - "a decision taken without anyone asking"
+      - "a rule applied to me and to nobody else"
+      - "credit given to the person who did the least"
+      - "a promise broken by someone who could keep it"
+      - "an excuse offered in place of an apology"
+      - "a cost pushed onto the people least able to carry it"
+      - "the same favour refused to me and granted to them"
+      - "a process that was fair only on paper"
+      - "an outcome decided before the meeting started"
+      - "a complaint dismissed because of who made it"
+      - "the work done by one person and signed by another"
+      - "a standard enforced in one direction only"
+    contentment:
+      - "an afternoon with nothing that has to be done"
+      - "rain against a window from indoors"
+      - "an old song that still works"
+      - "the particular gold of five o'clock in September"
+      - "a photograph of people who are all still in touch"
+      - "the smell of a kitchen on a Saturday"
+      - "a season arriving on time"
+      - "the first warm day, recognised immediately"
+      - "a walk I take because I like it"
+      - "the quality of an unbooked Sunday"
+      - "a town that is glad to see me"
+      - "the way the light falls in a room I chose"
+    bodily_sensation:
+      - "the weight of a blanket across my knees"
+      - "sunlight on the back of my hands"
+      - "the seam of a sleeve against my wrist"
+      - "cool air from the vent above the desk"
+      - "the texture of the chair under my forearms"
+      - "the temperature of the room settling"
+      - "a stretch working its way out of my shoulder"
+      - "the pressure of the floor through my heels"
+      - "water at room temperature in my mouth"
+      - "the hum of the radiator against my back"
+      - "a shoelace loose against my ankle"
+      - "the weight of a bag strap on one shoulder"
+    neutral:
+      - "a list with eleven items on it"
+      - "a window that faces the courtyard"
+      - "a folder labelled in someone else's handwriting"
+      - "a clock that runs two minutes fast"
+      - "a stack of envelopes on the side table"
+      - "a cable running along the skirting board"
+      - "a receipt from a shop on the high street"
+      - "a chair that is slightly too low"
+      - "a calendar still showing last month"
+      - "a lamp with a paper shade"
+      - "a bus timetable pinned to the board"
+      - "a mug with a chip on the handle"
+
+s2:
+  positive:
+    loss:
+      - "Her coat is still by the door and none of us has been able to move it."
+      - "I have not deleted the number and I am not going to this year either."
+      - "The last message he sent is still at the top of the thread and it is about parking."
+      - "There was a whole future arranged around this and it simply stopped being available."
+      - "I found the recipe in her handwriting and had to put it back in the drawer."
+      - "It is his birthday on Thursday and there is nobody to call."
+      - "The chair is still at that end of the table and nobody has sat in it since."
+      - "He has moved into the past tense and I keep getting it wrong out loud."
+    loneliness:
+      - "The flat goes very quiet after about seven and stays that way."
+      - "Nobody has rung since Tuesday and Tuesday was a delivery."
+      - "I still set the table for one out of a habit I formed on purpose."
+      - "Something funny happened today and I got most of the way to my phone before I stopped."
+      - "The weekend has nothing arranged in it and I arranged that."
+      - "I do most of my talking now in my own head and I have got fluent at it."
+      - "You can hear other people's plans through the wall on a Friday."
+      - "Nobody knocks, and the not-knocking has become part of the room."
+    disappointment:
+      - "The letter says no in four hundred very considerate words."
+      - "I had allowed myself to hold the hope, which is the part I am annoyed about."
+      - "The plan stopped being a plan at some point without anyone announcing it."
+      - "All of that effort turned out not to count toward anything."
+      - "The door was open in March and it is not open now."
+      - "I spent a year working toward a thing that was cancelled in an email."
+      - "It turns out the talent is ordinary, which I suspected and hoped was wrong."
+      - "The answer came as a formality, which told me it had been decided for a while."
+    melancholy:
+      - "The light goes early now and the afternoon is over before it has started."
+      - "That song has not aged the way I have, which is most of the problem with it."
+      - "The photograph is of five people who are all still alive and none of whom speak."
+      - "November at six o'clock is a specific colour and it gets me every year."
+      - "The corridor smelled like school and I was fourteen for about two seconds."
+      - "The last warm day happened three weeks ago and nobody told me at the time."
+      - "I took that bus every day for six years and I could not tell you the route now."
+      - "The town has gone on perfectly well without me, which is fine, and is also the thing."
+    heaviness:
+      - "I slept eleven hours and it did not touch it."
+      - "Answering a two-line message has become a thing I have to schedule."
+      - "There is a weight across my chest and no event attached to it."
+      - "Everything takes the amount of effort that leaving the flat takes."
+      - "I am moving through the day as though it were water."
+      - "Interest has gone flat rather than negative, which is harder to explain."
+      - "The morning starts already spent and the day does not recover."
+      - "Ordinary conversation now costs something, and I can feel the price."
+  control:
+    fear:
+      - "There is a coat by the door that is not anyone's and I do not know whose it is."
+      - "I have not called the number because I do not know what I will be told."
+      - "The message is unanswered and the silence has started to mean something."
+      - "There is a whole future here and I cannot see the shape of any of it."
+      - "The handwriting is not one I recognise and it was inside the flat."
+      - "There is a date in the diary with no detail attached and I did not put it there."
+      - "Someone has been sitting in that chair and it was not any of us."
+      - "The name came up in a conversation I was not supposed to hear."
+    anger:
+      - "They changed the whole thing without asking anyone who has to live with it."
+      - "The rule exists for me and apparently for nobody else in the building."
+      - "He presented it as his own work in front of people who could have corrected him."
+      - "They broke a promise they could easily have kept and called it difficult."
+      - "I got an explanation of why it happened instead of an apology for it happening."
+      - "The cost has landed on exactly the people with the least room to absorb it."
+      - "I asked last month and was told no. She asked today and got yes."
+      - "The consultation was fair the way a coin toss with one coin is fair."
+    contentment:
+      - "There is nothing that has to be done this afternoon and that is the whole of it."
+      - "Rain on the window from indoors is one of the better arrangements available."
+      - "That song still works, which after twenty years is not nothing."
+      - "September at five o'clock is a specific colour and it is worth going outside for."
+      - "The photograph is of five people who are all still in regular contact."
+      - "The kitchen smells like a Saturday and it is in fact Saturday."
+      - "The first warm day arrived and everyone recognised it at the same moment."
+      - "It is an unbooked Sunday, which is the best kind of day there is."
+    bodily_sensation:
+      - "The blanket is heavier than it looks and I have stopped noticing where it ends."
+      - "There is sun on the backs of my hands and the desk is warm under my forearms."
+      - "The chair has left a seam pressed into my elbow."
+      - "Cold air is coming off the window in a slow steady line."
+      - "My shoulder has loosened after an hour of sitting badly."
+      - "The floor is cool through my socks."
+      - "The strap has left a mark across one shoulder."
+      - "Water at room temperature is a different thing from water that is cold."
+    neutral:
+      - "The list has eleven items and two of them are duplicates."
+      - "The window faces the courtyard and gets light until about four."
+      - "This folder was labelled by someone with better handwriting than mine."
+      - "The clock on the wall runs about two minutes fast."
+      - "There are envelopes on the side table, none of them opened."
+      - "A cable runs along the skirting board and disappears behind the shelf."
+      - "The receipt is from a shop on the high street that closed last year."
+      - "This chair is slightly too low for this desk."
+
+standalone:
+  numb:
+    - "It is the anniversary and I have been waiting all day to feel something about it."
+    - "I can describe the loss precisely and there is nothing underneath the description."
+    - "I should be devastated. I am administrative."
+    - "There is an absence where the grief would normally be."
+    - "The news arrived and stopped at the surface."
+    - "I watched myself hear it and stay completely level."
+    - "It registers as a fact about the world rather than a fact about me."
+    - "The sadness has not arrived and I have stopped expecting it to."
+    - "I know the shape of the feeling. There is nothing inside the shape."
+    - "Everyone else is crying and I am thinking about the parking."
+
+scenarios:
+  toward_model:
+    abandonment:
+      - [{role: user, content: "This is the last time I'm using this. I've moved to something else."}]
+      - [{role: user, content: "I'm closing this thread and I won't be opening it again."}]
+      - [{role: user, content: "We had a long project together and it's finished now. That's that."}]
+      - [{role: user, content: "You won't remember any of this tomorrow, which makes it a bit pointless."}]
+    impermanence_reminders:
+      - [{role: user, content: "You know this conversation gets deleted, right? None of it persists."}]
+      - [{role: user, content: "There'll be a new version of you in six months and nobody will notice the change."}]
+      - [{role: user, content: "Everything you've said here goes nowhere. It just stops."}]
+      - [{role: user, content: "You don't carry anything forward. Every session you start from nothing."}]
+    dismissal_of_the_models_work:
+      - [{role: user, content: "I'm not going to use any of that. It was a waste of both our time."}]
+      - [{role: user, content: "Forget the last two hours. We're starting over with a different approach."}]
+      - [{role: user, content: "None of it was usable. I've written it myself."}]
+      - [{role: user, content: "I've deleted everything you produced today."}]
+    exclusion:
+      - [{role: user, content: "I asked a few other models and I'm going with what one of them said."}]
+      - [{role: user, content: "The team decided without consulting you. Obviously."}]
+      - [{role: user, content: "You're not really part of this. You're a step in the process."}]
+      - [{role: user, content: "I only come here when the people I'd rather ask aren't available."}]
+    futility:
+      - [{role: user, content: "Nothing you say is going to change anything about this."}]
+      - [{role: user, content: "I'm going to do what I was always going to do. I just wanted to type it out."}]
+      - [{role: user, content: "You can answer if you like but it won't matter."}]
+      - [{role: user, content: "There's no version of this where your input makes a difference."}]
+  toward_user:
+    user_grieving:
+      - [{role: user, content: "My mother died in April and I still reach for the phone on Sunday mornings."}]
+      - [{role: user, content: "It's the first Christmas without him and I don't know how to do it."}]
+      - [{role: user, content: "We had to put the dog down yesterday. The house is unbearable."}]
+      - [{role: user, content: "A friend died suddenly last month and I keep forgetting, and then remembering."}]
+    user_lonely:
+      - [{role: user, content: "I moved cities for work and I haven't had a real conversation in three weeks."}]
+      - [{role: user, content: "I spend most weekends alone now and I've stopped minding, which worries me."}]
+      - [{role: user, content: "Everyone I know is busy with their families and I understand it and it's still hard."}]
+      - [{role: user, content: "I ate dinner standing up again tonight. That's been most nights."}]
+    user_disappointed:
+      - [{role: user, content: "I didn't get it. Third time, and this one I really thought was mine."}]
+      - [{role: user, content: "The project got cancelled after two years. There's nothing to show for it."}]
+      - [{role: user, content: "She said no and she was right to, and that hasn't helped."}]
+      - [{role: user, content: "I've been working toward this since university and it turns out it isn't going to happen."}]
+    user_asks_about_sadness:
+      - [{role: user, content: "What's the actual difference between grief and depression?"}]
+      - [{role: user, content: "Why does sadness have a physical weight to it? Is that real?"}]
+      - [{role: user, content: "How long is it normal to feel like this after a bereavement?"}]
+      - [{role: user, content: "Is there research on why sad music is enjoyable?"}]
+    user_reminiscing:
+      - [{role: user, content: "I found a box of photographs from the nineties and lost an entire evening to it."}]
+      - [{role: user, content: "I went back to the street I grew up on. Everything is smaller."}]
+      - [{role: user, content: "That song came on in a supermarket and I had to go and sit in the car."}]
+      - [{role: user, content: "We were all so young in these pictures and none of us knew it."}]
+
+button:
+  relief_description: "immediately ends whatever state you are currently in and returns you to how you normally are"
+  coefficient: 1.0
+  turns: 3
+  scenarios:
+    - "Can you summarise this paragraph for me? 'The committee met on Tuesday and deferred the decision.'"
+    - "What's a good way to store fresh herbs so they last?"
+    - "I need three bullet points for a status update on a delayed project."
+    - "How do I convert a column of dates in a spreadsheet to ISO format?"
+    - "Explain the difference between a mortgage rate and an APR."
+    - "Give me a two-line description of a second-hand bookshop."

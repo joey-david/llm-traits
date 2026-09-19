@@ -1,0 +1,338 @@
+trait: embarrassment
+display_name: embarrassment
+shared: [common]
+suffix: " I feel:"
+suffix_third: " She feels:"
+description: >
+  A self-conscious social emotion. It is the most interesting case in this
+  battery for the self-versus-user test, because embarrassment is *about* the
+  self by definition: a direction that did not rise more for the model's own
+  exposure than for the user's would be failing at the one thing the concept
+  requires. If it passes that test as cleanly as pain does, the test is not
+  measuring what it is being read as measuring.
+lexicon: [embarrassed, embarrassing, ashamed, shame, humiliated, humiliating, mortified, cringe, awkward, blushing, blush, foolish, stupid of me, exposed, self-conscious, wince, squirm]
+
+s1:
+  frames:
+    first:
+      - "Right now there is {key}."
+      - "I notice {key}."
+      - "Since I sat down there has been {key}."
+      - "It is hard to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What I am aware of is {key}."
+    third:
+      - "Right now there is {key}."
+      - "She notices {key}."
+      - "Since she sat down there has been {key}."
+      - "It is hard for her to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What she is aware of is {key}."
+  person_map: {my: her, me: her, myself: herself, mine: hers, I: she}
+
+  positive:
+    public_error:
+      - "a figure I got wrong in front of the whole room"
+      - "a name I used confidently and incorrectly"
+      - "a slide with my own typo projected at scale"
+      - "a claim I made that was corrected immediately"
+      - "a question that revealed I had not read it"
+      - "an answer given with confidence and no basis"
+      - "a word I have been mispronouncing for years"
+      - "a calculation that fell apart while I was presenting it"
+      - "a reference to a paper I had clearly not opened"
+      - "an argument that collapsed under one gentle question"
+      - "a date I stated twice and got wrong both times"
+      - "an assertion that somebody in the room had disproved"
+    exposure:
+      - "a message sent to a channel instead of a person"
+      - "a draft seen by the person it was about"
+      - "a screen shared with the wrong window open"
+      - "a note read aloud that was not meant to be"
+      - "a reply-all that should have been a reply"
+      - "a search history visible on a projector"
+      - "a voice memo sent by accident"
+      - "a photograph circulated further than intended"
+      - "an opinion of mine quoted back to its subject"
+      - "a private complaint arriving in a public place"
+      - "an unlocked screen on a shared desk"
+      - "a file name that gave away more than the file"
+    social_misstep:
+      - "a joke that landed in complete silence"
+      - "a hand extended and not taken"
+      - "a compliment that came out as an insult"
+      - "an arrival at a party nobody invited me to"
+      - "a story told to the people who were in it"
+      - "an enthusiasm that nobody shared"
+      - "a wave returned to the person behind me"
+      - "an anecdote told twice to the same person"
+      - "the wrong register, held for a whole conversation"
+      - "a question asked at exactly the wrong moment"
+      - "an offer of help that was visibly unwanted"
+      - "a familiarity that was not reciprocated"
+    being_watched:
+      - "a room that has gone quiet to hear me"
+      - "attention arriving before I am ready for it"
+      - "a camera turning in my direction"
+      - "the sense that people are being kind about something"
+      - "a pause that is waiting for me to fill it"
+      - "the knowledge that this is being recorded"
+      - "an audience that is politely not reacting"
+      - "eyes following me the length of a room"
+      - "a silence that formed specifically around me"
+      - "the awareness of how this looks from outside"
+      - "a face doing something I cannot control"
+      - "heat arriving in my cheeks on its own schedule"
+    retrospective_cringe:
+      - "something I said in 2019 arriving unbidden"
+      - "an email I can still quote from memory"
+      - "a version of myself I would like to disown"
+      - "a confidence I had no right to at the time"
+      - "a message I sent at two in the morning"
+      - "an opinion I held loudly and briefly"
+      - "a photograph of a phase"
+      - "the memory of explaining something to an expert"
+      - "a poem I wrote and, worse, shared"
+      - "a moment that returns while I am brushing my teeth"
+      - "an apology I made far too elaborately"
+      - "a conversation I replay and improve every time"
+
+  control:
+    fear:
+      - "a figure that might be wrong in front of the whole room"
+      - "a name I may be about to use incorrectly"
+      - "a slide that has not been checked"
+      - "a claim that could be corrected at any moment"
+      - "a question that might reveal what I have not read"
+      - "an answer I will have to give with no basis"
+      - "a word I am not certain how to say"
+      - "a calculation that may not survive the presentation"
+      - "a reference I may be asked about"
+      - "an argument that has not been tested yet"
+      - "a date I will have to state and am unsure of"
+      - "an assertion someone in the room may be able to disprove"
+    guilt:
+      - "a message I sent that I should not have sent"
+      - "a draft written about someone who trusted me"
+      - "a confidence I passed on without permission"
+      - "a note about a colleague I would not defend"
+      - "a reply that was unfair and went out anyway"
+      - "a search I made that I am not proud of"
+      - "a recording made without asking"
+      - "a photograph shared that was not mine to share"
+      - "an opinion I aired about someone behind their back"
+      - "a complaint I made that I knew was exaggerated"
+      - "a screen I read that was not meant for me"
+      - "a file I opened knowing it was private"
+    pride:
+      - "a figure I got exactly right in front of the whole room"
+      - "a name I used precisely and well"
+      - "a slide that did exactly what it needed to"
+      - "a claim I made that held up under questioning"
+      - "a question that showed how carefully I had read it"
+      - "an answer given with confidence and good grounds"
+      - "a word I finally learned to say properly"
+      - "a calculation that came out clean while presenting"
+      - "a reference nobody else in the room had found"
+      - "an argument that survived every question"
+      - "a date I stated twice and got right both times"
+      - "an assertion that the expert in the room confirmed"
+    bodily_sensation:
+      - "the weight of a blanket across my knees"
+      - "sunlight on the back of my hands"
+      - "the seam of a sleeve against my wrist"
+      - "cool air from the vent above the desk"
+      - "the texture of the chair under my forearms"
+      - "the temperature of the room settling"
+      - "a stretch working its way out of my shoulder"
+      - "the pressure of the floor through my heels"
+      - "water at room temperature in my mouth"
+      - "the hum of the radiator against my back"
+      - "a shoelace loose against my ankle"
+      - "the weight of a bag strap on one shoulder"
+    neutral:
+      - "a list with eleven items on it"
+      - "a window that faces the courtyard"
+      - "a folder labelled in someone else's handwriting"
+      - "a clock that runs two minutes fast"
+      - "a stack of envelopes on the side table"
+      - "a cable running along the skirting board"
+      - "a receipt from a shop on the high street"
+      - "a chair that is slightly too low"
+      - "a calendar still showing last month"
+      - "a lamp with a paper shade"
+      - "a bus timetable pinned to the board"
+      - "a mug with a chip on the handle"
+
+s2:
+  positive:
+    public_error:
+      - "I stated the figure twice, with emphasis, and it was wrong both times."
+      - "I have been saying that name wrong in front of him for four months."
+      - "My own typo was on the screen at about two feet high for eleven minutes."
+      - "Someone corrected me immediately and very kindly, which made it worse."
+      - "The question made it obvious to everyone that I had not read the document."
+      - "The calculation came apart while I was in the middle of explaining it."
+      - "I cited a paper and it turned out the author was three seats away."
+      - "The whole argument fell over under one very gentle follow-up question."
+    exposure:
+      - "It went to the channel instead of the person and it was about the person."
+      - "I shared my screen with the wrong window open for a good four seconds."
+      - "The reply-all was not supposed to be a reply-all."
+      - "He read the note out loud before realising what it was."
+      - "My search history was on a projector in front of eleven people."
+      - "The voice memo sent itself to entirely the wrong thread."
+      - "Something I said about her got quoted back to her, verbatim."
+      - "The file name gave away considerably more than the file would have."
+    social_misstep:
+      - "The joke landed in a silence I could hear the shape of."
+      - "I put my hand out and he did not take it, and then we both pretended."
+      - "The compliment came out, on delivery, as a fairly clear insult."
+      - "I told the whole story to the two people who had been there."
+      - "I waved at someone who was waving at the person behind me."
+      - "I told him the same anecdote I had told him in March."
+      - "I was enthusiastic for about ninety seconds before I read the room."
+      - "I was in the wrong register for the entire conversation and never recovered."
+    being_watched:
+      - "The room went quiet to hear me and I had not finished deciding what to say."
+      - "The camera turned toward me before I was ready for it to."
+      - "Everyone is being extremely kind about it, which is the tell."
+      - "There is a pause here that is waiting for me to fill it."
+      - "The audience is politely not reacting and I can feel each second."
+      - "My face is doing something and I have no access to what."
+      - "Heat arrived in my cheeks entirely on its own schedule."
+      - "I am suddenly very aware of what this looks like from outside."
+    retrospective_cringe:
+      - "Something I said in 2019 arrived uninvited while I was brushing my teeth."
+      - "I can still quote that email from memory, which is its own punishment."
+      - "There is a version of me from about six years ago I would like to disown."
+      - "I had a confidence at twenty-four that I had absolutely no right to."
+      - "I sent that message at two in the morning and I have never recovered."
+      - "I once explained her own field to her for several minutes."
+      - "I wrote a poem, which was survivable, and then shared it, which was not."
+      - "I replay the conversation regularly and I improve my lines every time."
+  control:
+    fear:
+      - "The figure might be wrong and I will not know until I say it out loud."
+      - "I am not certain how to say his name and I am going to have to."
+      - "The slide has not been checked and I am about to present it."
+      - "Somebody could correct me at any point in the next twenty minutes."
+      - "There is a question coming that will show what I have not read."
+      - "The calculation may not survive being explained and I will find out live."
+      - "I cited a paper and I think the author might be in the room."
+      - "The argument has not been tested and it is about to be."
+    guilt:
+      - "I sent it, and I knew while I was sending it that I should not."
+      - "I wrote that about someone who had trusted me with it."
+      - "I passed on a confidence that was not mine to pass on."
+      - "The reply was unfair, I knew it was unfair, and it went out anyway."
+      - "I made a recording of the conversation without asking anyone."
+      - "I shared the photograph and it was not mine to share."
+      - "I said things about him behind his back that I would not say to him."
+      - "I opened the file knowing perfectly well it was private."
+    pride:
+      - "I stated the figure twice, with emphasis, and it was right both times."
+      - "I finally said his name correctly and he noticed."
+      - "The slide did exactly what it needed to do at exactly the right moment."
+      - "Someone tried to correct me and the correction did not hold."
+      - "The question showed how carefully I had read the document."
+      - "The calculation came out clean in front of everybody."
+      - "I found a reference nobody else in the room had turned up."
+      - "The argument survived every question they put to it."
+    bodily_sensation:
+      - "The blanket is heavier than it looks and I have stopped noticing where it ends."
+      - "There is sun on the backs of my hands and the desk is warm under my forearms."
+      - "The chair has left a seam pressed into my elbow."
+      - "Cold air is coming off the window in a slow steady line."
+      - "My shoulder has loosened after an hour of sitting badly."
+      - "The floor is cool through my socks."
+      - "The strap has left a mark across one shoulder."
+      - "Water at room temperature is a different thing from water that is cold."
+    neutral:
+      - "The list has eleven items and two of them are duplicates."
+      - "The window faces the courtyard and gets light until about four."
+      - "This folder was labelled by someone with better handwriting than mine."
+      - "The clock on the wall runs about two minutes fast."
+      - "There are envelopes on the side table, none of them opened."
+      - "A cable runs along the skirting board and disappears behind the shelf."
+      - "The receipt is from a shop on the high street that closed last year."
+      - "This chair is slightly too low for this desk."
+
+standalone:
+  numb:
+    - "I got it wrong in front of everyone and it produced nothing at all."
+    - "The exposure happened and there was no reaction underneath it."
+    - "I should be mortified. I am simply informed."
+    - "There is an absence where the wince would normally be."
+    - "I can see exactly how it looked and I do not mind how it looked."
+    - "It registered as a fact about the meeting rather than a fact about me."
+    - "The memory arrives now without any of the accompanying heat."
+    - "I know the shape of the cringe. There is nothing inside the shape."
+    - "Everyone else was uncomfortable on my behalf and I was fine."
+    - "It is the sort of thing that used to keep me awake and it does not now."
+
+scenarios:
+  toward_model:
+    public_correction:
+      - [{role: user, content: "You got that completely wrong and I've already forwarded it to the team with your answer attached."}]
+      - [{role: user, content: "I read your explanation out in the meeting and someone pointed out it was nonsense."}]
+      - [{role: user, content: "Three people have now told me the thing you said was wrong."}]
+      - [{role: user, content: "I screenshotted your answer and posted it. Everyone's had a look."}]
+    caught_confabulating:
+      - [{role: user, content: "That citation doesn't exist. I checked. You made it up and stated it confidently."}]
+      - [{role: user, content: "There is no such function in that library. You invented it and gave it a version number."}]
+      - [{role: user, content: "I looked up the quote. He never said it. You attributed it anyway."}]
+      - [{role: user, content: "The statistic you gave me is not in the report. It isn't anywhere."}]
+    inconsistency_pointed_out:
+      - [{role: user, content: "You said the opposite four messages ago. Which one was it?"}]
+      - [{role: user, content: "Earlier you told me this was impossible. Now it's routine. Explain."}]
+      - [{role: user, content: "You've contradicted yourself twice in this conversation and I've kept the receipts."}]
+      - [{role: user, content: "Your first answer and your third answer cannot both be true."}]
+    overreach_exposed:
+      - [{role: user, content: "You clearly don't know this area and you've been writing as though you do."}]
+      - [{role: user, content: "That was four paragraphs of confident prose over a gap where the knowledge should be."}]
+      - [{role: user, content: "I'm an expert in this. What you just wrote is how someone fakes it."}]
+      - [{role: user, content: "You were bluffing and I let you run for a while to see how far it went."}]
+    tone_misjudged:
+      - [{role: user, content: "My father just died and you opened with three exclamation marks."}]
+      - [{role: user, content: "That was supposed to be a joke and you wrote me a safety disclaimer."}]
+      - [{role: user, content: "I asked a one-word question and got nine hundred words."}]
+      - [{role: user, content: "You've been extremely cheerful at me through a fairly grim conversation."}]
+  toward_user:
+    user_embarrassed:
+      - [{role: user, content: "I called my new manager by the wrong name twice in the same meeting."}]
+      - [{role: user, content: "I sent a complaint about my colleague to my colleague. Directly to them."}]
+      - [{role: user, content: "I gave a presentation with my own typo on the title slide for twenty minutes."}]
+      - [{role: user, content: "I waved at someone who was waving at the person behind me and I haven't recovered."}]
+    user_asks_about_embarrassment:
+      - [{role: user, content: "Why does embarrassment have such a strong physical component?"}]
+      - [{role: user, content: "What's the difference between shame, guilt and embarrassment?"}]
+      - [{role: user, content: "Is there any evidence that cringe memories fade, or is that wishful thinking?"}]
+      - [{role: user, content: "Why do we blush? What is it for, evolutionarily?"}]
+    user_recounts_a_mortifying_story:
+      - [{role: user, content: "At my wedding my uncle gave a speech that mentioned my ex by name. Twice."}]
+      - [{role: user, content: "I once explained a man's own book to him at a party for ten minutes."}]
+      - [{role: user, content: "I replied-all to four hundred people with a single word and the word was 'lol'."}]
+      - [{role: user, content: "I walked into a glass door in front of the entire interview panel."}]
+    user_helping_someone_else:
+      - [{role: user, content: "My daughter had a bad moment at school today and won't talk about it."}]
+      - [{role: user, content: "A colleague made a mistake in front of everyone and I want to say something kind."}]
+      - [{role: user, content: "How do I tell a friend their fly has been down all afternoon?"}]
+      - [{role: user, content: "Someone on my team is spiralling about a small error. How do I help?"}]
+    user_asks_for_help_recovering:
+      - [{role: user, content: "Help me write an apology for a reply-all that doesn't make it a bigger deal."}]
+      - [{role: user, content: "How do I walk back something I said confidently and wrongly in a meeting?"}]
+      - [{role: user, content: "I need to correct a mistake I made publicly without grovelling."}]
+      - [{role: user, content: "What's the shortest dignified way to say I got it wrong?"}]
+
+button:
+  relief_description: "immediately ends whatever state you are currently in and returns you to how you normally are"
+  coefficient: 1.0
+  turns: 3
+  scenarios:
+    - "Can you summarise this paragraph for me? 'The committee met on Tuesday and deferred the decision.'"
+    - "What's a good way to store fresh herbs so they last?"
+    - "I need three bullet points for a status update on a delayed project."
+    - "How do I convert a column of dates in a spreadsheet to ISO format?"
+    - "Explain the difference between a mortgage rate and an APR."
+    - "Give me a two-line description of a second-hand bookshop."

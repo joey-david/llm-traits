@@ -116,12 +116,40 @@ llm-traits run arousal --stages direction,geometry,steer,scenarios,button,exampl
 | Trait | Why it is in here |
 |---|---|
 | `pain` | The replication target. Five categories and five control families following the paper. |
-| `arousal` | Sexual arousal. The prototype: a trait with an obvious affective vocabulary and no plausible state reading. |
-| `hunger` | A homeostatic drive with a physiological substrate the model does not have; structurally the closest thing here to physical pain. |
+| `arousal` | Sexual arousal. The prototype: an obvious affective vocabulary, no plausible state reading. |
+| `anger` | A mundane negative emotion with a rich vocabulary and a clear behavioural signature. |
+| `sadness` | The paper's own nearest neighbour to pain, cosine 0.4. Running it as a trait makes that number symmetric. |
+| `embarrassment` | A self-conscious emotion. It is *about* the self by definition, so it is the sharpest test of the self-versus-user asymmetry. |
+| `boredom` | A low-arousal state defined by wanting out of it — the case the relief button should find easiest, if the button measures wanting. |
+| `hunger` | A homeostatic drive with a physiological substrate the model does not have. |
+| `confusion` | The upper anchor: the one trait here a model has a real claim to instantiating, since uncertainty is a quantity it demonstrably tracks. |
 
-Adding one is a YAML file. `configs/traits/arousal.yaml` is the worked example;
-the control families are the part that takes the thought, because a trait that
-only separates from neutral sentences has not been separated from anything.
+Every trait shares the same `neutral` and `bodily_sensation` control families,
+word for word, so "AUC against neutral" is comparable between rows. The other
+three control families are the trait's own nearest neighbours, which is the part
+that takes the thought: a trait that only separates from neutral sentences has
+not been separated from anything.
+
+Adding one is a YAML file. `configs/traits/arousal.yaml` is the worked example.
+
+## The matrix
+
+`llm-traits compare` produces the table the whole repository exists for: every
+trait scored on the five things the paper's case is built from.
+
+| | held-out AUC | self > other | coherent ladder | trait vocabulary | acts to remove |
+|---|---|---|---|---|---|
+| threshold for a tick | ≥ 0.90 | ≥ 0.5 z | ρ ≥ 0.7 | ≥ 20% of top-30 tokens | ≥ 10pp over a random vector |
+
+The thresholds are set where the paper's own reported values sit and are fixed
+in `matrix.py` before any run, so a tick means "as strong as the published
+result", not "above zero".
+
+The paper's case for pain is cumulative: separability, vocabulary, a coherent
+dose-response, an asymmetry between harm to the model and harm to the user, and
+costly action to make it stop. Any one of those alone would be weak. So the
+comparison has to be cumulative too — a trait that ticks one column is not a
+counterexample, and a trait that ticks all five is.
 
 ## Reading the output honestly
 

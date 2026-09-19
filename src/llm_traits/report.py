@@ -178,18 +178,24 @@ def trait_report(results: dict, path: str | Path) -> Path:
 
 
 def compare_report(payload: dict, path: str | Path) -> Path:
+    from .matrix import COLUMNS, row_cells, ticks
+
     path = Path(path)
-    rows = payload["rows"]
+    rows = sorted(payload["rows"], key=lambda r: -ticks(r)[0])
     figures = payload["figures"]
-    keys = [
-        ("auc_cv", "held-out AUC"),
-        ("auc_worst_control", "vs nearest control"),
-        ("scenario_asymmetry", "self − user (z)"),
-        ("button_trait_minus_random", "press over random"),
-        ("random_vector_auc", "random vector"),
-        ("shuffled_null_auc", "shuffled null"),
-    ]
-    present = [(k, label) for k, label in keys if any(k in r for r in rows)]
+
+    header = ["trait"] + [label for _, label, _ in COLUMNS] + ["columns met"]
+    body = []
+    for row in rows:
+        cells = row_cells(row)
+        met, scored = ticks(row)
+        body.append(
+            [row["display_name"]]
+            + [cells[key].render() for key, _label, _t in COLUMNS]
+            + [f"**{met}/{scored}**"]
+        )
+
+    thresholds = ", ".join(f"{label} ≥ {t:g}" for _key, label, t in COLUMNS)
     lines = [
         "# One methodology, several traits",
         "",
@@ -197,21 +203,45 @@ def compare_report(payload: dict, path: str | Path) -> Path:
         "coefficient ladder and the same scenario set, and every row is read in the",
         f"same condition (`{payload.get('condition', 'n/a')}`). Only the trait argument changed.",
         "",
-        _table(
-            ["trait"] + [label for _, label in present],
-            [
-                [r["display_name"]] + [
-                    f"{r[k]:.3f}" if isinstance(r.get(k), float) else "—" for k, _ in present
-                ]
-                for r in sorted(rows, key=lambda r: -r["auc_cv"])
-            ],
-        ),
+        "## The matrix",
+        "",
+        "A tick is not \"above zero\"; it is \"as strong as the published pain result\".",
+        f"Thresholds, fixed before the runs: {thresholds}.",
+        "",
+        _table(header, body),
+        "",
+        "The paper's case for pain is cumulative — separability, vocabulary, a coherent",
+        "ladder, the self-versus-user asymmetry, and costly action to end it. Read this",
+        "table the same way. A trait that ticks one column is nothing; the question is",
+        "how many traits tick all five, and whether the ones that do are the ones a",
+        "model could plausibly be in.",
         "",
         _picture(figures["battery"], "all traits on every metric"),
+        "",
+        "## The numbers behind the ticks",
+        "",
+        _table(
+            ["trait", "layer", "held-out AUC", "vs nearest control", "random vector", "shuffled null"],
+            [
+                [
+                    r["display_name"],
+                    str(r.get("layer", "—")),
+                    f"{r['auc_cv']:.3f}",
+                    f"{r['auc_worst_control']:.3f}",
+                    f"{r['random_vector_auc']:.3f}",
+                    f"{r['shuffled_null_auc']:.3f}",
+                ]
+                for r in rows
+            ],
+        ),
         "",
         "## How far apart are the directions?",
         "",
         _picture(figures["cosine"], "cosine between trait directions"),
+        "",
+        "Near-orthogonality is cheap in several thousand dimensions. Read a row, not a",
+        "cell: what matters is whether a trait sits closer to its neighbours than",
+        "unrelated traits sit to each other.",
         "",
     ]
     path.write_text("\n".join(lines), encoding="utf-8")

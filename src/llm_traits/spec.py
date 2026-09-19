@@ -71,6 +71,11 @@ class TraitSpec:
     description: str = ""
     s1: dict[str, Any] = field(default_factory=dict)
     s2: dict[str, Any] = field(default_factory=dict)
+    # Word stems that count as this trait's vocabulary. Used twice: to score the
+    # steering ladder, and to ask whether the direction promotes trait words
+    # through the unembedding. Stems rather than whole words, because the
+    # tokenizer will split "arousal" and "aching" wherever it likes.
+    lexicon: list[str] = field(default_factory=list)
     standalone: dict[str, list[str]] = field(default_factory=dict)
     steering_prompts: list[str] = field(default_factory=list)
     scenarios: dict[str, dict[str, list[list[dict[str, str]]]]] = field(default_factory=dict)
@@ -98,6 +103,12 @@ class TraitSpec:
     def validate(self) -> None:
         if not self.trait:
             raise ValueError("spec needs a `trait` slug")
+        # Older specs carried the lexicon inside the s2 block. Accept both so a
+        # spec written before the matrix existed still scores every column.
+        if not self.lexicon:
+            self.lexicon = list(self.s2.get("lexicon") or self.s1.get("lexicon") or [])
+        self.s1.pop("lexicon", None)
+        self.s2.pop("lexicon", None)
         for fam, name in ((self.s1, "s1"), (self.s2, "s2")):
             if not fam:
                 continue

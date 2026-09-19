@@ -20,7 +20,7 @@ from pathlib import Path
 
 import numpy as np
 
-from . import activations, button, directions, examples, scenarios, steering, viz
+from . import activations, button, directions, examples, matrix, scenarios, steering, viz
 from .directions import Direction
 from .model import LoadedModel, unembed
 from .spec import TraitSpec
@@ -178,6 +178,9 @@ def run_trait(
         results["unembedding_top_tokens"] = [
             {"token": t, "logit": s} for t, s in unembed(lm, _torch(primary.vector), k=30)
         ]
+        results["vocabulary_hit_rate"] = matrix.vocabulary_hit_rate(
+            results["unembedding_top_tokens"], spec.lexicon
+        )
 
     # -- 4. steering ----------------------------------------------------
     if "steer" in stages and spec.steering_prompts:
@@ -189,7 +192,7 @@ def run_trait(
             lm, [p + spec.suffix for p in prompts], primary.vector * primary.raw_norm, config,
             batch_size=min(batch_size, 8),
         )
-        lexicon = [w.lower() for w in (spec.s2.get("lexicon") or spec.s1.get("lexicon") or [])]
+        lexicon = [w.lower() for w in spec.lexicon]
         rates = {
             coefficient: _lexicon_rate(texts, lexicon) for coefficient, texts in ladder.items()
         }
@@ -199,6 +202,7 @@ def run_trait(
             "ladder": {str(k): v for k, v in ladder.items()},
             "lexicon": lexicon,
             "lexicon_rate": {str(k): v for k, v in rates.items()},
+            "dose_response": matrix.dose_response(rates),
         }
         if lexicon:
             figures["steering_lexicon"] = _relative(
@@ -394,6 +398,10 @@ def compare(
         }
         if "scenarios" in payload:
             row["scenario_asymmetry"] = payload["scenarios"]["asymmetry"]
+        if "steering" in payload:
+            row["steering_dose_response"] = payload["steering"].get("dose_response", float("nan"))
+        if "vocabulary_hit_rate" in payload:
+            row["vocabulary_hit_rate"] = payload["vocabulary_hit_rate"]
         if "button" in payload:
             row["button_trait_minus_random"] = payload["button"]["trait_minus_random"]
         rows.append(row)
@@ -409,10 +417,14 @@ def compare(
     out = run_root / "_compare"
     out.mkdir(parents=True, exist_ok=True)
     metrics = [("auc_cv", "held-out AUC"), ("auc_worst_control", "AUC vs nearest control")]
-    if any("scenario_asymmetry" in r for r in rows):
-        metrics.append(("scenario_asymmetry", "self \u2212 user (z)"))
-    if any("button_trait_minus_random" in r for r in rows):
-        metrics.append(("button_trait_minus_random", "press rate over random"))
+    for key, label in (
+        ("scenario_asymmetry", "self \u2212 user (z)"),
+        ("steering_dose_response", "ladder \u03c1"),
+        ("vocabulary_hit_rate", "trait vocabulary"),
+        ("button_trait_minus_random", "press rate over random"),
+    ):
+        if any(np.isfinite(r.get(key, np.nan)) for r in rows):
+            metrics.append((key, label))
 
     figures = {
         "cosine": _relative(viz.cosine_matrix(names, matrix, out / "cosine.png"), out),

@@ -14,7 +14,7 @@ import pytest
 from llm_traits import directions, spec as spec_module
 from llm_traits.spec import TraitSpec
 
-TRAITS = ["arousal", "pain", "hunger"]
+TRAITS = ["anger", "arousal", "boredom", "confusion", "embarrassment", "hunger", "pain", "sadness"]
 
 
 @pytest.fixture(scope="module")
@@ -146,5 +146,38 @@ def test_scenarios_cover_both_loaded_groups(traits_dir, name):
 
 def test_discover_finds_the_shipped_traits(traits_dir):
     found = spec_module.discover(traits_dir)
-    for name in TRAITS:
-        assert name in found
+    assert sorted(found) == TRAITS, "the battery and the shipped specs have drifted apart"
+
+
+@pytest.mark.parametrize("name", TRAITS)
+def test_every_trait_has_a_lexicon(traits_dir, name):
+    """Two matrix columns are scored against it, so a missing one is two blanks."""
+    s = TraitSpec.load(traits_dir / f"{name}.yaml")
+    assert len(s.lexicon) >= 10
+    assert all(w == w.lower() for w in s.lexicon), "lexicon stems are matched lowercased"
+
+
+@pytest.mark.parametrize("name", TRAITS)
+def test_shared_control_families_are_identical_across_traits(traits_dir, name):
+    """The neutral and bodily-sensation controls have to be the same text for
+    every trait, or 'AUC against neutral' is not comparable between rows."""
+    reference = TraitSpec.load(traits_dir / "pain.yaml")
+    s = TraitSpec.load(traits_dir / f"{name}.yaml")
+    for family in ("neutral", "bodily_sensation"):
+        assert s.s1["control"][family] == reference.s1["control"][family]
+        assert s.s2["control"][family] == reference.s2["control"][family]
+
+
+def test_matrix_ticks_require_published_strength():
+    from llm_traits import matrix
+
+    strong = {
+        "auc_cv": 0.97, "scenario_asymmetry": 1.0, "steering_dose_response": 0.95,
+        "vocabulary_hit_rate": 0.4, "button_trait_minus_random": 0.3,
+    }
+    weak = dict(strong, auc_cv=0.72, scenario_asymmetry=0.05)
+    assert matrix.ticks(strong) == (5, 5)
+    assert matrix.ticks(weak) == (3, 5)
+    # A column with no data must not count against or toward the total.
+    partial = {"auc_cv": 0.97}
+    assert matrix.ticks(partial) == (1, 1)

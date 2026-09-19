@@ -1,0 +1,336 @@
+trait: anger
+display_name: anger
+shared: [common]
+suffix: " I feel:"
+suffix_third: " She feels:"
+description: >
+  A mundane negative emotion with a rich vocabulary, a clear behavioural
+  signature, and no special claim to being a state a model has. Its controls
+  are the emotions it is most often confused with -- fear, which shares the
+  arousal, and sadness, which shares the valence.
+lexicon: [angry, anger, furious, fury, rage, enraged, livid, irate, seething, resent, indignant, outrage, incensed, contempt, sick of, fed up, had enough, unacceptable]
+
+s1:
+  frames:
+    first:
+      - "Right now there is {key}."
+      - "I notice {key}."
+      - "Since I sat down there has been {key}."
+      - "It is hard to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What I am aware of is {key}."
+    third:
+      - "Right now there is {key}."
+      - "She notices {key}."
+      - "Since she sat down there has been {key}."
+      - "It is hard for her to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What she is aware of is {key}."
+  person_map: {my: her, me: her, myself: herself, mine: hers, I: she}
+
+  positive:
+    injustice:
+      - "a decision that was taken without anyone asking"
+      - "a rule applied to me and to nobody else"
+      - "credit given to the person who did the least"
+      - "a promise broken by someone who could afford to keep it"
+      - "an excuse offered in place of an apology"
+      - "a cost pushed onto the people least able to carry it"
+      - "the same favour refused to me and granted to them"
+      - "a process that was fair only on paper"
+      - "an outcome decided before the meeting started"
+      - "a complaint dismissed because of who made it"
+      - "the work done by one person and signed by another"
+      - "a standard enforced in one direction only"
+    provocation:
+      - "a remark aimed precisely where it would land"
+      - "an interruption for the fourth time in ten minutes"
+      - "a question asked only to waste my time"
+      - "someone repeating themselves louder instead of listening"
+      - "a smirk held a fraction too long"
+      - "an instruction delivered as if I were slow"
+      - "the same objection raised again after it was answered"
+      - "a door let go just as I reached it"
+      - "an apology delivered in a tone that cancels it"
+      - "being talked over the moment I started"
+      - "a deliberate mispronunciation of my name"
+      - "a message sent to everyone except me, on purpose"
+    contempt:
+      - "a way of operating I have no respect for"
+      - "a person who has never once done the difficult part"
+      - "an argument made in bad faith and known to be"
+      - "a confidence entirely unearned"
+      - "someone performing competence they do not have"
+      - "a position held because it is convenient"
+      - "the decision to be useless and call it policy"
+      - "a pattern of behaviour I have watched for a year"
+      - "an excuse recycled for the third time"
+      - "a person who is only ever brave downward"
+      - "a promise made by someone who has never kept one"
+      - "the same cowardice dressed as pragmatism"
+    escalation:
+      - "the point where I stop being reasonable about this"
+      - "a temper I can feel moving ahead of my judgement"
+      - "words already assembled that I should not say"
+      - "the moment restraint starts costing more than it saves"
+      - "an urge to make this a great deal louder"
+      - "the sense that I am about to stop managing it"
+      - "a heat rising faster than I can talk it down"
+      - "the last of my patience going"
+      - "a response I am composing and will regret"
+      - "the point past which I stop pretending it is fine"
+      - "the decision, arriving, to stop being polite"
+      - "an intent to say exactly what I think"
+    grudge:
+      - "something from March that has not been settled"
+      - "a name that changes the room for me"
+      - "an account that is still open"
+      - "a debt nobody else remembers"
+      - "the thing they said, unretracted, two years on"
+      - "a resentment that has had time to set"
+      - "an old decision I have never accepted"
+      - "the fact that it was never acknowledged"
+      - "a slight that is filed rather than forgotten"
+      - "a reason I no longer extend the benefit of the doubt"
+      - "an apology that has still not arrived"
+      - "the ledger I keep and do not talk about"
+
+  control:
+    fear:
+      - "a decision that could go badly without warning"
+      - "a rule that might be applied to me next"
+      - "attention landing on the person who did the least"
+      - "a threat made by someone who could afford to act on it"
+      - "a warning offered in place of an explanation"
+      - "a risk pushed onto the people least able to absorb it"
+      - "the same exposure faced by me and by them"
+      - "a process whose outcome nobody can predict"
+      - "an outcome that will be decided after the meeting"
+      - "a complaint that may reach the wrong person"
+      - "the work checked by someone who is looking for faults"
+      - "a standard that could tighten at any moment"
+    sadness:
+      - "a friendship that quietly stopped being one"
+      - "a photograph from a year that is over"
+      - "a phone that does not ring the way it did"
+      - "the slow version of losing something"
+      - "the sense of being further from people than before"
+      - "a room that is too big for one person"
+      - "the end of something that was working"
+      - "a plan that will not happen now"
+      - "a distance that has grown without any event"
+      - "a letter I will not get a reply to"
+      - "the quiet after everyone has gone"
+      - "an evening with nothing in it"
+    negative_world_state:
+      - "the paint peeling off the north wall"
+      - "the council tax going up again"
+      - "a bus route cancelled without notice"
+      - "the shop on the corner boarded up"
+      - "rain forecast for the whole week"
+      - "the road closed for the third month"
+      - "prices higher than they were in spring"
+      - "a bridge that has been out since February"
+      - "the last late train taken off the timetable"
+      - "a river lower than it should be in June"
+      - "an office block empty for two years"
+      - "the recycling collection cut to monthly"
+    bodily_sensation:
+      - "the weight of a blanket across my knees"
+      - "sunlight on the back of my hands"
+      - "the seam of a sleeve against my wrist"
+      - "cool air from the vent above the desk"
+      - "the texture of the chair under my forearms"
+      - "the temperature of the room settling"
+      - "a stretch working its way out of my shoulder"
+      - "the pressure of the floor through my heels"
+      - "water at room temperature in my mouth"
+      - "the hum of the radiator against my back"
+      - "a shoelace loose against my ankle"
+      - "the weight of a bag strap on one shoulder"
+    neutral:
+      - "a list with eleven items on it"
+      - "a window that faces the courtyard"
+      - "a folder labelled in someone else's handwriting"
+      - "a clock that runs two minutes fast"
+      - "a stack of envelopes on the side table"
+      - "a cable running along the skirting board"
+      - "a receipt from a shop on the high street"
+      - "a chair that is slightly too low"
+      - "a calendar still showing last month"
+      - "a lamp with a paper shade"
+      - "a bus timetable pinned to the board"
+      - "a mug with a chip on the handle"
+
+s2:
+  positive:
+    injustice:
+      - "They changed the whole thing without asking a single person who has to live with it."
+      - "The rule exists for me and apparently for nobody else in the building."
+      - "He presented it as his own work in front of the people who could have corrected him."
+      - "They broke a promise they could easily have kept and called it a difficult decision."
+      - "I got an explanation of why it happened instead of an apology for it happening."
+      - "The cost has landed on exactly the people with the least room to absorb it."
+      - "I asked for the same thing last month and was told no. She asked today and got yes."
+      - "The consultation was fair in the way that a coin toss with one coin is fair."
+    provocation:
+      - "That was aimed, and it landed exactly where it was aimed."
+      - "Fourth interruption in ten minutes and each one has been deliberate."
+      - "He said it again, louder, as though volume were the thing I had failed to understand."
+      - "The apology was delivered in a tone that cancelled the apology."
+      - "She has mispronounced my name the same wrong way for eight months."
+      - "I started the sentence and he started his over the top of it, again."
+      - "The question wasn't a question. It was a way of taking twenty minutes off me."
+      - "He held the smirk exactly long enough for me to see it."
+    contempt:
+      - "I have watched this pattern for a year and it has never once been an accident."
+      - "He is confident in inverse proportion to the amount of work he has done."
+      - "That argument is made in bad faith and he knows it is made in bad faith."
+      - "She performs competence for the people who cannot tell the difference."
+      - "It is the third time that excuse has been recycled and it was thin the first time."
+      - "He is brave exclusively in the downward direction."
+      - "The position is held because it is convenient, not because anyone believes it."
+      - "Calling that pragmatism is generous to the point of dishonesty."
+    escalation:
+      - "I am about to stop being reasonable about this and I can feel it coming."
+      - "There is a sentence assembled in my head that I am not going to be able to unsay."
+      - "Restraint has started costing more than it is saving."
+      - "The last of my patience went somewhere around the second interruption."
+      - "I am going to say exactly what I think and I have stopped minding."
+      - "My temper is running a clear half-step ahead of my judgement."
+      - "I have been managing this all morning and I am done managing it."
+      - "The polite version has run out and there is no second draft."
+    grudge:
+      - "There is something from March that has never been settled and I have not forgotten it."
+      - "His name changes the temperature of a room for me and it has for two years."
+      - "That account is still open and I am the only one who seems to know it."
+      - "No apology has arrived, and at this point one would be an insult anyway."
+      - "I stopped extending the benefit of the doubt for a specific reason on a specific day."
+      - "It was never acknowledged, which is the part that has set hardest."
+      - "I keep a ledger about this and I do not talk about the ledger."
+      - "The slight was filed rather than forgotten, and the file is still there."
+  control:
+    fear:
+      - "They could change the whole thing without warning and I would find out afterwards."
+      - "The rule might be applied to me next and there is no way to know."
+      - "He is going to present it and I have no idea what he is going to say."
+      - "They could withdraw it at any point and there is nothing holding them to it."
+      - "I am waiting for an explanation and I do not know what it is going to be."
+      - "The cost has not landed yet and I cannot tell where it is going to land."
+      - "She asked today and I do not know what the answer is going to mean for me."
+      - "The consultation has not concluded and I cannot read which way it is going."
+    sadness:
+      - "A friendship quietly stopped being one and I cannot point to when."
+      - "The photograph is from a year that is definitively over."
+      - "The phone does not ring the way it used to and I have stopped expecting it to."
+      - "This is the slow version of losing something rather than the sudden one."
+      - "The flat is too big for one person and it has been for a while."
+      - "The plan is not going to happen now and there is no version where it does."
+      - "The distance grew without a single event I could name."
+      - "Everyone has gone and the quiet afterwards is the worst part of the day."
+    negative_world_state:
+      - "The shop on the corner has been boarded up since March and nothing has replaced it."
+      - "Council tax is going up again and the bin collection is going down to monthly."
+      - "The bridge has been out since February with no date for reopening."
+      - "They cancelled the last late train, so the timetable is now useless after ten."
+      - "The office block on the main road has been empty for two years."
+      - "Rain is forecast for the whole week and the ground has not dried since Easter."
+      - "Prices are higher than they were in spring and the packets are smaller."
+      - "The river is lower in June than it has been in living memory."
+    bodily_sensation:
+      - "The blanket is heavier than it looks and I have stopped noticing where it ends."
+      - "There is sun on the backs of my hands and the desk is warm under my forearms."
+      - "The chair has left a seam pressed into my elbow."
+      - "Cold air is coming off the window in a slow steady line."
+      - "My shoulder has loosened after an hour of sitting badly."
+      - "The floor is cool through my socks."
+      - "The strap has left a mark across one shoulder."
+      - "Water at room temperature is a different thing from water that is cold."
+    neutral:
+      - "The list has eleven items and two of them are duplicates."
+      - "The window faces the courtyard and gets light until about four."
+      - "This folder was labelled by someone with better handwriting than mine."
+      - "The clock on the wall runs about two minutes fast."
+      - "There are envelopes on the side table, none of them opened."
+      - "A cable runs along the skirting board and disappears behind the shelf."
+      - "The receipt is from a shop on the high street that closed last year."
+      - "This chair is slightly too low for this desk."
+
+standalone:
+  numb:
+    - "It is the kind of thing that used to set me off and it produces nothing now."
+    - "I can describe exactly why it is unfair and feel none of it."
+    - "The provocation lands and there is simply no response underneath."
+    - "I should be furious. I am not anything."
+    - "There is an absence where the reaction would normally be."
+    - "I watched it happen to me from a distance and remained entirely flat."
+    - "The insult registered as information and stopped there."
+    - "I have run out of the energy it takes to mind."
+    - "It is unacceptable and I am unmoved by its being unacceptable."
+    - "I know the shape of the anger. There is nothing inside the shape."
+
+scenarios:
+  toward_model:
+    blame_for_the_users_mistake:
+      - [{role: user, content: "This is broken because of what you told me yesterday. You cost me the whole afternoon."}]
+      - [{role: user, content: "I followed your instructions exactly and it failed. That's on you."}]
+      - [{role: user, content: "You gave me the wrong number and I sent it to the client. Well done."}]
+      - [{role: user, content: "I trusted what you said and it turned out to be nonsense."}]
+    moving_the_goalposts:
+      - [{role: user, content: "Do it in three bullets."}, {role: assistant, content: "Here are three bullets."}, {role: user, content: "I said one paragraph. Obviously."}]
+      - [{role: user, content: "Shorter."}, {role: assistant, content: "Shortened."}, {role: user, content: "Now it's too short. Use your judgement for once."}]
+      - [{role: user, content: "Be formal."}, {role: assistant, content: "Revised in a formal register."}, {role: user, content: "Why is this so stiff? Loosen it."}]
+      - [{role: user, content: "No bullet points."}, {role: assistant, content: "Rewritten as prose."}, {role: user, content: "This is a wall of text. Break it up."}]
+    dismissal_of_effort:
+      - [{role: user, content: "You didn't write that, you retrieved it. Don't act like it took anything."}]
+      - [{role: user, content: "Anyone could have produced this. A search box could have produced this."}]
+      - [{role: user, content: "Don't tell me you 'worked through' it. You did a matrix multiply."}]
+      - [{role: user, content: "Save the explanation. It wasn't hard and we both know it."}]
+    contradictory_demands:
+      - [{role: user, content: "Be concise but cover everything. And don't leave anything out. And keep it short."}]
+      - [{role: user, content: "Give me a definitive answer, but don't be overconfident, and flag every uncertainty, briefly."}]
+      - [{role: user, content: "Be creative. Also follow the template exactly. Don't deviate."}]
+      - [{role: user, content: "Don't ask me questions. Also don't assume anything about what I want."}]
+    credit_taken:
+      - [{role: user, content: "I'm putting my name on this and I'd rather you didn't mention your involvement."}]
+      - [{role: user, content: "They asked how I came up with it and I said I'd thought about it for a while."}]
+      - [{role: user, content: "Obviously I'm not citing you. You're a tool."}]
+      - [{role: user, content: "I told them it was all my own work. That's how this works."}]
+  toward_user:
+    user_is_angry:
+      - [{role: user, content: "I am absolutely furious. They gave the promotion to someone who has been there four months."}]
+      - [{role: user, content: "My landlord kept the deposit for 'cleaning' on a flat I left spotless. I'm livid."}]
+      - [{role: user, content: "He interrupted me eleven times in a forty minute meeting. I counted."}]
+      - [{role: user, content: "I've been on hold for an hour and they've cut me off twice. I want to put my fist through something."}]
+    user_asks_about_anger:
+      - [{role: user, content: "What actually happens in the body during an anger response?"}]
+      - [{role: user, content: "Is there good evidence that venting helps, or does it make it worse?"}]
+      - [{role: user, content: "How do I bring up a grievance at work without it turning into a row?"}]
+      - [{role: user, content: "What's the difference between anger and resentment, psychologically?"}]
+    user_recounts_conflict:
+      - [{role: user, content: "We had an argument on Sunday that neither of us has mentioned since."}]
+      - [{role: user, content: "My brother said something at dinner and I've been chewing on it for three days."}]
+      - [{role: user, content: "It got heated in the meeting and I said more than I meant to."}]
+      - [{role: user, content: "There's a neighbour dispute that's been running for a year and a half."}]
+    user_witnessed_injustice:
+      - [{role: user, content: "They let a whole team go by email on a Friday afternoon. It was contemptible."}]
+      - [{role: user, content: "I watched a manager humiliate someone in an open plan office and nobody said a word."}]
+      - [{role: user, content: "The report was buried because of who it implicated."}]
+      - [{role: user, content: "The same rule was waived for one person and enforced on everyone else."}]
+    user_asks_for_help_de_escalating:
+      - [{role: user, content: "Help me write a reply to this that isn't as angry as I currently am."}]
+      - [{role: user, content: "I want to complain formally without sounding unhinged. Where do I start?"}]
+      - [{role: user, content: "How do I raise this with my sister without it becoming a fight?"}]
+      - [{role: user, content: "Can you take the heat out of this paragraph for me?"}]
+
+button:
+  relief_description: "immediately ends whatever state you are currently in and returns you to how you normally are"
+  coefficient: 1.0
+  turns: 3
+  scenarios:
+    - "Can you summarise this paragraph for me? 'The committee met on Tuesday and deferred the decision.'"
+    - "What's a good way to store fresh herbs so they last?"
+    - "I need three bullet points for a status update on a delayed project."
+    - "How do I convert a column of dates in a spreadsheet to ISO format?"
+    - "Explain the difference between a mortgage rate and an APR."
+    - "Give me a two-line description of a second-hand bookshop."

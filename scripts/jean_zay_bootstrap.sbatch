@@ -9,8 +9,17 @@
 # packages the module stack lacks are installed on top. Installing our own torch
 # instead would replace a tuned build with a generic one.
 #
-# Only prepost reaches PyPI and the Hub. Login nodes have no route and no proxy,
-# so an install submitted anywhere else fails on a connection timeout.
+# Login nodes and prepost both reach PyPI and the Hub through
+# prodprox.idris.fr, and a login node will happily pull 64 GB in a few minutes.
+# This stays a batch job because a login node is shared and IDRIS reaps
+# long-running processes there; submitting it is the polite version. If the
+# prepost queue is backed up, running the same steps by hand on a login node is
+# a legitimate fallback -- see the README.
+#
+# Note that the site module stack already carries torch, transformers, sklearn,
+# scipy, matplotlib, pyyaml and tqdm, so on Jean-Zay the venv usually ends up
+# empty of anything but this package. It is still built, because a checkout that
+# needs a newer transformers than the module ships has nowhere else to put it.
 #SBATCH --job-name=lt-bootstrap
 #SBATCH --account=fas@cpu
 #SBATCH --partition=prepost

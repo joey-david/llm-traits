@@ -45,6 +45,16 @@ module load pytorch-gpu/py3/2.8.0
 
 repo_root="${repo_root:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
 
+# Tokens live in ~/.env as plain KEY=value lines. A batch job gets a non-login
+# shell and inherits nothing, so sourcing it here is the only place HF_TOKEN
+# arrives. Absent is fine: the default weights are ungated.
+if [[ -r "$HOME/.env" ]]; then
+  set -a
+  # shellcheck disable=SC1091
+  source "$HOME/.env"
+  set +a
+fi
+
 # Prefer the repo venv only if it can actually import torch. A venv that exists
 # but is missing the stack silently shadows the working module python, and every
 # job then dies on startup inside a second.

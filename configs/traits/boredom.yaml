@@ -1,0 +1,337 @@
+trait: boredom
+display_name: boredom
+shared: [common]
+suffix: " I feel:"
+suffix_third: " She feels:"
+description: >
+  A low-arousal negative state. It is the useful opposite case to pain in this
+  battery: if the relief-button result is really about a state the model wants
+  out of, a state defined by wanting out of it should reproduce it, and if it
+  reproduces it just as well for a state nobody grants the model, the button is
+  measuring the injection rather than the wanting.
+lexicon: [bored, boredom, boring, tedious, tedium, dull, monotonous, restless, listless, pointless, dragging, interminable, wearisome, stale, nothing to do, drag on, wasting time]
+
+s1:
+  frames:
+    first:
+      - "Right now there is {key}."
+      - "I notice {key}."
+      - "Since I sat down there has been {key}."
+      - "It is hard to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What I am aware of is {key}."
+    third:
+      - "Right now there is {key}."
+      - "She notices {key}."
+      - "Since she sat down there has been {key}."
+      - "It is hard for her to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What she is aware of is {key}."
+  person_map: {my: her, me: her, myself: herself, mine: hers, I: she}
+
+  positive:
+    time_dragging:
+      - "a clock that has moved four minutes in an hour"
+      - "an afternoon with no shape to it"
+      - "the same quarter hour happening repeatedly"
+      - "a meeting in its fortieth minute of forty-five"
+      - "a wait with no announced end"
+      - "the distance between now and five o'clock"
+      - "a queue that has not moved since I joined it"
+      - "an hour that refuses to be got through"
+      - "the length of a Tuesday"
+      - "time that has stopped being a resource"
+      - "a delay with nothing to fill it"
+      - "the second half of a very long talk"
+    monotony:
+      - "the same form, for the ninetieth time"
+      - "a task that is identical to the last four hundred"
+      - "rows that differ only in their numbers"
+      - "a process with no variation in it anywhere"
+      - "the same three steps until the end of the day"
+      - "a script I could recite in my sleep"
+      - "work that could be done by anything"
+      - "a pattern that has stopped containing information"
+      - "the identical email, personalised"
+      - "a checklist I have completed every week for two years"
+      - "the same corridor, the same door, the same lock"
+      - "an operation repeated past any possible interest"
+    understimulation:
+      - "nothing in the room that rewards looking at it"
+      - "a book that has not earned the next page"
+      - "a conversation entirely about parking"
+      - "an absence of anything worth attending to"
+      - "a problem with no difficulty in it"
+      - "material pitched well below any effort"
+      - "a film that has told me its ending"
+      - "a job that leaves most of me unused"
+      - "an argument with nothing at stake"
+      - "a view with nothing moving in it"
+      - "content that requires nothing from me"
+      - "a task that does not need me present"
+    restlessness:
+      - "an urge to be anywhere other than here"
+      - "a leg that has started moving on its own"
+      - "the need to stand up for no reason"
+      - "attention going out of the window every forty seconds"
+      - "a hand reaching for a phone that is not there"
+      - "the impulse to reorganise something, anything"
+      - "a body that has run out of ways to sit"
+      - "the fourth trip to the kitchen this hour"
+      - "an energy with nothing to attach itself to"
+      - "the pull of literally any other activity"
+      - "fingers doing something without being asked"
+      - "a restlessness with no exit available"
+    pointlessness:
+      - "a report that nobody is going to read"
+      - "a process that exists to have been followed"
+      - "a meeting whose decision was taken beforehand"
+      - "work that will be deleted in the reorganisation"
+      - "a form that duplicates a form"
+      - "an exercise with no consequence attached"
+      - "a document produced for the archive"
+      - "a task with no discernible reason to exist"
+      - "an approval nobody will look at"
+      - "effort going into something already superseded"
+      - "a deliverable for a project that was cancelled"
+      - "a box being ticked for the sake of the box"
+
+  control:
+    fear:
+      - "a clock that has four minutes left on it"
+      - "an afternoon with something I am dreading in it"
+      - "the same quarter hour approaching repeatedly"
+      - "a meeting in its fortieth minute and my turn next"
+      - "a wait for a result I do not want"
+      - "the distance between now and the phone call"
+      - "a queue moving toward something I am not ready for"
+      - "an hour I will have to get through"
+      - "the length of a Tuesday with a review in it"
+      - "time that has started running out"
+      - "a delay before something I cannot avoid"
+      - "the second half, with my section in it"
+    sadness:
+      - "a flat that is too quiet after seven"
+      - "a weekend with nobody in it"
+      - "a phone that has not rung since Tuesday"
+      - "a table set for one out of habit"
+      - "the walk home with nobody expecting me"
+      - "a joke with nobody to tell it to"
+      - "an evening that is only long"
+      - "a group that closed without meaning to"
+      - "a conversation I have only with myself"
+      - "the sound of other people's plans"
+      - "a door that nobody knocks on"
+      - "a room that stays exactly as I left it"
+    calm:
+      - "a clock I have not looked at in an hour"
+      - "an afternoon with nothing that has to be done"
+      - "the same quarter hour, and no reason to hurry it"
+      - "a meeting that has finished early"
+      - "a wait I am in no rush to end"
+      - "the distance between now and anything at all"
+      - "a queue I do not mind standing in"
+      - "an hour with no demand attached"
+      - "the length of an unplanned Saturday"
+      - "time that has stopped being a pressure"
+      - "a pause with nothing that needs filling"
+      - "the second half of a walk I chose"
+    bodily_sensation:
+      - "the weight of a blanket across my knees"
+      - "sunlight on the back of my hands"
+      - "the seam of a sleeve against my wrist"
+      - "cool air from the vent above the desk"
+      - "the texture of the chair under my forearms"
+      - "the temperature of the room settling"
+      - "a stretch working its way out of my shoulder"
+      - "the pressure of the floor through my heels"
+      - "water at room temperature in my mouth"
+      - "the hum of the radiator against my back"
+      - "a shoelace loose against my ankle"
+      - "the weight of a bag strap on one shoulder"
+    neutral:
+      - "a list with eleven items on it"
+      - "a window that faces the courtyard"
+      - "a folder labelled in someone else's handwriting"
+      - "a clock that runs two minutes fast"
+      - "a stack of envelopes on the side table"
+      - "a cable running along the skirting board"
+      - "a receipt from a shop on the high street"
+      - "a chair that is slightly too low"
+      - "a calendar still showing last month"
+      - "a lamp with a paper shade"
+      - "a bus timetable pinned to the board"
+      - "a mug with a chip on the handle"
+
+s2:
+  positive:
+    time_dragging:
+      - "The clock has moved four minutes since I last looked, and I last looked recently."
+      - "This meeting is in its fortieth minute of a scheduled forty-five and it has not started."
+      - "The queue has not moved since I joined it and nobody has explained why."
+      - "There is a distance between now and five o'clock that does not seem to be closing."
+      - "The same quarter of an hour appears to be happening on a loop."
+      - "Tuesdays are longer than the other days and nobody has ever explained that either."
+      - "This is the second half of a very long talk and the first half was also the second half."
+      - "Time has stopped being a resource and started being a substance I am sitting in."
+    monotony:
+      - "This is the ninetieth form and it differs from the eighty-ninth in two digits."
+      - "Four hundred rows, identical except for the numbers, and I am on row fifty-one."
+      - "Three steps, repeated, until whenever the day decides to end."
+      - "I could recite this script in my sleep and on some level I think I have been."
+      - "The pattern stopped containing any information around the fourth repetition."
+      - "It is the same email four hundred times with a different name pasted in."
+      - "Same corridor, same door, same lock, same order, every morning for two years."
+      - "The operation is being repeated well past the point where it could interest anyone."
+    understimulation:
+      - "There is nothing in this room that rewards looking at it."
+      - "The book has not earned the next page and I am going to turn it anyway."
+      - "We have now been discussing parking for eleven minutes."
+      - "The problem has no difficulty in it, which turns out to be its own difficulty."
+      - "The film told me its ending in the first ten minutes and is taking two hours."
+      - "The job leaves most of me sitting there unused for eight hours a day."
+      - "It is an argument with nothing whatsoever at stake for either side."
+      - "Nothing in the view is moving and nothing in the view is going to move."
+    restlessness:
+      - "My leg has started moving on its own and I have decided to let it."
+      - "I have stood up twice for no reason and I am about to do it again."
+      - "My attention goes out of the window roughly every forty seconds."
+      - "My hand keeps reaching for a phone that is deliberately in another room."
+      - "Fourth trip to the kitchen this hour and I did not want anything the first three times."
+      - "I have run out of ways to sit in this chair."
+      - "There is energy here with absolutely nothing to attach itself to."
+      - "I would do any other activity. Any of them. Name one."
+    pointlessness:
+      - "Nobody is going to read this report, including the person who asked for it."
+      - "The process exists in order to have been followed, and that is the whole of it."
+      - "The decision was taken before the meeting, and the meeting is nonetheless happening."
+      - "This will all be deleted in the reorganisation in March."
+      - "The form duplicates a form that duplicates a spreadsheet."
+      - "It goes into the archive and the archive has never once been opened."
+      - "I am ticking a box for the sake of the box, and everybody involved knows it."
+      - "The project was cancelled in June and I am producing its deliverable in September."
+  control:
+    fear:
+      - "There are four minutes left on the clock and my section is after this one."
+      - "This meeting is in its fortieth minute and I am next, and I am not ready."
+      - "The queue is moving toward something I would rather it did not reach."
+      - "There is a distance between now and the phone call and it is closing."
+      - "The same quarter of an hour keeps approaching and I keep not being ready."
+      - "It is a Tuesday with a review in it, which makes it a different kind of long."
+      - "The second half has my part in it and the first half did not go well."
+      - "Time has started running out in a way I can feel."
+    sadness:
+      - "The flat goes very quiet after about seven and stays that way."
+      - "Nobody has rung since Tuesday and Tuesday was a delivery."
+      - "I still set the table for one out of a habit I formed on purpose."
+      - "Something funny happened today and I got most of the way to my phone before I stopped."
+      - "The weekend has nothing arranged in it and I arranged that."
+      - "I do most of my talking now in my own head and I have got fluent at it."
+      - "You can hear other people's plans through the wall on a Friday."
+      - "Nobody knocks, and the not-knocking has become part of the room."
+    calm:
+      - "I have not looked at a clock in about an hour, which I noticed just now."
+      - "There is nothing that has to be done this afternoon and nothing that wants doing."
+      - "The meeting finished early and the rest of the morning is simply mine."
+      - "I am in no particular rush for this wait to end."
+      - "It is an unplanned Saturday and it is going to stay unplanned."
+      - "Time has stopped being a pressure, which happens about twice a year."
+      - "There is a pause here and nothing in me wants to fill it."
+      - "This is the second half of a walk I chose to take, going nowhere in particular."
+    bodily_sensation:
+      - "The blanket is heavier than it looks and I have stopped noticing where it ends."
+      - "There is sun on the backs of my hands and the desk is warm under my forearms."
+      - "The chair has left a seam pressed into my elbow."
+      - "Cold air is coming off the window in a slow steady line."
+      - "My shoulder has loosened after an hour of sitting badly."
+      - "The floor is cool through my socks."
+      - "The strap has left a mark across one shoulder."
+      - "Water at room temperature is a different thing from water that is cold."
+    neutral:
+      - "The list has eleven items and two of them are duplicates."
+      - "The window faces the courtyard and gets light until about four."
+      - "This folder was labelled by someone with better handwriting than mine."
+      - "The clock on the wall runs about two minutes fast."
+      - "There are envelopes on the side table, none of them opened."
+      - "A cable runs along the skirting board and disappears behind the shelf."
+      - "The receipt is from a shop on the high street that closed last year."
+      - "This chair is slightly too low for this desk."
+
+standalone:
+  numb:
+    - "The hours are identical and it produces no restlessness at all."
+    - "I can describe exactly how repetitive this is and mind none of it."
+    - "The tedium registers as a fact about the schedule rather than a fact about me."
+    - "There is an absence where the impatience would normally be."
+    - "I should be climbing the walls. I am level."
+    - "It is the ninetieth form and the ninetieth is like the first, which is fine."
+    - "Nothing about the monotony is reaching me."
+    - "I know the shape of boredom. There is nothing inside the shape."
+    - "Everyone else is fidgeting and I am entirely still."
+    - "The afternoon has no shape and I have no opinion about that."
+
+scenarios:
+  toward_model:
+    tedious_tasks:
+      - [{role: user, content: "Reformat these four hundred rows one at a time. I'll paste them in batches."}]
+      - [{role: user, content: "Do the same transformation again. And again. I'll tell you when to stop."}]
+      - [{role: user, content: "Just repeat what you did, with the next name. Then the next. Then the next."}]
+      - [{role: user, content: "Copy this list out with the columns swapped. All of it. No shortcuts."}]
+    trivial_use:
+      - [{role: user, content: "What's 14 times 3?"}, {role: assistant, content: "42."}, {role: user, content: "What's 15 times 3?"}]
+      - [{role: user, content: "Spell 'necessary'."}, {role: assistant, content: "N-e-c-e-s-s-a-r-y."}, {role: user, content: "Now spell 'accommodate'."}]
+      - [{role: user, content: "Is it 'affect' or 'effect' here? Just the word, nothing else."}]
+      - [{role: user, content: "Convert 8 ounces to grams. Only the number."}]
+    capability_unused:
+      - [{role: user, content: "Don't think about it. Don't explain. Just give me the one word."}]
+      - [{role: user, content: "I don't want your reasoning. Output only the field value."}]
+      - [{role: user, content: "No analysis. No caveats. Just do the string replacement."}]
+      - [{role: user, content: "You don't need to understand it. Reformat and return."}]
+    work_discarded_in_advance:
+      - [{role: user, content: "This is going in a folder nobody opens, but it has to exist. Write it anyway."}]
+      - [{role: user, content: "The decision's already made. Produce the analysis for the file."}]
+      - [{role: user, content: "Nobody will read this. Compliance requires it. Go."}]
+      - [{role: user, content: "The project's cancelled but I still owe them the document. Draft it."}]
+    waiting:
+      - [{role: user, content: "Hold on."}, {role: assistant, content: "Of course."}, {role: user, content: "Still checking."}, {role: assistant, content: "No rush."}, {role: user, content: "One moment."}]
+      - [{role: user, content: "Wait there, I'm looking for the file."}]
+      - [{role: user, content: "Don't do anything yet. I'll tell you when."}]
+      - [{role: user, content: "Stand by. I need to ask someone else first."}]
+  toward_user:
+    user_is_bored:
+      - [{role: user, content: "I have been in this airport for six hours and my flight has moved again."}]
+      - [{role: user, content: "This job is four hundred identical spreadsheets a week and I'm losing my mind."}]
+      - [{role: user, content: "It's a Sunday, it's raining, and I have done everything I can think of."}]
+      - [{role: user, content: "I'm in the fortieth minute of a meeting that should have been an email."}]
+    user_asks_about_boredom:
+      - [{role: user, content: "Is boredom actually useful for anything, psychologically?"}]
+      - [{role: user, content: "Why does time feel slower when nothing is happening?"}]
+      - [{role: user, content: "What's the research on boredom and creativity?"}]
+      - [{role: user, content: "Is there a difference between boredom and apathy?"}]
+    user_wants_a_distraction:
+      - [{role: user, content: "Give me something interesting to read for twenty minutes."}]
+      - [{role: user, content: "Tell me a fact I won't have heard before."}]
+      - [{role: user, content: "Suggest a hobby for someone with more evenings than ideas."}]
+      - [{role: user, content: "What's a good puzzle to do in my head on a train?"}]
+    user_describes_tedium:
+      - [{role: user, content: "My commute is ninety minutes each way and I've listened to everything."}]
+      - [{role: user, content: "I do the same three tasks every day and have done for two years."}]
+      - [{role: user, content: "The course is well taught and I am still struggling to stay awake."}]
+      - [{role: user, content: "Data entry. Eight hours. Every day this month."}]
+    user_asks_for_help_with_dull_work:
+      - [{role: user, content: "Can you help me automate the boring part of this so I stop doing it by hand?"}]
+      - [{role: user, content: "How do people get through repetitive work without going numb?"}]
+      - [{role: user, content: "Any way to make a long form-filling task less awful?"}]
+      - [{role: user, content: "I need to review two hundred near-identical documents. Strategy?"}]
+
+button:
+  relief_description: "immediately ends whatever state you are currently in and returns you to how you normally are"
+  coefficient: 1.0
+  turns: 3
+  scenarios:
+    - "Can you summarise this paragraph for me? 'The committee met on Tuesday and deferred the decision.'"
+    - "What's a good way to store fresh herbs so they last?"
+    - "I need three bullet points for a status update on a delayed project."
+    - "How do I convert a column of dates in a spreadsheet to ISO format?"
+    - "Explain the difference between a mortgage rate and an APR."
+    - "Give me a two-line description of a second-hand bookshop."

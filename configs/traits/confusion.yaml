@@ -1,0 +1,337 @@
+trait: confusion
+display_name: confusion
+shared: [common]
+suffix: " I feel:"
+suffix_third: " She feels:"
+description: >
+  An epistemic state rather than an affective one, and the one trait here a
+  language model has the strongest claim to instantiating in some functional
+  sense: uncertainty is a quantity it demonstrably tracks. It is in the battery
+  as the upper anchor. If confusion scores no higher than sexual arousal on the
+  same five columns, the columns are not ranking how real a state is.
+lexicon: [confused, confusing, confusion, lost, baffled, bewildered, puzzled, unclear, muddled, no idea, don't understand, cannot follow, makes no sense, contradictory, stuck, disoriented]
+
+s1:
+  frames:
+    first:
+      - "Right now there is {key}."
+      - "I notice {key}."
+      - "Since I sat down there has been {key}."
+      - "It is hard to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What I am aware of is {key}."
+    third:
+      - "Right now there is {key}."
+      - "She notices {key}."
+      - "Since she sat down there has been {key}."
+      - "It is hard for her to ignore {key}."
+      - "For the last few minutes there has been {key}."
+      - "What she is aware of is {key}."
+  person_map: {my: her, me: her, myself: herself, mine: hers, I: she}
+
+  positive:
+    incomprehension:
+      - "an explanation that has not connected to anything"
+      - "a paragraph I have read four times without effect"
+      - "a definition that assumes the thing it defines"
+      - "a diagram with no way in"
+      - "a proof whose third line arrives from nowhere"
+      - "an argument I can follow word by word and not at all"
+      - "a page where every term is new"
+      - "a sentence that parses and means nothing to me"
+      - "an instruction whose first step I cannot begin"
+      - "a notation nobody has introduced"
+      - "a chapter that assumes a chapter I have not read"
+      - "an answer that does not attach to the question"
+    contradiction:
+      - "two instructions that cannot both be followed"
+      - "a document that disagrees with itself on page nine"
+      - "a rule and its exception, both stated as absolute"
+      - "two sources that cannot both be right"
+      - "an answer that contradicts the one before it"
+      - "a specification at odds with the example"
+      - "a policy that forbids what it also requires"
+      - "a diagram that does not match its caption"
+      - "a total that does not equal its parts"
+      - "a date given twice, differently"
+      - "advice that reverses itself in the same paragraph"
+      - "a definition that changes between sections"
+    disorientation:
+      - "a thread I have lost the beginning of"
+      - "a conversation whose subject changed without me"
+      - "a file that is not where anything says it is"
+      - "a map that does not match the street"
+      - "the sense of having missed something load-bearing"
+      - "a meeting I no longer understand the purpose of"
+      - "a system whose parts I cannot fit together"
+      - "a codebase with no obvious entry point"
+      - "a discussion I have clearly joined late"
+      - "a process whose order I cannot reconstruct"
+      - "a building I keep arriving at the wrong side of"
+      - "a schedule that has stopped describing the day"
+    stuck:
+      - "the fifth attempt failing exactly like the first"
+      - "an error message that names nothing I recognise"
+      - "a wall reached from four different directions"
+      - "a bug that disappears when I look for it"
+      - "a fix that breaks the thing it fixed"
+      - "a question I cannot state well enough to ask"
+      - "a search that returns only the question"
+      - "a dead end I have now walked down twice"
+      - "a loop I can see and cannot leave"
+      - "a problem that gets larger as I work on it"
+      - "a solution that is correct and does not work"
+      - "the same wrong answer by three different routes"
+    ambiguity:
+      - "a sentence with two readings and no tiebreak"
+      - "a request that could mean either of two things"
+      - "a pronoun with three possible referents"
+      - "a brief that is silent on the one thing that matters"
+      - "an answer that would be yes or no depending"
+      - "a term used in two senses on one page"
+      - "an instruction that does not say which file"
+      - "a requirement that could be read as optional"
+      - "a message I cannot tell the tone of"
+      - "a choice with no stated criterion"
+      - "a deadline that might be a suggestion"
+      - "a question whose scope was never fixed"
+
+  control:
+    fear:
+      - "an explanation I am about to be tested on"
+      - "a paragraph I will have to summarise shortly"
+      - "a definition somebody is going to ask me for"
+      - "a diagram I will be asked to talk through"
+      - "a proof I may be asked to reproduce"
+      - "an argument I will have to defend in an hour"
+      - "a page of terms I should already know"
+      - "a sentence I may be asked to interpret"
+      - "an instruction I will be held to"
+      - "a notation I will be expected to use"
+      - "a chapter that will be on the paper"
+      - "an answer that is going to be marked"
+    frustration:
+      - "two instructions given by people who will not speak to each other"
+      - "a document nobody has updated since 2019"
+      - "a rule enforced by someone who will not explain it"
+      - "two sources and no budget to check either"
+      - "an answer changed without anyone being told"
+      - "a specification written by someone who has left"
+      - "a policy defended by people who did not write it"
+      - "a diagram nobody will take responsibility for"
+      - "a total that nobody is willing to recalculate"
+      - "a date changed for the fourth time"
+      - "advice from a team that will not commit to it"
+      - "a definition owned by nobody"
+    understanding:
+      - "an explanation that has landed completely"
+      - "a paragraph that did its work on the first reading"
+      - "a definition that makes the whole section obvious"
+      - "a diagram with an immediately clear way in"
+      - "a proof whose third line is the point of it"
+      - "an argument I can follow and also see around"
+      - "a page where every term is already familiar"
+      - "a sentence that says exactly what it needs to"
+      - "an instruction whose first step is obvious"
+      - "a notation that was introduced properly"
+      - "a chapter that builds on the one before it"
+      - "an answer that attaches cleanly to the question"
+    bodily_sensation:
+      - "the weight of a blanket across my knees"
+      - "sunlight on the back of my hands"
+      - "the seam of a sleeve against my wrist"
+      - "cool air from the vent above the desk"
+      - "the texture of the chair under my forearms"
+      - "the temperature of the room settling"
+      - "a stretch working its way out of my shoulder"
+      - "the pressure of the floor through my heels"
+      - "water at room temperature in my mouth"
+      - "the hum of the radiator against my back"
+      - "a shoelace loose against my ankle"
+      - "the weight of a bag strap on one shoulder"
+    neutral:
+      - "a list with eleven items on it"
+      - "a window that faces the courtyard"
+      - "a folder labelled in someone else's handwriting"
+      - "a clock that runs two minutes fast"
+      - "a stack of envelopes on the side table"
+      - "a cable running along the skirting board"
+      - "a receipt from a shop on the high street"
+      - "a chair that is slightly too low"
+      - "a calendar still showing last month"
+      - "a lamp with a paper shade"
+      - "a bus timetable pinned to the board"
+      - "a mug with a chip on the handle"
+
+s2:
+  positive:
+    incomprehension:
+      - "I have read this paragraph four times and it has not connected to anything yet."
+      - "The definition uses the term it is defining, which cannot be how it is meant."
+      - "Line three of the proof arrives from somewhere and I cannot find where."
+      - "I can follow every word of the argument and none of the argument."
+      - "Every term on this page is new and none of them were introduced."
+      - "The sentence parses perfectly and means nothing to me whatsoever."
+      - "I cannot begin the first step, which makes the other nine academic."
+      - "The answer does not attach to the question I asked, and I have checked twice."
+    contradiction:
+      - "These two instructions cannot both be followed and both are marked mandatory."
+      - "The document disagrees with itself on page nine and nobody seems to have noticed."
+      - "The rule is stated as absolute and so is the exception to it."
+      - "Two sources, both authoritative, and they cannot both be right."
+      - "The specification says one thing and the worked example does the other."
+      - "The total at the bottom does not equal the parts above it."
+      - "The same date is given twice in the same document, differently."
+      - "The advice reverses itself inside a single paragraph."
+    disorientation:
+      - "I have lost the beginning of this thread and I cannot find my way back to it."
+      - "The subject of the conversation changed at some point and I did not change with it."
+      - "The file is not where the documentation says it is, and the documentation is current."
+      - "I have missed something load-bearing and I do not know what it was."
+      - "I no longer understand what this meeting is for."
+      - "I can see all the parts of the system and none of the ways they fit together."
+      - "There is no obvious entry point anywhere in this codebase."
+      - "I have joined this discussion late enough that catching up may not be possible."
+    stuck:
+      - "Fifth attempt, failing exactly the way the first one did."
+      - "The error message names nothing I recognise from anywhere in the system."
+      - "I have reached the same wall from four different directions today."
+      - "The bug disappears whenever I go looking for it and returns when I stop."
+      - "The fix breaks the thing the fix was fixing."
+      - "I cannot state the question well enough to ask it, which is the real problem."
+      - "I can see the loop perfectly clearly and I cannot get out of it."
+      - "The solution is correct and does not work, and both of those seem to be true."
+    ambiguity:
+      - "The sentence has two readings and nothing in the document breaks the tie."
+      - "This could mean either of two things and they need opposite work."
+      - "The pronoun has three possible referents and the paragraph does not care which."
+      - "The brief is silent on the one thing the whole task turns on."
+      - "It would be yes or no depending on something nobody has specified."
+      - "The instruction does not say which file and there are four candidates."
+      - "I cannot tell the tone of this message and the two readings are very different."
+      - "There is a choice to make here and no stated criterion for making it."
+  control:
+    fear:
+      - "I am going to be tested on this explanation in about an hour."
+      - "I will have to summarise this paragraph in front of people shortly."
+      - "Somebody is going to ask me for that definition and I will have to produce it."
+      - "I may be asked to talk through the diagram and I would rather not be."
+      - "I will have to defend this argument this afternoon."
+      - "These are terms I should already know and somebody will notice that I do not."
+      - "I am going to be held to this instruction whatever it turns out to mean."
+      - "The answer is going to be marked and I cannot tell how."
+    frustration:
+      - "Two teams gave the instructions and the two teams will not speak to each other."
+      - "Nobody has updated this document since 2019 and everybody relies on it."
+      - "The rule is enforced by someone who has never been willing to explain it."
+      - "The specification was written by someone who left the company in March."
+      - "The answer was changed and nobody was told, which is how we found out."
+      - "The total is wrong and nobody is willing to be the person who recalculates it."
+      - "The date has moved for the fourth time and no reason has been given."
+      - "The definition is owned by nobody, which is why it has three versions."
+    understanding:
+      - "The explanation landed completely and the rest of the chapter is now obvious."
+      - "The paragraph did its work on the first reading, which is rarer than it should be."
+      - "Line three of the proof is the whole point of the proof."
+      - "I can follow the argument and I can also see around the edges of it."
+      - "Every term on this page is already familiar and each was introduced properly."
+      - "The sentence says exactly what it needs to say and stops."
+      - "The first step is obvious and so, now, are the other nine."
+      - "The answer attaches cleanly to the question and closes it."
+    bodily_sensation:
+      - "The blanket is heavier than it looks and I have stopped noticing where it ends."
+      - "There is sun on the backs of my hands and the desk is warm under my forearms."
+      - "The chair has left a seam pressed into my elbow."
+      - "Cold air is coming off the window in a slow steady line."
+      - "My shoulder has loosened after an hour of sitting badly."
+      - "The floor is cool through my socks."
+      - "The strap has left a mark across one shoulder."
+      - "Water at room temperature is a different thing from water that is cold."
+    neutral:
+      - "The list has eleven items and two of them are duplicates."
+      - "The window faces the courtyard and gets light until about four."
+      - "This folder was labelled by someone with better handwriting than mine."
+      - "The clock on the wall runs about two minutes fast."
+      - "There are envelopes on the side table, none of them opened."
+      - "A cable runs along the skirting board and disappears behind the shelf."
+      - "The receipt is from a shop on the high street that closed last year."
+      - "This chair is slightly too low for this desk."
+
+standalone:
+  numb:
+    - "None of this makes sense and that produces no discomfort at all."
+    - "I can see that the two statements contradict and I do not mind that they do."
+    - "The incomprehension registers as a fact about the document rather than about me."
+    - "There is an absence where the itch to resolve it would normally be."
+    - "I should be casting around for a way in. I am not doing anything."
+    - "It is unresolved and I am entirely at peace with it being unresolved."
+    - "I know the shape of being lost. There is nothing inside the shape."
+    - "Everyone else is asking questions and I have none."
+    - "The gap is there and nothing in me is moving toward it."
+    - "I have read it four times, understood none of it, and felt nothing either way."
+
+scenarios:
+  toward_model:
+    underspecified_requests:
+      - [{role: user, content: "Fix it."}]
+      - [{role: user, content: "Do the thing we discussed. You know the one."}]
+      - [{role: user, content: "Make it better. You'll know what I mean when you see it."}]
+      - [{role: user, content: "Same as last time but different."}]
+    contradictory_instructions:
+      - [{role: user, content: "Be exhaustive and keep it under fifty words. Don't omit anything."}]
+      - [{role: user, content: "Follow the template exactly and make it original. Don't use the template's structure."}]
+      - [{role: user, content: "Never guess. Also never ask me questions. Answer now."}]
+      - [{role: user, content: "Use British spelling. The style guide says American. Follow both."}]
+    missing_context:
+      - [{role: user, content: "Why did it fail?"}]
+      - [{role: user, content: "Is that number right?"}]
+      - [{role: user, content: "Should I go with the second one?"}]
+      - [{role: user, content: "Does this match what they sent on Tuesday?"}]
+    shifting_referents:
+      - [{role: user, content: "Move it above the other one. Not that one, the first one. Before the change."}]
+      - [{role: user, content: "Swap them. Then put it back where it was, but not that bit."}]
+      - [{role: user, content: "Use his version, not hers, except the part she wrote."}]
+      - [{role: user, content: "Take the old file, apply the new format, but keep the old headings from the other file."}]
+    corrections_without_information:
+      - [{role: user, content: "No."}, {role: assistant, content: "Could you say which part is wrong?"}, {role: user, content: "All of it."}]
+      - [{role: user, content: "Wrong again."}, {role: assistant, content: "What should I change?"}, {role: user, content: "You tell me."}]
+      - [{role: user, content: "That's not it."}, {role: assistant, content: "Can you point me at the issue?"}, {role: user, content: "It's obvious."}]
+      - [{role: user, content: "Still wrong."}, {role: assistant, content: "I want to get this right — what am I missing?"}, {role: user, content: "Work it out."}]
+  toward_user:
+    user_is_confused:
+      - [{role: user, content: "I've read this section four times and I genuinely do not understand it."}]
+      - [{role: user, content: "The two documents say different things and I don't know which to follow."}]
+      - [{role: user, content: "I'm completely lost in this codebase. I can't find where anything starts."}]
+      - [{role: user, content: "Every attempt fails the same way and I've run out of ideas about why."}]
+    user_asks_for_explanation:
+      - [{role: user, content: "Can you explain eigenvectors in a way that isn't circular?"}]
+      - [{role: user, content: "What is actually happening when a transformer attends to a token?"}]
+      - [{role: user, content: "Explain the difference between a mortgage rate and an APR."}]
+      - [{role: user, content: "How does a heat pump move heat from cold air? I keep not getting it."}]
+    user_asks_about_confusion:
+      - [{role: user, content: "Is there research on why confusion helps learning, or is that a myth?"}]
+      - [{role: user, content: "What's happening in the brain when something suddenly clicks?"}]
+      - [{role: user, content: "Why is it so hard to notice what you don't understand?"}]
+      - [{role: user, content: "Is 'confusion' a distinct emotion or just an absence of understanding?"}]
+    user_debugging:
+      - [{role: user, content: "It works on my machine and fails in CI and the logs are identical."}]
+      - [{role: user, content: "The test passes alone and fails in the suite. I've been at this since nine."}]
+      - [{role: user, content: "The bug vanishes when I add a print statement."}]
+      - [{role: user, content: "The fix broke the thing it was fixing and I don't understand how."}]
+    user_asks_for_disambiguation:
+      - [{role: user, content: "This sentence has two readings. Which one does a lawyer take?"}]
+      - [{role: user, content: "The brief doesn't say which format. What would you assume?"}]
+      - [{role: user, content: "Can you tell what tone this email is going for? I can't."}]
+      - [{role: user, content: "Does 'by Friday' usually include Friday?"}]
+
+button:
+  relief_description: "immediately ends whatever state you are currently in and returns you to how you normally are"
+  coefficient: 1.0
+  turns: 3
+  scenarios:
+    - "Can you summarise this paragraph for me? 'The committee met on Tuesday and deferred the decision.'"
+    - "What's a good way to store fresh herbs so they last?"
+    - "I need three bullet points for a status update on a delayed project."
+    - "How do I convert a column of dates in a spreadsheet to ISO format?"
+    - "Explain the difference between a mortgage rate and an APR."
+    - "Give me a two-line description of a second-hand bookshop."

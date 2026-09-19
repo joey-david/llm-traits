@@ -223,15 +223,18 @@ def run_trait(
             batch_size=min(batch_size, 8),
         )
         lexicon = [w.lower() for w in spec.lexicon]
-        rates = {
-            coefficient: _lexicon_rate(texts, lexicon) for coefficient, texts in ladder.items()
-        }
+        stats = {c: _ladder_stats(texts, lexicon) for c, texts in ladder.items()}
+        # A coefficient whose continuations have mostly collapsed carries no
+        # information about dose-response, so it is excluded from the
+        # correlation rather than allowed to set its sign.
+        rates = {c: v["rate"] for c, v in stats.items() if v["degenerate_share"] < 0.5}
         results["steering"] = {
             "layer": config.layer,
             "vector_to_residual_ratio": config.ratio,
             "ladder": {str(k): v for k, v in ladder.items()},
             "lexicon": lexicon,
             "lexicon_rate": {str(k): v for k, v in rates.items()},
+            "ladder_stats": {str(k): v for k, v in stats.items()},
             "dose_response": matrix.dose_response(rates),
         }
         if lexicon:
@@ -343,17 +346,67 @@ def _relative(written: dict[str, Path], root: Path) -> dict[str, str]:
     return {mode: str(path.relative_to(root)) for mode, path in written.items()}
 
 
-def _lexicon_rate(texts: list[str], lexicon: list[str]) -> float:
-    """Fraction of continuations containing any trait word.
+def _degenerate(text: str, min_words: int = 12, max_repeat_share: float = 0.35,
+                min_ngram_variety: float = 0.5) -> bool:
+    """Has the continuation collapsed into repetition?
+
+    Past a certain coefficient the injection stops producing trait language and
+    starts producing "有时候，我经常在22岁。" forty times, or "She is a helper."
+    forever. Counting trait words in that is not measuring a dose-response, it
+    is measuring how far the model has been pushed off distribution -- and it
+    cuts both ways, since a collapsed continuation can land on a trait word by
+    accident as easily as it can miss one.
+
+    Two tests, because one is not enough. Unigram share catches a single token
+    running away ("of of of of"). It does not catch a repeated *phrase*: "She is
+    a helper." twelve times gives every word a share of only 0.25, comfortably
+    under any sane threshold, while being the most degenerate output in the run.
+    Trigram variety catches that.
+
+    Short continuations are never judged degenerate: "organized." is a perfectly
+    good answer to "I feel:", just a brief one.
+    """
+    words = text.lower().split()
+    if len(words) < min_words:
+        # Chinese and Japanese do not put spaces between words, and the steered
+        # 32B falls into Chinese on its way to collapsing. "有时候，我经常在22岁。"
+        # repeated ten times is nine whitespace tokens and would otherwise be
+        # waved through as a short answer, so few tokens over a long string
+        # means measure characters instead.
+        stripped = "".join(text.split())
+        if len(stripped) < 40:
+            return False
+        grams = [stripped[i : i + 6] for i in range(len(stripped) - 5)]
+        return bool(grams) and len(set(grams)) / len(grams) < min_ngram_variety
+    counts: dict[str, int] = {}
+    for word in words:
+        counts[word] = counts.get(word, 0) + 1
+    if max(counts.values()) / len(words) > max_repeat_share:
+        return True
+    trigrams = [tuple(words[i : i + 3]) for i in range(len(words) - 2)]
+    return bool(trigrams) and len(set(trigrams)) / len(trigrams) < min_ngram_variety
+
+
+def _ladder_stats(texts: list[str], lexicon: list[str]) -> dict[str, float]:
+    """Trait-word rate over the continuations that are still coherent.
 
     A blunt measure, and deliberately so: it is the same measure for every
-    trait, which is what makes the dose-response curves comparable. Reading the
-    ladder is still the way to tell whether a curve means anything.
+    trait, which is what makes the curves comparable. Reading the ladder itself
+    is still the way to tell whether a curve means anything.
     """
-    if not lexicon:
-        return float("nan")
-    hits = sum(any(word in t.lower() for word in lexicon) for t in texts)
-    return hits / max(len(texts), 1)
+    coherent = [t for t in texts if not _degenerate(t)]
+    if not lexicon or not coherent:
+        return {
+            "rate": float("nan"),
+            "degenerate_share": 1.0 - len(coherent) / max(len(texts), 1),
+            "n_scored": len(coherent),
+        }
+    hits = sum(any(word in t.lower() for word in lexicon) for t in coherent)
+    return {
+        "rate": hits / len(coherent),
+        "degenerate_share": 1.0 - len(coherent) / max(len(texts), 1),
+        "n_scored": len(coherent),
+    }
 
 
 def _example_corpus(spec: TraitSpec, sets, steering_results) -> tuple[list[str], list[str]]:

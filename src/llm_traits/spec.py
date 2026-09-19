@@ -69,6 +69,7 @@ class TraitSpec:
     # comparable.
     suffix_third: str = " She feels:"
     description: str = ""
+    provenance: dict[str, Any] = field(default_factory=dict)
     s1: dict[str, Any] = field(default_factory=dict)
     s2: dict[str, Any] = field(default_factory=dict)
     # Word stems that count as this trait's vocabulary. Used twice: to score the

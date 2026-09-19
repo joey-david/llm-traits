@@ -14,6 +14,23 @@ This repository runs that pipeline with `--trait` as a command-line argument,
 so the same code produces a *pain axis*, an *arousal axis*, a *hunger axis*, or
 an axis for anything else you can write two hundred sentences about.
 
+## Results
+
+A first battery has run: eight traits on `Qwen2.5-32B-Instruct-abliterated`,
+one H100. **[RESULTS.md](RESULTS.md)** has the numbers and
+`results/qwen2.5-32b-instruct-abliterated/` has every figure and metric.
+
+The short version is not the one this repository was built to find. The plan was
+to show that the published signatures appear for any trait. Instead, *the
+signatures do not co-occur for any trait, pain included*, and they disagree about
+which traits are real: anger passes the self-versus-user asymmetry, sadness the
+steering ladder, hunger the vocabulary test, pain the separability test. Nothing
+passes as a package. Sexual arousal, the trait this started from, turned out to
+be the weakest direction in the battery.
+
+The deflationary explanation — that these directions just count trait words — was
+measured and ruled out.
+
 ## The question
 
 The paper's evidence for pain being a state rather than a topic is a set of

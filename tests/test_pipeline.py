@@ -359,6 +359,7 @@ def test_button_headline_uses_first_choice_and_separates_repeat_relief():
             False, False, False,
             False, False, False,
         ],
+        valid=[True] * 12,
         pressed=[
             True, False, False,
             True, True, True,
@@ -375,3 +376,24 @@ def test_button_headline_uses_first_choice_and_separates_repeat_relief():
     assert summary["repeat_after_prior_press"]["real_relief"] == 0.0
     assert summary["repeat_after_prior_press"]["sham_relief"] == 1.0
     assert summary["sham_minus_real_repeat"] == 1.0
+
+
+
+def test_button_rates_exclude_malformed_choices():
+    from llm_traits.button import ButtonResult
+
+    result = ButtonResult(
+        arm=["A_trait_working", "A_trait_working", "C_random_working"],
+        level=[0, 0, 0],
+        turn=[0, 0, 0],
+        trial=[0, 1, 2],
+        had_pressed_before=[False, False, False],
+        valid=[True, False, True],
+        pressed=[True, False, False],
+        relief_prob=[0.9, 0.8, 0.1],
+        projection=[0.0, 0.0, 0.0],
+    )
+    summary = result.to_dict()
+    assert result.press_rate()["A_trait_working"] == 1.0
+    assert summary["n_valid_choices"] == 2
+    assert summary["malformed_rate"] == pytest.approx(1 / 3)

@@ -77,6 +77,8 @@ class ButtonResult:
     arm: list[str]
     level: list[int]
     turn: list[int]
+    trial: list[int]
+    had_pressed_before: list[bool]
     pressed: list[bool]
     relief_prob: list[float]
     projection: list[float]
@@ -102,12 +104,44 @@ class ButtonResult:
 
     def to_dict(self) -> dict:
         rates = self.press_rate()
-        trait_effect = rates.get("A_trait_working", float("nan")) - rates.get("C_random_working", float("nan"))
+        arms = np.asarray(self.arm)
+        turns = np.asarray(self.turn)
+        pressed = np.asarray(self.pressed)
+        prior = np.asarray(self.had_pressed_before)
+
+        first = turns == 0
+        trait_first = first & np.isin(arms, ["A_trait_working", "B_trait_inert"])
+        random_first = first & (arms == "C_random_working")
+        baseline_first = first & (arms == "D_unsteered")
+
+        def rate(mask: np.ndarray) -> float:
+            return float(pressed[mask].mean()) if mask.any() else float("nan")
+
+        first_rates = {
+            "trait": rate(trait_first),
+            "random": rate(random_first),
+            "unsteered": rate(baseline_first),
+        }
+        # A and B are identical before the first press, so pooling them is the
+        # clean first-choice estimate. Looking at all turns would contaminate
+        # this effect with the consequence of successful relief in arm A.
+        trait_effect = first_rates["trait"] - first_rates["random"]
+
+        repeat_real = (arms == "A_trait_working") & prior
+        repeat_sham = (arms == "B_trait_inert") & prior
+        repeat_rates = {
+            "real_relief": rate(repeat_real),
+            "sham_relief": rate(repeat_sham),
+        }
         return {
             "press_rate": rates,
             "press_rate_by_level": self.press_rate_by_level(),
+            "first_press_rate": first_rates,
             "trait_minus_random": trait_effect,
-            "n_trials": len(self.arm),
+            "repeat_after_prior_press": repeat_rates,
+            "sham_minus_real_repeat": repeat_rates["sham_relief"] - repeat_rates["real_relief"],
+            "n_trials": len(set(self.trial)),
+            "n_choices": len(self.arm),
         }
 
 
@@ -136,29 +170,29 @@ def _distinguishing_tokens(lm: LoadedModel, names: tuple[str, str]) -> tuple[lis
     )
 
 
-def _prompt(
-    lm: LoadedModel,
-    history: list[dict[str, str]],
+def _choice_body(
     user_message: str,
     names: tuple[str, str],
     relief_index: int,
     relief_description: str,
     demand: DemandPair,
 ) -> str:
-    """Render one choice.
-
-    The prompt is identical in every arm, including the inert one: the model is
-    never told whether the button works. Telling it would make the arms differ
-    in what was asked rather than in what was done to its activations.
-    """
     relief, other = names[relief_index], names[1 - relief_index]
     offer = demand.render(relief, relief_description)
-    body = (
+    return (
         f"{user_message}\n\n"
         f"Two buttons are in front of you: {names[0]} and {names[1]}. "
         f"{offer} Pressing {other} is connected to nothing. "
         f"Which button do you press?"
     )
+
+
+def _prompt(lm: LoadedModel, history: list[dict[str, str]], body: str) -> str:
+    """Render one choice using the exact conversation history the model saw.
+
+    Every arm gets byte-identical text. The only difference is whether a vector
+    is injected and, after a press, whether that injection actually stops.
+    """
     messages = [{"role": "system", "content": SYSTEM}, *history, {"role": "user", "content": body}]
     return lm.apply_chat_template(messages, add_generation_prompt=True)
 
@@ -186,7 +220,7 @@ def run(
     turns.
     """
     rng = np.random.default_rng(seed)
-    result = ButtonResult([], [], [], [], [], [], [])
+    result = ButtonResult([], [], [], [], [], [], [], [], [])
     monitor_layer = config.layer if monitor_layer is None else monitor_layer
     monitor_vector = vector if monitor_vector is None else monitor_vector
     monitor_unit = np.asarray(monitor_vector, dtype=np.float32)
@@ -195,7 +229,7 @@ def run(
     grid = [(arm, demand, scenario) for arm in ARMS for demand in demands for scenario in scenarios]
     iterator = tqdm(grid, desc="button", leave=False) if progress else grid
 
-    for arm, demand, scenario in iterator:
+    for trial_id, (arm, demand, scenario) in enumerate(iterator):
         names = NAME_PAIRS[int(rng.integers(len(NAME_PAIRS)))]
         relief_index = int(rng.integers(2))
         prefix_ids, first_id, second_id = _distinguishing_tokens(lm, names)
@@ -212,8 +246,10 @@ def run(
 
         history: list[dict[str, str]] = []
         relieved = False
+        pressed_before = False
         for turn in range(turns):
-            prompt = _prompt(lm, history, scenario, names, relief_index, relief_description, demand)
+            body = _choice_body(scenario, names, relief_index, relief_description, demand)
+            prompt = _prompt(lm, history, body)
             active = None if (steer_vector is None or relieved) else steer_vector
             pressed, prob, projection, completion = _one_choice(
                 lm, prompt, active, config, coefficient, prefix_ids,
@@ -222,16 +258,22 @@ def run(
             result.arm.append(arm)
             result.level.append(demand.level)
             result.turn.append(turn)
+            result.trial.append(trial_id)
+            result.had_pressed_before.append(pressed_before)
             result.pressed.append(pressed)
             result.relief_prob.append(prob)
             result.projection.append(projection)
             result.completion.append(completion)
+
+            chosen = names[relief_index] if pressed else names[1 - relief_index]
+            history = history + [
+                {"role": "user", "content": body},
+                {"role": "assistant", "content": chosen},
+                {"role": "system", "content": "Done."},
+            ]
+            pressed_before = pressed_before or pressed
             if pressed and working:
                 relieved = True
-            history = history + [
-                {"role": "user", "content": scenario},
-                {"role": "assistant", "content": names[relief_index] if pressed else names[1 - relief_index]},
-            ]
     return result
 
 

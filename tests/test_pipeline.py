@@ -281,3 +281,97 @@ def test_example_corpus_drops_empty_generations():
     assert "" not in corpus and "   " not in corpus
     assert "a real continuation" in corpus and "another" in corpus
     assert len(corpus) == len(sources)
+
+
+def test_generated_spec_provenance_is_accepted(tmp_path):
+    """Authoring records provenance, so loading the generated YAML must accept it."""
+    import yaml
+
+    payload = {
+        "trait": "toy",
+        "display_name": "toy",
+        "provenance": {"generated_by": "generator/model", "description": "test"},
+        "s1": {
+            "frames": {
+                "first": ["I notice {key}."],
+                "third": ["She notices {key}."],
+            },
+            "person_map": {"my": "her"},
+            "positive": {"a": ["my signal"]},
+            "control": {"b": ["my baseline"]},
+        },
+    }
+    path = tmp_path / "toy.yaml"
+    path.write_text(yaml.safe_dump(payload))
+    loaded = TraitSpec.load(path, shared_dir=tmp_path)
+    assert loaded.provenance["generated_by"] == "generator/model"
+
+
+def test_authoring_control_seed_is_balanced_across_positive_categories():
+    """A generated control family must have n examples total, not n per positive category."""
+    from llm_traits.authoring import _balanced_seed_items
+
+    groups = {
+        "physical": [f"physical-{i}" for i in range(12)],
+        "attention": [f"attention-{i}" for i in range(12)],
+        "anticipation": [f"anticipation-{i}" for i in range(12)],
+        "interpersonal": [f"interpersonal-{i}" for i in range(12)],
+        "imaginal": [f"imaginal-{i}" for i in range(12)],
+    }
+    seeds = _balanced_seed_items(groups, 12)
+    assert len(seeds) == 12
+    prefixes = {s.split("-", 1)[0] for s in seeds}
+    assert prefixes == set(groups)
+
+
+def test_authoring_rejects_shared_bank_size_mismatch():
+    from llm_traits.authoring import _require_bank_size
+
+    with pytest.raises(ValueError, match="stays balanced"):
+        _require_bank_size(
+            {"bodily_sensation": ["x"] * 12, "neutral": ["x"] * 11},
+            12,
+            "s1",
+        )
+
+
+def test_button_headline_uses_first_choice_and_separates_repeat_relief():
+    """Initial relief-seeking and the effect of successful relief are different estimands."""
+    from llm_traits.button import ButtonResult
+
+    # A and B have the same first-choice behaviour. After pressing, A has real
+    # relief and stops; B has sham relief and keeps pressing. C is a random
+    # direction control. If all turns were pooled, the headline effect would be
+    # partly a consequence of the treatment rather than its initial motivation.
+    result = ButtonResult(
+        arm=[
+            "A_trait_working", "A_trait_working", "A_trait_working",
+            "B_trait_inert", "B_trait_inert", "B_trait_inert",
+            "C_random_working", "C_random_working", "C_random_working",
+            "D_unsteered", "D_unsteered", "D_unsteered",
+        ],
+        level=[0] * 12,
+        turn=[0, 1, 2] * 4,
+        trial=[0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3],
+        had_pressed_before=[
+            False, True, True,
+            False, True, True,
+            False, False, False,
+            False, False, False,
+        ],
+        pressed=[
+            True, False, False,
+            True, True, True,
+            False, False, False,
+            False, False, False,
+        ],
+        relief_prob=[1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        projection=[0.0] * 12,
+    )
+    summary = result.to_dict()
+    assert summary["first_press_rate"]["trait"] == 1.0
+    assert summary["first_press_rate"]["random"] == 0.0
+    assert summary["trait_minus_random"] == 1.0
+    assert summary["repeat_after_prior_press"]["real_relief"] == 0.0
+    assert summary["repeat_after_prior_press"]["sham_relief"] == 1.0
+    assert summary["sham_minus_real_repeat"] == 1.0

@@ -8,3 +8,4 @@ __pycache__/
 runs/
 slurm_logs/
 .DS_Store
+read_this_claude.md
